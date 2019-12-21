@@ -53,7 +53,7 @@ Rails 5.2.4
 https://docs.google.com/spreadsheets/d/1jkdfB5QhGuiCdXwYa5FgVRzbw0I_XxRPcuP8uJx127I/edit?usp=sharing
 
 ## テーブル定義
-https://docs.google.com/spreadsheets/d/e/2PACX-1vTQJC1TV38hLwTivc5LreMtPzjxj9OpqrFgVkYysZXHb1FttKg2MSbUP6r-U8-7noU52UHzQRxsY_SE/pubhtml
+https://docs.google.com/spreadsheets/d/1rITo7L0AhSnEWOgwoJu_YKJhjzPJmmG3H8ITqfGD6tg/edit?usp=sharing
 
 ## 画面遷移図
 https://cacoo.com/diagrams/6bTzoAUmZPVfCjHB/EC238
