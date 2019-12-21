@@ -59,7 +59,7 @@ https://docs.google.com/spreadsheets/d/1rITo7L0AhSnEWOgwoJu_YKJhjzPJmmG3H8ITqfGD
 https://cacoo.com/diagrams/6bTzoAUmZPVfCjHB/EC238
 
 ## 画面ワイヤーフレーム
-https://docs.google.com/spreadsheets/d/e/2PACX-1vQW9UJIBgpQ7Ijd9oAv-vZYcxsO0X8r9bM9zWLJ4IOYV9aLLgRwe6T24Ae9gjOF-8gdesbHqiBhHtRi/pubhtml
+https://cacoo.com/diagrams/j8TwhkUQiPpTtaBa/466F5
 
 ## 使用予定Gem
 * devise
