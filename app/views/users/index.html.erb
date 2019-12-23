@@ -1,6 +1,9 @@
 <h1>Users#index</h1>
 
 
-<% @users.each do |user| %>
-<p><%= user.email %></p>
-<% end %>
+
+  <% @users.each do |user| %>
+    <%= user.name %>
+    <%= user.email %>
+    <%= render 'follow_form', user: user %>
+  <% end %>
