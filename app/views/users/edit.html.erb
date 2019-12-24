@@ -33,10 +33,10 @@
   <%= text_field_tag("profile[name]") %>
   <br>
   <%= label :profile, :gender, "性別" %>
-  <%= select_tag '性別', options_for_select({"選択してください": 0, "男": 1, "女": 2, "どちらでもない": 3}, 0) %>
+  <%= select_tag "profile[gender]", options_for_select([['選択してください', ''], ['男', '男'], ['女', '女'], ['どちらでもない', 'どちらでもない']]) %>
   <br>
   <%= label :profile, :name, "年齢" %>
-  <%= select_tag '性別', options_for_select({"選択してください": 0, "20~26": 1, "27~33": 2, "34~40": 4, "41~47": 5, "48~60": 6, "非公開": 7}, 0) %>
+  <%= select_tag "profile[age]", options_for_select([['選択してください', ''], ['20~26', '20~26'], ['27~33', '27~33'], ['34~40', '34~40'], ['41~47', '41~47'], ['48~60', '48~60'], ['非公開', '非公開']]) %>
   <br>
   <%= label :profile, :introduction, "自己紹介" %>
   <%= text_field_tag("profile[introduction]") %>
