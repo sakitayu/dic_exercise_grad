@@ -40,7 +40,7 @@
     <% if user.id != current_user.id && user.umbrella %>
         <% unless user.umbrella.have_umbrella %>
         <div class="item">
-          <%= user.profile.name %>
+          <%= user.profile.name if user.profile %>
           <%= user.email %>
           <%= user.umbrella.have_umbrella if user.umbrella %>
           <%= user.location.area if user.location %>
@@ -74,4 +74,5 @@
       <% end %>
     <% end %>
   <% end %>
+  <%= link_to "承諾済みリクエストを確認する", confirm_request_users_path %>
 <% end %>

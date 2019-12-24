@@ -1,0 +1,31 @@
+<h1>リクエスト承諾確認画面</h1>
+
+<h1>承諾されたリクエストはありません</h1>
+
+<%# binding.pry %>
+<% if @conversations.where(recipient_id: current_user.id) %>
+  <p>あります</p>
+<% else %>
+  <p>承諾されたリクエストはありません</p>
+<% end %>
+
+<% @conversations.each do |conversation| %>
+  <% if current_user.id == User.find(conversation.recipient_id).id %>
+    <%= User.find(conversation.sender_id).email %><br>
+  <% end %>
+<% end %>
+
+<% if false %>
+<% @users.each do |user| %>
+  <% if user.id != current_user.id && user.umbrella %>
+    <% if user.umbrella.have_umbrella %>
+      <div class="item">
+        <%= user.profile.name %>
+        <%= user.email %>
+        <%= user.active_matchings %>
+      </div>
+    <br>
+    <% end %>
+  <% end %>
+<% end %>
+<% end %>

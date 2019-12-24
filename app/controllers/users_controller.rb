@@ -32,6 +32,15 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def confirm_request
+    if current_user.umbrella
+      @users = User.all
+      @conversations = Conversation.all
+    else
+      redirect_to starts_path
+    end
+  end
+
   private
 
   def profile_params
