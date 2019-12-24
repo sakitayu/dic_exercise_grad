@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_23_064016) do
+ActiveRecord::Schema.define(version: 2019_12_23_182814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 2019_12_23_064016) do
     t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
     t.index ["sender_id", "recipient_id"], name: "index_conversations_on_sender_id_and_recipient_id", unique: true
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "area", default: "未入力", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "matchings", force: :cascade do |t|
@@ -44,6 +52,25 @@ ActiveRecord::Schema.define(version: 2019_12_23_064016) do
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "name", default: "未設定", null: false
+    t.integer "gender", default: 0, null: false
+    t.integer "age", default: 0, null: false
+    t.string "introduction"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "umbrellas", force: :cascade do |t|
+    t.bigint "user_id"
+    t.boolean "have_umbrella", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_umbrellas_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -72,6 +99,9 @@ ActiveRecord::Schema.define(version: 2019_12_23_064016) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "locations", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
+  add_foreign_key "profiles", "users"
+  add_foreign_key "umbrellas", "users"
 end

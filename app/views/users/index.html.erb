@@ -1,21 +1,20 @@
 <h1>Users#index</h1>
-
-
-
-<% @users.each do |user| %>
-  <%= user.name %>
-  <%= user.email %>
-  <%= render 'follow_form', user: user %>
-<% end %>
-
+<%= link_to "マイプロフィール", edit_user_path(current_user.id)  %>
+<%= current_user.email %>
+<%= current_user.umbrella.have_umbrella %>
+<%= current_user.location.area %>
+<br><br><br><br>
 <% @users.each do |user| %>
   <% if user.id != current_user.id %>
-    <li>
       <div class="item">
+        <%= user.name %>
         <%= user.email %>
+        <%= user.umbrella.have_umbrella %>
+        <%= user.location.area %>
+        <%= link_to "詳細", user_path(user.id)  %>
+        <%= render 'follow_form', user: user %>
         <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %>
       </div>
-    </li>
-    <li><%= render 'follow_form', user: user %></li> <!-- フォロー機能が実装されて入ればこの一文も必要 -->
+      <br>
   <% end %>
 <% end %>

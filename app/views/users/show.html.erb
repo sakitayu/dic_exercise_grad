@@ -1,0 +1,18 @@
+<h1><%= @user.email %>さんのプロフィールページ</h1>
+
+<%= @user.email %>
+<% if @user.umbrella == nil %>
+<p>このページが表示されないようにコントロールしてください</p>
+<% else %>
+<%= @user.umbrella.have_umbrella %>
+<%= @user.location.area %>
+<br>
+<%= @user.profile.name %>
+<br>
+<%= @user.profile.age %>
+<br>
+<%= @user.profile.gender %>
+<br>
+<%= @user.profile.introduction %>
+<br>
+<% end %>

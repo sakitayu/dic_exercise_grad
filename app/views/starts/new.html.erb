@@ -1,0 +1,46 @@
+<h1>スタート画面ですnew</h1>
+<% if false%>
+<%= form_with(model: @umbrella, url: starts_path) do |form| %>
+  <div class="have_umbrella">
+    <%= form.label "あなたは傘を持っていますか？" %>
+    <%= form.radio_button :have_umbrella, :true %>
+    <%= form.label :have_umbrella, "はい", {value: :true, style: "display: inline-block;"} %>
+    <%= form.radio_button :have_umbrella, :false %>
+    <%= form.label :have_umbrella, "いいえ", {value: :false, style: "display: inline-block;"} %>
+  </div>
+  <%= form.submit "利用を開始" %>
+<% end %>
+<% end %>
+
+<%= form_tag(miracle_starts_path, method: "get") do %>
+  <%= label :umbrella, :have_umbrella, "傘を持っていますか？" %>
+  <%= radio_button_tag("umbrella[have_umbrella]", true ) %>はい
+  <%= radio_button_tag("umbrella[have_umbrella]", false) %>いいえ
+  <br>
+  <%= label :location, :area, "あなたがいる場所を入力してください" %>
+  <%= text_field_tag("location[area]") %>
+  <br>
+  <%= submit_tag "利用を開始" %>
+<% end %>
+
+
+<% if false%>
+<h1>スタート画面ですindex</h1>
+
+<%= form_with(model: User.new) do |form| %>
+  <div class="have_umbrella">
+    <%= form.label "あなたは傘を持っていますか？" %>
+    <%= form.radio_button :have_umbrella, :true %>
+    <%= form.label :have_umbrella, "はい", {value: :true, style: "display: inline-block;"} %>
+    <%= form.radio_button :have_umbrella, :false %>
+    <%= form.label :have_umbrella, "いいえ", {value: :false, style: "display: inline-block;"} %>
+  </div>
+  <div class="user_location">
+    <%= form.label :location, "あなたがいる場所を入力してください" %>
+    <%= form.text_field :location %>
+  </div>
+  <%= form.submit "利用を開始" %>
+<% end %>
+<% end %>
+
+<%#= @start.have_umbrella %>
