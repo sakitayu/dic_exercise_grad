@@ -1,4 +1,8 @@
 <h1>Users#index</h1>
+
+
+<% if false %>
+
 <%= link_to "マイプロフィール", edit_user_path(current_user.id)  %>
 <%= current_user.email %>
 <%= current_user.umbrella.have_umbrella %>
@@ -18,5 +22,56 @@
         <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %>
       </div>
       <br>
+  <% end %>
+<% end %>
+
+<% end %>
+
+<%= link_to "マイプロフィール", user_path(current_user.id)  %>
+<%= current_user.email %>
+<%= current_user.umbrella.have_umbrella %>
+<%= current_user.location.area %>
+<br><br><br><br><br>
+
+<% if current_user.umbrella.have_umbrella %>
+  <h1>傘を持っていないひと一覧</h1>
+
+  <% @users.each do |user| %>
+    <% if user.id != current_user.id && user.umbrella %>
+        <% unless user.umbrella.have_umbrella %>
+        <div class="item">
+          <%= user.profile.name %>
+          <%= user.email %>
+          <%= user.umbrella.have_umbrella if user.umbrella %>
+          <%= user.location.area if user.location %>
+          <%= user.profile.gender if user.profile %>
+          <%= user.profile.age if user.profile %>
+          <%= link_to "詳細", user_path(user.id)  %>
+          <%= link_to 'リクエストを承諾', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post, data: { confirm: '本当に承諾しますか？' } %>
+        </div>
+        <br>
+      <% end %>
+    <% end %>
+  <% end %>
+
+<% else %>
+  
+  <h1>傘を持っているひと一覧</h1>
+  <% @users.each do |user| %>
+    <% if user.id != current_user.id && user.umbrella %>
+      <% if user.umbrella.have_umbrella %>
+        <div class="item">
+          <%= user.profile.name %>
+          <%= user.email %>
+          <%= user.umbrella.have_umbrella if user.umbrella %>
+          <%= user.location.area if user.location %>
+          <%= user.profile.gender if user.profile %>
+          <%= user.profile.age if user.profile %>
+          <%= link_to "詳細", user_path(user.id)  %>
+          <%= render 'request_form', user: user %>
+        </div>
+      <br>
+      <% end %>
+    <% end %>
   <% end %>
 <% end %>

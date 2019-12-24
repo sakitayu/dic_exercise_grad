@@ -90,10 +90,6 @@ ActiveRecord::Schema.define(version: 2019_12_23_182814) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.string "name", default: "名前未設定"
-    t.integer "gender", default: 0
-    t.integer "age", default: 0
-    t.string "profile"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

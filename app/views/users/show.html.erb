@@ -1,18 +1,20 @@
+
 <h1><%= @user.email %>さんのプロフィールページ</h1>
 
 <%= @user.email %>
-<% if @user.umbrella == nil %>
-<p>このページが表示されないようにコントロールしてください</p>
-<% else %>
-<%= @user.umbrella.have_umbrella %>
-<%= @user.location.area %>
+<%= @user.umbrella.have_umbrella if @user.umbrella != nil %>
+<%= @user.location.area if @user.location != nil %>
 <br>
-<%= @user.profile.name %>
+<%= @user.profile.name if @user.profile != nil %>
 <br>
-<%= @user.profile.age %>
+<%= @user.profile.age if @user.profile != nil %>
 <br>
-<%= @user.profile.gender %>
+<%= @user.profile.gender if @user.profile != nil %>
 <br>
-<%= @user.profile.introduction %>
+<%= @user.profile.introduction if @user.profile != nil %>
 <br>
-<% end %>
+
+
+
+<%= link_to "プロフィールを編集", edit_user_path(current_user.id) if current_user.id == @user.id %>
+
