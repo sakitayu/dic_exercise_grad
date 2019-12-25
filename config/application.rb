@@ -14,7 +14,7 @@ module Rainy
     config.i18n.default_locale = :ja
 
     #config.assets.initialize_on_precompile = false
-    config.assets.compile = true
+    #config.assets.compile = true
 
 
     # Settings in config/environments/* take precedence over those specified here.
