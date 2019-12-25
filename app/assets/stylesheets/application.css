@@ -15,7 +15,7 @@
  */
 
 body {
-  background-image: image-url('rain.jpg');
+  background-image: url(rain.jpg);
   margin:0;
   padding:0;
   display: flex;
