@@ -1,13 +1,17 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :profile_update]
   before_action :set_user, only: [:show, :edit]
-
+  require "date"
   def index
     if current_user.umbrella
-      #@users = User.all
-      @users = User.where(updated_at: Date.yesterday.beginning_of_day..Date.today)
-      @q = @users.ransack(params[:q])
-      @users = @q.result(distinct: true)
+      @users = User.all
+      @userx = User.where('updated_at LIKE ?', "%#{DateTime.now}%")
+      puts "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+      puts DateTime.now
+      puts Date.today
+      #@users = User.where(updated_at: Date.yesterday.beginning_of_day..Date.today)
+      # @q = @users.ransack(params[:q])
+      # @users = @q.result(distinct: true)
       @matchings = Matching.all
     else
       redirect_to starts_path

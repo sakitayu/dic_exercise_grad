@@ -1,15 +1,21 @@
 <div class="navi_box">
-  <h1>スタート画面ですnew</h1>
+  <div class="start_navi"><h1>Rainy スタート画面</h1></div>
 </div>
 
-<%= form_tag(miracle_starts_path, method: "get") do %>
-  <%= label :umbrella, :have_umbrella, "傘を持っていますか？" %>
-  <%= radio_button_tag("umbrella[have_umbrella]", true ) %>はい
-  <%= radio_button_tag("umbrella[have_umbrella]", false) %>いいえ
-  <br>
-  <%= label :location, :area, "あなたがいる場所を入力してください" %>
-  <%= text_field_tag("location[area]") %>
-  <br>
-  <%= submit_tag "利用を開始" %>
-<% end %>
+<div class="main_box">
+  <div class="start_form">
+    <%= form_tag(miracle_starts_path, method: "get") do %>
+      <%= label :umbrella, :have_umbrella, "あなたは傘を持っていますか？", class: "start_label" %>
+      <br>
+      <%= radio_button_tag("umbrella[have_umbrella]", true ) %>はい
+      <%= radio_button_tag("umbrella[have_umbrella]", false) %>いいえ
+      <br><br>
+      <%= label :location, :area, "あなたがいる場所を入力してください", class: "start_label" %>
+      <br>
+      <%= text_field_tag("location[area]") %>
+      <br><br><br>
+      <%= submit_tag "利用を開始" %>
+    <% end %>
+  </div>
+</div>
 

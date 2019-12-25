@@ -41,7 +41,7 @@ main {
 .app_name {
   font-size: 80px;
   color:#1a76d2;
-  margin:0;
+  margin:0 0 20px 0;
   padding:0;
 }
 
@@ -66,7 +66,7 @@ main {
 }
 
 .app_title {
-  width:290px;
+  width:260px;
   margin:100px auto 0 auto;
 }
 
@@ -87,3 +87,46 @@ main {
   color:#616161;
 
 }
+
+.navi_box {
+  background-color:white;
+  width:800px;
+  height:50px;
+  margin: 70px auto 0 auto;
+  border-radius: 4px;
+}
+
+.main_box {
+  background-color:white;
+  width:800px;
+  height:auto;
+  margin: 30px auto 0 auto;
+  border-radius: 4px;
+}
+
+.start_form {
+  text-align: center;
+  height:270px;
+  color:#616161;
+  font-weight:bold;
+  padding-top:60px;
+}
+
+.start_label {
+  font-size: 25px;
+}
+
+.start_navi {
+  text-align: center;
+  font-size: 10px;
+  width:250px;
+  margin:0 auto;
+  padding-right:20px;
+  color:#616161;
+}
+
+.start_navi h1 {
+  margin:10px 0 0 0;
+  padding-top:10px;
+}
+
