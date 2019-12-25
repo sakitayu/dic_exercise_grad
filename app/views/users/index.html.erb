@@ -65,26 +65,6 @@
         <div class="item">
           <%= user.profile.name if user.profile %>
           <%= user.email %>
-          <%= user.updated_at %>
-          <%= user.umbrella.have_umbrella if user.umbrella %>
-          <%= user.location.area if user.location %>
-          <%= user.profile.gender if user.profile %>
-          <%= user.profile.age if user.profile %>
-          <%= link_to "詳細", user_path(user.id)  %>
-          <%= render 'request_form', user: user %>
-        </div>
-      <br>
-      <% end %>
-    <% end %>
-  <% end %>
-<hr>
-<h1>成功</h1>
-  <% @userx.each do |user| %>
-    <% if user.id != current_user.id && user.umbrella %>
-      <% if user.umbrella.have_umbrella %>
-        <div class="item">
-          <%= user.profile.name if user.profile %>
-          <%= user.email %>
           <%= user.umbrella.have_umbrella if user.umbrella %>
           <%= user.location.area if user.location %>
           <%= user.profile.gender if user.profile %>
@@ -97,12 +77,12 @@
     <% end %>
   <% end %>
 
-  <%#= search_form_for @q do |f| %>
-    <%#= f.label :location_area, "Keyword" %>
-    <%#= f.search_field :location_area_cont %>
+  <%= search_form_for @q do |f| %>
+    <%= f.label :location_area, "Keyword" %>
+    <%= f.search_field :location_area_cont %>
 
-    <%#= f.submit "検索" %>
-  <%# end %>
+    <%= f.submit "検索" %>
+  <% end %>
 
   <%= link_to "承諾済みリクエストを確認する", confirm_request_users_path %>
 <% end %>
