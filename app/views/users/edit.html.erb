@@ -1,47 +1,25 @@
-<% if false%>
-<%= form_with(model: @user, local: true ,url: profile_update_users_path ) do |form| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2>エラー文の説明はここ！！</h2>
-    </div>
-  <% end %>
-  <div class="user_email">
-  <%= @user.email %>
-  </div>
-  <div class="user_name">
-  <%= form.label :name, "アカウント名" %>
-  <%= form.text_field :name %>
-  </div>
-  <div class="user_genders">
-  <%= form.label :gender, "性別" %>
-  <%= form.select :gender, {"男": 1, "女": 2, "どちらでもない": 3}, {include_blank: '選択'} %>
-  </div>
-  <div class="user_age">
-  <%= form.label :age, "年齢" %>
-  <%= form.select :age, {"20~32": 1, "33~45": 2, "46~58": 3, "60~72": 4, "年齢非公開": 5}, {include_blank: '選択'} %>
-  </div>
-  <div class="user_introduction">
-  <%= form.label :introduction, "自己紹介" %>
-  <%= form.text_field :introduction %>
-  </div>
-  <%= form.submit 'プロフィールを更新' %>
-<% end %>
-<% end %>
+<div class="navi_box">
+  <p>プロフィール編集画面</p>
+  <div class="navi_search"><%= link_to "編集をキャンセルする", :back %> </div>
+</div>
 
-<%= form_tag(profile_update_users_path, method: "get") do %>
-  <%= label :profile, :name, "アカウント名" %>
-  <%= text_field_tag("profile[name]") %>
-  <br>
-  <%= label :profile, :gender, "性別" %>
-  <%= select_tag "profile[gender]", options_for_select([['選択してください', ''], ['男', '男'], ['女', '女'], ['どちらでもない', 'どちらでもない']]) %>
-  <br>
-  <%= label :profile, :name, "年齢" %>
-  <%= select_tag "profile[age]", options_for_select([['選択してください', ''], ['20~26', '20~26'], ['27~33', '27~33'], ['34~40', '34~40'], ['41~47', '41~47'], ['48~60', '48~60'], ['非公開', '非公開']]) %>
-  <br>
-  <%= label :profile, :introduction, "自己紹介" %>
-  <%= text_field_tag("profile[introduction]") %>
-  <br>
-  <%= submit_tag "プロフィールを更新" %>
-<% end %>
+<div class="main_box">
+  <div class="edit_box">
+    <%= form_tag(profile_update_users_path, method: "get") do %>
+      <%= label :profile, :name, "アカウント名" %>
+      <%= text_field_tag("profile[name]") %>
+      <br>
+      <%= label :profile, :gender, "性別" %>
+      <%= select_tag "profile[gender]", options_for_select([['選択してください', ''], ['男', '男'], ['女', '女'], ['どちらでもない', 'どちらでもない']]) %>
+      <br>
+      <%= label :profile, :name, "年齢" %>
+      <%= select_tag "profile[age]", options_for_select([['選択してください', ''], ['20~26', '20~26'], ['27~33', '27~33'], ['34~40', '34~40'], ['41~47', '41~47'], ['48~60', '48~60'], ['非公開', '非公開']]) %>
+      <br>
+      <%= label :profile, :introduction, "自己紹介" %>
+      <%= text_field_tag("profile[introduction]", " ", {size:"80"}) %>
+      <br>
+      <%= submit_tag "プロフィールを更新" %>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to "編集をキャンセルして一覧画面に戻る", users_path %>

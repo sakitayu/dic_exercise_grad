@@ -6,8 +6,6 @@ class StartsController < ApplicationController
   end
 
   def new
-    # @start = User.find(current_user.id)
-    # @start = @start.build_umbrella
     if current_user.umbrella
       @umbrella = current_user.umbrella
     else
@@ -16,11 +14,6 @@ class StartsController < ApplicationController
   end
 
   def create
-    # umbrella = current_user.build_umbrella(have_umbrella: true)
-    # umbrella.save
-    # @user = User.find(current_user.id)
-    # @user = User.find(current_user.id)
-    # @user.save!
     redirect_to users_path
   end
 
@@ -33,7 +26,6 @@ class StartsController < ApplicationController
   end
 
   def miracle
-    
     if current_user.location
       current_user.location.update(location_params)
     else
@@ -45,6 +37,12 @@ class StartsController < ApplicationController
     else
       umbrella_info = current_user.build_umbrella(umbrella_params)
       umbrella_info.save
+    end
+    if current_user.profile
+      current_user.profile.update(profile_params)
+    else
+      profile_info = current_user.build_profile(profile_params)
+      profile_info.save
     end
 
     redirect_to users_path
@@ -58,5 +56,9 @@ class StartsController < ApplicationController
 
   def location_params
     params.require(:location).permit(:area)
+  end
+
+  def profile_params
+    params.require(:profile).permit(:name)
   end
 end

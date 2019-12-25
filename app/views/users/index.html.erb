@@ -1,88 +1,131 @@
-<h1>Users#index</h1>
 
 
-<% if false %>
-
-<%= link_to "マイプロフィール", edit_user_path(current_user.id)  %>
 <%= current_user.email %>
 <%= current_user.umbrella.have_umbrella %>
 <%= current_user.location.area %>
-<br><br><br><br>
-<% @users.each do |user| %>
-  <% if user.id != current_user.id %>
-      <div class="item">
-        <%= user.name %>
-        <%= user.email %>
-        <%= user.umbrella.have_umbrella if user.umbrella %>
-        <%= user.location.area if user.location %>
-        <%= user.profile.gander if user.profile %>
-        <%= user.profile.ege if user.profile %>
-        <%= link_to "詳細", user_path(user.id)  %>
-        <%= render 'follow_form', user: user %>
-        <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %>
-      </div>
-      <br>
-  <% end %>
-<% end %>
-
-<% end %>
-
-<%= link_to "マイプロフィール", user_path(current_user.id)  %>
-<%= current_user.email %>
-<%= current_user.umbrella.have_umbrella %>
-<%= current_user.location.area %>
-<br><br><br><br><br>
 
 <% if current_user.umbrella.have_umbrella %>
-  <h1>傘を持っていないひとからのリクエスト一覧</h1>
+  <div class="navi_box">
+    <h2>傘を持っていないひとからのリクエスト一覧</h2>
+  </div>
 
-  <% @matchings.each do |matching| %>
-    <% follower = User.find(matching.follower_id) %>
-    <% followed = User.find(matching.followed_id) %>
-    <% if followed.id == current_user.id && follower.umbrella %>
-        <% unless follower.umbrella.have_umbrella %>
-        <div class="item">
-          <%= follower.profile.name if follower.profile %>
-          <%= follower.email %>
-          <%= follower.umbrella.have_umbrella if follower.umbrella %>
-          <%= follower.location.area if follower.location %>
-          <%= follower.profile.gender if follower.profile %>
-          <%= follower.profile.age if follower.profile %>
-          <%= link_to "詳細", user_path(follower.id)  %>
-          <%= link_to 'リクエストを承諾', conversations_path(sender_id: current_user.id, recipient_id: follower.id), method: :post, data: { confirm: '本当に承諾しますか？' } %>
-        </div>
-        <br>
+  <div class="main_box">
+    <table>
+      <tr>
+        <th class="main_name">アカウント名</th>
+        <th class="main_area">今いる場所</th>
+        <th class="main_gender">性別</th>
+        <th class="main_age">年齢</th>
+        <th class="main_my_profile" colspan="2"><%= link_to "マイプロフィール", user_path(current_user.id)  %></th>
+      </tr>
+
+      <% @matchings.each do |matching| %>
+        <% follower = User.find(matching.follower_id) %>
+        <% followed = User.find(matching.followed_id) %>
+        <% if followed.id == current_user.id && follower.umbrella %>
+          <% unless follower.umbrella.have_umbrella %>
+            <tr class="table_border">
+              <td>
+                <% if follower.profile %>
+                  <%= follower.profile.name %>
+                <% else %>
+                  <%= "名前未設定" %>
+                <% end %>
+              </td>
+              <td><%= follower.location.area if follower.location %></td>
+              <td>
+                <% if follower.profile %>
+                  <%= follower.profile.gender %>
+                <% else %>
+                  <%= "性別未設定" %>
+                <% end %>
+              </td>
+              <td>
+                <% if follower.profile %>
+                  <%= follower.profile.age %>
+                <% else %>
+                  <%= "年齢未設定" %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to "詳細", user_path(follower.id)  %>
+              </td>
+              <td>
+                <%= link_to 'リクエストを承諾', conversations_path(sender_id: current_user.id, recipient_id: follower.id), method: :post, data: { confirm: '本当に承諾しますか？' } %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
-  <% end %>
+      </td></tr>
+    </table>
+        <br>
+  </div>
 
 <% else %>
   
-  <h1>傘を持っているひと一覧</h1>
-  <% @users.each do |user| %>
-    <% if user.id != current_user.id && user.umbrella %>
-      <% if user.umbrella.have_umbrella %>
-        <div class="item">
-          <%= user.profile.name if user.profile %>
-          <%= user.email %>
-          <%= user.umbrella.have_umbrella if user.umbrella %>
-          <%= user.location.area if user.location %>
-          <%= user.profile.gender if user.profile %>
-          <%= user.profile.age if user.profile %>
-          <%= link_to "詳細", user_path(user.id)  %>
-          <%= render 'request_form', user: user %>
-        </div>
-      <br>
+  <div class="navi_box">
+    <h2>傘を持っているひと一覧</h2>
+    <div class="navi_search">
+      <%= search_form_for @q do |f| %>
+        <%= f.label :location_area, "場所" %>
+        <%= f.search_field :location_area_cont, size: "10x10" %>
+        <%= f.label :profile_gender, "性別" %>
+        <%= f.select :profile_gender_eq, [['男', 1], ['女', 2], ['どちらでもない', 3]], :include_blank => '未選択' %>
+        <%= f.label :profile_age, "年齢" %>
+        <%= f.select :profile_age_eq, [['20~26', 1], ['27~33', 2], ['34~40', 3], ['41~47', 4], ['48~60', 5], ['非公開', 6]], :include_blank => '未選択' %>
+        <%= f.submit "検索" %>
       <% end %>
-    <% end %>
-  <% end %>
+    </div>
+  </div>
 
-  <%= search_form_for @q do |f| %>
-    <%= f.label :location_area, "Keyword" %>
-    <%= f.search_field :location_area_cont %>
+  <div class="main_box">
+    <table>
+      <tr>
+        <th class="main_name">アカウント名</th>
+        <th class="main_area">今いる場所</th>
+        <th class="main_gender">性別</th>
+        <th class="main_age">年齢</th>
+        <th class="main_my_profile" colspan="2"><%= link_to "マイプロフィール", user_path(current_user.id)  %></th>
+      </tr>
+      
+      <% @users.each do |user| %>
+        <% if user.id != current_user.id && user.umbrella %>
+          <% if user.umbrella.have_umbrella %>
+            <tr class="table_border">
+              <td>
+                <% if user.profile %>
+                  <%= user.profile.name %>
+                <% else %>
+                  <%= "名前未設定" %>
+                <% end %>
+              </td>
+              <td><%= user.location.area if user.location %></td>
+              <td>
+                <% if user.profile %>
+                  <%= user.profile.gender %>
+                <% else %>
+                  <%= "性別未設定" %>
+                <% end %>
+              </td>
+              <td>
+                <% if user.profile %>
+                  <%= user.profile.age %>
+                <% else %>
+                  <%= "年齢未設定" %>
+                <% end %>
+              </td>
+              <td><%= link_to "詳細", user_path(user.id)  %></td>
+              <td><%= render 'request_form', user: user %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+      </td></tr>
+    </table>
+  </div>
 
-    <%= f.submit "検索" %>
-  <% end %>
-
-  <%= link_to "承諾済みリクエストを確認する", confirm_request_users_path %>
+  <div class="bottom_box">
+    <%= link_to "承諾済みリクエストを確認する", confirm_request_users_path %>
+  </div>
 <% end %>

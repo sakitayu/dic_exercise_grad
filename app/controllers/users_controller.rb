@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     if current_user.umbrella
       search_date = Date.today
       @users = User.where(updated_at: search_date.in_time_zone.all_day())
-      #@users = User.where(updated_at: Date.yesterday.beginning_of_day..Date.today)
       @q = @users.ransack(params[:q])
       @users = @q.result(distinct: true)
       @matchings = Matching.all

@@ -90,26 +90,92 @@ main {
 
 .navi_box {
   background-color:white;
-  width:800px;
+  width:900px;
   height:50px;
   margin: 70px auto 0 auto;
   border-radius: 4px;
 }
 
+.navi_box h2{
+  color:#616161;
+  margin:0;
+  padding-top:6px;
+  padding-left:20px;
+  float:left;
+}
+
+.navi_box p{
+  color:#616161;
+  font-size:20px;
+  margin:0;
+  padding-top:10px;
+  padding-left:20px;
+  float:left;
+}
+
+.bottom_box {
+  background-color:linen;
+  text-align:center;
+  font-size:30px;
+  font-weight:bold;
+  width:900px;
+  height:48px;
+  margin: 30px auto 0 auto;
+  padding-top:5px;
+  border-radius: 4px;
+}
+
+.bottom_box a {
+  color:hotpink;
+  text-decoration-line: none;
+}
+
+.navi_search {
+  color:#616161;
+  float:right;
+  margin-top:12px;
+  margin-right:20px;
+}
+
+.navi_search span {
+  color:#616161;
+  font-size:13px;
+}
+
 .main_box {
   background-color:white;
-  width:800px;
+  width:900px;
   height:auto;
   margin: 30px auto 0 auto;
   border-radius: 4px;
 }
+
+.main_box table {
+  margin: 20px 30px;
+  padding-top: 10px;
+}
+
+.main_box tr {
+  color:#616161;
+}
+
+.main_box td {
+  border-top:1px solid #616161;
+  color:#616161;
+  padding:5px;
+}
+
+.table_border {
+  
+}
+
 
 .start_form {
   text-align: center;
   height:270px;
   color:#616161;
   font-weight:bold;
-  padding-top:60px;
+  padding-top:30px;
 }
 
 .start_label {
@@ -130,3 +196,88 @@ main {
   padding-top:10px;
 }
 
+.main_name {
+  width: 180px;
+}
+
+.main_area {
+  width: 250px;
+}
+
+.main_gender {
+  width: 100px;
+}
+
+.main_age {
+  width: 100px;
+}
+
+.main_my_profile {
+  width: 180px;
+}
+
+.profile_img {
+  width: 140px;
+}
+
+.profile_left {
+  border:1px solid #616161;
+  border-radius: 5px;
+  width:200px;
+  float:left;
+  margin:20px 20px 20px 30px;
+  padding:20px 0;
+}
+
+.profile_left div{
+  text-align: center;
+  margin-top:5px;
+}
+
+.profile_right {
+  height:330px;
+  width:600px;
+  margin-left:280px;
+}
+
+.prof_area {
+  color:#616161;
+  margin-left:10px;
+  padding-top:20px;
+  height: 100px;
+}
+
+.prof_area p {
+  margin:0;
+  padding:0;
+  font-size: 36px;
+}
+
+.prof_area h2{
+  margin:0;
+  padding:0;
+  color:#616161;
+}
+
+.prof_intro {
+  color:#616161;
+  margin-left:10px;
+  padding:10px;
+  height: 120px;
+  width:550px;
+}
+
+.prof_bottom {
+  margin-left:10px;
+  padding:10px;
+  width:550px;
+}
+
+.prof_bottom_float {
+  float:right;
+}
+
+.edit_box {
+  text-align: center;
+  padding:50px;
+}

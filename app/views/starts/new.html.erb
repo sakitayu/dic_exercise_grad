@@ -13,7 +13,11 @@
       <%= label :location, :area, "あなたがいる場所を入力してください", class: "start_label" %>
       <br>
       <%= text_field_tag("location[area]") %>
-      <br><br><br>
+      <br>
+      <%= label :profile, :name, "あなたのアカウント名を入力してください", class: "start_label" %>
+      <br>
+      <%= text_field_tag("profile[name]") %>
+      <br><br>
       <%= submit_tag "利用を開始" %>
     <% end %>
   </div>
