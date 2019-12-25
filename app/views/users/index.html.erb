@@ -34,20 +34,22 @@
 <br><br><br><br><br>
 
 <% if current_user.umbrella.have_umbrella %>
-  <h1>傘を持っていないひと一覧</h1>
+  <h1>傘を持っていないひとからのリクエスト一覧</h1>
 
-  <% @users.each do |user| %>
-    <% if user.id != current_user.id && user.umbrella %>
-        <% unless user.umbrella.have_umbrella %>
+  <% @matchings.each do |matching| %>
+    <% follower = User.find(matching.follower_id) %>
+    <% followed = User.find(matching.followed_id) %>
+    <% if followed.id == current_user.id && follower.umbrella %>
+        <% unless follower.umbrella.have_umbrella %>
         <div class="item">
-          <%= user.profile.name if user.profile %>
-          <%= user.email %>
-          <%= user.umbrella.have_umbrella if user.umbrella %>
-          <%= user.location.area if user.location %>
-          <%= user.profile.gender if user.profile %>
-          <%= user.profile.age if user.profile %>
-          <%= link_to "詳細", user_path(user.id)  %>
-          <%= link_to 'リクエストを承諾', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post, data: { confirm: '本当に承諾しますか？' } %>
+          <%= follower.profile.name if follower.profile %>
+          <%= follower.email %>
+          <%= follower.umbrella.have_umbrella if follower.umbrella %>
+          <%= follower.location.area if follower.location %>
+          <%= follower.profile.gender if follower.profile %>
+          <%= follower.profile.age if follower.profile %>
+          <%= link_to "詳細", user_path(follower.id)  %>
+          <%= link_to 'リクエストを承諾', conversations_path(sender_id: current_user.id, recipient_id: follower.id), method: :post, data: { confirm: '本当に承諾しますか？' } %>
         </div>
         <br>
       <% end %>
@@ -61,7 +63,7 @@
     <% if user.id != current_user.id && user.umbrella %>
       <% if user.umbrella.have_umbrella %>
         <div class="item">
-          <%= user.profile.name %>
+          <%= user.profile.name if user.profile %>
           <%= user.email %>
           <%= user.umbrella.have_umbrella if user.umbrella %>
           <%= user.location.area if user.location %>

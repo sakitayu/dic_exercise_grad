@@ -1,19 +1,37 @@
 <h1>リクエスト承諾確認画面</h1>
 
-<h1>承諾されたリクエストはありません</h1>
-
 <%# binding.pry %>
-<% if @conversations.where(recipient_id: current_user.id) %>
-  <p>あります</p>
-<% else %>
+<% if @matchings.where(follower_id: current_user.id).blank? %>
   <p>承諾されたリクエストはありません</p>
+<% else %>
+  <p>以下の方にリクエストが承諾されました</p>
 <% end %>
 
-<% @conversations.each do |conversation| %>
-  <% if current_user.id == User.find(conversation.recipient_id).id %>
-    <%= User.find(conversation.sender_id).email %><br>
+<% @matchings.each do |matching| %>
+  <% if current_user.id == User.find(matching.follower_id).id %>
+  <%# if current_user.id == User.find(conversation.recipient_id).id %>
+    <% @user = User.find(matching.followed_id) %><br>
+    <%= @user.profile.name if @user.profile %>
+    <%= @user.email %>
+    <%= @user.umbrella.have_umbrella if @user.umbrella %>
+    <%= @user.location.area if @user.location %>
+    <%= @user.profile.gender if @user.profile %>
+    <%= @user.profile.age if @user.profile %>
+    <%= link_to "詳細", user_path(@user.id)  %>
+    <%= link_to "この人に相合傘をお願いする", conversations_path(sender_id: @user.id, recipient_id: current_user.id), method: :post, data: { confirm: '本当にお願いしますか？' }  %>
   <% end %>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
 
 <% if false %>
 <% @users.each do |user| %>

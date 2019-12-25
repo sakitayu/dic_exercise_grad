@@ -4,7 +4,9 @@ class UsersController < ApplicationController
 
   def index
     if current_user.umbrella
-      @users = User.all
+      #@users = User.all
+      @users = User.where(updated_at: Date.yesterday.beginning_of_day..Date.today)
+      @matchings = Matching.all
     else
       redirect_to starts_path
     end
@@ -34,7 +36,8 @@ class UsersController < ApplicationController
 
   def confirm_request
     if current_user.umbrella
-      @users = User.all
+      #@users = User.where(created_at: Date.yesterday.beginning_of_day..Date.today)
+      @matchings = Matching.all
       @conversations = Conversation.all
     else
       redirect_to starts_path
