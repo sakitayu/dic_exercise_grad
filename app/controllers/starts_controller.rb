@@ -32,12 +32,14 @@ class StartsController < ApplicationController
       location_info = current_user.build_location(location_params)
       location_info.save
     end
+
     if current_user.umbrella
       current_user.umbrella.update(umbrella_params)
     else
       umbrella_info = current_user.build_umbrella(umbrella_params)
       umbrella_info.save
     end
+    
     if current_user.profile
       current_user.profile.update(profile_params)
     else

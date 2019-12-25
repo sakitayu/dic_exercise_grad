@@ -8,18 +8,13 @@ class User < ApplicationRecord
   has_many :passive_matchings, foreign_key: 'followed_id', class_name: 'Matching', dependent: :destroy
   has_many :following, through: :active_matchings, source: :followed
   has_many :followers, through: :passive_matchings, source: :follower
-  #has_many :messages, dependent: :destroy
   has_one :location, dependent: :destroy
   has_one :umbrella, dependent: :destroy
   has_one :profile, dependent: :destroy
-  # belongs_to :sender, foreign_key: :sender_id, class_name: 'User'
-  # belongs_to :recipient, foreign_key: :recipient_id, class_name: 'User'
-  # validates_uniqueness_of :sender_id, scope: :recipient_id
-  
-  # scope :between, -> (sender_id,recipient_id) do
-  #   where(["(conversations.sender_id = ? AND conversations.recipient_id = ?) OR (conversations.sender_id = ? AND conversations.recipient_id = ?)", sender_id ,recipient_id, recipient_id, sender_id])
-  # end
 
+  #enum gender: { "男": 1, "女": 2, "どちらでもない": 3 }
+  #enum age: { "20~26": 1, "27~33": 2, "34~40": 3, "41~47": 4, "48~60": 5, "非公開": 6 }
+  
   def follow!(other_user)
     active_matchings.create!(followed_id: other_user.id)
   end
