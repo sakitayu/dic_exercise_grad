@@ -9,28 +9,22 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <header>
-    <%= link_to 'ユーザー一覧', users_path if user_signed_in? %>
-  </header>
-
   <body>
+    <header>
+      <%= link_to 'ユーザー一覧', users_path if user_signed_in? %>
+
     <% if user_signed_in? %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to "新規登録", new_user_registration_path %>
       <%= link_to "ログイン", new_user_session_path %>
     <% end %>
+    </header>
 
+    <main>
+      <%= yield %>
+    </main>
 
-    <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-error"><%= alert %></p>
-    <% end %>
-
-
-  
-    <%= yield %>
+    <footer></footer>
   </body>
 </html>

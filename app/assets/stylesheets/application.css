@@ -13,3 +13,77 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-image: url(rain.jpg);
+  margin:0;
+  padding:0;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #64B5F7;
+  height:100px;
+}
+
+footer {
+  background-color: #64B5F7;
+  height:100px;
+  bottom:0;
+}
+
+main {
+  flex: 1;
+}
+
+.app_name {
+  font-size: 80px;
+  color:#1a76d2;
+  margin:0;
+  padding:0;
+}
+
+.app_name_sentence{
+  font-size: 16px;
+  font-weight:bold;
+  color:#1a76d2;
+  margin:0;
+  padding:0;
+}
+
+.field {
+  font-weight:bold;
+  text-align: right;
+  color:#616161;
+}
+
+.email_and_pass_form {
+  width:290px;
+  margin:0 auto;
+  padding-right:80px;
+}
+
+.app_title {
+  width:290px;
+  margin:100px auto 0 auto;
+}
+
+.actions {
+  width:100px;
+  margin:10px auto 0 auto;
+}
+
+.top_bottom_etc {
+  text-align: center;
+  font-size: 10px;
+  width:250px;
+  margin:10px auto 0 auto;
+  padding-right:50px;
+}
+
+.top_bottom_etc a {
+  color:#616161;
+
+}

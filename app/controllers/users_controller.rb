@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :profile_update]
+  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :profile_update]
   before_action :set_user, only: [:show, :edit]
 
   def index
