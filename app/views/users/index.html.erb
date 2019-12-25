@@ -76,5 +76,13 @@
       <% end %>
     <% end %>
   <% end %>
+
+  <%= search_form_for @q do |f| %>
+    <%= f.label :location_area, "Keyword" %>
+    <%= f.search_field :location_area_cont %>
+
+    <%= f.submit "検索" %>
+  <% end %>
+
   <%= link_to "承諾済みリクエストを確認する", confirm_request_users_path %>
 <% end %>
