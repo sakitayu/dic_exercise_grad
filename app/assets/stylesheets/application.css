@@ -146,7 +146,7 @@ main {
   background-color:white;
   width:900px;
   height:auto;
-  margin: 30px auto 0 auto;
+  margin: 30px auto 100px auto;
   border-radius: 4px;
 }
 
@@ -281,4 +281,8 @@ main {
 .edit_box {
   text-align: center;
   padding:50px;
+}
+
+.message_box {
+  padding:20px;
 }

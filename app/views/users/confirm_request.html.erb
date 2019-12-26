@@ -1,29 +1,69 @@
-<h1>リクエスト承諾確認画面</h1>
-
 
 
 <% @matchings.each do |matching| %>
-<%# binding.pry %>
   <% if current_user.id == matching.follower_id %>
-  <%# binding.pry %>
     <% if Matching.where(follower_id:matching.followed_id, followed_id:current_user.id).present? %>
-    <p>以下の方にリクエストが承諾されました</p>
-    
       <% @user = User.find(matching.followed_id) %><br>
-      <%= @user.name %>
-      <%= @user.email %>
-      <%= @user.have_umbrella %>
-      <%= @user.area %>
-      <%= @user.gender %>
-      <%= @user.age %>
-      <%= link_to "詳細", user_path(@user.id)  %>
-      <%= link_to "この人に相合傘をお願いする", conversations_path(sender_id: @user.id, recipient_id: current_user.id), method: :post, data: { confirm: '本当にお願いしますか？' }  %>
-    <% else %>
-      <p>承諾されたリクエストはありません</p>
+      <div class="navi_box">
+        <p>あなたのリクエストが <strong><%= @user.name %></strong> さんに承諾されました。お願いしますか？</p>
+      </div>
+
+      <div class="main_box">
+        <div class="profile_left">
+          <div><%= image_tag 'male.png', class: "profile_img" %></div>
+          <div><%= @user.name %></div>
+          <div><strong>性別</strong> <%= @user.gender %></div>
+          <div><strong>年齢</strong> <%= @user.age %></div>
+        </div>
+      
+        <div class="profile_right">
+          <div class="prof_area">
+            <h2>今いる場所</h2>
+            <p><%= @user.area %></p>
+          </div>
+          <div class="prof_intro">
+            <%= @user.introduction %>
+          </div>
+          <div class="prof_bottom">
+            <div class="prof_bottom_float">
+              <%= link_to "プロフィールを編集", edit_user_path(current_user.id) if current_user.id == @user.id %>
+              <%= link_to 'ユーザー一覧画面に戻る', users_path %> 
+              <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+              <%= link_to "この人に相合傘をお願いする", conversations_path(sender_id: @user.id, recipient_id: current_user.id), method: :post, data: { confirm: '本当にお願いしますか？' }  %>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
     
   <% end %>
 <% end %>
 
+<% @nobody_exist = [] %>
+<% @matchings.each do |matching| %>
+  
+  <% if Matching.where(follower_id:matching.followed_id, followed_id:current_user.id).present? %>
+    <% if Matching.where(follower_id:current_user.id, followed_id:matching.followed_id).present? %>
+      <%# @nobody_exist << "あ" %>
+    <% end %>
+  <% @nobody_exist << "あ" %>
+  <% elsif Matching.where(follower_id:current_user.id, followed_id:matching.followed_id).present? %>
+    <% if Matching.where(follower_id:matching.followed_id, followed_id:current_user.id).present? %>
+      <% @nobody_exist << "あ" %>
+    <% end %>
+  <%# @nobody_exist << "あ" %>
+  <% else %>
+  <% end %>
+<% end %>
+<%# binding.pry %>
+<% unless @nobody_exist.present? %>
 
-<%= link_to '戻る', :back %> 
+<div class="navi_box">
+  <p>承諾されたリクエストはまだありません</p>
+  <div class="navi_search"><%= link_to 'ユーザーの一覧に戻る', users_path %> </div>
+</div>
+
+<div class="main_box">
+<div>
+
+<% end %>

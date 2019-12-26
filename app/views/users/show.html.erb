@@ -4,7 +4,6 @@
 </div>
 
 <div class="main_box">
-  
   <div class="profile_left">
     <div><%= image_tag 'male.png', class: "profile_img" %></div>
     <div><%= @user.name %></div>
@@ -25,6 +24,5 @@
         <%= link_to "プロフィールを編集", edit_user_path(current_user.id) if current_user.id == @user.id %>
       </div>
     </div>
-    
   </div>
 </div>
