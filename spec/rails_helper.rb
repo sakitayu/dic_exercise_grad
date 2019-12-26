@@ -60,4 +60,12 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  #Deviceのテストヘルパー
+  config.include Devise::Test::ControllerHelpers, type: :controller
+
+
+  config.before(:all) do
+    FactoryBot.reload
+  end
 end
