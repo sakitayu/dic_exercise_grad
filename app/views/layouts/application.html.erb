@@ -12,6 +12,7 @@
   <body>
     <header>
       <%= link_to 'ユーザー一覧', users_path if user_signed_in? %>
+      <%= link_to 'スタート画面に戻る', new_start_path if user_signed_in? %>
 
     <% if user_signed_in? %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>

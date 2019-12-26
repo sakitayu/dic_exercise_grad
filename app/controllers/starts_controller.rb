@@ -35,6 +35,19 @@ class StartsController < ApplicationController
 
     if current_user.umbrella
       current_user.umbrella.update(umbrella_params)
+      #binding.pry
+      if Matching.where(follower_id:current_user.id)
+        relation = Matching.where(follower_id:current_user.id)
+        relation.delete_all
+        if Matching.where(followed_id:current_user.id)
+        relation = Matching.where(followed_id:current_user.id)
+        relation.delete_all
+        end
+      end
+      if Matching.where(followed_id:current_user.id)
+        relation = Matching.where(followed_id:current_user.id)
+        relation.delete_all
+      end
     else
       umbrella_info = current_user.build_umbrella(umbrella_params)
       umbrella_info.save
