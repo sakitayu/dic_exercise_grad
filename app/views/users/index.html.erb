@@ -1,9 +1,4 @@
 
-
-<%= current_user.email %>
-<%= current_user.have_umbrella %>
-<%= current_user.area %>
-
 <% if current_user.have_umbrella %>
   <div class="navi_box">
     <h2>傘を持っていないひとからのリクエスト一覧</h2>
@@ -22,9 +17,7 @@
       <% @matchings.each do |matching| %>
         <% follower = User.find(matching.follower_id) %>
         <% followed = User.find(matching.followed_id) %>
-        <%# binding.pry %>
         <% if followed.id == current_user.id && follower.have_umbrella == false %>
-          <%# if follower.have_umbrella == false %>
             <tr class="table_border">
               <td>
                   <%= follower.name %>
@@ -41,10 +34,8 @@
               </td>
               <td>
                 <%= render 'agreement_form', user: follower %>
-                <%#= link_to 'リクエストを承諾', conversations_path(sender_id: current_user.id, recipient_id: follower.id), method: :post, data: { confirm: '本当に承諾しますか？' } %>
               </td>
             </tr>
-          <%# end %>
         <% end %>
       <% end %>
       </td></tr>

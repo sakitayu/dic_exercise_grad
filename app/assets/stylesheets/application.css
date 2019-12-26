@@ -45,6 +45,19 @@ ul {
 #error_explanation {
   padding:10px 0px 0px 300px;
   color:red;
+  height:100%;
+}
+
+.error_explanation_small {
+  font-size: 10px;
+  padding:10px 0px 0px 300px;
+  color:red;
+  height:100%;
+}
+
+.field_with_errors {
+  display: contents;
+  // もしくは diplay: inline;
 }
 
 .app_name {
@@ -178,6 +191,10 @@ ul {
   
 }
 
+.start_box{
+  height:auto;
+  padding-bottom:auto;
+}
 
 .start_form {
   text-align: center;

@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 
       redirect_to users_path
     else
-      render :start
+      render 'start'
     end
   end
 
