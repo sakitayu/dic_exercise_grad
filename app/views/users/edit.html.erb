@@ -4,6 +4,19 @@
 </div>
 
 <div class="main_box">
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
   <div class="edit_box">
     <%= form_tag(profile_update_users_path, method: "get") do %>
       <%= label :profile, :name, "アカウント名" %>
@@ -12,24 +25,12 @@
       <%= label :profile, :gender, "性別" %>
       <%= select_tag "user[gender]", options_for_select([['選択してください', ''], ['男', '男'], ['女', '女'], ['どちらでもない', 'どちらでもない']]) %>
       <br>
-      <%= label :profile, :name, "年齢" %>
+      <%= label :profile, :age, "年齢" %>
       <%= select_tag "user[age]", options_for_select([['選択してください', ''], ['20~26', '20~26'], ['27~33', '27~33'], ['34~40', '34~40'], ['41~47', '41~47'], ['48~60', '48~60'], ['非公開', '非公開']]) %>
       <br>
       <%= label :profile, :introduction, "自己紹介" %>
       <%= text_field_tag("user[introduction]", " ", {size:"80"}) %>
       <br>
-
-
-
-
-
-
-
-
-
-
-
-      
       <%= submit_tag "プロフィールを更新" %>
     <% end %>
   </div>

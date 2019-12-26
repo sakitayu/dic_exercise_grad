@@ -2,12 +2,9 @@ ja:
   activerecord:
     models:
       user: "ユーザー"
-      umbrella: "傘所有情報"
-      profile: "ユーザーの具体的な情報"
       message: "メッセージ情報"
       conversation: "会話情報"
       matching: "マッチング情報"
-      location: "位置情報"
     attributes:
       user:
         email: "メールアドレス"
@@ -15,3 +12,8 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+        have_umbrella: "傘所有情報" 
+        area: "今いる場所"
+        name: "アカウント名"
+        gender: "性別"
+        age: "年齢"

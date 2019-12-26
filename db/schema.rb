@@ -63,11 +63,11 @@ ActiveRecord::Schema.define(version: 2019_12_26_052010) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.string "name", default: "未設定", null: false
-    t.integer "age", default: 3, null: false
-    t.integer "gender", default: 6, null: false
+    t.string "name"
+    t.integer "age"
+    t.integer "gender"
     t.string "introduction"
-    t.string "area", default: "未入力", null: false
+    t.string "area"
     t.boolean "have_umbrella", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true

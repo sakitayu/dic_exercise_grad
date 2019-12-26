@@ -2,10 +2,32 @@
   <div class="start_navi"><h1>Rainy スタート画面</h1></div>
 </div>
 
+<% if @user.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
 <div class="main_box">
   <div class="start_form">
 
     <%= form_with(model: User.find(current_user.id)) do |form| %>
+    <% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
       <div class="start_form">
         <%= form.label "あなたは傘を持っていますか？", class: "start_label" %>
         <br>
@@ -22,12 +44,7 @@
         <br>
         <%= form.text_field :name %>
         <br>
-        <%#= form.label :gender, "あなたの性別を入力してください", class: "start_label" %>
-        
         <%= form.select :gender, ['男', '女', 'どちらでもない'], {include_blank: '性別'} %>
-        
-        <%#= form.label :age, "あなたの年齢を入力してください", class: "start_label" %>
-        
         <%= form.select :age, ['20~26', '27~33', '34~40', '41~47', '48~60', '非公開'], {include_blank: '年齢'} %>
         <br>
         <br>

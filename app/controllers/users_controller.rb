@@ -25,29 +25,36 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update(user_params)
-
-    if Matching.where(follower_id:current_user.id)
-      relation = Matching.where(follower_id:current_user.id)
-      relation.delete_all
-      if Matching.where(followed_id:current_user.id)
-      relation = Matching.where(followed_id:current_user.id)
-      relation.delete_all
+    @user = User.find(current_user.id)
+    if @user.update(user_params)
+      if Matching.where(follower_id:current_user.id)
+        relation = Matching.where(follower_id:current_user.id)
+        relation.delete_all
+        if Matching.where(followed_id:current_user.id)
+        relation = Matching.where(followed_id:current_user.id)
+        relation.delete_all
+        end
       end
-    end
 
-    if Matching.where(followed_id:current_user.id)
-      relation = Matching.where(followed_id:current_user.id)
-      relation.delete_all
-    end
+      if Matching.where(followed_id:current_user.id)
+        relation = Matching.where(followed_id:current_user.id)
+        relation.delete_all
+      end
 
-    redirect_to users_path
+      redirect_to users_path
+    else
+      redirect_to new_start_path
+    end
   end
 
   def profile_update
-    current_user.update(profile_params)
-      
-    redirect_to users_path
+    @user = User.find(current_user.id)
+    #binding.pry
+    if @user.update(profile_params)
+      redirect_to user_path(id: current_user.id)
+    else
+      render :edit
+    end
   end
 
   def confirm_request
