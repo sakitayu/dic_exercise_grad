@@ -32,6 +32,18 @@ footer {
   background-color: #64B5F7;
   height:100px;
   bottom:0;
+  padding:0 auto;
+}
+
+footer div{
+  margin-top:30px;
+  margin-left:400px;
+}
+
+footer a{
+  font-weight: bold;
+  color:white;
+  text-decoration: none;
 }
 
 main {

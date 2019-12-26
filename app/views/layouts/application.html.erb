@@ -28,6 +28,10 @@
       <%= yield %>
     </main>
 
-    <footer></footer>
+    <footer>
+      <% if user_signed_in? %>
+          <div><%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete %></div>
+      <% end %>
+    </footer>
   </body>
 </html>

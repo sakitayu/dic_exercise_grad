@@ -12,8 +12,6 @@ class MatchingsController < ApplicationController
       else
         redirect_to "/conversations/#{message_room.id}/messages"
       end
-      #binding.pry
-      #redirect_to "/conversations/#{message_room.id}/messages" #conversations_path(sender_id: current_user.id, recipient_id: @user.id)
     end
   end
 
