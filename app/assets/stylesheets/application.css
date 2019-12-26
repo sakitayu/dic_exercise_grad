@@ -38,6 +38,15 @@ main {
   flex: 1;
 }
 
+ul {
+  list-style-type: decimal; 
+}
+
+#error_explanation {
+  padding:10px 0px 0px 300px;
+  color:red;
+}
+
 .app_name {
   font-size: 80px;
   color:#1a76d2;
@@ -177,6 +186,7 @@ main {
   font-weight:bold;
   padding-top:20px;
   padding-bottom:30px;
+  margin-bottom:30px;
 }
 
 .start_label {

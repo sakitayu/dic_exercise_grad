@@ -1,21 +1,19 @@
 <div class="navi_box">
   <p>プロフィール編集画面</p>
-  <div class="navi_search"><%= link_to "編集をキャンセルする", :back %> </div>
+  <div class="navi_search"><%= link_to "編集をキャンセルする", user_path(current_user.id) %> </div>
 </div>
 
 <div class="main_box">
-
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= @user.errors.count %>件のエラーがあります。</h2>
-    <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="edit_box">
     <%= form_tag(profile_update_users_path, method: "get") do %>

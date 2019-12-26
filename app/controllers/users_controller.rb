@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :profile_update]
+  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :profile_update, :start]
   before_action :set_user, only: [:show, :edit]
   require "date"
 
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       @users = @q.result(distinct: true)
       @matchings = Matching.all
     else
-      redirect_to new_start_path
+      redirect_to start_users_path
     end
   end
 
@@ -43,13 +43,16 @@ class UsersController < ApplicationController
 
       redirect_to users_path
     else
-      redirect_to new_start_path
+      render :start
     end
+  end
+
+  def start
+    @user = User.find(current_user.id)
   end
 
   def profile_update
     @user = User.find(current_user.id)
-    #binding.pry
     if @user.update(profile_params)
       redirect_to user_path(id: current_user.id)
     else
