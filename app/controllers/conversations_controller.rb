@@ -2,6 +2,9 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    if current_user.area == nil
+      redirect_to start_users_path
+    end
     @conversations = Conversation.all
   end
 

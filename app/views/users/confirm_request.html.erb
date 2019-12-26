@@ -35,7 +35,6 @@
         </div>
       </div>
     <% end %>
-    
   <% end %>
 <% end %>
 
@@ -44,18 +43,16 @@
   
   <% if Matching.where(follower_id:matching.followed_id, followed_id:current_user.id).present? %>
     <% if Matching.where(follower_id:current_user.id, followed_id:matching.followed_id).present? %>
-      <%# @nobody_exist << "あ" %>
     <% end %>
-  <% @nobody_exist << "あ" %>
+  <% @nobody_exist << "love" %>
   <% elsif Matching.where(follower_id:current_user.id, followed_id:matching.followed_id).present? %>
     <% if Matching.where(follower_id:matching.followed_id, followed_id:current_user.id).present? %>
-      <% @nobody_exist << "あ" %>
+      <% @nobody_exist << "love" %>
     <% end %>
-  <%# @nobody_exist << "あ" %>
   <% else %>
   <% end %>
 <% end %>
-<%# binding.pry %>
+
 <% unless @nobody_exist.present? %>
 
 <div class="navi_box">

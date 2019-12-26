@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   require "date"
 
   def index
-    if current_user.area != "未入力"
+    if current_user.area != nil
       search_date = Date.today
       @users = User.where(updated_at: search_date.in_time_zone.all_day())
       @q = @users.ransack(params[:q])
@@ -16,11 +16,14 @@ class UsersController < ApplicationController
   end
 
   def show
+    if current_user.area == nil
+      redirect_to start_users_path
+    end
   end
 
   def edit
     if current_user.id != @user.id
-      redirect_to users_path
+      redirect_to user_path(@user.id)
     end
   end
 
@@ -40,7 +43,6 @@ class UsersController < ApplicationController
         relation = Matching.where(followed_id:current_user.id)
         relation.delete_all
       end
-
       redirect_to users_path
     else
       render 'start'
