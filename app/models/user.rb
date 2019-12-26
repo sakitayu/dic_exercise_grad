@@ -12,8 +12,14 @@ class User < ApplicationRecord
   has_one :umbrella, dependent: :destroy
   has_one :profile, dependent: :destroy
 
-  #enum gender: { "男": 1, "女": 2, "どちらでもない": 3 }
-  #enum age: { "20~26": 1, "27~33": 2, "34~40": 3, "41~47": 4, "48~60": 5, "非公開": 6 }
+  #validates :have_umbrella, presence: true
+  validates :area, presence: true
+  validates :name, presence: true
+  #validates :gender, presence: true
+  validates :age, presence: true
+
+  enum gender: { "男": 1, "女": 2, "どちらでもない": 3 }
+  enum age: { "20~26": 1, "27~33": 2, "34~40": 3, "41~47": 4, "48~60": 5, "非公開": 6 }
   
   def follow!(other_user)
     active_matchings.create!(followed_id: other_user.id)

@@ -1,10 +1,10 @@
 
 
 <%= current_user.email %>
-<%= current_user.umbrella.have_umbrella %>
-<%= current_user.location.area %>
+<%= current_user.have_umbrella %>
+<%= current_user.area %>
 
-<% if current_user.umbrella.have_umbrella %>
+<% if current_user.have_umbrella %>
   <div class="navi_box">
     <h2>傘を持っていないひとからのリクエスト一覧</h2>
   </div>
@@ -22,30 +22,19 @@
       <% @matchings.each do |matching| %>
         <% follower = User.find(matching.follower_id) %>
         <% followed = User.find(matching.followed_id) %>
-        <% if followed.id == current_user.id && follower.umbrella %>
-          <% unless follower.umbrella.have_umbrella %>
+        <%# binding.pry %>
+        <% if followed.id == current_user.id && follower.have_umbrella == false %>
+          <%# if follower.have_umbrella == false %>
             <tr class="table_border">
               <td>
-                <% if follower.profile %>
-                  <%= follower.profile.name %>
-                <% else %>
-                  <%= "名前未設定" %>
-                <% end %>
+                  <%= follower.name %>
               </td>
-              <td><%= follower.location.area if follower.location %></td>
+              <td><%= follower.area %></td>
               <td>
-                <% if follower.profile %>
-                  <%= follower.profile.gender %>
-                <% else %>
-                  <%= "性別未設定" %>
-                <% end %>
+                  <%= follower.gender %>
               </td>
               <td>
-                <% if follower.profile %>
-                  <%= follower.profile.age %>
-                <% else %>
-                  <%= "年齢未設定" %>
-                <% end %>
+                  <%= follower.age %>
               </td>
               <td>
                 <%= link_to "詳細", user_path(follower.id)  %>
@@ -55,7 +44,7 @@
                 <%#= link_to 'リクエストを承諾', conversations_path(sender_id: current_user.id, recipient_id: follower.id), method: :post, data: { confirm: '本当に承諾しますか？' } %>
               </td>
             </tr>
-          <% end %>
+          <%# end %>
         <% end %>
       <% end %>
       </td></tr>
@@ -69,12 +58,12 @@
     <h2>傘を持っているひと一覧</h2>
     <div class="navi_search">
       <%= search_form_for @q do |f| %>
-        <%= f.label :location_area, "場所" %>
-        <%= f.search_field :location_area_cont, size: "10x10" %>
-        <%= f.label :profile_gender, "性別" %>
-        <%= f.select :profile_gender_eq, [['男', 1], ['女', 2], ['どちらでもない', 3]], :include_blank => '未選択' %>
-        <%= f.label :profile_age, "年齢" %>
-        <%= f.select :profile_age_eq, [['20~26', 1], ['27~33', 2], ['34~40', 3], ['41~47', 4], ['48~60', 5], ['非公開', 6]], :include_blank => '未選択' %>
+        <%= f.label :area, "場所" %>
+        <%= f.search_field :area_cont, size: "10x10" %>
+        <%= f.label :gender, "性別" %>
+        <%= f.select :gender_eq, [['男', 1], ['女', 2], ['どちらでもない', 3]], :include_blank => '未選択' %>
+        <%= f.label :age, "年齢" %>
+        <%= f.select :age_eq, [['20~26', 1], ['27~33', 2], ['34~40', 3], ['41~47', 4], ['48~60', 5], ['非公開', 6]], :include_blank => '未選択' %>
         <%= f.submit "検索" %>
       <% end %>
     </div>
@@ -91,31 +80,13 @@
       </tr>
       
       <% @users.each do |user| %>
-        <% if user.id != current_user.id && user.umbrella %>
-          <% if user.umbrella.have_umbrella %>
+        <% if user.id != current_user.id && user.have_umbrella %>
+          <% if user.have_umbrella %>
             <tr class="table_border">
-              <td>
-                <% if user.profile %>
-                  <%= user.profile.name %>
-                <% else %>
-                  <%= "名前未設定" %>
-                <% end %>
-              </td>
-              <td><%= user.location.area if user.location %></td>
-              <td>
-                <% if user.profile %>
-                  <%= user.profile.gender %>
-                <% else %>
-                  <%= "性別未設定" %>
-                <% end %>
-              </td>
-              <td>
-                <% if user.profile %>
-                  <%= user.profile.age %>
-                <% else %>
-                  <%= "年齢未設定" %>
-                <% end %>
-              </td>
+              <td><%= user.name %></td>
+              <td><%= user.area %></td>
+              <td><%= user.gender %></td>
+              <td><%= user.age %></td>
               <td><%= link_to "詳細", user_path(user.id)  %></td>
               <td><%= render 'request_form', user: user %></td>
             </tr>

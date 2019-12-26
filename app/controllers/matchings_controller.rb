@@ -4,10 +4,16 @@ class MatchingsController < ApplicationController
   def create
     @user = User.find(params[:matching][:followed_id])
     current_user.follow!(@user)
-    if current_user.umbrella.have_umbrella
+    if current_user.have_umbrella == true
       message_room = Conversation.find_by(sender_id: current_user.id,recipient_id: @user.id)
+      if message_room == nil
+        new_message_room = Conversation.create(sender_id: current_user.id,recipient_id: @user.id)
+        redirect_to "/conversations/#{new_message_room.id}/messages"
+      else
+        redirect_to "/conversations/#{message_room.id}/messages"
+      end
       #binding.pry
-      redirect_to "/conversations/#{message_room.id}/messages" #conversations_path(sender_id: current_user.id, recipient_id: @user.id)
+      #redirect_to "/conversations/#{message_room.id}/messages" #conversations_path(sender_id: current_user.id, recipient_id: @user.id)
     end
   end
 

@@ -1,5 +1,5 @@
 <div class="navi_box">
-  <p><strong><%= @user.profile.name %></strong> さんのプロフィール</p>
+  <p><strong><%= @user.name %></strong> さんのプロフィール</p>
   <div class="navi_search"><%= link_to 'ユーザーの一覧に戻る', users_path %> </div>
 </div>
 
@@ -7,18 +7,18 @@
   
   <div class="profile_left">
     <div><%= image_tag 'male.png', class: "profile_img" %></div>
-    <div><%= @user.profile.name if @user.profile != nil %></div>
-    <div><strong>性別</strong> <%= @user.profile.gender if @user.profile != nil %></div>
-    <div><strong>年齢</strong> <%= @user.profile.age if @user.profile != nil %></div>
+    <div><%= @user.name %></div>
+    <div><strong>性別</strong> <%= @user.gender %></div>
+    <div><strong>年齢</strong> <%= @user.age %></div>
   </div>
 
   <div class="profile_right">
     <div class="prof_area">
       <h2>今いる場所</h2>
-      <p><%= @user.location.area if @user.location != nil %></p>
+      <p><%= @user.area %></p>
     </div>
     <div class="prof_intro">
-      <%= @user.profile.introduction if @user.profile != nil %>
+      <%= @user.introduction %>
     </div>
     <div class="prof_bottom">
       <div class="prof_bottom_float">

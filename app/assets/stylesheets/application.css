@@ -175,11 +175,12 @@ main {
   height:270px;
   color:#616161;
   font-weight:bold;
-  padding-top:30px;
+  padding-top:20px;
+  padding-bottom:30px;
 }
 
 .start_label {
-  font-size: 25px;
+  font-size: 21px;
 }
 
 .start_navi {

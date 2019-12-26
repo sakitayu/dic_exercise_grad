@@ -4,21 +4,35 @@
 
 <div class="main_box">
   <div class="start_form">
-    <%= form_tag(miracle_starts_path, method: "get") do %>
-      <%= label :umbrella, :have_umbrella, "あなたは傘を持っていますか？", class: "start_label" %>
-      <br>
-      <%= radio_button_tag("umbrella[have_umbrella]", true ) %>はい
-      <%= radio_button_tag("umbrella[have_umbrella]", false) %>いいえ
-      <br><br>
-      <%= label :location, :area, "あなたがいる場所を入力してください", class: "start_label" %>
-      <br>
-      <%= text_field_tag("location[area]") %>
-      <br>
-      <%= label :profile, :name, "あなたのアカウント名を入力してください", class: "start_label" %>
-      <br>
-      <%= text_field_tag("profile[name]") %>
-      <br><br>
-      <%= submit_tag "利用を開始" %>
+
+    <%= form_with(model: User.find(current_user.id)) do |form| %>
+      <div class="start_form">
+        <%= form.label "あなたは傘を持っていますか？", class: "start_label" %>
+        <br>
+        <%= form.radio_button :have_umbrella, :true %>
+        <%= form.label :have_umbrella, "はい", {value: :true, style: "display: inline-block;"} %>
+        <%= form.radio_button :have_umbrella, :false %>
+        <%= form.label :have_umbrella, "いいえ", {value: :false, style: "display: inline-block;"} %>
+        <br>
+        <%= form.label :area, "あなたがいる場所を入力してください", class: "start_label" %>
+        <br>
+        <%= form.text_field :area %>
+        <br>
+        <%= form.label :name, "あなたのアカウント名を入力してください", class: "start_label" %>
+        <br>
+        <%= form.text_field :name %>
+        <br>
+        <%#= form.label :gender, "あなたの性別を入力してください", class: "start_label" %>
+        
+        <%= form.select :gender, ['男', '女', 'どちらでもない'], {include_blank: '性別'} %>
+        
+        <%#= form.label :age, "あなたの年齢を入力してください", class: "start_label" %>
+        
+        <%= form.select :age, ['20~26', '27~33', '34~40', '41~47', '48~60', '非公開'], {include_blank: '年齢'} %>
+        <br>
+        <br>
+        <%= form.submit "利用を開始" %>
+      </div>
     <% end %>
   </div>
 </div>

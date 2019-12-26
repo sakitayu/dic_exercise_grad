@@ -10,12 +10,12 @@
     <p>以下の方にリクエストが承諾されました</p>
     
       <% @user = User.find(matching.followed_id) %><br>
-      <%= @user.profile.name if @user.profile %>
+      <%= @user.name %>
       <%= @user.email %>
-      <%= @user.umbrella.have_umbrella if @user.umbrella %>
-      <%= @user.location.area if @user.location %>
-      <%= @user.profile.gender if @user.profile %>
-      <%= @user.profile.age if @user.profile %>
+      <%= @user.have_umbrella %>
+      <%= @user.area %>
+      <%= @user.gender %>
+      <%= @user.age %>
       <%= link_to "詳細", user_path(@user.id)  %>
       <%= link_to "この人に相合傘をお願いする", conversations_path(sender_id: @user.id, recipient_id: current_user.id), method: :post, data: { confirm: '本当にお願いしますか？' }  %>
     <% else %>
@@ -25,20 +25,5 @@
   <% end %>
 <% end %>
 
-
-<% if false %>
-<% @users.each do |user| %>
-  <% if user.id != current_user.id && user.umbrella %>
-    <% if user.umbrella.have_umbrella %>
-      <div class="item">
-        <%= user.profile.name %>
-        <%= user.email %>
-        <%= user.active_matchings %>
-      </div>
-    <br>
-    <% end %>
-  <% end %>
-<% end %>
-<% end %>
 
 <%= link_to '戻る', :back %> 
