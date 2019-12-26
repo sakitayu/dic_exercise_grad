@@ -1,5 +1,5 @@
 <div class="navi_box">
-  <p><strong><%= @user.name %></strong> さんのプロフィール</p>
+  <p><strong><%= @user.name %></strong> <%= @user.email if current_user.id == @user.id %> さんのプロフィール</p>
   <div class="navi_search"><%= link_to 'ユーザーの一覧に戻る', users_path %> </div>
 </div>
 

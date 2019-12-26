@@ -9,11 +9,12 @@ class User < ApplicationRecord
   has_many :following, through: :active_matchings, source: :followed
   has_many :followers, through: :passive_matchings, source: :follower
 
-  validates :have_umbrella, presence: true, on: :update
-  validates :area, presence: true, on: :update
-  validates :name, presence: true, length: { maximum: 9 }, on: :update
+  validates :have_umbrella, inclusion: {in: [true, false]}, on: :update
+  validates :area, presence: true, length: { maximum: 25 }, on: :update
+  validates :name, presence: true, length: { maximum: 11 }, on: :update
   validates :gender, presence: true, on: :update
   validates :age, presence: true, on: :update
+  validates :introduction, length: { maximum: 225 }, on: :update
 
   enum gender: { "男": 1, "女": 2, "どちらでもない": 3 }
   enum age: { "20~26": 1, "27~33": 2, "34~40": 3, "41~47": 4, "48~60": 5, "非公開": 6 }

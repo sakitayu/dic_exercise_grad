@@ -5,11 +5,12 @@ class UsersController < ApplicationController
 
   def index
     if current_user.area != "未入力"
-      search_date = Date.today
+      search_date = Date.yesterday
       @users = User.where(updated_at: search_date.in_time_zone.all_day())
       @q = @users.ransack(params[:q])
       @users = @q.result(distinct: true)
       @matchings = Matching.all
+      #binding.pry
     else
       redirect_to start_users_path
     end
@@ -53,7 +54,7 @@ class UsersController < ApplicationController
 
   def profile_update
     @user = User.find(current_user.id)
-    if @user.update(profile_params)
+    if @user.update(user_params)
       redirect_to user_path(id: current_user.id)
     else
       render :edit
@@ -73,7 +74,7 @@ class UsersController < ApplicationController
 
 
   def profile_params
-    params.require(:user).permit(:name, :gender, :age, :introduction)
+    params.require(:user).permit(:have_umbrella, :area, :name, :gender, :age, :introduction)
   end
 
   def set_user

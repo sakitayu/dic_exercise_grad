@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2019_12_26_052010) do
     t.integer "gender"
     t.string "introduction"
     t.string "area"
-    t.boolean "have_umbrella", default: false
+    t.boolean "have_umbrella"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

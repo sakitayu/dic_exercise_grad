@@ -5,6 +5,6 @@ class AddcollumsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :gender, :integer
     add_column :users, :introduction, :string
     add_column :users, :area, :string
-    add_column :users, :have_umbrella, :boolean, default: false
+    add_column :users, :have_umbrella, :boolean
   end
 end
