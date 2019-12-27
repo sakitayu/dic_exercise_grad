@@ -56,20 +56,26 @@ ul {
 }
 
 #error_explanation {
-  padding:10px 0px 0px 300px;
-  color:red;
+  padding:10px 0px 0px 440px;
+  color:deeppink;
   height:100%;
 }
 
 .error_explanation_small {
   font-size: 10px;
   padding:10px 0px 0px 300px;
-  color:red;
+  color:deeppink;
   height:100%;
 }
 
 .field_with_errors {
   display: contents;
+}
+
+.login_error_message {
+  text-align: center;
+  color:deeppink;
+  margin-bottom:16px;
 }
 
 .forgot_password_box {
@@ -80,6 +86,14 @@ ul {
   margin: 80px auto 30px auto;
   border-radius: 4px;
   padding:100px 0;
+}
+
+.forgot_password_actions{
+  margin-right: 50px;
+}
+
+.change_password_field {
+  margin-right: 50px;
 }
 
 .header_logo{
