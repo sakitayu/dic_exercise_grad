@@ -64,47 +64,6 @@ RSpec.describe 'Rainyテスト', type: :system do
     end
   end
 
-  # describe 'ユーザー一覧画面' do
-  #   context '傘ありを選び、必要項目を入力して「利用を開始」ボタンを押した場合' do
-  #     before do
-  #     user2 = FactoryBot.create(
-  #                               :user, 
-  #                               email: "aaaa@example.com", 
-  #                               password: "password",
-  #                               have_umbrella: false,
-  #                               area: "渋谷109",
-  #                               name: "テストちゃん2号",
-  #                               gender: "女",
-  #                               age: "20~26"
-  #                             )
-  #     user3 = FactoryBot.create(
-  #                               :user, 
-  #                               email: "bbbb@example.com", 
-  #                               password: "password",
-  #                               have_umbrella: false,
-  #                               area: "渋谷109",
-  #                               name: "テストちゃん3号",
-  #                               gender: "女",
-  #                               age: "20~26"
-  #                             )
-  #     end
-      
-  #     it '遷移先のページに傘を持っていないユーザーが表示されていること' do
-  #       visit start_users_path
-  #       choose 'はい'
-  #       fill_in 'あなたがいる場所を入力してください', with: '渋谷駅'
-  #       fill_in 'あなたのアカウント名などを入力してください', with: 'テストちゃん'
-  #       select '女', from: 'user_gender'
-  #       select '20~26', from: 'user_age'
-        
-  #       click_on '利用を開始'
-        
-  #       expect(page).to have_content '傘を持っていないひとからのリクエスト一覧'
-  #       expect(page).to have_content 'テスト'
-  #     end
-  #   end
-  # end
-
   describe 'マイプロフィール画面' do
     context '一覧画面で「マイプロフィール」を押した場合' do
       
