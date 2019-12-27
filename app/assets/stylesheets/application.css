@@ -72,13 +72,24 @@ ul {
   display: contents;
 }
 
+.forgot_password_box {
+  text-align: center;
+  background-color:white;
+  width:900px;
+  height:auto;
+  margin: 80px auto 30px auto;
+  border-radius: 4px;
+  padding:100px 0;
+}
+
 .header_logo{
   color:white;
   font-size: 60px;
   font-weight:bold;
   width:300px;
   margin:0px auto;
-  padding-left:110px;
+  padding-top:10px;
+  padding-left:120px;
 }
 
 .app_name {
