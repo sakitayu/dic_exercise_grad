@@ -11,6 +11,9 @@
 
   <body>
     <header>
+      <% if user_signed_in? %>
+        <div class="header_logo">Rainy<div>
+      <% end %>
       <% if false %>
         <%= link_to 'ユーザー一覧', users_path if user_signed_in? %>
         <%= link_to 'スタート画面に戻る', start_users_path if user_signed_in? %>

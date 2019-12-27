@@ -38,7 +38,7 @@ footer {
 footer div{
   width:300px;
   margin:30px auto;
-  padding-left:80px;
+  padding-left:100px;
 }
 
 footer a{
@@ -70,6 +70,15 @@ ul {
 
 .field_with_errors {
   display: contents;
+}
+
+.header_logo{
+  color:white;
+  font-size: 60px;
+  font-weight:bold;
+  width:300px;
+  margin:0px auto;
+  padding-left:110px;
 }
 
 .app_name {
