@@ -56,9 +56,16 @@ ul {
 }
 
 #error_explanation {
+  padding:10px 0px 0px 320px;
+  color:deeppink;
+  height:100%;
+}
+
+#error_explanation_partial {
   padding:10px 0px 0px 440px;
   color:deeppink;
   height:100%;
+
 }
 
 .error_explanation_small {
