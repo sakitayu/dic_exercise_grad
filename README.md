@@ -77,7 +77,5 @@ https://docs.google.com/spreadsheets/d/1RfgUJXfSwmt3_wmU9-IuWb5Uab-FeYfrTjCGFCqu
 * pry-rails
 
 テスト
-* spring
 * rspec-rails
 * factory_bot_rails
-* capybara
