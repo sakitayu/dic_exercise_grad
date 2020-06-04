@@ -64,7 +64,20 @@ https://docs.google.com/spreadsheets/d/16D7C_iYghqZb075Qxy524ciJA_B9JudhNZLSwvha
 ## 画面ワイヤーフレーム
 https://docs.google.com/spreadsheets/d/1RfgUJXfSwmt3_wmU9-IuWb5Uab-FeYfrTjCGFCquHQo/edit?usp=sharing
 
-## 使用予定Gem
+## 使用Gem
+ログイン系
 * devise
-* dotenv
+* devise-i18n
+* devise-i18n-views
+
+検索機能
 * ransack
+
+デバッグ
+* pry-rails
+
+テスト
+* spring
+* rspec-rails
+* factory_bot_rails
+* capybara
