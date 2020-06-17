@@ -6,7 +6,13 @@ class UsersController < ApplicationController
   def index
     if current_user.area != nil
       search_date = Date.today
-      @users = User.where(updated_at: search_date.in_time_zone.all_day())
+      # ポートフォリオ用に一時的に直近滞在時間表示機能をオフにしています
+      # 直近滞在時間表示機能をオンにする場合は以下のコードに変えてください
+      #
+      # @users = User.all
+      #      ↓↓↓↓↓↓
+      # @users = User.where(updated_at: search_date.in_time_zone.all_day())
+      @users = User.all
       @q = @users.ransack(params[:q])
       @users = @q.result(distinct: true)
       @matchings = Matching.all
