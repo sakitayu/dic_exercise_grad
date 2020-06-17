@@ -161,6 +161,12 @@ ul {
 
 .top_bottom_etc a {
   color:#616161;
+  transition: 0.7s ;
+}
+
+.top_bottom_etc a:hover {
+  color:deeppink;
+  transition: 0.1s ;
 
 }
 
