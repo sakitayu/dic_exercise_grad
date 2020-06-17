@@ -111,7 +111,7 @@ ul {
   width:300px;
   margin:0px auto;
   padding-top:10px;
-  padding-left:120px;
+  padding-left:70px;
 }
 
 .app_name {
@@ -125,7 +125,7 @@ ul {
   font-size: 16px;
   font-weight:bold;
   color:#1a76d2;
-  margin:0;
+  margin:0 0 0 25px;
   padding:0;
 }
 
@@ -142,7 +142,7 @@ ul {
 }
 
 .app_title {
-  width:260px;
+  width:340px;
   margin:100px auto 0 auto;
 }
 
