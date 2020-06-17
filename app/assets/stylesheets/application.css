@@ -15,6 +15,7 @@
  */
 
 body {
+  font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
   background-image: url(/images/rain.jpg);
   margin:0;
   padding:0;
