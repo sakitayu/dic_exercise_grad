@@ -84,6 +84,7 @@ ul {
   text-align: center;
   color:deeppink;
   margin-bottom:16px;
+  margin-right: 21px;
 }
 
 .forgot_password_box {
@@ -245,6 +246,15 @@ ul {
   border-top:1px solid #616161;
   color:#616161;
   padding:5px;
+}
+
+.table_border {
+  transition-duration: 1.0s;
+}
+
+.table_border:hover {
+  background-color: #E6EFF4;
+  transition-duration: 0.5s;
 }
 
 .start_box{
