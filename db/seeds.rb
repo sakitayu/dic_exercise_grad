@@ -249,6 +249,28 @@ User.create!(
       gender: '女',
       age: '非公開',
       introduction: 'こなたです☆',
+    },
+    {
+      email: 'sample_a@example.com',
+      password: 'sample_a',
+      confirmed_at: Date.today,
+      have_umbrella: true,
+      area: '',
+      name: '',
+      gender: '',
+      age: '',
+      introduction: '',
+    },
+    {
+      email: 'sample_b@example.com',
+      password: 'sample_b',
+      confirmed_at: Date.today,
+      have_umbrella: true,
+      area: '',
+      name: '',
+      gender: '',
+      age: '',
+      introduction: '',
     }
   ]
 )
