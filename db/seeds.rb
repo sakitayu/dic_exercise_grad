@@ -258,7 +258,7 @@ User.create!(
       area: '渋谷駅',
       name: 'サンプルAくん',
       gender: '男',
-      age: '',
+      age: '20~26',
       introduction: '',
     },
     {
@@ -269,7 +269,7 @@ User.create!(
       area: '渋谷109',
       name: 'サンプルBちゃん',
       gender: '女',
-      age: '',
+      age: '20~26',
       introduction: '',
     }
   ]
