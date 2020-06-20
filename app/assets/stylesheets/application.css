@@ -250,7 +250,7 @@ ul {
 }
 
 .table_border {
-  transition-duration: 1.0s;
+  transition-duration: 0.5s;
 }
 
 .table_border:hover {
@@ -379,4 +379,8 @@ ul {
 
 .message_box {
   padding:20px;
+}
+
+.sample_user {
+  padding-right:130px;
 }

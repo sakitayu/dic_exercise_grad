@@ -29,4 +29,26 @@
   </div>
 <% end %>
 
+<div class="sample_user">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.hidden_field :email ,value: "sample_a@example.com" %>
+    <%= f.hidden_field :password ,value: "sample_a" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "サンプルユーザーAでログイン"%>
+  </div>
+<% end %>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.hidden_field :email ,value: "sample_a@example.com" %>
+    <%= f.hidden_field :password ,value: "sample_b" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "サンプルユーザーBでログイン"%>
+  </div>
+<% end %>
+</div>
+
 <%= render "devise/shared/links" %>
