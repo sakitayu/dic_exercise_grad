@@ -265,7 +265,7 @@ User.create!(
       email: 'sample_b@example.com',
       password: 'sample_b',
       confirmed_at: Date.today,
-      have_umbrella: true,
+      have_umbrella: false,
       area: '渋谷109',
       name: 'サンプルBちゃん',
       gender: '女',
