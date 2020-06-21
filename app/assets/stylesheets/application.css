@@ -153,6 +153,22 @@ ul {
   margin:10px auto 0 auto;
 }
 
+.actions input[type="submit"] {
+  border-style: none;
+  height: 31px;
+  background: linear-gradient(to bottom,#8ecafc,#64B5F7);
+  border-radius: 3px;
+  border: 1px #5398d1 solid;
+  font-weight: bold;
+  color:white;
+}
+
+.actions input[type="submit"]:hover {
+  cursor: pointer;
+  background: #64B5F7;
+}
+
+
 .top_bottom_etc {
   text-align: center;
   font-size: 10px;
