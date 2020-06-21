@@ -25,6 +25,10 @@ body {
   min-height: 100vh;
 }
 
+body a{
+  text-decoration: none;
+}
+
 header {
   background-color: #64B5F7;
   height:100px;
