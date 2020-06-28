@@ -2,6 +2,9 @@
 <% if current_user.have_umbrella %>
   <div class="navi_box">
     <h2>傘を持っていないひとからのリクエスト一覧</h2>
+    <div class="navi_search">
+      <input type="button" value="リクエストが来ていないかチェックする" onclick="window.location.reload();" />
+    </div>
   </div>
 
   <div class="main_box">
