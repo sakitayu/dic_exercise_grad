@@ -404,3 +404,9 @@ ul {
 .sample_user {
   padding-right:130px;
 }
+
+.profile_pic {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+}

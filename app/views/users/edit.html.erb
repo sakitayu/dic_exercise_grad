@@ -17,25 +17,28 @@
   <% end %>
 
   <div class="edit_box">
-    <%= form_tag(profile_update_users_path, method: "get") do %>
+    <%= form_with model: @user do |form| %>
 
-      <%= hidden_field_tag "user[have_umbrella]", @user.have_umbrella %>
+      <%= hidden_field :have_umbrella, @user.have_umbrella %>
       
-      <%= hidden_field_tag "user[area]", @user.area %>
+      <%= hidden_field :area, @user.area %>
 
-      <%= label :user, :name, "アカウント名" %>
-      <%= text_field_tag("user[name]") %>
+      <%= label :name, "アカウント名" %>
+      <%= form.text_field :name %>
       <br>
-      <%= label :user, :gender, "性別" %>
-      <%= select_tag "user[gender]", options_for_select([['選択してください', ''], ['男', '男'], ['女', '女'], ['どちらでもない', 'どちらでもない']]) %>
+      <%= label :gender, "性別" %>
+      <%= form.select :gender, [['選択してください', ''], ['男', '男'], ['女', '女'], ['どちらでもない', 'どちらでもない']] %>
       <br>
-      <%= label :user, :age, "年齢" %>
-      <%= select_tag "user[age]", options_for_select([['選択してください', ''], ['20~26', '20~26'], ['27~33', '27~33'], ['34~40', '34~40'], ['41~47', '41~47'], ['48~60', '48~60'], ['非公開', '非公開']]) %>
+      <%= label :age, "年齢" %>
+      <%= form.select :age, [['選択してください', ''], ['20~26', '20~26'], ['27~33', '27~33'], ['34~40', '34~40'], ['41~47', '41~47'], ['48~60', '48~60'], ['非公開', '非公開']] %>
       <br>
-      <%= label :user, :introduction, "自己紹介" %>
-      <%= text_field_tag("user[introduction]", " ", {size:"80"}) %>
+      <%= label :introduction, "自己紹介" %>
+      <%= form.text_field :introduction %>
       <br>
-      <%= submit_tag "プロフィールを更新" %>
+      <%= label :image, "プロフィール画像" %>
+      <%= form.file_field :image %>
+      <br>
+      <%= form.submit "プロフィールを更新" %>
     <% end %>
   </div>
 </div>

@@ -5,7 +5,13 @@
 
 <div class="main_box">
   <div class="profile_left">
-    <div><%= image_tag 'male.png', class: "profile_img" %></div>
+    <div>
+      <% if @user.image.url == nil %>
+        <%= image_tag 'male.png', class: "profile_img" %>
+      <% else %>
+        <%= image_tag @user.image.url, class: "profile_pic" unless @user.image.url == nil %>
+      <% end %>
+    </div>
     <div><%= @user.name %></div>
     <div><strong>性別</strong> <%= @user.gender %></div>
     <div><strong>年齢</strong> <%= @user.age %></div>
