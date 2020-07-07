@@ -61,7 +61,9 @@ class UsersController < ApplicationController
 
   def profile_update
     @user = User.find(current_user.id)
+    #binding.pry
     if @user.update(user_params)
+      #binding.pry
       redirect_to user_path(id: current_user.id)
     else
       render :edit
@@ -76,7 +78,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:have_umbrella, :area, :name, :gender, :age, :introduction)
+    params.require(:user).permit(:have_umbrella, :area, :name, :gender, :age, :introduction, :image, :image_cache)
   end
 
   def set_user

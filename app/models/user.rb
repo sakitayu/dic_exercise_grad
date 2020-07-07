@@ -3,10 +3,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+  mount_uploader :image, ImageUploader
   has_many :active_matchings, foreign_key: 'follower_id', class_name: 'Matching', dependent: :destroy
   has_many :passive_matchings, foreign_key: 'followed_id', class_name: 'Matching', dependent: :destroy
   has_many :following, through: :active_matchings, source: :followed
   has_many :followers, through: :passive_matchings, source: :follower
+  
 
   validates :have_umbrella, inclusion: {in: [true, false]}, on: :update
   validates :area, presence: true, length: { maximum: 25 }, on: :update
