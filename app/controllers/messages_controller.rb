@@ -4,6 +4,16 @@ class MessagesController < ApplicationController
   end
 
   def index
+
+    #会話相手ユーザーのIDを@opposite_idに格納
+    if @conversation.sender_id == current_user.id
+      @opposite_id = @conversation.recipient_id
+    else
+      @opposite_id = @conversation.sender_id
+    end
+    #会話相手ユーザーのテーブルを@opposite_userに格納
+    @opposite_user = User.find(@opposite_id)
+    
     @messages = @conversation.messages
   
     if @messages.length > 10
