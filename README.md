@@ -40,6 +40,7 @@ Rails 5.2.4
 - [ ] リクエスト承諾機能
   - [ ] 傘を持っているユーザーは傘を持っていない人からきたリクエスト一覧から一つだけ選んで承諾することができる
 - [ ] リクエスト送信とリクエストのキャンセルはページ遷移なしで実行できる
+- [ ] ページ遷移なしでリクエスト通知もしくはリクエスト承諾通知がくる
 - [ ] マイプロフィール編集機能
   - [ ] 自分のアカウント名を編集することができる
   - [ ] 自分の性別を編集することができる
@@ -69,6 +70,9 @@ https://docs.google.com/spreadsheets/d/1RfgUJXfSwmt3_wmU9-IuWb5Uab-FeYfrTjCGFCqu
 * devise
 * devise-i18n
 * devise-i18n-views
+
+画像投稿
+* CarrierWave
 
 検索機能
 * ransack
