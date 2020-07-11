@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_update_commit { RemoveBroadcastJob.perform_later self }
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable

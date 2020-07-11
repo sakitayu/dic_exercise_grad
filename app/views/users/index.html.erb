@@ -3,12 +3,14 @@
   <div class="navi_box">
     <h2>傘を持っていないひとからのリクエスト一覧</h2>
     <div class="navi_search">
-      <input type="button" value="リクエストが来ていないかチェックする" onclick="window.location.reload();" />
+      <!---
+        <input type="button" value="リクエストが来ていないかチェックする" onclick="window.location.reload();" />
+      --->
     </div>
   </div>
 
   <div class="main_box">
-    <table>
+    <table id="notification_id_is_<%= current_user.id %>">
       <tr>
         <th class="main_name">アカウント名</th>
         <th class="main_area">今いる場所</th>
@@ -24,31 +26,31 @@
         <%#= followed.id %>
         <%#= follower.have_umbrella %>
         <% if followed.id == current_user.id && follower.have_umbrella == false %>
-            <tr class="table_border">
-              <td>
-                  <%= follower.name %>
-              </td>
-              <td><%= follower.area %></td>
-              <td>
-                  <%= follower.gender %>
-              </td>
-              <td>
-                  <%= follower.age %>
-              </td>
-              <td>
-                <%= link_to "詳細", user_path(follower.id)  %>
-              </td>
-              <td>
-                <%= render 'agreement_form', user: follower %>
-              </td>
-            </tr>
+          <tr class="table_border">
+            <td>
+                <%= follower.name %>
+            </td>
+            <td><%= follower.area %></td>
+            <td>
+                <%= follower.gender %>
+            </td>
+            <td>
+                <%= follower.age %>
+            </td>
+            <td>
+              <%= link_to "詳細", user_path(follower.id)  %>
+            </td>
+            <td>
+              <%= render 'agreement_form', user: follower %>
+            </td>
+          </tr>
         <% end %>
       <% end %>
-      </td></tr>
+      
     </table>
         <br>
   </div>
-
+<div id="remove"><%#= current_user.passive_matchings.methods.sort %></div>
 <% else %>
   
   <div class="navi_box">

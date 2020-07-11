@@ -17,6 +17,8 @@ class MatchingsController < ApplicationController
 
   def destroy
     @user = Matching.find(params[:id]).followed
+    @remove_user = Matching.find(params[:id]).follower
     current_user.unfollow!(@user)
+    @remove_user.update(removing: true)
   end
 end
