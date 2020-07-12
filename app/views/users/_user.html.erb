@@ -3,7 +3,7 @@
   <td class="main_area"><%= ping.follower.area %></td>
   <td class="main_gender"><%= ping.follower.gender %></td>
   <td class="main_age"><%= ping.follower.age %></td>
-  <td><%= link_to "確認する", confirm_request_users_path %></td>
+  <td><%= link_to "確認する", user_path(ping.follower.id) %></td>
   <td></td>
 </tr>
 

@@ -22,9 +22,7 @@
       <% @matchings.each do |matching| %>
         <% follower = User.find(matching.follower_id) %>
         <% followed = User.find(matching.followed_id) %>
-        <%#= current_user.id %>
-        <%#= followed.id %>
-        <%#= follower.have_umbrella %>
+        
         <% if followed.id == current_user.id && follower.have_umbrella == false %>
           <tr class="table_border">
             <td>
@@ -50,8 +48,14 @@
     </table>
         <br>
   </div>
-<div id="remove"><%#= current_user.passive_matchings.methods.sort %></div>
+
 <% else %>
+
+  <% if Matching.find_by(followed_id:current_user.id) %>
+    <div class="confirm_box">
+      <%= link_to "承諾済みリクエストを確認する", confirm_request_users_path %>
+    </div>
+  <% end %>
   
   <div class="navi_box">
     <h2>傘を持っているひと一覧</h2>
@@ -94,9 +98,5 @@
       <% end %>
       </td></tr>
     </table>
-  </div>
-
-  <div class="bottom_box">
-    <%= link_to "承諾済みリクエストを確認する", confirm_request_users_path %>
   </div>
 <% end %>
