@@ -218,19 +218,19 @@ ul {
   float:left;
 }
 
-.bottom_box {
+.confirm_box {
   background-color:linen;
   text-align:center;
   font-size:30px;
   font-weight:bold;
   width:900px;
   height:48px;
-  margin: 10px auto 50px auto;
+  margin: 30px auto 0px auto;
   padding-top:5px;
   border-radius: 4px;
 }
 
-.bottom_box a {
+.confirm_box a {
   color:hotpink;
   text-decoration-line: none;
 }

@@ -1,7 +1,13 @@
+<% if current_user.id != @user.id && current_user.have_umbrella == true %>
+  <div class="navi_box">
+    <p>あなたのリクエストが <strong><%= @follower.name %></strong> さんに承諾されました。お願いしますか？</p>
+  </div>
+<% else %>
 <div class="navi_box">
   <p><strong><%= @user.name %></strong> <%= @user.email if current_user.id == @user.id %> さんのプロフィール</p>
   <div class="navi_search"><%= link_to 'ユーザーの一覧に戻る', users_path %> </div>
 </div>
+<% end %>
 
 <div class="main_box">
   <div class="profile_left">
@@ -28,6 +34,16 @@
     <div class="prof_bottom">
       <div class="prof_bottom_float">
         <%= link_to "プロフィールを編集", edit_user_path(current_user.id) if current_user.id == @user.id %>
+        <% unless @followed == nil %>
+          <% if current_user.id == @followed.id %>
+            <%= link_to 'ユーザー一覧画面に戻る', users_path unless current_user.id == @user.id %> 
+            <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+            <%= form_with(model: current_user.active_matchings.build(followed_id: @user.id)) do |f| %>
+              <%= f.hidden_field :followed_id %>
+              <%= f.submit "この人からのリクエストを承諾する", data: { confirm: '本当に承諾しますか？(承諾するとメッセージルームに移動します)' } if current_user.id != @user.id && current_user.have_umbrella == true %>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

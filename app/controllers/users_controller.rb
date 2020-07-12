@@ -25,6 +25,14 @@ class UsersController < ApplicationController
     if current_user.area == nil
       redirect_to start_users_path
     end
+    #Matchingテーブルから表示ユーザーがリクエストを送っているユーザーを@followedに格納
+    @matchings = Matching.all
+    @matchings.each do |matching|
+      if current_user.id == User.find(matching.followed_id).id
+        @follower = User.find(matching.follower_id)
+        @followed = User.find(matching.followed_id)
+      end
+    end
   end
 
   def edit
