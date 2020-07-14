@@ -3,6 +3,10 @@ class MatchingsController < ApplicationController
 
   def create
     @user = User.find(params[:matching][:followed_id])
+    # if Matching.find(current_user.id)
+    #   @matching_state = Matching.find(current_user.id)
+    #   @matching_state.destroy
+    # end
     current_user.follow!(@user)
     if current_user.have_umbrella == true
       message_room = Conversation.find_by(sender_id: current_user.id,recipient_id: @user.id)
