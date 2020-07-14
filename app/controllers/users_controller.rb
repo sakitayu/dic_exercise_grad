@@ -43,23 +43,33 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(current_user.id)
-    if @user.update(user_params)
-      if Matching.where(follower_id:current_user.id)
-        relation = Matching.where(follower_id:current_user.id)
-        relation.delete_all
-        if Matching.where(followed_id:current_user.id)
-        relation = Matching.where(followed_id:current_user.id)
-        relation.delete_all
+    
+    if params[:follow_state] == {"true"=>""}
+      if @user.update(user_params)
+        redirect_to user_path(id: current_user.id)
+      else
+        render :edit
+      end
+    else
+      #スタート画面でユーザー情報を更新したらフォロー関係がリセットされる
+      if @user.update(user_params)
+        if Matching.where(follower_id:current_user.id)
+          relation = Matching.where(follower_id:current_user.id)
+          relation.delete_all
+          if Matching.where(followed_id:current_user.id)
+          relation = Matching.where(followed_id:current_user.id)
+          relation.delete_all
+          end
         end
+        if Matching.where(followed_id:current_user.id)
+          relation = Matching.where(followed_id:current_user.id)
+          relation.delete_all
+        end
+        redirect_to users_path
+      else
+        render 'start'
       end
 
-      if Matching.where(followed_id:current_user.id)
-        relation = Matching.where(followed_id:current_user.id)
-        relation.delete_all
-      end
-      redirect_to users_path
-    else
-      render 'start'
     end
   end
 
@@ -69,9 +79,7 @@ class UsersController < ApplicationController
 
   def profile_update
     @user = User.find(current_user.id)
-    #binding.pry
     if @user.update(user_params)
-      #binding.pry
       redirect_to user_path(id: current_user.id)
     else
       render :edit
@@ -86,7 +94,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:have_umbrella, :area, :name, :gender, :age, :introduction, :image, :image_cache)
+    params.require(:user).permit(:have_umbrella, :area, :name, :gender, :age, :introduction, :image, :image_cache, :removing)
   end
 
   def set_user

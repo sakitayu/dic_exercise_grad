@@ -19,9 +19,10 @@
   <div class="edit_box">
     <%= form_with model: @user do |form| %>
 
-      <%= hidden_field :have_umbrella, @user.have_umbrella %>
-      
-      <%= hidden_field :area, @user.area %>
+      <%= form.hidden_field :have_umbrella, :value => @user.have_umbrella %>
+      <%= form.hidden_field :area, :value => @user.area %>
+      <%= hidden_field :follow_state, "true" %>
+      <%= form.hidden_field :removing, :value => false %>
 
       <%= label :name, "アカウント名" %>
       <%= form.text_field :name %>
