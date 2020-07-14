@@ -3,10 +3,12 @@ class MatchingsController < ApplicationController
 
   def create
     @user = User.find(params[:matching][:followed_id])
-    # if Matching.find(current_user.id)
-    #   @matching_state = Matching.find(current_user.id)
-    #   @matching_state.destroy
-    # end
+    
+    #キャンセル等の誤操作により自分に対してフォローしている状態だった場合Matching状態を無効に戻す
+    if Matching.find_by(follower_id: current_user.id)
+      @matching_state = Matching.find_by(follower_id: current_user.id)
+      @matching_state.destroy
+    end
     current_user.follow!(@user)
     if current_user.have_umbrella == true
       message_room = Conversation.find_by(sender_id: current_user.id,recipient_id: @user.id)
@@ -22,11 +24,7 @@ class MatchingsController < ApplicationController
   def destroy
     @user = Matching.find(params[:id]).followed
     @remove_user = Matching.find(params[:id]).follower
-    #@following_user = Matching.find(params[:id]).follower
     current_user.unfollow!(@user)
-    #どちらかがフォローを外したら両方ともフォローが外れるようにする
-    #@user.delete_all
-    #both_following = Matching.find(params[:id]).followed
 
     #removingカラムの値を更新することでActionCableを発火させる
     #さらにremovingカラムをtrue/falseで通知削除の動作分岐をしています(→ channels/remove.coffee)
