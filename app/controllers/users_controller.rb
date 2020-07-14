@@ -43,11 +43,15 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(current_user.id)
-    #ユーザー情報を更新したらフォロー関係がリセットされる
-    # if params[:follow_state] != "true"
-    #   @user.update(user_params)
-    # else
-
+    
+    if params[:follow_state] == {"true"=>""}
+      if @user.update(user_params)
+        redirect_to user_path(id: current_user.id)
+      else
+        render :edit
+      end
+    else
+      #スタート画面でユーザー情報を更新したらフォロー関係がリセットされる
       if @user.update(user_params)
         if Matching.where(follower_id:current_user.id)
           relation = Matching.where(follower_id:current_user.id)
@@ -57,7 +61,6 @@ class UsersController < ApplicationController
           relation.delete_all
           end
         end
-
         if Matching.where(followed_id:current_user.id)
           relation = Matching.where(followed_id:current_user.id)
           relation.delete_all
@@ -66,7 +69,8 @@ class UsersController < ApplicationController
       else
         render 'start'
       end
-    # end
+
+    end
   end
 
   def start

@@ -22,6 +22,7 @@
       <%= hidden_field :have_umbrella, @user.have_umbrella %>
       <%= hidden_field :area, @user.area %>
       <%= hidden_field :follow_state, "true" %>
+      <%= hidden_field :removing, "false" %>
 
       <%= label :name, "アカウント名" %>
       <%= form.text_field :name %>

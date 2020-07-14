@@ -23,7 +23,9 @@ class MatchingsController < ApplicationController
     #どちらかがフォローを外したら両方ともフォローが外れるようにする
     #@user.delete_all
     #both_following = Matching.find(params[:id]).followed
+
     #removingカラムの値を更新することでActionCableを発火させる
+    #さらにremovingカラムをtrue/falseで通知削除の動作分岐をしています(→ channels/remove.coffee)
     @remove_user.update(removing: true)
   end
 end
