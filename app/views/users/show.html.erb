@@ -1,4 +1,4 @@
-<% if current_user.id != @user.id && current_user.have_umbrella == true %>
+<% if current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil %>
   <div class="navi_box">
     <p>あなたのリクエストが <strong><%= @follower.name %></strong> さんに承諾されました。お願いしますか？</p>
   </div>
