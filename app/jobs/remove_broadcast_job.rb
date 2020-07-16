@@ -11,6 +11,6 @@ class RemoveBroadcastJob < ApplicationJob
 
   private
     def render_cancel_notification(ban)
-      ApplicationController.renderer.render(partial: 'messages/cancel_notification', locals: { ban: ban })
+      ApplicationController.renderer.render(partial: 'messages/cancel_notification', locals: { ban: ban, ban_opposite_id: ban.following.first.id })
     end
 end
