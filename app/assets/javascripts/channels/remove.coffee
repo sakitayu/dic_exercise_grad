@@ -12,6 +12,7 @@ App.remove = App.cable.subscriptions.create "RemoveChannel",
     notification_div = '#cancel_id_is_' + ban_id + ban_opposite_id
     cancel_notification_div = '#cancel_notification_' + ban_id + ban_opposite_id
     $(cancel_notification_div).remove()
+    $(".notificaion_box").remove()
     $(notification_div).append data['ban']
       
     if data['ban_removing'] == true

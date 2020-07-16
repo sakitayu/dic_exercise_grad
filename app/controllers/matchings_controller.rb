@@ -9,7 +9,12 @@ class MatchingsController < ApplicationController
     #   @matching_state = Matching.find_by(follower_id: current_user.id)
     #   @matching_state.destroy
     # end
-    current_user.follow!(@user)
+
+    #複数のユーザーをフォローできないように相手がfollowd_idにいるMatchingテーブルがないか確認
+    if Matching.find_by(followed_id: @user.id) == nil
+      current_user.follow!(@user)
+    end
+    
     if current_user.have_umbrella == true
       message_room = Conversation.find_by(sender_id: current_user.id,recipient_id: @user.id)
       if message_room == nil
@@ -28,7 +33,7 @@ class MatchingsController < ApplicationController
     #removingカラムの値を更新することでActionCableを発火させる
     #さらにremovingカラムをtrue/falseで通知削除の動作分岐をしています(→ channels/remove.coffee)
     @remove_user.update(removing: true)
-    
+
     current_user.unfollow!(@user)
 
     #リクエストキャンセル時に向こう側からのフォローも解除して相互フォロー状態を無効にする
