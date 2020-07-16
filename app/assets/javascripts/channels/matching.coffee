@@ -9,5 +9,5 @@ App.matching = App.cable.subscriptions.create "MatchingChannel",
     ping = data['ping']
     followed_id = data['followed_id']
     target_div = '#notification_id_is_' + followed_id
+    $(".notificaion_box").remove()
     $(target_div).append data['ping']
-    #$('#kakunin').append target_div
