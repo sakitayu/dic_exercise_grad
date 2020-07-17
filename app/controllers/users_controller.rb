@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     if current_user.area == nil
       redirect_to start_users_path
     end
+    
     #Matchingテーブルから表示ユーザーがリクエストを送っているユーザーを@followedに格納
     @matchings = Matching.all
     @matchings.each do |matching|

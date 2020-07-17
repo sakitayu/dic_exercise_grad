@@ -10,11 +10,8 @@ class MatchingsController < ApplicationController
     #   @matching_state.destroy
     # end
 
-    #複数のユーザーをフォローできないように相手がfollowd_idにいるMatchingテーブルがないか確認
-    if Matching.find_by(followed_id: @user.id) == nil
-      current_user.follow!(@user)
-    end
-    
+    current_user.follow!(@user)
+
     if current_user.have_umbrella == true
       message_room = Conversation.find_by(sender_id: current_user.id,recipient_id: @user.id)
       if message_room == nil
