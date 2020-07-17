@@ -21,7 +21,8 @@ App.remove = App.cable.subscriptions.create "RemoveChannel",
     $(notification_message).append data['ban']
 
     # 傘なしユーザーが傘持ちユーザーにリクエストキャンセルを行なった場合に傘なしユーザー一覧の承諾通知が消えるように設定
-    #$(".notificaion_box").remove()
+    remove_notificaion_box = '#notificaion_box_id_is_' + ban_id
+    $(remove_notificaion_box).remove()
 
     # 傘なしユーザーが傘持ちユーザーにリクエストキャンセルを行なった場合に(データベースのマッチング情報から分岐で)
     # 傘なしユーザー一覧の承諾通知が消えるように設定

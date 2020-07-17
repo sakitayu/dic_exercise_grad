@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
 
   def index
 
+    @matching = Matching.find_by(follower_id: current_user.id)
     #会話相手ユーザーのIDを@opposite_idに格納
     if @conversation.sender_id == current_user.id
       @opposite_id = @conversation.recipient_id
