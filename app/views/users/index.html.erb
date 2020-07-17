@@ -48,7 +48,7 @@
 <% else %>
 
   <% if Matching.find_by(followed_id:current_user.id) %>
-    <div class="confirm_box">
+    <div class="confirm_box" id="confirm_id_is_<%= current_user.id %>">
       <%= link_to "あなたのリクエストが承諾されました。確認してください。", confirm_request_users_path %>
     </div>
   <% end %>
