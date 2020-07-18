@@ -33,8 +33,11 @@ App.remove = App.cable.subscriptions.create "RemoveChannel",
       
     # 傘なしユーザーがフォロー解除した場合にdestroyと同時にユーザーテーブルのremovingカラムがtrueに更新されて
     # userモデルでafter_update_commitで発火したのち傘持ちユーザーのリクエスト一覧に表示された傘なしユーザーが一覧から消える
+    # DOMにレンダーされた場合とDBから表示された場合の両方を消すようになっている
     remove_request_div = '#request_id_is_' + ban_id
+    remove_request_on_db_div = '#user_list_id_is_' + ban_id
     if data['ban_removing'] == true
       $(remove_request_div).remove()
+      $(remove_request_on_db_div).remove()
       
 

@@ -21,7 +21,7 @@
         <% followed = User.find(matching.followed_id) %>
         
         <% if followed.id == current_user.id && follower.have_umbrella == false %>
-          <tr class="table_border">
+          <tr class="table_border" id="user_list_id_is_<%= follower.id %>">
             <td>
                 <%= follower.name %>
             </td>
@@ -98,4 +98,4 @@
   </div>
 <% end %>
 
-<div id="testes"></div>
+<%#= User.find(1).name %>
