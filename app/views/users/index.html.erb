@@ -21,7 +21,7 @@
         <% followed = User.find(matching.followed_id) %>
         
         <% if followed.id == current_user.id && follower.have_umbrella == false %>
-          <tr class="table_border" id="user_list_id_is_<%= follower.id %>">
+          <tr class="table_border" id="request_user_list_id_is_<%= follower.id %>">
             <td>
                 <%= follower.name %>
             </td>
@@ -82,7 +82,7 @@
       <% @users.each do |user| %>
         <% if user.id != current_user.id && user.have_umbrella %>
           <% if user.have_umbrella %>
-            <tr class="table_border">
+            <tr class="table_border" id="having_user_list_id_is_<%= user.id %>">
               <td><%= user.name %></td>
               <td><%= user.area %></td>
               <td><%= user.gender %></td>

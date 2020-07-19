@@ -8,12 +8,17 @@ App.matching = App.cable.subscriptions.create "MatchingChannel",
   received: (data) ->
     ping = data['ping']
     followed_id = data['followed_id']
+    follower_id = data['follower_id']
 
     # 傘なしユーザーのユーザー一覧にリクエスト承諾通知をユーザー一覧に表示
     # 動作機序としてはフォローしたときにmatchingモデルのafter_create_commitが発火
     notification_approval_div = '#notification_id_is_' + followed_id
     $(notification_approval_div).append data['ping']
 
-    # 傘持ちユーザーから見たリクエストを自分に送っているユーザー一覧に表示される
+    # 傘持ちユーザーから見たリクエストを自分に送っているユーザー一覧に表示
     request_user_div = '#request_user_id_is_' + followed_id
     $(request_user_div).append data['ping']
+
+    # 他のユーザーーとマッチングした傘持ちユーザーを一覧から削除
+    having_user_div = '#having_user_list_id_is_' + follower_id
+    $(having_user_div).remove()
