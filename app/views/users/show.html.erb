@@ -34,7 +34,10 @@
     <div class="prof_bottom">
       <div class="prof_bottom_float">
         <%= link_to "プロフィールを編集", edit_user_path(current_user.id) if current_user.id == @user.id %>
-        <% unless @followed == nil %>
+        <% if @followed == nil && current_user.id != @user.id %>
+          <div><%= render 'request_form', user: @user %></div>
+        <% elsif @followed != nil %>
+
           <% if current_user.id == @followed.id %>
             <%= link_to 'ユーザー一覧画面に戻る', users_path unless current_user.id == @user.id %> 
             <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
@@ -43,6 +46,7 @@
               <%= f.submit "この人からのリクエストを承諾する", data: { confirm: '本当に承諾しますか？(承諾するとメッセージルームに移動します)' } if current_user.id != @user.id && current_user.have_umbrella == true %>
             <% end %>
           <% end %>
+
         <% end %>
       </div>
     </div>

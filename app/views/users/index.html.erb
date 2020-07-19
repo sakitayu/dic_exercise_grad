@@ -87,7 +87,6 @@
               <td><%= user.gender %></td>
               <td><%= user.age %></td>
               <td><%= link_to "詳細", user_path(user.id)  %></td>
-              <td><%= render 'request_form', user: user %></td>
             </tr>
         <% end %>
       <% end %>

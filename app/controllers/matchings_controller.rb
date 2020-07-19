@@ -39,9 +39,6 @@ class MatchingsController < ApplicationController
       @matching_state = Matching.find_by(followed_id: current_user.id)
       @matching_state.destroy
     end
-
-    if current_user.have_umbrella == false
-      redirect_to users_path
-    end
+    
   end
 end
