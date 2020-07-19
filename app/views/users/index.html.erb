@@ -80,8 +80,7 @@
       </tr>
       
       <% @users.each do |user| %>
-        <% if user.id != current_user.id && user.have_umbrella %>
-          <% if user.have_umbrella %>
+        <% if user.id != current_user.id && user.have_umbrella && Matching.find_by(follower_id: user.id) == nil %>
             <tr class="table_border" id="having_user_list_id_is_<%= user.id %>">
               <td><%= user.name %></td>
               <td><%= user.area %></td>
@@ -90,12 +89,9 @@
               <td><%= link_to "詳細", user_path(user.id)  %></td>
               <td><%= render 'request_form', user: user %></td>
             </tr>
-          <% end %>
         <% end %>
       <% end %>
       </td></tr>
     </table>
   </div>
 <% end %>
-
-<%#= User.find(1).name %>
