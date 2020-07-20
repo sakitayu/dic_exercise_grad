@@ -13,7 +13,13 @@
   <div class="profile_left">
     <div>
       <% if @user.image.url == nil %>
-        <%= image_tag 'male.png', class: "profile_img" %>
+        <% if @user.gender == "男" %>
+          <%= image_tag 'male.png', class: "profile_img" %>
+        <% elsif @user.gender == "女" %>
+          <%= image_tag 'female.png', class: "profile_img" %>
+        <% elsif @user.gender == "どちらでもない" %>
+          <%= image_tag 'trans.png', class: "profile_img" %>
+        <% end %>
       <% else %>
         <%= image_tag @user.image.url, class: "profile_pic" unless @user.image.url == nil %>
       <% end %>
