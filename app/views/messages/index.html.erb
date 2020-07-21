@@ -11,7 +11,7 @@
 <div id="cancel_id_is_<%= @opposite_user.id %><%= current_user.id %>"></div>
 
 <div class="main_box">
-  <div class="message_box">
+  <div class="message_box" id="remove_form_id_is_<%= @opposite_user.id %><%= current_user.id %>">
 
     <div class="ui segment">
       <% @messages.each do |message| %>
@@ -47,7 +47,7 @@
           </div>
         <% end %>
       <% end %>
-</div>
+    </div>
 
 
     <div class="partner-container">
