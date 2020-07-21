@@ -46,16 +46,16 @@
         <% if @followed == nil && current_user.id != @user.id %>
           <div><%= render 'request_form', user: @user %></div>
         <% elsif @followed != nil %>
-
-          <% if current_user.id == @followed.id %>
-            <%= link_to 'ユーザー一覧画面に戻る', users_path unless current_user.id == @user.id %> 
-            <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-            <%= form_with(model: current_user.active_matchings.build(followed_id: @user.id)) do |f| %>
-              <%= f.hidden_field :followed_id %>
-              <%= f.submit "承諾する", data: { confirm: '本当に承諾しますか？(承諾するとメッセージルームに移動します)' } if current_user.id != @user.id && current_user.have_umbrella == true %>
+          <div id="remove_form_id_is_<%= @user.id %><%= current_user.id %>">
+            <% if current_user.id == @followed.id %>
+              <%= link_to 'ユーザー一覧画面に戻る', users_path unless current_user.id == @user.id %> 
+              <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+              <%= form_with(model: current_user.active_matchings.build(followed_id: @user.id)) do |f| %>
+                <%= f.hidden_field :followed_id %>
+                <%= f.submit "承諾する", data: { confirm: '本当に承諾しますか？(承諾するとメッセージルームに移動します)' } if current_user.id != @user.id && current_user.have_umbrella == true %>
+              <% end %>
             <% end %>
-          <% end %>
-
+          </div>
         <% end %>
       </div>
     </div>

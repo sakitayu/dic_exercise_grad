@@ -9,16 +9,17 @@ App.remove = App.cable.subscriptions.create "RemoveChannel",
     ban_id = data['ban_id']
     #ping_id = data['ping_id']
     ban_opposite_id = data['ban_opposite_id']
-    
-    #remove_notification_div = '#notification_' + ping_id
 
     # メッセージ画面のパーシャル_cansel_notification.html.erbにリクエストキャンセルを通知
     # その際に傘なしユーザーがリクエストとキャンセルを短時間に何回繰り返しても表示か増えないように削除してから表示するように動作
     remove_cancel_notification = '#cancel_notification_' + ban_id + ban_opposite_id
     $(remove_cancel_notification).remove()
-    #$(remove_notification_div).remove()
     notification_message = '#cancel_id_is_' + ban_id + ban_opposite_id
     $(notification_message).append data['ban']
+
+    # 傘持ちユーザーがキャンセルをされた場合にユーザー詳細画面の承諾フォームを非表示にする
+    remove_form_div = '#remove_form_id_is_' + ban_id + ban_opposite_id
+    $(remove_form_div).remove()
 
     # 傘なしユーザーが傘持ちユーザーにリクエストキャンセルを行なった場合に傘なしユーザー一覧の承諾通知が消えるように設定
     remove_notificaion_box = '#notificaion_box_id_is_' + ban_id

@@ -9,8 +9,11 @@ class MatchingsController < ApplicationController
     #   @matching_state = Matching.find_by(follower_id: current_user.id)
     #   @matching_state.destroy
     # end
-
-    current_user.follow!(@user)
+    if @user.have_umbrella == true
+      current_user.follow!(@user)
+    else
+      
+    end
 
     if current_user.have_umbrella == true
       message_room = Conversation.find_by(sender_id: current_user.id,recipient_id: @user.id)
