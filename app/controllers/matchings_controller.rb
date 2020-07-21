@@ -39,6 +39,7 @@ class MatchingsController < ApplicationController
       @matching_state = Matching.find_by(followed_id: current_user.id)
       @matching_state.destroy
     end
-    
+
+    redirect_to users_path
   end
 end
