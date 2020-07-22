@@ -10,7 +10,11 @@
 </div>
 <% end %>
 
-<div id="notification_id_is_<%= current_user.id %>"></div>
+<div id="notification_id_is_<%= current_user.id %>">
+  <div id="remove_overlap_notification_id_is_<%= current_user.id %>">
+    <div id="overlap_notification_id_is_<%= @user.id %>"></div>
+  </div>
+</div>
 
 <div class="main_box">
   <div class="profile_left">
@@ -44,9 +48,9 @@
       <div class="prof_bottom_float">
         <%= link_to "プロフィールを編集", edit_user_path(current_user.id) if current_user.id == @user.id %>
         <% if @followed == nil && current_user.id != @user.id %>
-          <div><%= render 'request_form', user: @user %></div>
+          <div id="notification_request_form_id_is_<%= @user.id %>"><%= render 'request_form', user: @user %></div>
         <% elsif @followed != nil %>
-          <div id="remove_form_id_is_<%= @user.id %><%= current_user.id %>">
+          <div>
             <% if current_user.id == @followed.id %>
               <%= link_to 'ユーザー一覧画面に戻る', users_path unless current_user.id == @user.id %> 
               <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>

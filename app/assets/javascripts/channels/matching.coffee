@@ -10,10 +10,20 @@ App.matching = App.cable.subscriptions.create "MatchingChannel",
     followed_id = data['followed_id']
     follower_id = data['follower_id']
 
-    # 傘なしユーザーのユーザー一覧にリクエスト承諾通知をユーザー一覧に表示
+    # 傘なしユーザーのユーザー一覧にリクエスト承諾通知を表示する前に
+    # リクエストしてるユーザーが他のユーザーとマッチングした場合にその旨を通知する文(厳密にはdivブロック)を削除
+    # 自分に対してフォローされない場合は動作せずスルーされる
+    remove_overlap_notification_div = '#remove_overlap_notification_id_is_' + followed_id
+    $(remove_overlap_notification_div).remove()
+
+    # 傘なしユーザーのユーザー一覧にリクエスト承諾通知を表示
     # 動作機序としてはフォローしたときにmatchingモデルのafter_create_commitが発火
     notification_approval_div = '#notification_id_is_' + followed_id
     $(notification_approval_div).append data['ping']
+
+    # リクエスト中のユーザーが他のユーザーとマッチングした場合(フォローした場合)に通知
+    notification_overlap_div = '#overlap_notification_id_is_' + follower_id
+    $(notification_overlap_div).append data['overlap']
 
     # 傘持ちユーザーから見たリクエストを自分に送っているユーザー一覧に表示
     request_user_div = '#request_user_id_is_' + followed_id
