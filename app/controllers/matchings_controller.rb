@@ -10,7 +10,17 @@ class MatchingsController < ApplicationController
     #   @matching_state.destroy
     # end
     current_user.follow!(@user)
-      
+    
+    # 傘持ちユーザーがリクエストを送っている傘なしユーザーをフォロー(承諾)した際に
+    # 他に同じ傘持ちユーザーをフォロー(リクエスト)している傘なしユーザーがいた場合にそれらのマッチングを全て解除
+    if current_user.have_umbrella == true && Matching.where(followed_id: current_user.id) != nil
+      overlap_users = Matching.where(followed_id: current_user.id)
+      overlap_users.each do | overlap_user |
+        if overlap_user.follower_id != @user.id
+          overlap_user.destroy
+        end
+      end
+    end
 
     if current_user.have_umbrella == true
       message_room = Conversation.find_by(sender_id: current_user.id,recipient_id: @user.id)
