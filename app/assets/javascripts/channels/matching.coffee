@@ -12,9 +12,14 @@ App.matching = App.cable.subscriptions.create "MatchingChannel",
 
     # 傘なしユーザーのユーザー一覧にリクエスト承諾通知を表示する前に
     # リクエストしてるユーザーが他のユーザーとマッチングした場合にその旨を通知する文(厳密にはdivブロック)を削除
-    # 自分に対してフォローされない場合は動作せずスルーされる
+    # 自分に対してフォローされない場合は動作せずスルーされるため上記の通知が表示される仕様になっています
     remove_overlap_notification_div = '#remove_overlap_notification_id_is_' + followed_id
     $(remove_overlap_notification_div).remove()
+    
+    # リクエストしてるユーザーが他のユーザーとマッチングした場合に
+    # 詳細ページのリクエストボタンを非表示にする
+    remove_request_form__div = '#request_form_id_is_' + follower_id
+    $(remove_request_form__div).remove()
 
     # 傘なしユーザーのユーザー一覧にリクエスト承諾通知を表示
     # 動作機序としてはフォローしたときにmatchingモデルのafter_create_commitが発火
