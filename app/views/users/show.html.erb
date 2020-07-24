@@ -10,11 +10,17 @@
 </div>
 <% end %>
 
-<div id="notification_id_is_<%= current_user.id %>">
-  <div id="remove_overlap_notification_id_is_<%= current_user.id %>">
-    <div id="overlap_notification_id_is_<%= @user.id %>"></div>
+<% if current_user.id != @user.id && current_user.have_umbrella == true %>
+  <!-- ここに傘持ちユーザーのみに表示されるフォロー通知 -->
+<% end %>
+
+<% if current_user.id != @user.id %>
+  <div id="notification_id_is_<%= current_user.id %>">
+    <div id="remove_overlap_notification_id_is_<%= current_user.id %>">
+      <div id="overlap_notification_id_is_<%= @user.id %>"></div>
+    </div>
   </div>
-</div>
+<% end %>
 
 <div class="main_box">
   <div class="profile_left">
