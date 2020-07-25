@@ -28,13 +28,6 @@
         <br>
         <%= form.text_field :area %>
         <br>
-        <%= form.label :name, "あなたのアカウント名などを入力してください", class: "start_label" %>
-        <br>
-        <%= form.text_field :name %>
-        <br>
-        <%= form.select :gender, ['男', '女', 'どちらでもない'], {include_blank: '性別'} %>
-        <%= form.select :age, ['20~26', '27~33', '34~40', '41~47', '48~60', '非公開'], {include_blank: '年齢'} %>
-        <br>
         <br>
         <%= form.submit "利用を開始" %>
       </div>

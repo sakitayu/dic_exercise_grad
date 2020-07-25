@@ -13,6 +13,21 @@
     </div>
 
     <div class="field">
+      <%= f.label :ニックネーム %><br />
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :性別 %><br />
+      <%= f.select :gender, ['男', '女', 'どちらでもない'], {include_blank: '性別'} %>
+    </div>
+
+    <div class="field">
+      <%= f.label :年齢 %><br />
+      <%= f.select :age, ['20~26', '27~33', '34~40', '41~47', '48~60', '非公開'], {include_blank: '年齢'} %>
+    </div>
+
+    <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
       <% if false %><em>(<%= @minimum_password_length %> characters minimum)</em><% end %>
