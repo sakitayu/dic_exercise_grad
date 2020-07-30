@@ -4,6 +4,7 @@
     <title>Rainy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1”>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,20 +12,19 @@
 
   <body>
     <header>
-      <% if user_signed_in? %>
-        <div class="header_logo">Raynee<div>
-      <% end %>
-      <% if false %>
-        <%= link_to 'ユーザー一覧', users_path if user_signed_in? %>
-        <%= link_to 'スタート画面に戻る', start_users_path if user_signed_in? %>
-
-        <% if user_signed_in? %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "新規登録", new_user_registration_path %>
-          <%= link_to "ログイン", new_user_session_path %>
+      <div class="header_block">
+        <div class="header_left"><%= image_tag 'raynee_logo.png', class: "raynee-logo" %></div>
+        <div class="header_center"></div>
+        <% unless user_signed_in? %>
+          <% if controller.action_name == "new" && controller.controller_name == "registrations" %>
+            <div class="header_right"><%= link_to "ログイン", new_user_session_path, class: "register_link" %></div>
+          <% elsif controller.action_name == "new" && controller.controller_name == "sessions" %>
+            <div class="header_right"><%= link_to "登録する", new_user_registration_path, class: "register_link" %></div>
+          <% else %>
+            <div class="header_right"><%= link_to "ログイン", new_user_session_path, class: "register_link" %></div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </header>
 
     <main>

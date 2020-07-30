@@ -1,6 +1,4 @@
-<div class="navi_box">
-  <div class="start_navi"><h1>Rainy スタート画面</h1></div>
-</div>
+
 
 <div class="main_box">
   <% if @user.errors.any? %>
@@ -17,14 +15,14 @@
   <div class="start_box">
     <%= form_with(model: @user, local: true) do |form| %>
       <div class="start_form">
-        <%= form.label "あなたは傘を持っていますか？", class: "start_label" %>
+        <%= form.label "傘を持っていますか？", class: "start_label" %>
         <br>
         <%= form.radio_button :have_umbrella, :true %>
         <%= form.label :have_umbrella, "はい", {value: :true, style: "display: inline-block;"} %>
         <%= form.radio_button :have_umbrella, :false %>
         <%= form.label :have_umbrella, "いいえ", {value: :false, style: "display: inline-block;"} %>
         <br>
-        <%= form.label :area, "あなたがいる場所を入力してください", class: "start_label" %>
+        <%= form.label :area, "あなたがいる場所は？", class: "start_label" %>
         <br>
         <%= form.text_field :area %>
         <br>

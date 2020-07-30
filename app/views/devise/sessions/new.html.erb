@@ -1,54 +1,68 @@
-<div class="app_title">
-  <p class="app_name_sentence">つながる傘シェアリングサービス</p>
-  <h2 class="app_name">Raynee</h2>
-</div>
+<div class="login_container">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="login_box">
 
-  <div class="login_error_message"><%= alert %><%= notice %></div>
-  <div class="email_and_pass_form">
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
+    <div class="email_and_pass_form">
+      <div class="login_error_message"><%= alert %><%= notice %></div>
+      <div class="field">
+        <%= f.label :email %>
+        <br>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <br>
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
     </div>
     
-    <div class="field">
-      <%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "current-password" %>
+    <div class="remember_and_submit_form">
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <div class="field">
+          <%= link_to "パスワードを忘れた方", new_password_path(resource_name) %>
+        </div>
+      <% end %>
     </div>
-    <% if devise_mapping.rememberable? %>
+
+    <div class="login_button_container">
+      <div class="login_button">
+        <%= f.submit "ログイン" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="sample_user">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <%= f.hidden_field :email ,value: "sample_a@example.com" %>
+        <%= f.hidden_field :password ,value: "sample_a" %>
+      </div>
+      <div class="login_button">
+        <%= f.submit "サンプルユーザーAでログイン"%>
+      </div>
+    <% end %>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.hidden_field :email ,value: "sample_b@example.com" %>
+        <%= f.hidden_field :password ,value: "sample_b" %>
+      </div>
+      <div class="login_button">
+        <%= f.submit "サンプルユーザーBでログイン"%>
       </div>
     <% end %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "ログイン", class: "login_buttom" %>
-  </div>
-<% end %>
-
-<div class="sample_user">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.hidden_field :email ,value: "sample_a@example.com" %>
-    <%= f.hidden_field :password ,value: "sample_a" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "サンプルユーザーAでログイン"%>
-  </div>
-<% end %>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.hidden_field :email ,value: "sample_b@example.com" %>
-    <%= f.hidden_field :password ,value: "sample_b" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "サンプルユーザーBでログイン"%>
-  </div>
-<% end %>
 </div>
 
-<%= render "devise/shared/links" %>
+</div>

@@ -14,6 +14,10 @@
  *= require_tree .
  *= require_self
  */
+/* メインカラー */
+/* ブレークポイント */
+/* スマホサイズの設定 */
+/* PCサイズの設定 */
 body {
   font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
   background-image: url(/images/rain.jpg);
@@ -31,12 +35,56 @@ body a {
 }
 
 header {
-  background-color: #64B5F7;
-  height: 100px;
+  background-color: #8ac6d1;
+  height: 5em;
+  width: 100%;
+}
+
+header div.header_block {
+  width: 80em;
+  /* 共通の横幅 1280px */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+header div.header_left {
+  height: 3em;
+  color: white;
+  padding: 1.2em 0 0 0;
+  margin-left: 5em;
+}
+
+header div.header_center {
+  height: 3em;
+}
+
+header div.header_right {
+  height: 3em;
+  margin: 1.4em 5em 0 0;
+}
+
+header img.raynee-logo {
+  height: 3em;
+}
+
+header a.register_link {
+  width: auto;
+  color: #444;
+  font-size: 1.4em;
+  background-color: white;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+header a.register_link:hover {
+  color: #ffb6b9;
+  transition: 0.1s;
 }
 
 footer {
-  background-color: #64B5F7;
   height: 100px;
   bottom: 0;
   padding: 0 auto;
@@ -62,16 +110,264 @@ ul {
   list-style-type: decimal;
 }
 
+.login_container {
+  width: 80em;
+  margin: 0 auto;
+}
+
+.login_container div.login_box {
+  width: 28em;
+  height: auto;
+  margin: 4.8em auto;
+  padding-bottom: 3.6em;
+  background-color: white;
+  border: solid thin #8ac6d1;
+  border-radius: 0.3em;
+}
+
+.login_container div.login_box div.remember_and_submit_form {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 0.7em;
+}
+
+.login_container div.login_box div.remember_and_submit_form a {
+  color: #999999;
+  font-weight: lighter;
+  transition: 0.5s;
+}
+
+.login_container div.login_box div.remember_and_submit_form a:hover {
+  color: #ffb6b9;
+  transition: 0.1s;
+}
+
+.login_container div.login_box div.remember_and_submit_form div.field {
+  width: 15em;
+  text-align: center;
+  color: #999999;
+  font-weight: lighter;
+  margin: 0 auto;
+  padding-top: 1em;
+}
+
+.login_container div.login_box div.remember_and_submit_form input[type=checkbox] {
+  display: none;
+}
+
+.login_container div.login_box div.remember_and_submit_form input[type="checkbox"] + label {
+  display: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  padding-right: 10px;
+}
+
+.login_container div.login_box div.remember_and_submit_form input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  left: 0;
+  top: 50%;
+  border: 1px solid;
+  border-color: #999999;
+  /* 枠の色 */
+  border-radius: 0.2em;
+  background-color: #FFF;
+  /* 背景の色 */
+}
+
+.login_container div.login_box div.remember_and_submit_form input[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  width: 18px;
+  height: 9px;
+  margin-top: -9px;
+  top: 50%;
+  left: 3px;
+  transform: rotate(-45deg);
+  border-bottom: 3px solid;
+  border-left: 3px solid;
+  border-color: #ffb6b9;
+  /* チェックの色 */
+}
+
+.regis_container {
+  width: 80em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.regis_container div.regis_box {
+  width: 28em;
+  height: auto;
+  margin: 4.8em 5em 5em 0;
+  padding-bottom: 3em;
+  background-color: white;
+  border: solid thin #8ac6d1;
+  border-radius: 0.3em;
+}
+
+.regis_container div.regis_box div.email_and_pass_form {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+}
+
+.regis_container div.regis_box div.email_and_pass_form div.field {
+  margin-top: 1em;
+  color: #999999;
+  font-weight: lighter;
+}
+
+.regis_container div.regis_box div.email_and_pass_form div.field_remember {
+  width: 17.1em;
+  margin-top: 1.5em;
+  color: #999999;
+  font-weight: lighter;
+}
+
+.regis_container div.regis_box div.email_and_pass_form div.field_age, .regis_container div.regis_box div.email_and_pass_form div.field_gender {
+  margin-top: 1.5em;
+  color: #999999;
+  font-weight: lighter;
+}
+
+.regis_container div.regis_box div.email_and_pass_form div.gender_and_age {
+  width: 19em;
+  margin: 0;
+  padding: 0;
+}
+
+.regis_container div.regis_box div.email_and_pass_form input[type=email] {
+  height: 1.5em;
+  width: 23em;
+  padding: 0.2em;
+  text-indent: 0.5em;
+  border: solid thin #999999;
+  border-radius: 0.2em;
+}
+
+.regis_container div.regis_box div.email_and_pass_form input[type=email]:focus {
+  border: solid thin #ffb6b9;
+  outline: 0;
+}
+
+.regis_container div.regis_box div.email_and_pass_form input[type=text] {
+  height: 1.5em;
+  width: 23em;
+  padding: 0.2em;
+  text-indent: 0.5em;
+  border: solid thin #999999;
+  border-radius: 0.2em;
+}
+
+.regis_container div.regis_box div.email_and_pass_form input[type=text]:focus {
+  border: solid thin #ffb6b9;
+  outline: 0;
+}
+
+.regis_container div.regis_box div.email_and_pass_form input[type=password] {
+  height: 1.5em;
+  width: 23em;
+  padding: 0.2em;
+  text-indent: 0.5em;
+  border: solid thin #999999;
+  border-radius: 0.2em;
+}
+
+.regis_container div.regis_box div.email_and_pass_form input[type=password]:focus {
+  border: solid thin #ffb6b9;
+  outline: 0;
+}
+
+.regis_container div.regis_box div.email_and_pass_form select {
+  border: solid thin #999999;
+  height: 1.5em;
+  width: auto;
+  border-radius: 0.2em;
+  color: #999999;
+  padding: 0 0.5em;
+  outline: none;
+  text-indent: 0.01px;
+  text-overflow: '';
+  background: none transparent;
+  vertical-align: middle;
+  font-size: inherit;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+
+.regis_container div.regis_box div.email_and_pass_form select option {
+  background-color: #fff;
+  color: #333;
+}
+
+.regis_container div.regis_box div.email_and_pass_form select::-ms-expand {
+  display: none;
+}
+
+.regis_container div.regis_box div.email_and_pass_form select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #828c9a;
+}
+
+.regis_container div.disc_box {
+  height: 30em;
+  margin: 4em 3em 5em 4.9em;
+  color: #444;
+}
+
+.regis_container div.disc_box div.disc_large {
+  font-size: 3.2em;
+  font-weight: bold;
+}
+
+.regis_container div.disc_box div.disc_large p {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.regis_container div.disc_box div.disc_small {
+  font-size: 1.6em;
+  margin-top: 1em;
+}
+
+.regis_container div.disc_box div.disc_small p {
+  margin: 0;
+  padding: 0.1em;
+  white-space: nowrap;
+}
+
 #error_explanation {
   padding: 10px 0px 0px 320px;
   color: deeppink;
   height: 100%;
 }
 
+.regis_error_messages {
+  display: flex;
+  justify-content: center;
+}
+
 #error_explanation_partial {
-  padding: 10px 0px 0px 440px;
-  color: deeppink;
-  height: 100%;
+  color: #ffb6b9;
+  height: 2em;
+  margin-bottom: 5em;
+  padding-bottom: 2em;
 }
 
 .error_explanation_small {
@@ -87,9 +383,8 @@ ul {
 
 .login_error_message {
   text-align: center;
-  color: deeppink;
-  margin-bottom: 16px;
-  margin-right: 21px;
+  color: #ffb6b9;
+  padding-bottom: -3em;
 }
 
 .forgot_password_box {
@@ -110,16 +405,6 @@ ul {
   margin-right: 50px;
 }
 
-.header_logo {
-  color: white;
-  font-size: 60px;
-  font-weight: bold;
-  width: 300px;
-  margin: 0px auto;
-  padding-top: 10px;
-  padding-left: 70px;
-}
-
 .app_name {
   font-size: 80px;
   color: #1a76d2;
@@ -135,41 +420,171 @@ ul {
   padding: 0;
 }
 
-.field {
-  font-weight: bold;
-  text-align: right;
-  color: #616161;
-}
-
 .email_and_pass_form {
-  width: 290px;
-  margin: 0 auto;
-  padding-right: 80px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 2em;
 }
 
-.app_title {
-  width: 340px;
-  margin: 100px auto 0 auto;
+.email_and_pass_form div.field {
+  margin-top: 1em;
+  color: #999999;
+  font-weight: lighter;
 }
 
-.actions {
-  width: 100px;
-  margin: 10px auto 0 auto;
+.email_and_pass_form div.field_remember {
+  width: 17.1em;
+  margin-top: 1.5em;
+  color: #999999;
+  font-weight: lighter;
 }
 
-.actions input[type="submit"] {
+.email_and_pass_form div.field_age, .email_and_pass_form div.field_gender {
+  margin-top: 1.5em;
+  color: #999999;
+  font-weight: lighter;
+}
+
+.email_and_pass_form div.gender_and_age {
+  width: 19em;
+  margin: 0;
+  padding: 0;
+}
+
+.email_and_pass_form input[type=email] {
+  height: 1.5em;
+  width: 23em;
+  padding: 0.2em;
+  text-indent: 0.5em;
+  border: solid thin #999999;
+  border-radius: 0.2em;
+}
+
+.email_and_pass_form input[type=email]:focus {
+  border: solid thin #ffb6b9;
+  outline: 0;
+}
+
+.email_and_pass_form input[type=text] {
+  height: 1.5em;
+  width: 23em;
+  padding: 0.2em;
+  text-indent: 0.5em;
+  border: solid thin #999999;
+  border-radius: 0.2em;
+}
+
+.email_and_pass_form input[type=text]:focus {
+  border: solid thin #ffb6b9;
+  outline: 0;
+}
+
+.email_and_pass_form input[type=password] {
+  height: 1.5em;
+  width: 23em;
+  padding: 0.2em;
+  text-indent: 0.5em;
+  border: solid thin #999999;
+  border-radius: 0.2em;
+}
+
+.email_and_pass_form input[type=password]:focus {
+  border: solid thin #ffb6b9;
+  outline: 0;
+}
+
+.email_and_pass_form select {
+  border: solid thin #999999;
+  height: 1.5em;
+  width: auto;
+  border-radius: 0.2em;
+  color: #999999;
+  padding: 0 0.5em;
+  outline: none;
+  text-indent: 0.01px;
+  text-overflow: '';
+  background: none transparent;
+  vertical-align: middle;
+  font-size: inherit;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+
+.email_and_pass_form select option {
+  background-color: #fff;
+  color: #333;
+}
+
+.email_and_pass_form select::-ms-expand {
+  display: none;
+}
+
+.email_and_pass_form select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #828c9a;
+}
+
+.login_button_container, .regis_button_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.login_button, .regis_button {
+  margin: 2em auto 0 auto;
+}
+
+.login_button input[type="submit"], .regis_button input[type="submit"] {
+  height: 2.1em;
+  line-height: 0;
+  width: auto;
   border-style: none;
-  height: 31px;
-  background: linear-gradient(to bottom, #8ecafc, #64B5F7);
-  border-radius: 3px;
-  border: 1px #5398d1 solid;
-  font-weight: bold;
+  font-size: 1.4em;
+  white-space: nowrap;
+  padding: 0 1em;
+  border-radius: 1em;
   color: white;
+  background: #ffb6b9;
+  transition: 0.3s;
 }
 
-.actions input[type="submit"]:hover {
+.login_button input[type="submit"]:hover, .regis_button input[type="submit"]:hover {
   cursor: pointer;
-  background: #64B5F7;
+  opacity: 0.8;
+  transition: 0.1s;
+}
+
+.sample_user {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sample_user div.login_button {
+  margin: 2em auto 0 auto;
+}
+
+.sample_user div.login_button input[type="submit"] {
+  height: 2.1em;
+  line-height: 0;
+  width: auto;
+  border-style: none;
+  font-size: 1.2em;
+  white-space: nowrap;
+  padding: 0 1em;
+  border-radius: 1em;
+  color: white;
+  background: #ffb6b9;
+  transition: 0.3s;
+}
+
+.sample_user div.login_button input[type="submit"]:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.1s;
 }
 
 .top_bottom_etc {
@@ -416,10 +831,6 @@ ul {
 
 .message_box {
   padding: 20px;
-}
-
-.sample_user {
-  padding-right: 130px;
 }
 
 .profile_pic {

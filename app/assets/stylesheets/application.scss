@@ -14,6 +14,30 @@
  *= require_self
  */
 
+/* メインカラー */
+$dark-green: #8ac6d1;
+$light-green: #bbded6;
+$dark-pink: #ffb6b9;
+$light-pink: #fae3d9;
+$dark-grey: #444;
+$middle-grey: #999999;
+$light-grey: #F7F7F7;
+
+/* ブレークポイント */
+$break-point-Mobile: 481px;
+$break-point-PC: 960px;
+
+
+/* スマホサイズの設定 */
+@media (min-width: $break-point-Mobile) {
+  
+}
+
+/* PCサイズの設定 */
+@media (min-width: $break-point-PC) {
+  
+}
+
 body {
   font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
   background-image: url(/images/rain.jpg);
@@ -30,12 +54,48 @@ body {
 }
 
 header {
-  background-color: #64B5F7;
-  height:100px;
+  background-color: $dark-green;
+  height: 5em;
+  width: 100%;
+  div.header_block {
+    width: 80em; /* 共通の横幅 1280px */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  div.header_left {
+    height: 3em;
+    color: white;
+    padding: 1.2em 0 0 0;
+    margin-left: 5em;
+  }
+  div.header_center {
+    height: 3em;
+  }
+  div.header_right {
+    height: 3em;
+    margin: 1.4em 5em 0 0;
+  }
+  img.raynee-logo {
+    height: 3em;
+  }
+  a.register_link {
+    width: auto;
+    color: $dark-grey;
+    font-size: 1.4em;
+    background-color: white;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    white-space: nowrap;
+    transition: 0.3s;
+    &:hover {
+      color: $dark-pink;
+      transition: 0.1s;
+    }
+  }
 }
 
 footer {
-  background-color: #64B5F7;
   height:100px;
   bottom:0;
   padding:0 auto;
@@ -60,17 +120,231 @@ ul {
   list-style-type: decimal; 
 }
 
+.login_container{
+  width:80em;
+  margin:0 auto;
+  div.login_box {
+    width: 28em;
+    height: auto;
+    margin: 4.8em auto;
+    padding-bottom: 3.6em;
+    background-color: white;
+    border: solid thin $dark-green;
+    border-radius: 0.3em;
+    div.remember_and_submit_form {
+      width: auto;
+      display: flex;
+      justify-content: center; 
+      flex-wrap: wrap;
+      padding-top: 0.7em;
+      a {
+        color: $middle-grey;
+        font-weight: lighter;
+        transition: 0.5s;
+        &:hover {
+          color: $dark-pink;
+          transition: 0.1s;
+        }
+      }
+      div.field {
+        width: 15em;
+        text-align: center;
+        color: $middle-grey;
+        font-weight: lighter;
+        margin: 0 auto;
+        padding-top: 1em;
+      }
+      input[type=checkbox] {
+        display: none;
+      }
+      input[type="checkbox"]+label {
+        display: none;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        padding-left: 25px;
+        padding-right: 10px;
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          box-sizing: border-box;
+          width: 20px;
+          height: 20px;
+          margin-top: -10px;
+          left: 0;
+          top: 50%;
+          border: 1px solid;
+          border-color:  $middle-grey; /* 枠の色 */
+          border-radius: 0.2em;
+          background-color: #FFF; /* 背景の色 */
+        }
+      }
+      input[type="checkbox"]:checked+label::after{
+        content: "";
+        position: absolute;
+        display: block;
+        box-sizing: border-box;
+        width: 18px;
+        height: 9px;
+        margin-top: -9px;
+        top: 50%;
+        left: 3px;
+        transform: rotate(-45deg);
+        border-bottom: 3px solid;
+        border-left: 3px solid;
+        border-color:  $dark-pink; /* チェックの色 */
+      }
+    }
+  }
+}
+
+.regis_container {
+  width:80em;
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+  div.regis_box {
+    width: 28em;
+    height: auto;
+    margin: 4.8em 5em 5em 0;
+    padding-bottom: 3em;
+    background-color: white;
+    border: solid thin $dark-green;
+    border-radius: 0.3em;
+    div.email_and_pass_form {
+      width:auto;
+      display: flex;
+      justify-content: center;
+      padding-top: 2em;
+      div.field {
+        margin-top: 1em;
+        color: $middle-grey;
+        font-weight: lighter;
+      }
+      div.field_remember {
+        width: 17.1em;
+        margin-top: 1.5em;
+        color: $middle-grey;
+        font-weight: lighter;
+      }
+      div.field_age, div.field_gender {
+        margin-top: 1.5em;
+        color: $middle-grey;
+        font-weight: lighter;
+      }
+      div.gender_and_age {
+        width:19em;
+        margin:0;
+        padding:0;
+      }
+      input[type=email] {
+        height: 1.5em;
+        width: 23em;
+        padding: 0.2em;
+        text-indent: 0.5em;
+        border: solid thin $middle-grey;
+        border-radius: 0.2em;
+        &:focus {
+          border: solid thin $dark-pink;
+          outline: 0;
+        }
+      }
+      input[type=text] {
+        height: 1.5em;
+        width: 23em;
+        padding: 0.2em;
+        text-indent: 0.5em;
+        border: solid thin $middle-grey;
+        border-radius: 0.2em;
+        &:focus {
+          border: solid thin $dark-pink;
+          outline: 0;
+        }
+      }
+      input[type=password] {
+        height: 1.5em;
+        width: 23em;
+        padding: 0.2em;
+        text-indent: 0.5em;
+        border: solid thin $middle-grey;
+        border-radius: 0.2em;
+        &:focus {
+          border: solid thin $dark-pink;
+          outline: 0;
+        }
+      }
+      select {
+        border: solid thin $middle-grey;
+        height: 1.5em;
+        width: auto;
+        border-radius: 0.2em;
+        color: $middle-grey;
+        padding: 0 0.5em;
+        outline:none;
+        text-indent: 0.01px;
+        text-overflow: '';
+        background: none transparent;
+        vertical-align: middle;
+        font-size: inherit;
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        appearance: button;
+        option {
+          background-color: #fff;
+          color: #333;
+        }
+        &::-ms-expand {
+          display: none;
+        }
+        &:-moz-focusring {
+          color: transparent; 
+          text-shadow: 0 0 0 #828c9a;
+        }
+      }
+    }
+  }
+  div.disc_box {
+    height: 30em;
+    margin: 4em 3em 5em 4.9em;
+    color: $dark-grey;
+    div.disc_large {
+      font-size: 3.2em;
+      font-weight: bold;
+      p {
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+      }
+    }
+    div.disc_small {
+      font-size: 1.6em;
+      margin-top: 1em;
+      p {
+        margin: 0;
+        padding: 0.1em;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
 #error_explanation {
   padding:10px 0px 0px 320px;
   color:deeppink;
   height:100%;
 }
 
-#error_explanation_partial {
-  padding:10px 0px 0px 440px;
-  color:deeppink;
-  height:100%;
+.regis_error_messages {
+  display: flex;
+  justify-content: center;
+}
 
+#error_explanation_partial {
+  color: $dark-pink;
+  height: 2em;
+  margin-bottom: 5em;
+  padding-bottom: 2em;
 }
 
 .error_explanation_small {
@@ -86,9 +360,8 @@ ul {
 
 .login_error_message {
   text-align: center;
-  color:deeppink;
-  margin-bottom:16px;
-  margin-right: 21px;
+  color:$dark-pink;
+  padding-bottom:-3em;
 }
 
 .forgot_password_box {
@@ -109,16 +382,6 @@ ul {
   margin-right: 50px;
 }
 
-.header_logo {
-  color:white;
-  font-size: 60px;
-  font-weight:bold;
-  width:300px;
-  margin:0px auto;
-  padding-top:10px;
-  padding-left:70px;
-}
-
 .app_name {
   font-size: 80px;
   color:#1a76d2;
@@ -134,41 +397,153 @@ ul {
   padding:0;
 }
 
-.field {
-  font-weight:bold;
-  text-align: right;
-  color:#616161;
-}
-
 .email_and_pass_form {
-  width:290px;
-  margin:0 auto;
-  padding-right:80px;
-}
-
-.app_title {
-  width:340px;
-  margin:100px auto 0 auto;
-}
-
-.actions {
-  width:100px;
-  margin:10px auto 0 auto;
-  input[type="submit"] {
-    border-style: none;
-    height: 31px;
-    background: linear-gradient(to bottom,#8ecafc,#64B5F7);
-    border-radius: 3px;
-    border: 1px #5398d1 solid;
-    font-weight: bold;
-    color:white;
-    &:hover {
-      cursor: pointer;
-      background: #64B5F7;
+  width:auto;
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+  padding-top: 2em;
+  div.field {
+    margin-top: 1em;
+    color: $middle-grey;
+    font-weight: lighter;
+  }
+  div.field_remember {
+    width: 17.1em;
+    margin-top: 1.5em;
+    color: $middle-grey;
+    font-weight: lighter;
+  }
+  div.field_age, div.field_gender {
+    margin-top: 1.5em;
+    color: $middle-grey;
+    font-weight: lighter;
+  }
+  div.gender_and_age {
+    width:19em;
+    margin:0;
+    padding:0;
+  }
+  input[type=email] {
+    height: 1.5em;
+    width: 23em;
+    padding: 0.2em;
+    text-indent: 0.5em;
+    border: solid thin $middle-grey;
+    border-radius: 0.2em;
+    &:focus {
+      border: solid thin $dark-pink;
+      outline: 0;
+    }
+  }
+  input[type=text] {
+    height: 1.5em;
+    width: 23em;
+    padding: 0.2em;
+    text-indent: 0.5em;
+    border: solid thin $middle-grey;
+    border-radius: 0.2em;
+    &:focus {
+      border: solid thin $dark-pink;
+      outline: 0;
+    }
+  }
+  input[type=password] {
+    height: 1.5em;
+    width: 23em;
+    padding: 0.2em;
+    text-indent: 0.5em;
+    border: solid thin $middle-grey;
+    border-radius: 0.2em;
+    &:focus {
+      border: solid thin $dark-pink;
+      outline: 0;
+    }
+  }
+  select {
+    border: solid thin $middle-grey;
+    height: 1.5em;
+    width: auto;
+    border-radius: 0.2em;
+    color: $middle-grey;
+    padding: 0 0.5em;
+    outline:none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    background: none transparent;
+    vertical-align: middle;
+    font-size: inherit;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    option {
+      background-color: #fff;
+      color: #333;
+    }
+    &::-ms-expand {
+      display: none;
+    }
+    &:-moz-focusring {
+      color: transparent; 
+      text-shadow: 0 0 0 #828c9a;
     }
   }
 }
 
+.login_button_container, .regis_button_container {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+}
+
+.login_button, .regis_button {
+  margin: 2em auto 0 auto;
+  input[type="submit"] {
+    height: 2.1em;
+    line-height: 0;
+    width: auto;
+    border-style: none;
+    font-size: 1.4em;
+    white-space: nowrap;
+    padding: 0 1em;
+    border-radius: 1em;
+    color:white;
+    background: $dark-pink;
+    transition: 0.3s;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+      transition: 0.1s;
+    }
+  }
+}
+
+.sample_user {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+  div.login_button {
+    margin: 2em auto 0 auto;
+    input[type="submit"] {
+      height: 2.1em;
+      line-height: 0;
+      width: auto;
+      border-style: none;
+      font-size: 1.2em;
+      white-space: nowrap;
+      padding: 0 1em;
+      border-radius: 1em;
+      color:white;
+      background: $dark-pink;
+      transition: 0.3s;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+        transition: 0.1s;
+      }
+    }
+  }
+}
 
 
 .top_bottom_etc {
@@ -400,10 +775,6 @@ ul {
 
 .message_box {
   padding:20px;
-}
-
-.sample_user {
-  padding-right:130px;
 }
 
 .profile_pic {

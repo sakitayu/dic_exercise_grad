@@ -1,49 +1,79 @@
-<div class="app_title">
-  <p class="app_name_sentence">つながる傘シェアリングサービス</p>
-  <h2 class="app_name">Raynee</h2>
+<div class="regis_container">
+
+  <div class="disc_box">
+    <div class="disc_large">
+      <p>雨の日に人と人をつなぐ</p>
+      <p>傘シェアリングサービス</p>
+    </div>
+
+    <div class="disc_small">
+      <p>傘を忘れてしまいましたか？</p>
+      <p>目的地まで誰かに相合傘を頼んでみませんか？</p>
+      <p>あなた自身が誰かに相合傘を</p>
+      <p>してあげることもできます。</p>
+      <p>ユーザー登録をすれば</p>
+      <p>すぐに利用することができます。</p>
+    </div>
+  </div>
+
+  <div class="regis_box">
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+    <div class="email_and_pass_form">
+      <div class="regis_error_messages"><%= render "devise/shared/error_messages", resource: resource %></div>
+      <div>
+        <div class="field">
+          <%= f.label :ニックネーム %>
+          <br />
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+
+        <div class="field_gender">
+          <%= f.label :性別 %>
+          <br />
+          <%= f.select :gender, ['男', '女', 'どちらでもない'], {include_blank: '性別'} %>
+        </div>
+
+        <div class="field_age">
+          <%= f.label :年齢 %>
+          <br />
+          <%= f.select :age, ['20~26', '27~33', '34~40', '41~47', '48~60', '非公開'], {include_blank: '年齢'} %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email %>
+          <br>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+          <br />
+          <% if @minimum_password_length %>
+          <% if false %><em>(<%= @minimum_password_length %> characters minimum)</em><% end %>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %>
+          <br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+
+        
+      </div>
+    </div>
+
+    <div class="regis_button_container">
+      <div class="regis_button">
+        <%= f.submit "登録する" %>
+      </div>
+    </div>
+  
+  <% end %>
+
+  </div>
+
 </div>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="email_and_pass_form">
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :ニックネーム %><br />
-      <%= f.text_field :name, class: "form-control" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :性別 %><br />
-      <%= f.select :gender, ['男', '女', 'どちらでもない'], {include_blank: '性別'} %>
-    </div>
-
-    <div class="field">
-      <%= f.label :年齢 %><br />
-      <%= f.select :age, ['20~26', '27~33', '34~40', '41~47', '48~60', '非公開'], {include_blank: '年齢'} %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <% if false %><em>(<%= @minimum_password_length %> characters minimum)</em><% end %>
-      <% end %>
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "登録する" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

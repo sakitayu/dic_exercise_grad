@@ -13,9 +13,9 @@ class User < ApplicationRecord
 
   validates :have_umbrella, inclusion: {in: [true, false]}, on: :update
   validates :area, presence: true, length: { maximum: 25 }, on: :update
-  validates :name, presence: true, length: { maximum: 11 }, on: :update
-  validates :gender, presence: true, on: :update
-  validates :age, presence: true, on: :update
+  validates :name, presence: true, length: { maximum: 11 }
+  validates :gender, presence: true
+  validates :age, presence: true
   validates :introduction, length: { maximum: 225 }, on: :update
 
   enum gender: { "男": 1, "女": 2, "どちらでもない": 3 }
