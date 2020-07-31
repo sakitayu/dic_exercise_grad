@@ -1,38 +1,60 @@
+<div class="start_background">
 
-
-<div class="main_box">
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2>未入力の箇所があります</h2>
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="start_box">
-    <%= form_with(model: @user, local: true) do |form| %>
-      <div class="start_form">
-        <%= form.label "傘を持っていますか？", class: "start_label" %>
-        <br>
-        <%= form.radio_button :have_umbrella, :true %>
-        <%= form.label :have_umbrella, "はい", {value: :true, style: "display: inline-block;"} %>
-        <%= form.radio_button :have_umbrella, :false %>
-        <%= form.label :have_umbrella, "いいえ", {value: :false, style: "display: inline-block;"} %>
-        <br>
-        <%= form.label :area, "あなたがいる場所は？", class: "start_label" %>
-        <br>
-        <%= form.text_field :area %>
-        <br>
-        <br>
-        <%= form.hidden_field :removing, :value => nil %>
-        <br>
-        <br>
-        <%= form.submit "利用を開始" %>
+<div class="start_container">
+  
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2>未入力の箇所があります</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
       </div>
     <% end %>
-  </div>
+
+    <div class="start_box">
+      <%= form_with(model: @user, local: true) do |form| %>
+        <div class="start_form">
+          <div>
+            <div class="field">
+              <div class="start_label"><%= form.label "傘を持っていますか？" %></div>
+              <div>
+                <group class="inline-radio">
+                  <div>
+                    <%= form.radio_button :have_umbrella, :true, class: "radio-inline__input" %>
+                    <%= form.label :have_umbrella, " はい", {value: :true, style: "display: inline-block;", class: 'inline__input'} %>
+                  </div>
+                  <div>
+                    <%= form.radio_button :have_umbrella, :false, class: "radio-inline__input" %>
+                    <%= form.label :have_umbrella, "いいえ", {value: :false, style: "display: inline-block;", class: 'inline__input'} %>
+                  </div>
+              </div>
+              </group>
+            </div>
+            <div class="field">
+              <div class="start_label"><%= form.label :area, "あなたがいる場所は？" %></div>
+              <div><%= form.text_field :area %></div>
+            </div>
+            <div class="start_button_container">
+              <div class="start_button">
+                <%= form.hidden_field :removing, :value => nil %>
+                <%= form.submit "利用を開始" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  
 </div>
 
+</div>
+
+<script>
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+</script>

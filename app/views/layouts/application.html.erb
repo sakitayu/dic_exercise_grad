@@ -29,12 +29,12 @@
 
     <main>
       <%= yield %>
-    </main>
-
-    <footer>
       <% if user_signed_in? %>
           <div><%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %></div>
       <% end %>
+    </main>
+
+    <footer>
     </footer>
   </body>
 </html>

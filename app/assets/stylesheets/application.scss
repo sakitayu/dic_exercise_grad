@@ -40,13 +40,12 @@ $break-point-PC: 960px;
 
 body {
   font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
-  background-image: url(/images/rain.jpg);
-  background-size: cover;
+  font-size: 1em;
+  min-width: 80em;
   margin:0;
   padding:0;
   display: flex;
   flex-flow: column;
-  min-height: 100vh;
   word-wrap: break-word;
   a {
     text-decoration: none;
@@ -58,7 +57,7 @@ header {
   height: 5em;
   width: 100%;
   div.header_block {
-    width: 80em; /* 共通の横幅 1280px */
+    width: 80em; /* 共通の横幅 =1280px */
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -96,7 +95,7 @@ header {
 }
 
 footer {
-  height:100px;
+  height:0;
   bottom:0;
   padding:0 auto;
   div {
@@ -116,6 +115,20 @@ main {
   flex: 1;
 }
 
+.regis_background, .login_background {
+  background-image: url(/images/rain.jpg);
+  background-size: cover;
+  min-height: 46em;
+}
+
+.start_background {
+  background-image: url(/images/undraw_raining_sguh.png);
+  background-size: contain;
+  background-repeat:  no-repeat;
+  min-height: 46em;
+  
+}
+
 ul {
   list-style-type: decimal; 
 }
@@ -123,6 +136,7 @@ ul {
 .login_container{
   width:80em;
   margin:0 auto;
+  display: flex;
   div.login_box {
     width: 28em;
     height: auto;
@@ -200,7 +214,7 @@ ul {
 }
 
 .regis_container {
-  width:80em;
+  width: 80em; /* 共通の横幅 =1280px */
   margin:0 auto;
   display: flex;
   justify-content: space-between;
@@ -232,6 +246,9 @@ ul {
         margin-top: 1.5em;
         color: $middle-grey;
         font-weight: lighter;
+        label {
+          margin-left: 0.1em;
+        }
       }
       div.gender_and_age {
         width:19em;
@@ -280,9 +297,9 @@ ul {
         width: auto;
         border-radius: 0.2em;
         color: $middle-grey;
-        padding: 0 0.5em;
+        padding: 0 2.5em 0 0.5em;
         outline:none;
-        text-indent: 0.01px;
+        text-indent: 0em;
         text-overflow: '';
         background: none transparent;
         vertical-align: middle;
@@ -290,16 +307,17 @@ ul {
         -webkit-appearance: button;
         -moz-appearance: button;
         appearance: button;
+        z-index: 1;
         option {
           background-color: #fff;
-          color: #333;
+          color: $middle-grey;
         }
         &::-ms-expand {
-          display: none;
+          display: button;
         }
         &:-moz-focusring {
           color: transparent; 
-          text-shadow: 0 0 0 #828c9a;
+          text-shadow: 0 0 0 $middle-grey;
         }
       }
     }
@@ -380,21 +398,6 @@ ul {
 
 .change_password_field {
   margin-right: 50px;
-}
-
-.app_name {
-  font-size: 80px;
-  color:#1a76d2;
-  margin:0 0 20px 0;
-  padding:0;
-}
-
-.app_name_sentence {
-  font-size: 16px;
-  font-weight:bold;
-  color:#1a76d2;
-  margin:0 0 0 25px;
-  padding:0;
 }
 
 .email_and_pass_form {
@@ -494,26 +497,25 @@ ul {
   display: flex;
   justify-content: center; 
   flex-wrap: wrap;
-}
-
-.login_button, .regis_button {
-  margin: 2em auto 0 auto;
-  input[type="submit"] {
-    height: 2.1em;
-    line-height: 0;
-    width: auto;
-    border-style: none;
-    font-size: 1.4em;
-    white-space: nowrap;
-    padding: 0 1em;
-    border-radius: 1em;
-    color:white;
-    background: $dark-pink;
-    transition: 0.3s;
-    &:hover {
-      cursor: pointer;
-      opacity: 0.8;
-      transition: 0.1s;
+  div.login_button, div.regis_button {
+    margin: 2em auto 0 auto;
+    input[type="submit"] {
+      height: 2.1em;
+      line-height: 0;
+      width: auto;
+      border-style: none;
+      font-size: 1.4em;
+      white-space: nowrap;
+      padding: 0 1em;
+      border-radius: 1em;
+      color:white;
+      background: $dark-pink;
+      transition: 0.3s;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+        transition: 0.1s;
+      }
     }
   }
 }
@@ -544,6 +546,142 @@ ul {
     }
   }
 }
+
+.start_container {
+  width: 80em; /* 共通の横幅 =1280px */
+  margin:0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  div.start_box{
+    width: 30em;
+    height: auto;
+    margin: 4.8em 5em 0 0;
+    padding: 0 2em;
+    background-color: white;
+    border: solid thin $dark-green;
+    border-radius: 0.3em;
+    div.start_form {
+      width:auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding-top: 2em;
+      div.field {
+        margin-top: 1em;
+        color: $dark-grey;
+        font-size: 1.3em;
+        font-weight: lighter;
+        display: flex;
+        div.start_label {
+          margin-top: 0.1em;
+        }
+        input[type=text] {
+          height: 1.5em;
+          width: 13em;
+          padding: 0.2em;
+          margin-left: 0.5em;
+          font-size: 0.8em;
+          text-indent: 0.5em;
+          border: solid thin $middle-grey;
+          border-radius: 0.2em;
+          &:focus {
+            border: solid thin $dark-pink;
+            outline: 0;
+          }
+        }
+      }
+    }
+    group + group {
+      margin-top: 20px;
+    }
+    .inline-radio {
+      display: flex;
+      border-radius: 0.2em;
+      overflow: hidden;
+      border: solid thin $middle-grey;
+      margin-left: 0.45em;
+      div {
+        position: relative;
+        flex: 1;
+      }
+      input {
+        width: 7em;
+        height: 1.7em;
+        opacity: 0;
+      }
+      label {
+        font-size: 1em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $middle-grey;
+        width: 5em;
+        height: 5em;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        border-right: 1px solid #b6b6b6;
+        text-align:left;
+        padding-left:0.2em;
+      }
+      div:last-child label {
+        border-right: 0;
+      }
+      input:checked + label {
+        background: $dark-pink;
+        font-weight: 500;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+
+
+.start_button_container {
+  display: flex;
+  div.start_button {
+    margin: 3em auto 3em auto;
+    input[type="submit"] {
+      height: 2.1em;
+      line-height: 0;
+      width: auto;
+      border-style: none;
+      font-size: 1.4em;
+      white-space: nowrap;
+      padding: 0 1em 0 1em;
+      border-radius: 1em;
+      color:white;
+      background: $dark-pink;
+      transition: 0.3s;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+        transition: 0.1s;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .top_bottom_etc {
@@ -655,38 +793,6 @@ ul {
   &:hover {
     background-color: #E6EFF4;
     transition-duration: 0.3s;
-  }
-}
-
-.start_box{
-  height:auto;
-  padding-bottom:auto;
-}
-
-.start_form {
-  text-align: center;
-  height:270px;
-  color:#616161;
-  font-weight:bold;
-  padding-top:20px;
-  padding-bottom:30px;
-  margin-bottom:30px;
-}
-
-.start_label {
-  font-size: 21px;
-}
-
-.start_navi {
-  text-align: center;
-  font-size: 10px;
-  width:250px;
-  margin:0 auto;
-  padding-right:20px;
-  color:#616161;
-  h1 {
-    margin:10px 0 0 0;
-    padding-top:10px;
   }
 }
 
