@@ -1,48 +1,72 @@
+<div class="main_container">
 
 <% if current_user.have_umbrella %>
   <div class="navi_box">
-    <h2>傘を持っていないひとからのリクエスト一覧</h2>
-    <div class="navi_search">
-    </div>
+    <div>ここにナビ</div>
+    <div><%= link_to "マイプロフィール", user_path(current_user.id) %></div>
   </div>
 
   <div class="main_box">
-    <table id="request_user_id_is_<%= current_user.id %>">
-      <tr>
-        <th class="main_name">アカウント名</th>
-        <th class="main_area">今いる場所</th>
-        <th class="main_gender">性別</th>
-        <th class="main_age">年齢</th>
-        <th class="main_my_profile" colspan="2"><%= link_to "マイプロフィール", user_path(current_user.id)  %></th>
-      </tr>
+    <div class="main_contents">
+      <table id="request_user_id_is_<%= current_user.id %>">
+        <% @matchings.each do |matching| %>
+          <% follower = User.find(matching.follower_id) %>
+          <% followed = User.find(matching.followed_id) %>
 
-      <% @matchings.each do |matching| %>
-        <% follower = User.find(matching.follower_id) %>
-        <% followed = User.find(matching.followed_id) %>
-        
-        <% if followed.id == current_user.id && follower.have_umbrella == false %>
-          <tr class="table_border" id="request_user_list_id_is_<%= follower.id %>">
-            <td>
-              <%= link_to "#{follower.name}", user_path(follower.id)  %>
-            </td>
-            <td>
-              <%= follower.area %>
-            </td>
-            <td>
-              <%= follower.gender %>
-            </td>
-            <td>
-              <%= follower.age %>
-            </td>
-          </tr>
+          <% if followed.id == current_user.id && follower.have_umbrella == false %>
+            <tr class="table_border" id="request_user_list_id_is_<%= follower.id %>">
+              <td>
+                <%= link_to "#{follower.name}", user_path(follower.id)  %>
+              </td>
+              <td>
+                <%= follower.area %>
+              </td>
+              <td>
+                <%= follower.gender %>
+              </td>
+              <td>
+                <%= follower.age %>
+              </td>
+            </tr>
+          <% end %>
         <% end %>
-      <% end %>
-      
-    </table>
-        <br>
+
+      </table>
+    </div>
   </div>
 
 <% else %>
+
+  <div class="navi_box">
+    <div class="state_umbrella"><p>傘を持っていません</p></div>
+      <div class="navi_prof_pic">
+        <% if current_user.image.url == nil %>
+          <% if current_user.gender == "男" %>
+            <%= image_tag('male.png') %>
+          <% elsif current_user.gender == "女" %>
+            <%= image_tag('female.png') %>
+          <% elsif current_user.gender == "どちらでもない" %>
+            <%= image_tag('trans.png') %>
+          <% end %>
+        <% else %>
+          <%= image_tag(current_user.image.url) unless current_user.image.url == nil %>
+        <% end %>
+      </div>
+      <div class="navi_prof_name">
+        <p><%= current_user.name %></p>
+      </div>
+      <div class="navi_prof_mypage">
+        <p><%= link_to "マイページ", user_path(current_user.id) %></p>
+      </div>
+      <div class="navi_prof_notification">
+        ここに通知
+      </div>
+      <div class="navi_prof_logout">
+        <% if user_signed_in? %>
+            <div><%= link_to "ログアウトして終了", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %></div>
+        <% end %>
+      </div>
+  </div>
 
   <% if Matching.find_by(followed_id:current_user.id) %>
     <div class="confirm_box" id="confirm_id_is_<%= current_user.id %>">
@@ -51,44 +75,51 @@
   <% end %>
   <div id="notification_id_is_<%= current_user.id %>"></div>
 
-  <div class="navi_box">
-    <h2>傘を持っているひと一覧</h2>
+  <div class="main_box">
     <div class="navi_search">
-      <%= search_form_for @q do |f| %>
-        <%= f.label :area, "場所" %>
-        <%= f.search_field :area_cont, size: "10x10" %>
-        <%= f.label :gender, "性別" %>
-        <%= f.select :gender_eq, [['男', 1], ['女', 2], ['どちらでもない', 3]], :include_blank => '未選択' %>
-        <%= f.label :age, "年齢" %>
-        <%= f.select :age_eq, [['20~26', 1], ['27~33', 2], ['34~40', 3], ['41~47', 4], ['48~60', 5], ['非公開', 6]], :include_blank => '未選択' %>
-        <%= f.submit "検索" %>
-      <% end %>
+      <div>
+        <%= search_form_for @q do |f| %>
+          <%= f.label :area, "場所" %>
+          <%= f.search_field :area_cont, size: "10x10" %>
+          <%= f.label :gender, "性別" %>
+          <%= f.select :gender_eq, [['男', 1], ['女', 2], ['どちらでもない', 3]], :include_blank => '未選択' %>
+          <%= f.label :age, "年齢" %>
+          <%= f.select :age_eq, [['20~26', 1], ['27~33', 2], ['34~40', 3], ['41~47', 4], ['48~60', 5], ['非公開', 6]], :include_blank => '未選択' %>
+          <%= f.submit "検索" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="main_contents">
+      <table>
+        <% @users.each do |user| %>
+          <% if user.id != current_user.id && user.have_umbrella && Matching.find_by(follower_id: user.id) == nil %>
+              <tr class="table_border" id="having_user_list_id_is_<%= user.id %>">
+                <td>
+                  <% if user.image.url == nil %>
+                    <% if user.gender == "男" %>
+                      <%= link_to image_tag('male.png'), user_path(user.id) %>
+                    <% elsif user.gender == "女" %>
+                      <%= link_to image_tag('female.png'), user_path(user.id) %>
+                    <% elsif user.gender == "どちらでもない" %>
+                      <%= link_to image_tag('trans.png'), user_path(user.id) %>
+                    <% end %>
+                  <% else %>
+                    <%= link_to image_tag(user.image.url), user_path(user.id) unless user.image.url == nil %>
+                  <% end %>
+                </td>
+                <td class="list_name">
+                  <%= link_to "#{user.name}", user_path(user.id)  %>
+                </td>
+                <td class="list_area"><%= user.area %></td>
+                <td class="list_gender"><%= user.gender %></td>
+                <td class="list_age"><%= user.age %></td>
+              </tr>
+          <% end %>
+        <% end %>
+      </table>
     </div>
   </div>
-
-  <div class="main_box">
-    <table>
-      <tr>
-        <th class="main_name">アカウント名</th>
-        <th class="main_area">今いる場所</th>
-        <th class="main_gender">性別</th>
-        <th class="main_age">年齢</th>
-        <th class="main_my_profile" colspan="2"><%= link_to "マイプロフィール", user_path(current_user.id)  %></th>
-      </tr>
-      
-      <% @users.each do |user| %>
-        <% if user.id != current_user.id && user.have_umbrella && Matching.find_by(follower_id: user.id) == nil %>
-            <tr class="table_border" id="having_user_list_id_is_<%= user.id %>">
-              <td>
-                <%= link_to "#{user.name}", user_path(user.id)  %>
-              </td>
-              <td><%= user.area %></td>
-              <td><%= user.gender %></td>
-              <td><%= user.age %></td>
-            </tr>
-        <% end %>
-      <% end %>
-      </td></tr>
-    </table>
-  </div>
 <% end %>
+
+</div>

@@ -37,6 +37,8 @@ header {
   background-color: #8ac6d1;
   height: 5em;
   width: 100%;
+  position: fixed;
+  z-index: 2;
 }
 
 header div.header_block {
@@ -125,6 +127,7 @@ ul {
 .login_container {
   width: 80em;
   margin: 0 auto;
+  margin-top: 5em;
   display: flex;
 }
 
@@ -218,6 +221,7 @@ ul {
   width: 80em;
   /* 共通の横幅 =1280px */
   margin: 0 auto;
+  margin-top: 5em;
   display: flex;
   justify-content: space-between;
 }
@@ -595,6 +599,7 @@ ul {
   width: 80em;
   /* 共通の横幅 =1280px */
   margin: 0 auto;
+  margin-top: 5em;
   display: flex;
   flex-direction: row-reverse;
 }
@@ -742,29 +747,108 @@ ul {
   transition: 0.1s;
 }
 
+.main_container {
+  width: 80em;
+  /* 共通の横幅 =1280px */
+  margin: 0 auto;
+  display: flex;
+  margin-top: 5em;
+}
+
 .navi_box {
-  background-color: white;
-  width: 900px;
-  height: 50px;
-  margin: 70px auto 0 auto;
-  border-radius: 4px;
+  position: fixed;
+  background-color: #F7F7F7;
+  width: 12em;
+  height: 30em;
+  margin: 5em 0 0 5em;
+  border-radius: 0.2em;
 }
 
-.navi_box h2 {
-  color: #616161;
-  margin: 0;
-  padding-top: 6px;
-  padding-left: 20px;
-  float: left;
+.navi_box div.state_umbrella {
+  width: 100%;
+  height: 2em;
+  background: #bbded6;
+  border-radius: 0.2em 0.2em 0 0;
+  color: #444;
 }
 
-.navi_box p {
-  color: #616161;
-  font-size: 20px;
+.navi_box div.state_umbrella p {
+  text-align: center;
+  padding-top: 0.3em;
   margin: 0;
-  padding-top: 10px;
-  padding-left: 20px;
-  float: left;
+}
+
+.navi_box div.navi_prof_pic {
+  width: 100%;
+  text-align: center;
+}
+
+.navi_box div.navi_prof_pic img {
+  width: 6em;
+  height: 6em;
+  border: 0.1em solid #444;
+  border-radius: 5em;
+  margin: 2em 0 1em 0;
+}
+
+.navi_box div.navi_prof_name {
+  width: 100%;
+  text-align: center;
+}
+
+.navi_box div.navi_prof_name p {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.navi_box div.navi_prof_mypage {
+  width: 100%;
+  text-align: center;
+}
+
+.navi_box div.navi_prof_mypage p {
+  font-size: 1em;
+  margin: 0;
+}
+
+.navi_box div.navi_prof_mypage p a {
+  color: #444;
+  transition: 0.3s;
+}
+
+.navi_box div.navi_prof_mypage p a:hover {
+  color: #ffb6b9;
+  transition: 0.1s;
+}
+
+.navi_box div.navi_prof_notification {
+  width: 100%;
+  height: 5em;
+  background-color: #fae3d9;
+  margin: 3em 0;
+}
+
+.navi_box div.navi_prof_logout {
+  margin: 0 auto;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 1em;
+}
+
+.navi_box div.navi_prof_logout a {
+  width: 10em;
+  height: 2em;
+  padding: 0.7em;
+  background-color: #8ac6d1;
+  border-radius: 3em;
+  color: white;
+  transition: 0.3s;
+}
+
+.navi_box div.navi_prof_logout a:hover {
+  opacity: 0.8;
+  transition: 0.1s;
 }
 
 .confirm_box {
@@ -801,50 +885,73 @@ ul {
   text-decoration-line: none;
 }
 
-.navi_search {
-  color: #616161;
-  float: right;
-  margin-top: 12px;
-  margin-right: 20px;
-}
-
-.navi_search span {
-  color: #616161;
-  font-size: 13px;
-}
-
 .main_box {
   position: relative;
-  background-color: white;
-  width: 900px;
+  background-color: #F7F7F7;
+  width: 100%;
   height: auto;
-  margin: 30px auto 30px auto;
-  border-radius: 4px;
+  margin: 5em 5em 0 21em;
+  border-radius: 0.2em;
   z-index: 0;
 }
 
-.main_box table {
-  margin: 20px 30px;
-  padding-top: 10px;
+.main_box div.navi_search {
+  color: #444;
+  height: 4em;
+  margin-top: 1em;
+  margin-right: 2em;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
-.main_box tr {
-  color: #616161;
+.main_box div.navi_search span {
+  color: #444;
+  font-size: 13px;
 }
 
-.main_box td {
-  border-top: 1px solid #616161;
-  color: #616161;
-  padding: 5px;
+.main_box div.main_contents {
+  margin: 0 2em 2em 2em;
+  background-color: white;
 }
 
-.table_border {
+.main_box div.main_contents table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+.main_box div.main_contents tr {
+  color: #444;
+  height: 5em;
+  margin: 0;
   transition-duration: 0.5s;
 }
 
-.table_border:hover {
-  background-color: #E6EFF4;
+.main_box div.main_contents tr:hover {
+  background-color: #F7F7F7;
   transition-duration: 0.3s;
+}
+
+.main_box div.main_contents td {
+  color: #444;
+  padding: 0.3em;
+  margin: 0;
+}
+
+.main_box div.main_contents td a {
+  color: #444;
+}
+
+.main_box div.main_contents td img {
+  width: 4em;
+  height: 4em;
+  margin: 0.4em 0 0 0.4em;
+  border: 0.1em solid #444;
+  border-radius: 3em;
+}
+
+.main_box div.main_contents .list_name {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .main_name {
