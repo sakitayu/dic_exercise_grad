@@ -1,8 +1,21 @@
 <tr class="table_border" id="request_id_is_<%= ping.follower.id %>">
-  <td class="main_name">
+  <td>
+    <% if ping.follower.image.url == nil %>
+      <% if ping.follower.gender == "男" %>
+        <%= link_to image_tag('male.png'), user_path(ping.follower.id) %>
+      <% elsif ping.follower.gender == "女" %>
+        <%= link_to image_tag('female.png'), user_path(ping.follower.id) %>
+      <% elsif ping.follower.gender == "どちらでもない" %>
+        <%= link_to image_tag('trans.png'), user_path(ping.follower.id) %>
+      <% end %>
+    <% else %>
+      <%= link_to image_tag(ping.follower.image.url), user_path(ping.follower.id) unless ping.follower.image.url == nil %>
+    <% end %>
+  </td>
+  <td class="list_name">
     <%= link_to "#{ping.follower.name}", user_path(ping.follower.id)  %>
   </td>
-  <td class="main_area"><%= ping.follower.area %></td>
-  <td class="main_gender"><%= ping.follower.gender %></td>
-  <td class="main_age"><%= ping.follower.age %></td>
+  <td class="list_area"><%= ping.follower.area %></td>
+  <td class="list_gender"><%= ping.follower.gender %></td>
+  <td class="list_age"><%= ping.follower.age %></td>
 </tr>

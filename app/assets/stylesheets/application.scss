@@ -57,7 +57,6 @@ header {
   background-color: $dark-green;
   height: 5em;
   width: 100%;
-  position: fixed;
   z-index: 2;
   div.header_block {
     width: 80em; /* 共通の横幅 =1280px */
@@ -139,7 +138,6 @@ ul {
 .login_container{
   width:80em;
   margin:0 auto;
-  margin-top: 5em;
   display: flex;
   div.login_box {
     width: 28em;
@@ -220,7 +218,6 @@ ul {
 .regis_container {
   width: 80em; /* 共通の横幅 =1280px */
   margin:0 auto;
-  margin-top: 5em;
   display: flex;
   justify-content: space-between;
   div.regis_box {
@@ -555,7 +552,6 @@ ul {
 .start_container {
   width: 80em; /* 共通の横幅 =1280px */
   margin:0 auto;
-  margin-top: 5em;
   display: flex;
   flex-direction: row-reverse;
   div.start_box{
@@ -710,16 +706,16 @@ ul {
   width: 80em; /* 共通の横幅 =1280px */
   margin:0 auto;
   display: flex;
-  margin-top: 5em;
 }
 
 .navi_box {
-  position: fixed;
   background-color: $light-grey;
-  width: 12em;
-  height: 30em;
+  width: 13.5em;
+  height: auto;
   margin: 5em 0 0 5em;
   border-radius: 0.2em;
+  position: sticky;
+  top: 0;
   div.state_umbrella {
     width: 100%;
     height: 2em;
@@ -741,6 +737,7 @@ ul {
       border: 0.1em solid $dark-grey;
       border-radius: 5em;
       margin: 2em 0 1em 0;
+      background-color: white;
     }
   }
   div.navi_prof_name {
@@ -772,13 +769,20 @@ ul {
     width: 100%;
     height: 5em;
     background-color: $light-pink;
-    margin: 3em 0;
+    margin: 1em 0;
+  }
+  div.navi_prof_state {
+    width: 100%;
+    height: 5em;
+    background-color: $dark-pink;
+    margin: 1em 0;
   }
   div.navi_prof_logout {
-    margin: 0 auto;
+    margin: 5em auto;
     font-weight: bold;
     text-align: center;
-    padding-top: 1em;
+    position: relative;
+    bottom:2em;
     a {
       width: 10em;
       height:2em;
@@ -833,16 +837,20 @@ ul {
   background-color: $light-grey;
   width: 100%;
   height: auto;
-  margin: 5em 5em 0 21em;
+  margin: 5em 5em 0 5em;
   border-radius: 0.2em;
   z-index: 0;
   div.navi_search {
     color: $dark-grey;
-    height: 4em;
+    height: 3em;
     margin-top: 1em;
     margin-right: 2em;
+    padding-top: 1em;
     display: flex;
     flex-direction: row-reverse;
+    position: sticky;
+    top: 0;
+    background-color: $light-grey;
     span {
       color: $dark-grey;
       font-size:13px;
@@ -878,6 +886,7 @@ ul {
         margin: 0.4em 0 0 0.4em;
         border: 0.1em solid $dark-grey;
         border-radius: 3em;
+        background-color: white;
       }
     }
     .list_name {

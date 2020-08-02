@@ -37,7 +37,6 @@ header {
   background-color: #8ac6d1;
   height: 5em;
   width: 100%;
-  position: fixed;
   z-index: 2;
 }
 
@@ -127,7 +126,6 @@ ul {
 .login_container {
   width: 80em;
   margin: 0 auto;
-  margin-top: 5em;
   display: flex;
 }
 
@@ -221,7 +219,6 @@ ul {
   width: 80em;
   /* 共通の横幅 =1280px */
   margin: 0 auto;
-  margin-top: 5em;
   display: flex;
   justify-content: space-between;
 }
@@ -599,7 +596,6 @@ ul {
   width: 80em;
   /* 共通の横幅 =1280px */
   margin: 0 auto;
-  margin-top: 5em;
   display: flex;
   flex-direction: row-reverse;
 }
@@ -752,16 +748,16 @@ ul {
   /* 共通の横幅 =1280px */
   margin: 0 auto;
   display: flex;
-  margin-top: 5em;
 }
 
 .navi_box {
-  position: fixed;
   background-color: #F7F7F7;
-  width: 12em;
-  height: 30em;
+  width: 13.5em;
+  height: auto;
   margin: 5em 0 0 5em;
   border-radius: 0.2em;
+  position: sticky;
+  top: 0;
 }
 
 .navi_box div.state_umbrella {
@@ -789,6 +785,7 @@ ul {
   border: 0.1em solid #444;
   border-radius: 5em;
   margin: 2em 0 1em 0;
+  background-color: white;
 }
 
 .navi_box div.navi_prof_name {
@@ -826,14 +823,22 @@ ul {
   width: 100%;
   height: 5em;
   background-color: #fae3d9;
-  margin: 3em 0;
+  margin: 1em 0;
+}
+
+.navi_box div.navi_prof_state {
+  width: 100%;
+  height: 5em;
+  background-color: #ffb6b9;
+  margin: 1em 0;
 }
 
 .navi_box div.navi_prof_logout {
-  margin: 0 auto;
+  margin: 5em auto;
   font-weight: bold;
   text-align: center;
-  padding-top: 1em;
+  position: relative;
+  bottom: 2em;
 }
 
 .navi_box div.navi_prof_logout a {
@@ -890,18 +895,22 @@ ul {
   background-color: #F7F7F7;
   width: 100%;
   height: auto;
-  margin: 5em 5em 0 21em;
+  margin: 5em 5em 0 5em;
   border-radius: 0.2em;
   z-index: 0;
 }
 
 .main_box div.navi_search {
   color: #444;
-  height: 4em;
+  height: 3em;
   margin-top: 1em;
   margin-right: 2em;
+  padding-top: 1em;
   display: flex;
   flex-direction: row-reverse;
+  position: sticky;
+  top: 0;
+  background-color: #F7F7F7;
 }
 
 .main_box div.navi_search span {
@@ -947,6 +956,7 @@ ul {
   margin: 0.4em 0 0 0.4em;
   border: 0.1em solid #444;
   border-radius: 3em;
+  background-color: white;
 }
 
 .main_box div.main_contents .list_name {

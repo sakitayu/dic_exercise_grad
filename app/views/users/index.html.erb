@@ -1,12 +1,57 @@
 <div class="main_container">
 
 <% if current_user.have_umbrella %>
-  <div class="navi_box">
-    <div>ここにナビ</div>
-    <div><%= link_to "マイプロフィール", user_path(current_user.id) %></div>
+  <div class="navi_container">
+    <div class="navi_box">
+      <div class="state_umbrella"><p>傘を持っています</p></div>
+        <div class="navi_prof_pic">
+          <% if current_user.image.url == nil %>
+            <% if current_user.gender == "男" %>
+              <%= image_tag('male.png') %>
+            <% elsif current_user.gender == "女" %>
+              <%= image_tag('female.png') %>
+            <% elsif current_user.gender == "どちらでもない" %>
+              <%= image_tag('trans.png') %>
+            <% end %>
+          <% else %>
+            <%= image_tag(current_user.image.url) unless current_user.image.url == nil %>
+          <% end %>
+        </div>
+        <div class="navi_prof_name">
+          <p><%= current_user.name %></p>
+        </div>
+        <div class="navi_prof_mypage">
+          <p><%= link_to "マイページ", user_path(current_user.id) %></p>
+        </div>
+        <div class="navi_prof_state">
+          ここに通知
+        </div>
+        <div class="navi_prof_notification">
+          ここに状態
+        </div>
+        <div class="navi_prof_logout">
+          <% if user_signed_in? %>
+              <div><%= link_to "ログアウトして終了", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %></div>
+          <% end %>
+        </div>
+    </div>
   </div>
 
   <div class="main_box">
+    <div class="navi_search">
+      <div>
+        <%= search_form_for @q do |f| %>
+          <%= f.label :area, "場所" %>
+          <%= f.search_field :area_cont, size: "10x10" %>
+          <%= f.label :gender, "性別" %>
+          <%= f.select :gender_eq, [['男', 1], ['女', 2], ['どちらでもない', 3]], :include_blank => '未選択' %>
+          <%= f.label :age, "年齢" %>
+          <%= f.select :age_eq, [['20~26', 1], ['27~33', 2], ['34~40', 3], ['41~47', 4], ['48~60', 5], ['非公開', 6]], :include_blank => '未選択' %>
+          <%= f.submit "検索" %>
+        <% end %>
+      </div>
+    </div>
+
     <div class="main_contents">
       <table id="request_user_id_is_<%= current_user.id %>">
         <% @matchings.each do |matching| %>
@@ -16,17 +61,24 @@
           <% if followed.id == current_user.id && follower.have_umbrella == false %>
             <tr class="table_border" id="request_user_list_id_is_<%= follower.id %>">
               <td>
+                <% if follower.image.url == nil %>
+                  <% if follower.gender == "男" %>
+                    <%= link_to image_tag('male.png'), user_path(follower.id) %>
+                  <% elsif follower.gender == "女" %>
+                    <%= link_to image_tag('female.png'), user_path(follower.id) %>
+                  <% elsif follower.gender == "どちらでもない" %>
+                    <%= link_to image_tag('trans.png'), user_path(follower.id) %>
+                  <% end %>
+                <% else %>
+                  <%= link_to image_tag(follower.image.url), user_path(follower.id) unless follower.image.url == nil %>
+                <% end %>
+              </td>
+              <td class="list_name">
                 <%= link_to "#{follower.name}", user_path(follower.id)  %>
               </td>
-              <td>
-                <%= follower.area %>
-              </td>
-              <td>
-                <%= follower.gender %>
-              </td>
-              <td>
-                <%= follower.age %>
-              </td>
+              <td class="list_area"><%= follower.area %></td>
+              <td class="list_gender"><%= follower.gender %></td>
+              <td class="list_age"><%= follower.age %></td>
             </tr>
           <% end %>
         <% end %>
@@ -36,38 +88,41 @@
   </div>
 
 <% else %>
-
-  <div class="navi_box">
-    <div class="state_umbrella"><p>傘を持っていません</p></div>
-      <div class="navi_prof_pic">
-        <% if current_user.image.url == nil %>
-          <% if current_user.gender == "男" %>
-            <%= image_tag('male.png') %>
-          <% elsif current_user.gender == "女" %>
-            <%= image_tag('female.png') %>
-          <% elsif current_user.gender == "どちらでもない" %>
-            <%= image_tag('trans.png') %>
+  <div class="navi_container">
+    <div class="navi_box">
+      <div class="state_umbrella"><p>傘を持っていません</p></div>
+        <div class="navi_prof_pic">
+          <% if current_user.image.url == nil %>
+            <% if current_user.gender == "男" %>
+              <%= image_tag('male.png') %>
+            <% elsif current_user.gender == "女" %>
+              <%= image_tag('female.png') %>
+            <% elsif current_user.gender == "どちらでもない" %>
+              <%= image_tag('trans.png') %>
+            <% end %>
+          <% else %>
+            <%= image_tag(current_user.image.url) unless current_user.image.url == nil %>
           <% end %>
-        <% else %>
-          <%= image_tag(current_user.image.url) unless current_user.image.url == nil %>
-        <% end %>
-      </div>
-      <div class="navi_prof_name">
-        <p><%= current_user.name %></p>
-      </div>
-      <div class="navi_prof_mypage">
-        <p><%= link_to "マイページ", user_path(current_user.id) %></p>
-      </div>
-      <div class="navi_prof_notification">
-        ここに通知
-      </div>
-      <div class="navi_prof_logout">
-        <% if user_signed_in? %>
-            <div><%= link_to "ログアウトして終了", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %></div>
-        <% end %>
-      </div>
+        </div>
+        <div class="navi_prof_name">
+          <p><%= current_user.name %></p>
+        </div>
+        <div class="navi_prof_mypage">
+          <p><%= link_to "マイページ", user_path(current_user.id) %></p>
+        </div>
+        <div class="navi_prof_state">
+          ここに通知
+        </div>
+        <div class="navi_prof_notification">
+          ここに状態
+        </div>
+        <div class="navi_prof_logout">
+          <% if user_signed_in? %>
+              <div><%= link_to "ログアウトして終了", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %></div>
+          <% end %>
+        </div>
+    </div>
   </div>
-
   <% if Matching.find_by(followed_id:current_user.id) %>
     <div class="confirm_box" id="confirm_id_is_<%= current_user.id %>">
       <%= link_to "あなたのリクエストが承諾されました。確認してください。", confirm_request_users_path %>
