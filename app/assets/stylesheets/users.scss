@@ -797,7 +797,7 @@ $break-point-PC: 960px;
       &::after {
         content: "";
         display: inline-block;
-        background: url(pencil.png);
+        background-image: url(pencil.png);
         background-size: contain;
         display: inline-block;
         position: absolute;
@@ -813,7 +813,7 @@ $break-point-PC: 960px;
         &::after {
           content: "";
           display: inline-block;
-          background: url(pencil_black.png);
+          background-image: url(pencil_black.png);
           background-size: contain;
           display: inline-block;
           position: absolute;

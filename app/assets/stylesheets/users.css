@@ -894,7 +894,7 @@
 .main_box_on_my_page div.navi_profile a.edit_on_my_page::after {
   content: "";
   display: inline-block;
-  background: url(pencil.png);
+  background-image: url(pencil.png);
   background-size: contain;
   display: inline-block;
   position: absolute;
@@ -913,7 +913,7 @@
 .main_box_on_my_page div.navi_profile a.edit_on_my_page:hover::after {
   content: "";
   display: inline-block;
-  background: url(pencil_black.png);
+  background-image: url(pencil_black.png);
   background-size: contain;
   display: inline-block;
   position: absolute;
