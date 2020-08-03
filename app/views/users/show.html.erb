@@ -72,7 +72,7 @@
       <div><%= link_to 'ユーザー一覧に戻る', users_path, class: "back_to_users" %></div>
       <div class="my_page_on_profile">マイページ</div>
       <div>
-        <%= link_to "編集", edit_user_path(current_user.id), class: "edit_on_my_page" if current_user.id == @user.id %>
+        <%= link_to "プロフィールを編集", edit_user_path(current_user.id), class: "edit_on_my_page" if current_user.id == @user.id %>
       </div>
     <% end %>
   </div>
