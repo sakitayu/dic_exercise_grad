@@ -43,7 +43,6 @@ body {
   font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
   font-size: 1em;
   min-width: 80em;
-  min-height: 100vh;
   margin:0;
   padding:0;
   display: flex;
@@ -121,14 +120,12 @@ main {
 .regis_background, .login_background {
   background-image: url(/images/rain.jpg);
   background-size: cover;
-  min-height: 46em;
 }
 
 .start_background {
   background-image: url(/images/undraw_raining_sguh.png);
   background-size: contain;
   background-repeat:  no-repeat;
-  min-height: 46em;
   
 }
 
