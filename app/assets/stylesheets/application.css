@@ -22,6 +22,7 @@ body {
   font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
   font-size: 1em;
   min-width: 80em;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   display: flex;
