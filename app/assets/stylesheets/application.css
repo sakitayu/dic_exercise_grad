@@ -22,6 +22,7 @@ body {
   font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
   font-size: 1em;
   min-width: 80em;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   display: flex;
@@ -918,6 +919,59 @@ ul {
   font-size: 13px;
 }
 
+.main_box div.navi_profile {
+  color: #444;
+  height: 3em;
+  margin-top: 1em;
+  margin-left: 3em;
+  padding-top: 0.5em;
+  top: 0;
+  background-color: #F7F7F7;
+}
+
+.main_box div.navi_profile a {
+  font-size: 1.3em;
+  color: #999999;
+  transition: 0.3s;
+  padding-left: 0.5em;
+}
+
+.main_box div.navi_profile a::before {
+  content: "";
+  position: absolute;
+  left: 1.6em;
+  top: 1.5em;
+  width: 0;
+  height: 0;
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.8em solid #999999;
+  transition: 0.3s;
+}
+
+.main_box div.navi_profile a:hover {
+  color: #444;
+  transition: 0.1s;
+}
+
+.main_box div.navi_profile a:hover::before {
+  content: "";
+  position: absolute;
+  left: 1.6em;
+  top: 1.5em;
+  width: 0;
+  height: 0;
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.8em solid #444;
+  transition: 0.1s;
+}
+
+.main_box div.navi_profile span {
+  color: #444;
+  font-size: 13px;
+}
+
 .main_box div.main_contents {
   margin: 0 2em 2em 2em;
   background-color: white;
@@ -964,85 +1018,82 @@ ul {
   font-weight: bold;
 }
 
-.main_name {
-  width: 180px;
+.profile_container {
+  display: flex;
+  background-color: white;
+  margin: 0 2em 2em 2em;
+  height: 30em;
 }
 
-.main_area {
-  width: 250px;
+.profile_container div.profile_left {
+  border: 1px solid #999999;
+  border-radius: 0.2em;
+  width: 15em;
+  margin: 2em;
+  padding: 0.5em;
 }
 
-.main_gender {
-  width: 100px;
-}
-
-.main_age {
-  width: 100px;
-}
-
-.main_my_profile {
-  width: 180px;
-}
-
-.profile_img {
-  width: 140px;
-}
-
-.profile_left {
-  border: 1px solid #616161;
-  border-radius: 5px;
-  width: 200px;
-  float: left;
-  margin: 20px 20px 20px 30px;
-  padding: 20px 0;
-}
-
-.profile_left div {
+.profile_container div.profile_left div {
   text-align: center;
-  margin-top: 5px;
+  margin-top: 1.3em;
 }
 
-.profile_right {
-  height: 330px;
-  width: 600px;
-  margin-left: 280px;
+.profile_container div.profile_left img.profile_img {
+  width: 12em;
 }
 
-.prof_area {
-  color: #616161;
-  margin-left: 10px;
-  padding-top: 20px;
-  height: 100px;
+.profile_container div.profile_left img.profile_pic {
+  width: 12em;
+  object-fit: cover;
 }
 
-.prof_area h2 {
+.profile_container div.profile_left p.prof_name {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.profile_container div.profile_left p.prof_gender {
+  text-align: center;
+  font-size: 1em;
+}
+
+.profile_container div.profile_left p.prof_age {
+  text-align: center;
+  font-size: 1em;
+}
+
+.profile_container div.profile_right {
+  margin: 2em 1em 2em 1em;
+}
+
+.profile_container div.profile_right div.prof_area {
+  color: #444;
+  height: 10em;
+}
+
+.profile_container div.profile_right div.prof_area h2 {
   margin: 0;
   padding: 0;
-  color: #616161;
+  color: #444;
 }
 
-.prof_area p {
+.profile_container div.profile_right div.prof_area p {
   margin: 0;
   padding: 0;
-  font-size: 36px;
+  font-size: 2em;
 }
 
-.prof_intro {
-  color: #616161;
-  margin-left: 0px;
-  padding: 10px;
-  height: 120px;
-  width: 550px;
+.profile_container div.profile_right div.prof_intro {
+  color: #444;
+  margin-top: 1em;
+  height: auto;
+  width: auto;
 }
 
-.prof_bottom {
+.profile_container div.profile_right div.prof_bottom {
   margin-left: 10px;
   padding: 10px;
-  width: 550px;
-}
-
-.prof_bottom_float {
-  float: right;
+  width: auto;
 }
 
 .edit_box {
@@ -1052,12 +1103,6 @@ ul {
 
 .message_box {
   padding: 20px;
-}
-
-.profile_pic {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
 }
 
 .self-container {

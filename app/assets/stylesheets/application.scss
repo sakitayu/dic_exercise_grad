@@ -43,6 +43,7 @@ body {
   font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
   font-size: 1em;
   min-width: 80em;
+  min-height: 100vh;
   margin:0;
   padding:0;
   display: flex;
@@ -856,6 +857,53 @@ ul {
       font-size:13px;
     }
   }
+  div.navi_profile {
+    color: $dark-grey;
+    height: 3em;
+    margin-top: 1em;
+    margin-left: 3em;
+    padding-top: 0.5em;
+    top: 0;
+    background-color: $light-grey;
+    a {
+      font-size: 1.3em;
+      color: $middle-grey;
+      transition: 0.3s;
+      padding-left: 0.5em;
+      &::before {
+        content: "";
+        position: absolute;
+        left:1.6em;
+        top: 1.5em;
+        width: 0;
+        height: 0;
+        border-top: 0.4em solid transparent;
+        border-bottom: 0.4em solid transparent;
+        border-right: 0.8em solid $middle-grey;
+        transition: 0.3s;
+      }
+      &:hover {
+        color: $dark-grey;
+        transition: 0.1s;
+        &::before {
+          content: "";
+          position: absolute;
+          left:1.6em;
+          top: 1.5em;
+          width: 0;
+          height: 0;
+          border-top: 0.4em solid transparent;
+          border-bottom: 0.4em solid transparent;
+          border-right: 0.8em solid $dark-grey;
+          transition: 0.1s;
+        }
+      }
+    }
+    span {
+      color: $dark-grey;
+      font-size:13px;
+    }
+  }
   div.main_contents {
     margin: 0 2em 2em 2em;
     background-color: white;
@@ -896,83 +944,78 @@ ul {
   }
 }
 
-.main_name {
-  width: 180px;
-}
-
-.main_area {
-  width: 250px;
-}
-
-.main_gender {
-  width: 100px;
-}
-
-.main_age {
-  width: 100px;
-}
-
-.main_my_profile {
-  width: 180px;
-}
-
-.profile_img {
-  width: 140px;
-}
-
-.profile_left {
-  border:1px solid #616161;
-  border-radius: 5px;
-  width:200px;
-  float:left;
-  margin:20px 20px 20px 30px;
-  padding:20px 0;
-  div {
-    text-align: center;
-    margin-top:5px;
+.profile_container {
+  display: flex;
+  background-color: white;
+  margin: 0 2em 2em 2em;
+  height: 30em;
+  div.profile_left {
+    border:1px solid $middle-grey;
+    border-radius: 0.2em;
+    width: 15em;
+    margin:2em;
+    padding:0.5em;
+    div {
+      text-align: center;
+      margin-top: 1.3em;
+    }
+    img.profile_img {
+      width: 12em;
+    }
+    img.profile_pic {
+      width: 12em;
+      object-fit: cover;
+    }
+    p.prof_name {
+      text-align: center;
+      font-size: 1.5em;
+    }
+    p.prof_gender {
+      text-align: center;
+      font-size: 1em;
+    }
+    p.prof_age {
+      text-align: center;
+      font-size: 1em;
+    }
   }
-}
-
-.profile_right {
-  height:330px;
-  width:600px;
-  margin-left:280px;
-}
-
-.prof_area {
-  color:#616161;
-  margin-left:10px;
-  padding-top:20px;
-  height: 100px;
-  h2 {
-    margin:0;
-    padding:0;
-    color:#616161;
+  div.profile_right {
+    margin: 2em 1em 2em 1em;
+    div.prof_area {
+      color: $dark-grey;
+      height: 10em;
+      h2 {
+        margin: 0;
+        padding: 0;
+        color: $dark-grey;
+      }
+      p {
+        margin: 0;
+        padding: 0;
+        font-size: 2em;
+      }
+    }
+    div.prof_intro {
+      color: $dark-grey;
+      margin-top: 1em;
+      height: auto;
+      width:auto;
+    }
+    div.prof_bottom {
+      margin-left:10px;
+      padding:10px;
+      width:auto;
+    }
   }
-  p {
-    margin:0;
-    padding:0;
-    font-size: 36px;
-  }
+  
 }
 
-.prof_intro {
-  color:#616161;
-  margin-left:0px;
-  padding:10px;
-  height: 120px;
-  width:550px;
-}
 
-.prof_bottom {
-  margin-left:10px;
-  padding:10px;
-  width:550px;
-}
 
-.prof_bottom_float {
-  float:right;
-}
+
+
+
+
 
 .edit_box {
   text-align: center;
@@ -981,12 +1024,6 @@ ul {
 
 .message_box {
   padding:20px;
-}
-
-.profile_pic {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
 }
 
 

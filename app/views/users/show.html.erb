@@ -1,14 +1,40 @@
-<% if current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil %>
-  <div class="navi_box">
-    <p><strong><%= @follower.name %></strong> さんのリクエストを承諾しますか？</p>
+<div class="main_container">
+
+  <div class="navi_container">
+    <div class="navi_box">
+      <div class="state_umbrella"><p>傘を持っています</p></div>
+        <div class="navi_prof_pic">
+          <% if current_user.image.url == nil %>
+            <% if current_user.gender == "男" %>
+              <%= image_tag('male.png') %>
+            <% elsif current_user.gender == "女" %>
+              <%= image_tag('female.png') %>
+            <% elsif current_user.gender == "どちらでもない" %>
+              <%= image_tag('trans.png') %>
+            <% end %>
+          <% else %>
+            <%= image_tag(current_user.image.url) unless current_user.image.url == nil %>
+          <% end %>
+        </div>
+        <div class="navi_prof_name">
+          <p><%= current_user.name %></p>
+        </div>
+        <div class="navi_prof_mypage">
+          <p><%= link_to "マイページ", user_path(current_user.id) %></p>
+        </div>
+        <div class="navi_prof_state">
+          ここに通知
+        </div>
+        <div class="navi_prof_notification">
+          ここに状態
+        </div>
+        <div class="navi_prof_logout">
+          <% if user_signed_in? %>
+              <div><%= link_to "ログアウトして終了", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %></div>
+          <% end %>
+        </div>
+    </div>
   </div>
-  <div id="cancel_id_is_<%= @user.id %><%= current_user.id %>"></div>
-<% else %>
-<div class="navi_box">
-  <p><strong><%= @user.name %></strong> <%= @user.email if current_user.id == @user.id %> さんのプロフィール</p>
-  <div class="navi_search"><%= link_to 'ユーザーの一覧に戻る', users_path %> </div>
-</div>
-<% end %>
 
 <% if current_user.id != @user.id && current_user.have_umbrella == true %>
   <!-- ここに傘持ちユーザーのみに表示されるフォロー通知を置く -->
@@ -23,51 +49,68 @@
 <% end %>
 
 <div class="main_box">
-  <div class="profile_left">
-    <div>
-      <% if @user.image.url == nil %>
-        <% if @user.gender == "男" %>
-          <%= image_tag 'male.png', class: "profile_img" %>
-        <% elsif @user.gender == "女" %>
-          <%= image_tag 'female.png', class: "profile_img" %>
-        <% elsif @user.gender == "どちらでもない" %>
-          <%= image_tag 'trans.png', class: "profile_img" %>
-        <% end %>
-      <% else %>
-        <%= image_tag @user.image.url, class: "profile_pic" unless @user.image.url == nil %>
-      <% end %>
+  <% if current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil %>
+    <div class="navi_profile">
+      <p><strong><%= @follower.name %></strong> さんのリクエストを承諾しますか？</p>
     </div>
-    <div><%= @user.name %></div>
-    <div><strong>性別</strong> <%= @user.gender %></div>
-    <div><strong>年齢</strong> <%= @user.age %></div>
+    <div id="cancel_id_is_<%= @user.id %><%= current_user.id %>"></div>
+  <% else %>
+  <div class="navi_profile">
+    <%= link_to 'ユーザー一覧に戻る', users_path %>
   </div>
+  <% end %>
 
-  <div class="profile_right">
-    <div class="prof_area">
-      <h2>今いる場所</h2>
-      <p><%= @user.area %></p>
-    </div>
-    <div class="prof_intro">
-      <%= @user.introduction %>
-    </div>
-    <div class="prof_bottom">
-      <div class="prof_bottom_float">
-        <%= link_to "プロフィールを編集", edit_user_path(current_user.id) if current_user.id == @user.id %>
-        <% if @followed == nil && current_user.id != @user.id %>
-          <div id="request_form_id_is_<%= @user.id %>"><%= render 'request_form', user: @user %></div>
-        <% elsif @followed != nil %>
-          <div>
-            <% if current_user.id == @followed.id %>
-              <%= link_to 'ユーザー一覧画面に戻る', users_path unless current_user.id == @user.id %> 
-              <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-              <%= form_with(model: current_user.active_matchings.build(followed_id: @user.id)) do |f| %>
-                <%= f.hidden_field :followed_id %>
-                <%= f.submit "承諾する", data: { confirm: '本当に承諾しますか？(承諾するとメッセージルームに移動します)' } if current_user.id != @user.id && current_user.have_umbrella == true %>
-              <% end %>
-            <% end %>
-          </div>
+  <div class="profile_container">
+    <div class="profile_left">
+      <div>
+        <% if @user.image.url == nil %>
+          <% if @user.gender == "男" %>
+            <%= image_tag 'male.png', class: "profile_img" %>
+          <% elsif @user.gender == "女" %>
+            <%= image_tag 'female.png', class: "profile_img" %>
+          <% elsif @user.gender == "どちらでもない" %>
+            <%= image_tag 'trans.png', class: "profile_img" %>
+          <% end %>
+        <% else %>
+          <%= image_tag @user.image.url, class: "profile_pic" unless @user.image.url == nil %>
         <% end %>
+      </div>
+      <p class="prof_name"><strong><%= @user.name %></strong></p>
+      <p class="prof_gender"><b>性別</b> <%= @user.gender %></p>
+      <p class="prof_age"><b>年齢</b> <%= @user.age %> 才</p>
+    </div>
+
+    <div class="profile_right">
+      <div class="prof_area">
+        <h2>今いる場所</h2>
+        <p><%= @user.area %></p>
+      </div>
+      <div class="prof_intro">
+        <%= @user.introduction %>
+      </div>
+      <div class="prof_bottom">
+        <div class="prof_bottom_float">
+          <%= link_to "プロフィールを編集", edit_user_path(current_user.id) if current_user.id == @user.id %>
+          <% if @followed == nil && current_user.id != @user.id %>
+            <div id="request_form_id_is_<%= @user.id %>"><%= render 'request_form', user: @user %></div>
+          <% elsif @followed != nil %>
+            <div>
+              <% if current_user.id == @followed.id %>
+                <%= link_to 'ユーザー一覧画面に戻る', users_path unless current_user.id == @user.id %> 
+                <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                <%= form_with(model: current_user.active_matchings.build(followed_id: @user.id)) do |f| %>
+                  <%= f.hidden_field :followed_id %>
+                  <%= f.submit "承諾する", data: { confirm: '本当に承諾しますか？(承諾するとメッセージルームに移動します)' } if current_user.id != @user.id && current_user.have_umbrella == true %>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
+
+
+</div>
+
 </div>
