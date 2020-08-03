@@ -121,12 +121,14 @@ main {
 .regis_background, .login_background {
   background-image: url(/images/rain.jpg);
   background-size: cover;
+  min-height: 100vh;
 }
 
 .start_background {
   background-image: url(/images/undraw_raining_sguh.png);
   background-size: contain;
   background-repeat:  no-repeat;
+  min-height: 100vh;
   
 }
 
