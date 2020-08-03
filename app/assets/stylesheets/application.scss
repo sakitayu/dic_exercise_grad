@@ -852,10 +852,6 @@ ul {
     position: sticky;
     top: 0;
     background-color: $light-grey;
-    span {
-      color: $dark-grey;
-      font-size:13px;
-    }
   }
   div.navi_profile {
     color: $dark-grey;
@@ -950,6 +946,122 @@ ul {
   }
 }
 
+.main_box_on_my_page {
+  position: relative;
+  background-color: $light-green;
+  width: 100%;
+  height: auto;
+  margin: 5em 5em 0 5em;
+  border-radius: 0.2em;
+  z-index: 0;
+  div.navi_search {
+    color: $dark-green;
+    height: 3em;
+    margin-top: 1em;
+    margin-right: 2em;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: row-reverse;
+    position: sticky;
+    top: 0;
+    background-color: $light-green;
+  }
+  div.navi_profile {
+    color: $dark-grey;
+    height: 3em;
+    margin-top: 1em;
+    margin-left: 3em;
+    margin-right: 2em;
+    padding-top: 0.5em;
+    top: 0;
+    background-color: $light-green;
+    display: flex;
+    justify-content: space-between;
+    img {
+      width:1em;
+      height:1em;
+    }
+    a.back_to_users {
+      font-size: 1.3em;
+      color: $dark-grey;
+      transition: 0.3s;
+      padding-left: 0.5em;
+      &::before {
+        content: "";
+        position: absolute;
+        left:1.6em;
+        top: 1.5em;
+        width: 0;
+        height: 0;
+        border-top: 0.4em solid transparent;
+        border-bottom: 0.4em solid transparent;
+        border-right: 0.8em solid $dark-grey;
+        transition: 0.3s;
+      }
+      &:hover {
+        color: black;
+        transition: 0.1s;
+        &::before {
+          content: "";
+          position: absolute;
+          left:1.6em;
+          top: 1.5em;
+          width: 0;
+          height: 0;
+          border-top: 0.4em solid transparent;
+          border-bottom: 0.4em solid transparent;
+          border-right: 0.8em solid black;
+          transition: 0.1s;
+        }
+      }
+    }
+    a.edit_on_my_page {
+      font-size: 1.3em;
+      color: $dark-grey;
+      transition: 0.3s;
+      padding-right: 1.1em;
+      &::after {
+        content: "";
+        display: inline-block;
+        background-image: url(pencil.png);
+        background-size: contain;
+        display: inline-block;
+        position: absolute;
+        right:1.6em;
+        top: 1.5em;
+        width: 0.8em;
+        height: 0.8em;
+        transition: 0.3s;
+      }
+      &:hover {
+        color: black;
+        transition: 0.1s;
+        &::after {
+          content: "";
+          display: inline-block;
+          background-image: url(pencil_black.png);
+          background-size: contain;
+          display: inline-block;
+          position: absolute;
+          right:1.6em;
+          top: 1.5em;
+          width: 0.8em;
+          height: 0.8em;
+          transition: 0.1s;
+        }
+      }
+    }
+    div.my_page_on_profile {
+      font-size: 2em;
+      font-weight: bold;
+      margin: 0 5.5em 0 0;
+      position: relative;
+      bottom:0.3em;
+    }
+  }
+}
+
+
 .profile_container {
   display: flex;
   background-color: white;
@@ -978,11 +1090,11 @@ ul {
     }
     p.prof_gender {
       text-align: center;
-      font-size: 1em;
+      font-size: 1.2em;
     }
     p.prof_age {
       text-align: center;
-      font-size: 1em;
+      font-size: 1.2em;
     }
   }
   div.profile_right {
