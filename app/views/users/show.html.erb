@@ -73,7 +73,6 @@
       <div class="my_page_on_profile">マイページ</div>
       <div>
         <%= link_to "編集", edit_user_path(current_user.id), class: "edit_on_my_page" if current_user.id == @user.id %>
-        <%#= image_tag('pencil.png') %>
       </div>
     <% end %>
   </div>
