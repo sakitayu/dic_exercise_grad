@@ -2,7 +2,13 @@
 
   <div class="navi_container">
     <div class="navi_box">
-      <div class="state_umbrella"><p>傘を持っています</p></div>
+      <div class="state_umbrella">
+        <% if current_user.have_umbrella %>
+          <p>傘を持っています</p>
+        <% else %>
+          <p>傘を持っていません</p>
+        <% end %>
+      </div>
         <div class="navi_prof_pic">
           <% if current_user.image.url == nil %>
             <% if current_user.gender == "男" %>
@@ -56,7 +62,13 @@
     <div id="cancel_id_is_<%= @user.id %><%= current_user.id %>"></div>
   <% else %>
   <div class="navi_profile">
-    <%= link_to 'ユーザー一覧に戻る', users_path %>
+    <% if current_user.id != @user.id %>
+      <%= link_to 'ユーザー一覧に戻る', users_path %>
+    <% else %>
+      <div><%= link_to 'ユーザー一覧に戻る', users_path %></div>
+      <div class="my_page_on_profile">マイページ</div>
+      <div>編集</div>
+    <% end %>
   </div>
   <% end %>
 
