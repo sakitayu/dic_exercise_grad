@@ -515,11 +515,13 @@ $break-point-PC: 960px;
   display: flex;
 }
 
+/* 左側のナビゲーションカラム */
+
 .navi_box {
   background-color: $light-grey;
-  width: 13.5em;
+  width: 12.2em;
   height: auto;
-  margin: 5em 0 0 5em;
+  margin: 5em 0 0 5.1em;
   border-radius: 0.2em;
   position: sticky;
   top: 0;
@@ -615,19 +617,79 @@ $break-point-PC: 960px;
   margin: 5em 5em 0 5em;
   border-radius: 0.2em;
   z-index: 0;
-  div.navi_search {
+  div.search_user {
     color: $dark-grey;
     height: 3em;
     margin-top: 1em;
     margin-right: 2em;
-    padding-top: 1em;
+    padding-top: 0.5em;
     display: flex;
     flex-direction: row-reverse;
     position: sticky;
     top: 0;
     background-color: $light-grey;
   }
-  div.navi_profile {
+  div.main_contents {
+    margin: 0 2em 2em 2em;
+    background-color: white;
+    table {
+    width: 100%;
+    border-spacing: 0;
+    }
+    tr {
+      color: $dark-grey;
+      height: 5em;
+      margin: 0;
+      transition-duration: 0.5s;
+      &:hover {
+        background-color: $light-grey;
+        transition-duration: 0.3s;
+      }
+    }
+    td {
+      color: $dark-grey;
+      padding: 0.3em;
+      margin: 0;
+      a {
+        color: $dark-grey
+      }
+      img {
+        width: 4em;
+        height: 4em;
+        margin: 0.4em 0 0 0.4em;
+        border: 0.1em solid $dark-grey;
+        border-radius: 3em;
+        background-color: white;
+      }
+    }
+    .list_name {
+      font-size:1.5em;
+      font-weight: bold;
+    }
+  }
+}
+
+.main_box_on_user_page {
+  position: relative;
+  background-color: $light-grey;
+  width: 100%;
+  height: 37em;
+  margin: 5em 5em 0 5em;
+  border-radius: 0.2em;
+  z-index: 0;
+  div.search_user {
+    color: $dark-grey;
+    height: 3em;
+    margin-top: 1em;
+    margin-right: 2em;
+    padding-top: 0.5em;
+    display: flex;
+    flex-direction: row-reverse;
+    position: sticky;
+    top: 0;
+    background-color: $light-grey;
+  }
+  div.profile_header {
     color: $dark-grey;
     height: 3em;
     margin-top: 1em;
@@ -680,43 +742,19 @@ $break-point-PC: 960px;
       bottom:0.3em;
     }
   }
+  div.profile_header {
+    color: $dark-grey;
+    height: 3em;
+    margin-top: 1em;
+    margin-left: 3em;
+    margin-right: 2em;
+    padding-top: 0.5em;
+    top: 0;
+    background-color: $light-grey;
+  }
   div.main_contents {
     margin: 0 2em 2em 2em;
     background-color: white;
-    table {
-    width: 100%;
-    border-spacing: 0;
-    }
-    tr {
-      color: $dark-grey;
-      height: 5em;
-      margin: 0;
-      transition-duration: 0.5s;
-      &:hover {
-        background-color: $light-grey;
-        transition-duration: 0.3s;
-      }
-    }
-    td {
-      color: $dark-grey;
-      padding: 0.3em;
-      margin: 0;
-      a {
-        color: $dark-grey
-      }
-      img {
-        width: 4em;
-        height: 4em;
-        margin: 0.4em 0 0 0.4em;
-        border: 0.1em solid $dark-grey;
-        border-radius: 3em;
-        background-color: white;
-      }
-    }
-    .list_name {
-      font-size:1.5em;
-      font-weight: bold;
-    }
   }
 }
 
@@ -724,11 +762,11 @@ $break-point-PC: 960px;
   position: relative;
   background-color: $light-green;
   width: 100%;
-  height: auto;
+  height: 37em;
   margin: 5em 5em 0 5em;
   border-radius: 0.2em;
   z-index: 0;
-  div.navi_search {
+  div.search_user {
     color: $dark-green;
     height: 3em;
     margin-top: 1em;
@@ -740,7 +778,7 @@ $break-point-PC: 960px;
     top: 0;
     background-color: $light-green;
   }
-  div.navi_profile {
+  div.profile_header {
     color: $dark-grey;
     height: 3em;
     margin-top: 1em;
@@ -751,10 +789,6 @@ $break-point-PC: 960px;
     background-color: $light-green;
     display: flex;
     justify-content: space-between;
-    img {
-      width:1em;
-      height:1em;
-    }
     a.back_to_users {
       font-size: 1.3em;
       color: $dark-grey;
@@ -838,7 +872,7 @@ $break-point-PC: 960px;
 .profile_container {
   display: flex;
   background-color: white;
-  margin: 0 2em 2em 2em;
+  margin: 0 2em 0 2em;
   height: 30em;
   div.profile_left {
     border:1px solid $middle-grey;
@@ -852,9 +886,12 @@ $break-point-PC: 960px;
     }
     img.profile_img {
       width: 12em;
+      height: 12em;
+      object-fit: cover;
     }
     img.profile_pic {
       width: 12em;
+      height: 12em;
       object-fit: cover;
     }
     p.prof_name {
@@ -869,9 +906,25 @@ $break-point-PC: 960px;
       text-align: center;
       font-size: 1.2em;
     }
+    p.edit_name {
+      margin-top: 1.5em;
+      text-align: center;
+      font-size: 0.8em;
+    }
+    p.edit_gender {
+      margin-top: 0.5em;
+      text-align: center;
+      font-size: 0.8em;
+    }
+    p.edit_age {
+      margin-top: 0.5em;
+      text-align: center;
+      font-size: 0.8em;
+    }
   }
   div.profile_right {
-    margin: 2em 1em 2em 1em;
+    width: 25em;
+    margin: 2em 1em 0 1em;
     padding-right: 1em;
     div.prof_area {
       color: $dark-grey;
@@ -893,11 +946,81 @@ $break-point-PC: 960px;
       height: auto;
       width:auto;
     }
+    div.edit_intro {
+      position: absolute;
+      bottom: 4.5em;
+      color: $dark-grey;
+      margin-top: 1em;
+      height: auto;
+      width:25em;
+      textarea {
+        font-size: 1.2em;
+        color: $dark-grey;
+        resize: none;
+        height: 15em;
+        width: 100%;
+        padding: 0.2em;
+      }
+    }
     div.prof_bottom {
       margin-left:10px;
       padding:10px;
       width:auto;
     }
+    div.profile_update_button {
+      position: absolute;
+      padding-top: 1.5em;
+      top: 0;
+      right: 2em;
+    }
   }
-  
+  form {
+    display: flex;
+    div.edit_prof_img {
+      width: 12em;
+      height: 12em;
+      margin: 1.5em auto 0 auto;
+      text-align: center;
+      background-color: $light-grey;
+      #img_prev {
+        z-index: 2;
+      }
+      img {
+        object-fit: cover;
+        width: 12em;
+        height: 12em;
+        z-index: 1;
+      }
+      label {
+        display:block;
+        position: absolute;
+        z-index: 1;
+        top: 8.5em;
+        width: 9.9em;
+        height: 9.9em;
+        color: white;
+        background-color: red($color: #000000);
+        padding: 1em;
+        border: solid 0.05em $middle-grey;
+      }
+      input[type="file"] {
+        display: none;
+      }
+      div.img_submit_label {
+        position: absolute;
+        z-index: 0;
+        top: 8.5em;
+        width: 12em;
+        height: 9.35em;
+        margin: 0 auto;
+        padding-top: 2.7em;
+        background-color: white;
+        opacity: 0.7;
+        p {
+          color: black;
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }

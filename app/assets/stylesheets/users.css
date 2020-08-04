@@ -571,11 +571,12 @@
   display: flex;
 }
 
+/* 左側のナビゲーションカラム */
 .navi_box {
   background-color: #F7F7F7;
-  width: 13.5em;
+  width: 12.2em;
   height: auto;
-  margin: 5em 0 0 5em;
+  margin: 5em 0 0 5.1em;
   border-radius: 0.2em;
   position: sticky;
   top: 0;
@@ -687,76 +688,17 @@
   z-index: 0;
 }
 
-.main_box div.navi_search {
+.main_box div.search_user {
   color: #444;
   height: 3em;
   margin-top: 1em;
   margin-right: 2em;
-  padding-top: 1em;
+  padding-top: 0.5em;
   display: flex;
   flex-direction: row-reverse;
   position: sticky;
   top: 0;
   background-color: #F7F7F7;
-}
-
-.main_box div.navi_profile {
-  color: #444;
-  height: 3em;
-  margin-top: 1em;
-  margin-left: 3em;
-  margin-right: 2em;
-  padding-top: 0.5em;
-  top: 0;
-  background-color: #F7F7F7;
-  display: flex;
-  justify-content: space-between;
-}
-
-.main_box div.navi_profile a {
-  font-size: 1.3em;
-  color: #999999;
-  transition: 0.3s;
-  padding-left: 0.5em;
-}
-
-.main_box div.navi_profile a::before {
-  content: "";
-  position: absolute;
-  left: 1.6em;
-  top: 1.5em;
-  width: 0;
-  height: 0;
-  border-top: 0.4em solid transparent;
-  border-bottom: 0.4em solid transparent;
-  border-right: 0.8em solid #999999;
-  transition: 0.3s;
-}
-
-.main_box div.navi_profile a:hover {
-  color: #444;
-  transition: 0.1s;
-}
-
-.main_box div.navi_profile a:hover::before {
-  content: "";
-  position: absolute;
-  left: 1.6em;
-  top: 1.5em;
-  width: 0;
-  height: 0;
-  border-top: 0.4em solid transparent;
-  border-bottom: 0.4em solid transparent;
-  border-right: 0.8em solid #444;
-  transition: 0.1s;
-}
-
-.main_box div.navi_profile div.my_page_on_profile {
-  font-size: 2em;
-  font-weight: bold;
-  margin: 0 5.5em 0 0;
-  position: relative;
-  bottom: 0.3em;
 }
 
 .main_box div.main_contents {
@@ -805,17 +747,115 @@
   font-weight: bold;
 }
 
-.main_box_on_my_page {
+.main_box_on_user_page {
   position: relative;
-  background-color: #bbded6;
+  background-color: #F7F7F7;
   width: 100%;
-  height: auto;
+  height: 37em;
   margin: 5em 5em 0 5em;
   border-radius: 0.2em;
   z-index: 0;
 }
 
-.main_box_on_my_page div.navi_search {
+.main_box_on_user_page div.search_user {
+  color: #444;
+  height: 3em;
+  margin-top: 1em;
+  margin-right: 2em;
+  padding-top: 0.5em;
+  display: flex;
+  flex-direction: row-reverse;
+  position: sticky;
+  top: 0;
+  background-color: #F7F7F7;
+}
+
+.main_box_on_user_page div.profile_header {
+  color: #444;
+  height: 3em;
+  margin-top: 1em;
+  margin-left: 3em;
+  margin-right: 2em;
+  padding-top: 0.5em;
+  top: 0;
+  background-color: #F7F7F7;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_box_on_user_page div.profile_header a {
+  font-size: 1.3em;
+  color: #999999;
+  transition: 0.3s;
+  padding-left: 0.5em;
+}
+
+.main_box_on_user_page div.profile_header a::before {
+  content: "";
+  position: absolute;
+  left: 1.6em;
+  top: 1.5em;
+  width: 0;
+  height: 0;
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.8em solid #999999;
+  transition: 0.3s;
+}
+
+.main_box_on_user_page div.profile_header a:hover {
+  color: #444;
+  transition: 0.1s;
+}
+
+.main_box_on_user_page div.profile_header a:hover::before {
+  content: "";
+  position: absolute;
+  left: 1.6em;
+  top: 1.5em;
+  width: 0;
+  height: 0;
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.8em solid #444;
+  transition: 0.1s;
+}
+
+.main_box_on_user_page div.profile_header div.my_page_on_profile {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0 5.5em 0 0;
+  position: relative;
+  bottom: 0.3em;
+}
+
+.main_box_on_user_page div.profile_header {
+  color: #444;
+  height: 3em;
+  margin-top: 1em;
+  margin-left: 3em;
+  margin-right: 2em;
+  padding-top: 0.5em;
+  top: 0;
+  background-color: #F7F7F7;
+}
+
+.main_box_on_user_page div.main_contents {
+  margin: 0 2em 2em 2em;
+  background-color: white;
+}
+
+.main_box_on_my_page {
+  position: relative;
+  background-color: #bbded6;
+  width: 100%;
+  height: 37em;
+  margin: 5em 5em 0 5em;
+  border-radius: 0.2em;
+  z-index: 0;
+}
+
+.main_box_on_my_page div.search_user {
   color: #8ac6d1;
   height: 3em;
   margin-top: 1em;
@@ -828,7 +868,7 @@
   background-color: #bbded6;
 }
 
-.main_box_on_my_page div.navi_profile {
+.main_box_on_my_page div.profile_header {
   color: #444;
   height: 3em;
   margin-top: 1em;
@@ -841,19 +881,14 @@
   justify-content: space-between;
 }
 
-.main_box_on_my_page div.navi_profile img {
-  width: 1em;
-  height: 1em;
-}
-
-.main_box_on_my_page div.navi_profile a.back_to_users {
+.main_box_on_my_page div.profile_header a.back_to_users {
   font-size: 1.3em;
   color: #444;
   transition: 0.3s;
   padding-left: 0.5em;
 }
 
-.main_box_on_my_page div.navi_profile a.back_to_users::before {
+.main_box_on_my_page div.profile_header a.back_to_users::before {
   content: "";
   position: absolute;
   left: 1.6em;
@@ -866,12 +901,12 @@
   transition: 0.3s;
 }
 
-.main_box_on_my_page div.navi_profile a.back_to_users:hover {
+.main_box_on_my_page div.profile_header a.back_to_users:hover {
   color: black;
   transition: 0.1s;
 }
 
-.main_box_on_my_page div.navi_profile a.back_to_users:hover::before {
+.main_box_on_my_page div.profile_header a.back_to_users:hover::before {
   content: "";
   position: absolute;
   left: 1.6em;
@@ -884,14 +919,14 @@
   transition: 0.1s;
 }
 
-.main_box_on_my_page div.navi_profile a.edit_on_my_page {
+.main_box_on_my_page div.profile_header a.edit_on_my_page {
   font-size: 1.3em;
   color: #444;
   transition: 0.3s;
   padding-right: 1.1em;
 }
 
-.main_box_on_my_page div.navi_profile a.edit_on_my_page::after {
+.main_box_on_my_page div.profile_header a.edit_on_my_page::after {
   content: "";
   display: inline-block;
   background-image: url(pencil.png);
@@ -905,12 +940,12 @@
   transition: 0.3s;
 }
 
-.main_box_on_my_page div.navi_profile a.edit_on_my_page:hover {
+.main_box_on_my_page div.profile_header a.edit_on_my_page:hover {
   color: black;
   transition: 0.1s;
 }
 
-.main_box_on_my_page div.navi_profile a.edit_on_my_page:hover::after {
+.main_box_on_my_page div.profile_header a.edit_on_my_page:hover::after {
   content: "";
   display: inline-block;
   background-image: url(pencil_black.png);
@@ -924,7 +959,7 @@
   transition: 0.1s;
 }
 
-.main_box_on_my_page div.navi_profile div.my_page_on_profile {
+.main_box_on_my_page div.profile_header div.my_page_on_profile {
   font-size: 2em;
   font-weight: bold;
   margin: 0 1em 0 0;
@@ -935,7 +970,7 @@
 .profile_container {
   display: flex;
   background-color: white;
-  margin: 0 2em 2em 2em;
+  margin: 0 2em 0 2em;
   height: 30em;
 }
 
@@ -954,10 +989,13 @@
 
 .profile_container div.profile_left img.profile_img {
   width: 12em;
+  height: 12em;
+  object-fit: cover;
 }
 
 .profile_container div.profile_left img.profile_pic {
   width: 12em;
+  height: 12em;
   object-fit: cover;
 }
 
@@ -976,8 +1014,27 @@
   font-size: 1.2em;
 }
 
+.profile_container div.profile_left p.edit_name {
+  margin-top: 1.5em;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.profile_container div.profile_left p.edit_gender {
+  margin-top: 0.5em;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.profile_container div.profile_left p.edit_age {
+  margin-top: 0.5em;
+  text-align: center;
+  font-size: 0.8em;
+}
+
 .profile_container div.profile_right {
-  margin: 2em 1em 2em 1em;
+  width: 25em;
+  margin: 2em 1em 0 1em;
   padding-right: 1em;
 }
 
@@ -1005,8 +1062,90 @@
   width: auto;
 }
 
+.profile_container div.profile_right div.edit_intro {
+  position: absolute;
+  bottom: 4.5em;
+  color: #444;
+  margin-top: 1em;
+  height: auto;
+  width: 25em;
+}
+
+.profile_container div.profile_right div.edit_intro textarea {
+  font-size: 1.2em;
+  color: #444;
+  resize: none;
+  height: 15em;
+  width: 100%;
+  padding: 0.2em;
+}
+
 .profile_container div.profile_right div.prof_bottom {
   margin-left: 10px;
   padding: 10px;
   width: auto;
+}
+
+.profile_container div.profile_right div.profile_update_button {
+  position: absolute;
+  padding-top: 1.5em;
+  top: 0;
+  right: 2em;
+}
+
+.profile_container form {
+  display: flex;
+}
+
+.profile_container form div.edit_prof_img {
+  width: 12em;
+  height: 12em;
+  margin: 1.5em auto 0 auto;
+  text-align: center;
+  background-color: #F7F7F7;
+}
+
+.profile_container form div.edit_prof_img #img_prev {
+  z-index: 2;
+}
+
+.profile_container form div.edit_prof_img img {
+  object-fit: cover;
+  width: 12em;
+  height: 12em;
+  z-index: 1;
+}
+
+.profile_container form div.edit_prof_img label {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 8.5em;
+  width: 9.9em;
+  height: 9.9em;
+  color: white;
+  background-color: 0;
+  padding: 1em;
+  border: solid 0.05em #999999;
+}
+
+.profile_container form div.edit_prof_img input[type="file"] {
+  display: none;
+}
+
+.profile_container form div.edit_prof_img div.img_submit_label {
+  position: absolute;
+  z-index: 0;
+  top: 8.5em;
+  width: 12em;
+  height: 9.35em;
+  margin: 0 auto;
+  padding-top: 2.7em;
+  background-color: white;
+  opacity: 0.7;
+}
+
+.profile_container form div.edit_prof_img div.img_submit_label p {
+  color: black;
+  font-weight: bold;
 }

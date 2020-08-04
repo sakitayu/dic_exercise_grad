@@ -1,46 +1,138 @@
-<div class="navi_box">
-  <p>プロフィール編集画面</p>
-  <div class="navi_search"><%= link_to "編集をキャンセルする", user_path(current_user.id) %> </div>
-</div>
+<div class="main_container">
 
-<div class="main_box">
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2>未入力の箇所があります</h2>
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;(※自己紹介は任意で結構です)</p>
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="navi_container">
+    <div class="navi_box">
+      <div class="state_umbrella">
+        <% if current_user.have_umbrella %>
+          <p>傘を持っています</p>
+        <% else %>
+          <p>傘を持っていません</p>
+        <% end %>
+      </div>
+      <div class="navi_prof_pic">
+        <% if current_user.image.url == nil %>
+          <% if current_user.gender == "男" %>
+            <%= image_tag('male.png') %>
+          <% elsif current_user.gender == "女" %>
+            <%= image_tag('female.png') %>
+          <% elsif current_user.gender == "どちらでもない" %>
+            <%= image_tag('trans.png') %>
+          <% end %>
+        <% else %>
+          <%= image_tag(current_user.image.url) unless current_user.image.url == nil %>
+        <% end %>
+      </div>
+      <div class="navi_prof_name">
+        <p><%= current_user.name %></p>
+      </div>
+      <div class="navi_prof_mypage">
+        <p><%= link_to "マイページ", user_path(current_user.id) %></p>
+      </div>
+      <div class="navi_prof_state">
+        ここに通知
+      </div>
+      <div class="navi_prof_notification">
+        ここに状態
+      </div>
+      <div class="navi_prof_logout">
+        <% if user_signed_in? %>
+            <div><%= link_to "ログアウトして終了", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %></div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
+  </div>
 
-  <div class="edit_box">
-    <%= form_with model: @user do |form| %>
+  <div class="main_box_on_my_page">
+    <div class="profile_header">
+      <% if current_user.id != @user.id %>
+        <%= link_to 'ユーザー一覧に戻る', users_path %>
+      <% else %>
+        <div>
+          <%= link_to "編集をキャンセル", user_path(current_user.id), class: "back_to_users" %>
+        </div>
+      <% end %>
+    </div>
 
-      <%= form.hidden_field :have_umbrella, :value => @user.have_umbrella %>
-      <%= form.hidden_field :area, :value => @user.area %>
-      <%= hidden_field :follow_state, "true" %>
-      <%= form.hidden_field :removing, :value => false %>
+    <div class="profile_container">
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2>未入力の箇所があります</h2>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;(※自己紹介は任意で結構です)</p>
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-      <%= label :name, "アカウント名" %>
-      <%= form.text_field :name %>
-      <br>
-      <%= label :gender, "性別" %>
-      <%= form.select :gender, [['選択してください', ''], ['男', '男'], ['女', '女'], ['どちらでもない', 'どちらでもない']] %>
-      <br>
-      <%= label :age, "年齢" %>
-      <%= form.select :age, [['選択してください', ''], ['20~26', '20~26'], ['27~33', '27~33'], ['34~40', '34~40'], ['41~47', '41~47'], ['48~60', '48~60'], ['非公開', '非公開']] %>
-      <br>
-      <%= label :introduction, "自己紹介" %>
-      <%= form.text_field :introduction %>
-      <br>
-      <%= label :image, "プロフィール画像" %>
-      <%= form.file_field :image %>
-      <br>
-      <%= form.submit "プロフィールを更新" %>
+      <%= form_with model: @user do |form| %>
+        <div class="profile_left">
+          <%= form.hidden_field :have_umbrella, :value => @user.have_umbrella %>
+          <%= form.hidden_field :area, :value => @user.area %>
+          <%= hidden_field :follow_state, "true" %>
+          <%= form.hidden_field :removing, :value => false %>
+          <div class="edit_prof_img">
+            <% if @user.image.present? %>
+              <%= image_tag @user.image.url, id: :img_prev %>
+            <% else %>
+              <%= image_tag "trans.png", id: :img_prev %>
+            <% end %>
+            <%= label :image, "", for: "file_upload" %>
+            <%= form.file_field :image, id: "file_upload" %>
+            <div class="img_submit_label">
+              <p>ファイルを</p>
+              <p>選択してください</p>
+            </div>
+          </div>
+          <p class="edit_name">
+            <%= label :name, "ニックネーム" %><br>
+            <%= form.text_field :name %>
+          </p>
+          <p class="edit_gender">
+            <%= label :gender, "性別" %><br>
+            <%= form.select :gender, [['選択してください', ''], ['男', '男'], ['女', '女'], ['どちらでもない', 'どちらでもない']] %>
+          </p>
+          <p class="edit_age">
+            <%= label :age, "年齢" %><br>
+            <%= form.select :age, [['選択してください', ''], ['20~26', '20~26'], ['27~33', '27~33'], ['34~40', '34~40'], ['41~47', '41~47'], ['48~60', '48~60'], ['非公開', '非公開']] %>
+          </p>
+        </div>
+        
+        <div class="profile_right">
+          <div class="prof_area">
+            <h2>今いる場所</h2>
+            <p><%= @user.area %></p>
+          </div>
+          <div class="edit_intro">
+            <%= label :introduction, "自己紹介" %><br>
+            <%= form.text_area :introduction, maxlength: "225" %>
+          </div>
+          <div class="profile_update_button">
+            <%= form.submit "プロフィールを更新" %>
+          </div>
+          <div class="prof_bottom">
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
+
 </div>
 
+<script type="text/javascript">
+  $(function() {
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+    $('#img_prev').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#file_upload").change(function(){
+        readURL(this);
+    });
+  });
+</script>
