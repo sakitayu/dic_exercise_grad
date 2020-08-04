@@ -947,8 +947,9 @@ $break-point-PC: 960px;
       width:auto;
     }
     div.edit_intro {
+      font-size: 1em;
       position: absolute;
-      bottom: 4.5em;
+      bottom: 4.2em;
       color: $dark-grey;
       margin-top: 1em;
       height: auto;
@@ -957,7 +958,7 @@ $break-point-PC: 960px;
         font-size: 1.2em;
         color: $dark-grey;
         resize: none;
-        height: 15em;
+        height: 13em;
         width: 100%;
         padding: 0.2em;
       }
