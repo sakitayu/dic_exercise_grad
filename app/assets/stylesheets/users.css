@@ -1081,17 +1081,32 @@
   padding: 0.2em;
 }
 
-.profile_container div.profile_right div.prof_bottom {
-  margin-left: 10px;
-  padding: 10px;
-  width: auto;
-}
-
 .profile_container div.profile_right div.profile_update_button {
   position: absolute;
-  padding-top: 1.5em;
+  padding-top: 1.3em;
   top: 0;
   right: 2em;
+}
+
+.profile_container div.profile_right div.profile_update_button input[type="submit"] {
+  height: 2.1em;
+  line-height: 0;
+  width: auto;
+  border-style: none;
+  font-size: 1em;
+  white-space: nowrap;
+  padding: 0 1em;
+  border-radius: 1em;
+  color: #444;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.profile_container div.profile_right div.profile_update_button input[type="submit"]:hover {
+  cursor: pointer;
+  transition: 0.1s;
+  color: black;
+  font-weight: 500;
 }
 
 .profile_container form {
