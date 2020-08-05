@@ -1020,16 +1020,32 @@
   font-size: 0.8em;
 }
 
+.profile_container div.profile_left p.edit_name input[type="text"] {
+  font-size: 1em;
+  padding: 0;
+  border: solid thin #999999;
+  border-radius: 0.2em;
+}
+
+.profile_container div.profile_left p.edit_name input[type="text"]:focus {
+  font-size: 1em;
+  border: solid thin #ffb6b9;
+  outline: 0;
+  border-radius: 0.2em;
+}
+
 .profile_container div.profile_left p.edit_gender {
   margin-top: 0.5em;
   text-align: center;
   font-size: 0.8em;
+  padding: 0;
 }
 
 .profile_container div.profile_left p.edit_age {
   margin-top: 0.5em;
   text-align: center;
   font-size: 0.8em;
+  padding: 0;
 }
 
 .profile_container div.profile_right {
@@ -1075,10 +1091,18 @@
 .profile_container div.profile_right div.edit_intro textarea {
   font-size: 1.2em;
   color: #444;
+  border: solid thin #999999;
+  border-radius: 0.2em;
   resize: none;
   height: 13em;
   width: 100%;
   padding: 0.2em;
+}
+
+.profile_container div.profile_right div.edit_intro textarea:focus {
+  border: solid thin #ffb6b9;
+  outline: 0;
+  border-radius: 0.2em;
 }
 
 .profile_container div.profile_right div.profile_update_button {
@@ -1106,7 +1130,6 @@
   cursor: pointer;
   transition: 0.1s;
   color: black;
-  font-weight: 500;
 }
 
 .profile_container form {
