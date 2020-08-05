@@ -1008,6 +1008,30 @@ $break-point-PC: 960px;
         }
       }
     }
+    div.request_button {
+      position: absolute;
+      padding-top: 1.3em;
+      top: 0;
+      right: 2em;
+      input[type="submit"] {
+        height: 2.1em;
+        line-height: 0;
+        width: auto;
+        border-style: none;
+        font-size: 1em;
+        white-space: nowrap;
+        padding: 0 1em;
+        border-radius: 1em;
+        color: $dark-grey;
+        background-color: $dark-pink;
+        transition: 0.3s;
+        &:hover {
+          cursor: pointer;
+          transition: 0.1s;
+          color: black;
+        }
+      }
+    }
   }
   form {
     display: flex;

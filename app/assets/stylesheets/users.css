@@ -1132,6 +1132,33 @@
   color: black;
 }
 
+.profile_container div.profile_right div.request_button {
+  position: absolute;
+  padding-top: 1.3em;
+  top: 0;
+  right: 2em;
+}
+
+.profile_container div.profile_right div.request_button input[type="submit"] {
+  height: 2.1em;
+  line-height: 0;
+  width: auto;
+  border-style: none;
+  font-size: 1em;
+  white-space: nowrap;
+  padding: 0 1em;
+  border-radius: 1em;
+  color: #444;
+  background-color: #ffb6b9;
+  transition: 0.3s;
+}
+
+.profile_container div.profile_right div.request_button input[type="submit"]:hover {
+  cursor: pointer;
+  transition: 0.1s;
+  color: black;
+}
+
 .profile_container form {
   display: flex;
 }
