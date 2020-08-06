@@ -1,3 +1,294 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* メインカラー */
+$dark-green: #8ac6d1;
+$light-green: #bbded6;
+$dark-pink: #ffb6b9;
+$light-pink: #fae3d9;
+$dark-grey: #444;
+$middle-grey: #999999;
+$light-grey: #F7F7F7;
+
+/* ブレークポイント */
+$break-point-Mobile: 481px;
+$break-point-PC: 960px;
+
+
+.message_box {
+  margin: 5em;
+  padding:5em;
+  background-color: white;
+}
+
+.self-container{
+  display: flex;
+  flex-direction: row-reverse;
+  margin:0 0 1rem 0;
+  padding:0;
+  width:400px;
+}
+
+.partner-container{
+  display: flex;
+  flex-direction: row;
+  margin:0 0 1rem 0.5rem;
+  padding:0;
+  width:420px;
+}
+
+.partner_span{
+  margin: 0 0.3rem 0 0;
+  top:0.4rem;
+  position: relative;
+  width:50px;
+  padding:0;
+  white-space: nowrap;
+}
+
+.latest_box{
+  margin:0 0 1rem 0;
+  padding:0;
+  display: flex;
+  flex-direction: row;
+  width:100%;
+}
+
+.latest_message {
+  width: auto;
+  height:auto;
+  margin:0;
+  padding:0;
+  display: inline-block;
+  position: relative;
+  margin-top: 10px;
+  margin-left: 0px;
+  padding: 10px;
+  background: #64B5F7;
+  border-radius: 1.5rem;
+  p {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    margin: 0 0;
+    top: 0;
+    bottom: 1.5rem;
+    left: -0.5rem;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 30px solid #64B5F7;
+    border-bottom: 10px solid transparent;
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }
+}
+
+.past_self_message {
+  width: auto;
+  height:auto;
+  margin-top:0;
+  padding:0;
+  display: inline-block;
+  position: relative;
+  margin-top: 10px;
+  margin-right: -80px;
+  margin-left: 120px;
+  padding: 10px;
+  background: rgb(116, 224, 158);
+  border-radius: 1.5rem;
+  p {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    margin: 0 0;
+    top: 0;
+    bottom: 1.5rem;
+    right: -0.5rem;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 30px solid rgb(116, 224, 158);
+    border-bottom: 10px solid transparent;
+    -webkit-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+  }
+}
+
+.past_partner_message {
+  width: auto;
+  height:auto;
+  margin:0;
+  padding:0;
+  display: inline-block;
+  position: relative;
+  margin-top: 10px;
+  margin-left: 0px;
+  padding: 10px;
+  background: #64B5F7;
+  border-radius: 1.5rem;
+  p {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    margin: 0 0;
+    top: 0;
+    bottom: 1.5rem;
+    left: -0.5rem;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 30px solid #64B5F7;
+    border-bottom: 10px solid transparent;
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }
+}
+
+.input_text form{
+  display: flex;
+  justify-content: center;
+  margin: 0.3rem 0 0 0;
+  padding:0;
+}
+
+.submit_buttom {
+  position: absolute;
+  margin-bottom:1.7rem;
+  background-color: #e055d9;
+  border-style: none;
+  border-radius: 0.2rem;
+  color:white;
+  width:3rem;
+  height:3rem;
+  transition-duration: 0.2s;
+  margin:0.3rem 0rem 1.2rem 12.3rem;
+  bottom:0;
+  font-size:1rem;
+  &:hover {
+    background-color: #f186ec;
+    color:white;
+    transition-duration: 0s;
+  }
+}
+
+.scroll_down {
+  position: absolute;
+  margin-bottom:1.7rem;
+  background-color: #525a6b;
+  border-style: none;
+  border-radius: 0.2rem;
+  color:white;
+  width:3rem;
+  height:3rem;
+  transition-duration: 0.2s;
+  margin:0.3rem 1rem 1.2rem -12.3rem;
+  bottom:0;
+  font-size:2rem;
+  &:hover {
+    background-color: #757983;
+    transition-duration: 0s;
+  }
+}
+
+#bottom_block {
+  margin:0;
+  padding:0;
+  height: 80px;
+  background-color: #6F9ECC;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
+}
+
+.profile_show_img {
+  width: 10rem;
+}
+.profile_message_img {
+  width: 3rem;
+  border-radius: 3rem;
+}
+
+#head_block {
+  position:fixed;
+  color:white;
+  background-color: #273147;
+  width:100%;
+  height: 80px;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin:0;
+  padding:0;
+  margin-bottom:1rem;
+  z-index: 1;
+}
+
+.left_arrow {
+  width:2rem;
+  padding-top:1.5rem;
+}
+
+.head_person {
+  width:1rem;
+  padding-top:1.5rem;
+}
+
+.head_door {
+  width:1rem;
+}
+
+.delete_message {
+  right:2rem;
+  position: absolute;
+  font-size: 0.2rem;
+}
+
+.delete_box {
+  height:0.5rem;
+  margin:0;
+  padding:0;
+}
+
+.header_name {
+
+  padding-top:1rem;
+}
+
+.header_space {
+  height:100px;
+}
+
+.header_right {
+  margin:-0.2rem 0.5rem 0 0;
+  padding:0;
+  height:2rem;
+}
+
+.all_user:hover{
+  font-weight: bold;
+}
+
+.message_pics {
+  width:2rem;
+  padding:0.5rem;
+}

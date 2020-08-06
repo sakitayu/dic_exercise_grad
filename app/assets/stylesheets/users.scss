@@ -741,16 +741,12 @@ $break-point-PC: 960px;
       position: relative;
       bottom:0.3em;
     }
-  }
-  div.profile_header {
-    color: $dark-grey;
-    height: 3em;
-    margin-top: 1em;
-    margin-left: 3em;
-    margin-right: 2em;
-    padding-top: 0.5em;
-    top: 0;
-    background-color: $light-grey;
+    p.disc_for_accept {
+      font-size: 1.1em;
+      position: absolute;
+      top: 0.5em;
+      right: 1.6em;
+    }
   }
   div.main_contents {
     margin: 0 2em 2em 2em;
@@ -963,7 +959,7 @@ $break-point-PC: 960px;
     div.edit_intro {
       font-size: 1em;
       position: absolute;
-      bottom: 4.2em;
+      bottom: 8.2em;
       color: $dark-grey;
       margin-top: 1em;
       height: auto;
@@ -974,7 +970,7 @@ $break-point-PC: 960px;
         border: solid thin $middle-grey;
         border-radius: 0.2em;
         resize: none;
-        height: 13em;
+        height: 10em;
         width: 100%;
         padding: 0.2em;
         &:focus {
@@ -1011,24 +1007,50 @@ $break-point-PC: 960px;
     div.request_button {
       position: absolute;
       padding-top: 1.3em;
-      top: 0;
-      right: 2em;
+      bottom: 4.7em;
+      right: 9em;
       input[type="submit"] {
         height: 2.1em;
         line-height: 0;
         width: auto;
         border-style: none;
-        font-size: 1em;
+        font-size: 1.2em;
         white-space: nowrap;
         padding: 0 1em;
         border-radius: 1em;
-        color: $dark-grey;
+        color: white;
         background-color: $dark-pink;
         transition: 0.3s;
         &:hover {
           cursor: pointer;
           transition: 0.1s;
-          color: black;
+          color: white;
+          opacity: 0.8;
+        }
+      }
+    }
+    div.approval_button {
+      position: absolute;
+      padding-top: 1.3em;
+      bottom: 4.7em;
+      right: 13.5em;
+      input[type="submit"] {
+        height: 2.1em;
+        line-height: 0;
+        width: auto;
+        border-style: none;
+        font-size: 1.2em;
+        white-space: nowrap;
+        padding: 0 1em;
+        border-radius: 1em;
+        color: white;
+        background-color: $dark-pink;
+        transition: 0.3s;
+        &:hover {
+          cursor: pointer;
+          transition: 0.1s;
+          color: white;
+          opacity: 0.8;
         }
       }
     }

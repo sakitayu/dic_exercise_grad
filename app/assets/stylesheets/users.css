@@ -829,15 +829,11 @@
   bottom: 0.3em;
 }
 
-.main_box_on_user_page div.profile_header {
-  color: #444;
-  height: 3em;
-  margin-top: 1em;
-  margin-left: 3em;
-  margin-right: 2em;
-  padding-top: 0.5em;
-  top: 0;
-  background-color: #F7F7F7;
+.main_box_on_user_page div.profile_header p.disc_for_accept {
+  font-size: 1.1em;
+  position: absolute;
+  top: 0.5em;
+  right: 1.6em;
 }
 
 .main_box_on_user_page div.main_contents {
@@ -1081,7 +1077,7 @@
 .profile_container div.profile_right div.edit_intro {
   font-size: 1em;
   position: absolute;
-  bottom: 4.2em;
+  bottom: 8.2em;
   color: #444;
   margin-top: 1em;
   height: auto;
@@ -1094,7 +1090,7 @@
   border: solid thin #999999;
   border-radius: 0.2em;
   resize: none;
-  height: 13em;
+  height: 10em;
   width: 100%;
   padding: 0.2em;
 }
@@ -1135,8 +1131,8 @@
 .profile_container div.profile_right div.request_button {
   position: absolute;
   padding-top: 1.3em;
-  top: 0;
-  right: 2em;
+  bottom: 4.7em;
+  right: 9em;
 }
 
 .profile_container div.profile_right div.request_button input[type="submit"] {
@@ -1144,11 +1140,11 @@
   line-height: 0;
   width: auto;
   border-style: none;
-  font-size: 1em;
+  font-size: 1.2em;
   white-space: nowrap;
   padding: 0 1em;
   border-radius: 1em;
-  color: #444;
+  color: white;
   background-color: #ffb6b9;
   transition: 0.3s;
 }
@@ -1156,7 +1152,36 @@
 .profile_container div.profile_right div.request_button input[type="submit"]:hover {
   cursor: pointer;
   transition: 0.1s;
-  color: black;
+  color: white;
+  opacity: 0.8;
+}
+
+.profile_container div.profile_right div.approval_button {
+  position: absolute;
+  padding-top: 1.3em;
+  bottom: 4.7em;
+  right: 13.5em;
+}
+
+.profile_container div.profile_right div.approval_button input[type="submit"] {
+  height: 2.1em;
+  line-height: 0;
+  width: auto;
+  border-style: none;
+  font-size: 1.2em;
+  white-space: nowrap;
+  padding: 0 1em;
+  border-radius: 1em;
+  color: white;
+  background-color: #ffb6b9;
+  transition: 0.3s;
+}
+
+.profile_container div.profile_right div.approval_button input[type="submit"]:hover {
+  cursor: pointer;
+  transition: 0.1s;
+  color: white;
+  opacity: 0.8;
 }
 
 .profile_container form {

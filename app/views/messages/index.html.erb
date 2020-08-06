@@ -1,12 +1,46 @@
-<div class="navi_box">
-  <p>
-        <% unless @opposite_user == nil %>
-          <%= @opposite_user.name %>
+<div class="main_container">
+
+  <div class="navi_container">
+    <div class="navi_box">
+      <div class="state_umbrella">
+        <% if current_user.have_umbrella %>
+          <p>傘を持っています</p>
+        <% else %>
+          <p>傘を持っていません</p>
         <% end %>
-  </p>
-  <div class="navi_search">
+      </div>
+      <div class="navi_prof_pic">
+        <% if current_user.image.url == nil %>
+          <% if current_user.gender == "男" %>
+            <%= image_tag('male.png') %>
+          <% elsif current_user.gender == "女" %>
+            <%= image_tag('female.png') %>
+          <% elsif current_user.gender == "どちらでもない" %>
+            <%= image_tag('trans.png') %>
+          <% end %>
+        <% else %>
+          <%= image_tag(current_user.image.url) unless current_user.image.url == nil %>
+        <% end %>
+      </div>
+      <div class="navi_prof_name">
+        <p><%= current_user.name %></p>
+      </div>
+      <div class="navi_prof_mypage">
+        <p><%= link_to "マイページ", user_path(current_user.id) %></p>
+      </div>
+      <div class="navi_prof_state">
+        ここに通知
+      </div>
+      <div class="navi_prof_notification">
+        ここに状態
+      </div>
+      <div class="navi_prof_logout">
+        <% if user_signed_in? %>
+            <div><%= link_to "ログアウトして終了", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %></div>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
 
 <div id="cancel_id_is_<%= @opposite_user.id %><%= current_user.id %>"></div>
 
@@ -35,8 +69,7 @@
                 <div class="past_partner_message">
             <% end %>
 
-                <i class="right triangle icon"></i>
-                <%= message.body %>
+                <p class="message_body"><%= message.body %></p>
                 <% if message.user == current_user %>
                   <%#= message.read ? '既読' : '未読' %>
                 <% end %>
@@ -49,11 +82,9 @@
       <% end %>
     </div>
 
-
     <div class="partner-container">
       <div id="conversation_id_is_<%= @opposite_id %><%= @conversation.id %>"></div>
     </div>
-
 
     <%= form_with(model: [@conversation, @message]) do |f| %>
       <div class="message_field">
@@ -65,4 +96,7 @@
       </div>
     <% end %>
   </div>
+</div>
+
+
 </div>

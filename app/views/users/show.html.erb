@@ -42,78 +42,79 @@
     </div>
   </div>
 
-<% if current_user.id != @user.id && current_user.have_umbrella == true %>
-  <!-- ここに傘持ちユーザーのみに表示されるフォロー通知を置く -->
-<% end %>
+  <% if current_user.id != @user.id && current_user.have_umbrella == true %>
+    <!-- ここに傘持ちユーザーのみに表示されるフォロー通知を置く -->
+  <% end %>
 
-<% if current_user.id != @user.id %>
-  <div id="notification_id_is_<%= current_user.id %>">
-    <div id="remove_overlap_notification_id_is_<%= current_user.id %>">
-      <div id="overlap_notification_id_is_<%= @user.id %>"></div>
+  <% if current_user.id != @user.id %>
+    <div id="notification_id_is_<%= current_user.id %>">
+      <div id="remove_overlap_notification_id_is_<%= current_user.id %>">
+        <div id="overlap_notification_id_is_<%= @user.id %>"></div>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 
 <% if current_user.id != @user.id %>
   <div class="main_box_on_user_page">
 <% else %>
   <div class="main_box_on_my_page">
 <% end %>
+
   <% if current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil %>
     <div class="profile_header">
-      <p><strong><%= @follower.name %></strong> さんのリクエストを承諾しますか？</p>
+      <%= link_to 'ユーザー一覧に戻る', users_path %>
+      <p class="disc_for_accept"><strong><%= @user.name %></strong> さんからリクエストが来ています。承諾しますか？</p>
     </div>
     <div id="cancel_id_is_<%= @user.id %><%= current_user.id %>"></div>
   <% else %>
-  <div class="profile_header">
-    <% if current_user.id != @user.id %>
-      <%= link_to 'ユーザー一覧に戻る', users_path %>
-    <% else %>
-      <div><%= link_to 'ユーザー一覧に戻る', users_path, class: "back_to_users" %></div>
-      <div class="my_page_on_profile">マイページ</div>
-      <div>
-        <%= link_to "プロフィールを編集", edit_user_path(current_user.id), class: "edit_on_my_page" if current_user.id == @user.id %>
-      </div>
-    <% end %>
-  </div>
+    <div class="profile_header">
+      <% if current_user.id != @user.id %>
+        <%= link_to 'ユーザー一覧に戻る', users_path %>
+      <% else %>
+        <div><%= link_to 'ユーザー一覧に戻る', users_path, class: "back_to_users" %></div>
+        <div class="my_page_on_profile">マイページ</div>
+        <div>
+          <%= link_to "プロフィールを編集", edit_user_path(current_user.id), class: "edit_on_my_page" if current_user.id == @user.id %>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 
-  <div class="profile_container">
-    <div class="profile_left">
-      <div>
-        <% if @user.image.url == nil %>
-          <% if @user.gender == "男" %>
-            <%= image_tag 'male.png', class: "profile_img" %>
-          <% elsif @user.gender == "女" %>
-            <%= image_tag 'female.png', class: "profile_img" %>
-          <% elsif @user.gender == "どちらでもない" %>
-            <%= image_tag 'trans.png', class: "profile_img" %>
+    <div class="profile_container">
+      <div class="profile_left">
+        <div>
+          <% if @user.image.url == nil %>
+            <% if @user.gender == "男" %>
+              <%= image_tag 'male.png', class: "profile_img" %>
+            <% elsif @user.gender == "女" %>
+              <%= image_tag 'female.png', class: "profile_img" %>
+            <% elsif @user.gender == "どちらでもない" %>
+              <%= image_tag 'trans.png', class: "profile_img" %>
+            <% end %>
+          <% else %>
+            <%= image_tag @user.image.url, class: "profile_pic" unless @user.image.url == nil %>
           <% end %>
-        <% else %>
-          <%= image_tag @user.image.url, class: "profile_pic" unless @user.image.url == nil %>
-        <% end %>
+        </div>
+        <p class="prof_name"><strong><%= @user.name %></strong></p>
+        <p class="prof_gender"><b>性別</b> <%= @user.gender %></p>
+        <p class="prof_age"><b>年齢</b> <%= @user.age %> 才</p>
       </div>
-      <p class="prof_name"><strong><%= @user.name %></strong></p>
-      <p class="prof_gender"><b>性別</b> <%= @user.gender %></p>
-      <p class="prof_age"><b>年齢</b> <%= @user.age %> 才</p>
-    </div>
 
-    <div class="profile_right">
-      <div class="prof_area">
-        <h2>今いる場所</h2>
-        <p><%= @user.area %></p>
-      </div>
-      <div class="prof_intro">
-        <%= @user.introduction %>
-      </div>
-      <div class="request_button">
+      <div class="profile_right">
+        <div class="prof_area">
+          <h2>今いる場所</h2>
+          <p><%= @user.area %></p>
+        </div>
+        <div class="prof_intro">
+          <%= @user.introduction %>
+        </div>
         <% if @followed == nil && current_user.id != @user.id %>
-          <div id="request_form_id_is_<%= @user.id %>"><%= render 'request_form', user: @user %></div>
+          <div class="request_button">
+            <div id="request_form_id_is_<%= @user.id %>"><%= render 'request_form', user: @user %></div>
+          </div>
         <% elsif @followed != nil %>
-          <div>
+          <div class="approval_button">
             <% if current_user.id == @followed.id %>
-              <%= link_to 'ユーザー一覧画面に戻る', users_path unless current_user.id == @user.id %> 
-              <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
               <%= form_with(model: current_user.active_matchings.build(followed_id: @user.id)) do |f| %>
                 <%= f.hidden_field :followed_id %>
                 <%= f.submit "承諾する", data: { confirm: '本当に承諾しますか？(承諾するとメッセージルームに移動します)' } if current_user.id != @user.id && current_user.have_umbrella == true %>
@@ -123,9 +124,7 @@
         <% end %>
       </div>
     </div>
+
   </div>
-
-
 </div>
 
-</div>
