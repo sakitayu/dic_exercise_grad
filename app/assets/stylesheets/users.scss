@@ -947,7 +947,7 @@ $break-point-PC: 960px;
     div.prof_intro {
       color: $dark-grey;
       margin-top: 1em;
-      height: auto;
+      height: 8em;
       width:auto;
     }
     div.edit_intro {
@@ -999,10 +999,9 @@ $break-point-PC: 960px;
       }
     }
     div.request_button {
-      position: absolute;
-      padding-top: 1.3em;
-      bottom: 4.7em;
-      right: 9em;
+      padding-top: 4.1em;
+      display: flex;
+      justify-content: center;
       input[type="submit"] {
         height: 2.1em;
         line-height: 0;
@@ -1024,10 +1023,9 @@ $break-point-PC: 960px;
       }
     }
     div.approval_button {
-      position: absolute;
-      padding-top: 1.3em;
-      bottom: 4.7em;
-      right: 13.5em;
+      padding-top: 4.1em;
+      display: flex;
+      justify-content: center;
       input[type="submit"] {
         height: 2.1em;
         line-height: 0;

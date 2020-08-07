@@ -1064,7 +1064,7 @@
 .profile_container div.profile_right div.prof_intro {
   color: #444;
   margin-top: 1em;
-  height: auto;
+  height: 8em;
   width: auto;
 }
 
@@ -1123,10 +1123,9 @@
 }
 
 .profile_container div.profile_right div.request_button {
-  position: absolute;
-  padding-top: 1.3em;
-  bottom: 4.7em;
-  right: 9em;
+  padding-top: 4.1em;
+  display: flex;
+  justify-content: center;
 }
 
 .profile_container div.profile_right div.request_button input[type="submit"] {
@@ -1151,10 +1150,9 @@
 }
 
 .profile_container div.profile_right div.approval_button {
-  position: absolute;
-  padding-top: 1.3em;
-  bottom: 4.7em;
-  right: 13.5em;
+  padding-top: 4.1em;
+  display: flex;
+  justify-content: center;
 }
 
 .profile_container div.profile_right div.approval_button input[type="submit"] {
