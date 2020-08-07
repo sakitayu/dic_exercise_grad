@@ -2,13 +2,13 @@
 /* メインカラー */
 /* ブレークポイント */
 .regis_background, .login_background {
-  background-image: url(/images/rain.jpg);
+  background-image: url(rain.jpg);
   background-size: cover;
   min-height: 100vh;
 }
 
 .start_background {
-  background-image: url(/images/undraw_raining_sguh.png);
+  background-image: url(undraw_raining_sguh.png);
   background-size: contain;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -681,9 +681,10 @@
 .main_box {
   position: relative;
   background-color: #F7F7F7;
-  width: 100%;
+  width: auto;
   height: auto;
   margin: 5em 5em 0 5em;
+  padding-bottom: 0.3em;
   border-radius: 0.2em;
   z-index: 0;
 }
@@ -691,9 +692,8 @@
 .main_box div.search_user {
   color: #444;
   height: 3em;
-  margin-top: 1em;
-  margin-right: 2em;
-  padding-top: 0.5em;
+  margin: 1em 2em 0.4em 0;
+  padding-top: 1.5em;
   display: flex;
   flex-direction: row-reverse;
   position: sticky;
@@ -750,7 +750,7 @@
 .main_box_on_user_page {
   position: relative;
   background-color: #F7F7F7;
-  width: 100%;
+  width: auto;
   height: 37em;
   margin: 5em 5em 0 5em;
   border-radius: 0.2em;
@@ -773,10 +773,8 @@
 .main_box_on_user_page div.profile_header {
   color: #444;
   height: 3em;
-  margin-top: 1em;
-  margin-left: 3em;
-  margin-right: 2em;
-  padding-top: 0.5em;
+  margin: 1em 2em 0.4em 3em;
+  padding-top: 1.5em;
   top: 0;
   background-color: #F7F7F7;
   display: flex;
@@ -844,7 +842,7 @@
 .main_box_on_my_page {
   position: relative;
   background-color: #bbded6;
-  width: 100%;
+  width: auto;
   height: 37em;
   margin: 5em 5em 0 5em;
   border-radius: 0.2em;
@@ -856,7 +854,7 @@
   height: 3em;
   margin-top: 1em;
   margin-right: 2em;
-  padding-top: 1em;
+  padding-top: 0.5em;
   display: flex;
   flex-direction: row-reverse;
   position: sticky;
@@ -867,10 +865,8 @@
 .main_box_on_my_page div.profile_header {
   color: #444;
   height: 3em;
-  margin-top: 1em;
-  margin-left: 3em;
-  margin-right: 2em;
-  padding-top: 0.5em;
+  margin: 1em 2em 0.4em 3em;
+  padding-top: 1.5em;
   top: 0;
   background-color: #bbded6;
   display: flex;
@@ -927,7 +923,6 @@
   display: inline-block;
   background-image: url(pencil.png);
   background-size: contain;
-  display: inline-block;
   position: absolute;
   right: 1.6em;
   top: 1.5em;
@@ -946,7 +941,6 @@
   display: inline-block;
   background-image: url(pencil_black.png);
   background-size: contain;
-  display: inline-block;
   position: absolute;
   right: 1.6em;
   top: 1.5em;
@@ -1103,17 +1097,17 @@
 
 .profile_container div.profile_right div.profile_update_button {
   position: absolute;
-  padding-top: 1.3em;
-  top: 0;
+  padding-top: 1.2em;
+  top: 0.1em;
   right: 2em;
 }
 
 .profile_container div.profile_right div.profile_update_button input[type="submit"] {
-  height: 2.1em;
+  height: 2em;
   line-height: 0;
   width: auto;
   border-style: none;
-  font-size: 1em;
+  font-size: 1.2em;
   white-space: nowrap;
   padding: 0 1em;
   border-radius: 1em;
@@ -1191,7 +1185,7 @@
 .profile_container form div.edit_prof_img {
   width: 12em;
   height: 12em;
-  margin: 1.5em auto 0 auto;
+  margin: 1.3em auto 0 auto;
   text-align: center;
   background-color: #F7F7F7;
 }
@@ -1211,7 +1205,7 @@
   display: block;
   position: absolute;
   z-index: 1;
-  top: 8.5em;
+  top: 8.75em;
   width: 9.9em;
   height: 9.9em;
   color: white;
@@ -1227,7 +1221,7 @@
 .profile_container form div.edit_prof_img div.img_submit_label {
   position: absolute;
   z-index: 0;
-  top: 8.5em;
+  top: 8.8em;
   width: 12em;
   height: 9.35em;
   margin: 0 auto;
@@ -1239,4 +1233,33 @@
 .profile_container form div.edit_prof_img div.img_submit_label p {
   color: black;
   font-weight: bold;
+}
+
+.right_culumn_container {
+  width: 80em;
+  /* 共通の横幅 =1280px */
+  margin: 0 auto;
+}
+
+.notification_box {
+  margin: 5em 0 5em 5em;
+  padding: 0.5em;
+  background-color: #ffb6b9;
+  height: 3em;
+}
+
+.notification_box p {
+  color: white;
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+
+.notification_box p::before {
+  content: "";
+  display: inline-block;
+  background-image: url(bell.png);
+  background-size: contain;
+  width: 1em;
+  height: 1em;
 }

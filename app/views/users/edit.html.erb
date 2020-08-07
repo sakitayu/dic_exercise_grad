@@ -42,82 +42,84 @@
     </div>
   </div>
 
-  <div class="main_box_on_my_page">
-    <div class="profile_header">
-      <% if current_user.id != @user.id %>
-        <%= link_to 'ユーザー一覧に戻る', users_path %>
-      <% else %>
-        <div>
-          <%= link_to "編集をキャンセル", user_path(current_user.id), class: "back_to_users" %>
+  <div class="right_culumn_container">
+    <div class="main_box_on_my_page">
+      <div class="profile_header">
+        <% if current_user.id != @user.id %>
+          <%= link_to 'ユーザー一覧に戻る', users_path %>
+        <% else %>
+          <div>
+            <%= link_to "編集をキャンセル", user_path(current_user.id), class: "back_to_users" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="profile_container">
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2>未入力の箇所があります</h2>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;(※自己紹介は任意で結構です)</p>
+            <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <%= form_with model: @user do |form| %>
+          <div class="profile_left">
+            <%= form.hidden_field :have_umbrella, :value => @user.have_umbrella %>
+            <%= form.hidden_field :area, :value => @user.area %>
+            <%= hidden_field :follow_state, "true" %>
+            <%= form.hidden_field :removing, :value => false %>
+            <div class="edit_prof_img">
+              <% if @user.image.present? %>
+                <%= image_tag @user.image.url, id: :img_prev %>
+              <% elsif @user.gender == "男" %>
+                <%= image_tag "male.png", id: :img_prev %>
+              <% elsif @user.gender == "女" %>
+                <%= image_tag "female.png", id: :img_prev %>
+              <% elsif @user.gender == "どちらでもない" %>
+                <%= image_tag "trans.png", id: :img_prev %>
+              <% end %>
+              <%= label :image, "", for: "file_upload" %>
+              <%= form.file_field :image, id: "file_upload" %>
+              <div class="img_submit_label">
+                <p>ファイルを</p>
+                <p>選択してください</p>
+              </div>
+            </div>
+            <p class="edit_name">
+              <%= label :name, "ニックネーム" %><br>
+              <%= form.text_field :name %>
+            </p>
+            <p class="edit_gender">
+              <%= label :gender, "性別" %><br>
+              <%= form.select :gender, [['選択してください', ''], ['男', '男'], ['女', '女'], ['どちらでもない', 'どちらでもない']] %>
+            </p>
+            <p class="edit_age">
+              <%= label :age, "年齢" %><br>
+              <%= form.select :age, [['選択してください', ''], ['20~26', '20~26'], ['27~33', '27~33'], ['34~40', '34~40'], ['41~47', '41~47'], ['48~60', '48~60'], ['非公開', '非公開']] %>
+            </p>
+          </div>
+
+          <div class="profile_right">
+            <div class="prof_area">
+              <h2>今いる場所</h2>
+              <p><%= @user.area %></p>
+            </div>
+            <div class="edit_intro">
+              <%= label :introduction, "自己紹介" %><br>
+              <%= form.text_area :introduction, maxlength: "225" %>
+            </div>
+            <div class="profile_update_button">
+              <%= form.submit "プロフィールを更新" %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
-
-    <div class="profile_container">
-      <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <h2>未入力の箇所があります</h2>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;(※自己紹介は任意で結構です)</p>
-          <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-      <%= form_with model: @user do |form| %>
-        <div class="profile_left">
-          <%= form.hidden_field :have_umbrella, :value => @user.have_umbrella %>
-          <%= form.hidden_field :area, :value => @user.area %>
-          <%= hidden_field :follow_state, "true" %>
-          <%= form.hidden_field :removing, :value => false %>
-          <div class="edit_prof_img">
-            <% if @user.image.present? %>
-              <%= image_tag @user.image.url, id: :img_prev %>
-            <% elsif @user.gender == "男" %>
-              <%= image_tag "male.png", id: :img_prev %>
-            <% elsif @user.gender == "女" %>
-              <%= image_tag "female.png", id: :img_prev %>
-            <% elsif @user.gender == "どちらでもない" %>
-              <%= image_tag "trans.png", id: :img_prev %>
-            <% end %>
-            <%= label :image, "", for: "file_upload" %>
-            <%= form.file_field :image, id: "file_upload" %>
-            <div class="img_submit_label">
-              <p>ファイルを</p>
-              <p>選択してください</p>
-            </div>
-          </div>
-          <p class="edit_name">
-            <%= label :name, "ニックネーム" %><br>
-            <%= form.text_field :name %>
-          </p>
-          <p class="edit_gender">
-            <%= label :gender, "性別" %><br>
-            <%= form.select :gender, [['選択してください', ''], ['男', '男'], ['女', '女'], ['どちらでもない', 'どちらでもない']] %>
-          </p>
-          <p class="edit_age">
-            <%= label :age, "年齢" %><br>
-            <%= form.select :age, [['選択してください', ''], ['20~26', '20~26'], ['27~33', '27~33'], ['34~40', '34~40'], ['41~47', '41~47'], ['48~60', '48~60'], ['非公開', '非公開']] %>
-          </p>
-        </div>
-        
-        <div class="profile_right">
-          <div class="prof_area">
-            <h2>今いる場所</h2>
-            <p><%= @user.area %></p>
-          </div>
-          <div class="edit_intro">
-            <%= label :introduction, "自己紹介" %><br>
-            <%= form.text_area :introduction, maxlength: "225" %>
-          </div>
-          <div class="profile_update_button">
-            <%= form.submit "プロフィールを更新" %>
-          </div>
-        </div>
-      </div>
-    <% end %>
   </div>
 
 </div>

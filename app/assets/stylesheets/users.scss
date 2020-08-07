@@ -18,13 +18,13 @@ $break-point-PC: 960px;
 
 
 .regis_background, .login_background {
-  background-image: url(/images/rain.jpg);
+  background-image: url(rain.jpg);
   background-size: cover;
   min-height: 100vh;
 }
 
 .start_background {
-  background-image: url(/images/undraw_raining_sguh.png);
+  background-image: url(undraw_raining_sguh.png);
   background-size: contain;
   background-repeat:  no-repeat;
   min-height: 100vh;
@@ -612,17 +612,17 @@ $break-point-PC: 960px;
 .main_box {
   position: relative;
   background-color: $light-grey;
-  width: 100%;
+  width: auto;
   height: auto;
   margin: 5em 5em 0 5em;
+  padding-bottom: 0.3em;
   border-radius: 0.2em;
   z-index: 0;
   div.search_user {
     color: $dark-grey;
     height: 3em;
-    margin-top: 1em;
-    margin-right: 2em;
-    padding-top: 0.5em;
+    margin: 1em 2em 0.4em 0;
+    padding-top: 1.5em;
     display: flex;
     flex-direction: row-reverse;
     position: sticky;
@@ -672,7 +672,7 @@ $break-point-PC: 960px;
 .main_box_on_user_page {
   position: relative;
   background-color: $light-grey;
-  width: 100%;
+  width: auto;
   height: 37em;
   margin: 5em 5em 0 5em;
   border-radius: 0.2em;
@@ -692,10 +692,8 @@ $break-point-PC: 960px;
   div.profile_header {
     color: $dark-grey;
     height: 3em;
-    margin-top: 1em;
-    margin-left: 3em;
-    margin-right: 2em;
-    padding-top: 0.5em;
+    margin: 1em 2em 0.4em 3em;
+    padding-top: 1.5em;
     top: 0;
     background-color: $light-grey;
     display: flex;
@@ -757,7 +755,7 @@ $break-point-PC: 960px;
 .main_box_on_my_page {
   position: relative;
   background-color: $light-green;
-  width: 100%;
+  width: auto;
   height: 37em;
   margin: 5em 5em 0 5em;
   border-radius: 0.2em;
@@ -767,7 +765,7 @@ $break-point-PC: 960px;
     height: 3em;
     margin-top: 1em;
     margin-right: 2em;
-    padding-top: 1em;
+    padding-top: 0.5em;
     display: flex;
     flex-direction: row-reverse;
     position: sticky;
@@ -777,10 +775,8 @@ $break-point-PC: 960px;
   div.profile_header {
     color: $dark-grey;
     height: 3em;
-    margin-top: 1em;
-    margin-left: 3em;
-    margin-right: 2em;
-    padding-top: 0.5em;
+    margin: 1em 2em 0.4em 3em;
+    padding-top: 1.5em;
     top: 0;
     background-color: $light-green;
     display: flex;
@@ -829,7 +825,6 @@ $break-point-PC: 960px;
         display: inline-block;
         background-image: url(pencil.png);
         background-size: contain;
-        display: inline-block;
         position: absolute;
         right:1.6em;
         top: 1.5em;
@@ -845,7 +840,6 @@ $break-point-PC: 960px;
           display: inline-block;
           background-image: url(pencil_black.png);
           background-size: contain;
-          display: inline-block;
           position: absolute;
           right:1.6em;
           top: 1.5em;
@@ -982,15 +976,15 @@ $break-point-PC: 960px;
     }
     div.profile_update_button {
       position: absolute;
-      padding-top: 1.3em;
-      top: 0;
+      padding-top: 1.2em;
+      top: 0.1em;
       right: 2em;
       input[type="submit"] {
-        height: 2.1em;
+        height: 2em;
         line-height: 0;
         width: auto;
         border-style: none;
-        font-size: 1em;
+        font-size: 1.2em;
         white-space: nowrap;
         padding: 0 1em;
         border-radius: 1em;
@@ -1060,7 +1054,7 @@ $break-point-PC: 960px;
     div.edit_prof_img {
       width: 12em;
       height: 12em;
-      margin: 1.5em auto 0 auto;
+      margin: 1.3em auto 0 auto;
       text-align: center;
       background-color: $light-grey;
       #img_prev {
@@ -1076,7 +1070,7 @@ $break-point-PC: 960px;
         display:block;
         position: absolute;
         z-index: 1;
-        top: 8.5em;
+        top: 8.75em;
         width: 9.9em;
         height: 9.9em;
         color: white;
@@ -1090,7 +1084,7 @@ $break-point-PC: 960px;
       div.img_submit_label {
         position: absolute;
         z-index: 0;
-        top: 8.5em;
+        top: 8.8em;
         width: 12em;
         height: 9.35em;
         margin: 0 auto;
@@ -1102,6 +1096,32 @@ $break-point-PC: 960px;
           font-weight: bold;
         }
       }
+    }
+  }
+}
+
+.right_culumn_container {
+  width: 80em; /* 共通の横幅 =1280px */
+  margin:0 auto;
+}
+
+.notification_box {
+  margin: 5em 0 5em 5em;
+  padding: 0.5em;
+  background-color: $dark-pink;
+  height: 3em;
+  p {
+    color: white;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    &::before {
+      content: "";
+      display: inline-block;
+      background-image: url(bell.png);
+      background-size: contain;
+      width: 1em;
+      height: 1em;
     }
   }
 }
