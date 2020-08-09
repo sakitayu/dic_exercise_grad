@@ -48,11 +48,13 @@
       <% if Matching.where(follower_id:matching.followed_id, followed_id:current_user.id).present? %>
         <% @user = User.find(matching.followed_id) %>
         <div class="right_culumn_container">
-          <div class="notification_box">
-            <p>あなたのリクエストが <strong><%= @user.name %></strong> さんに承諾されました。お願いしますか？</p>
-          </div>
 
-          <div class="main_box_on_user_page">
+          <div class="main_box_on_confirm_page">
+            <div class="profile_header">
+              <%#= link_to 'ユーザー一覧に戻る', users_path %>
+              <p>あなたのリクエストが <strong><%= @user.name %></strong> さんに承諾されました。お願いしますか？</p>
+            </div>
+
             <div class="profile_container">
 
               <div class="profile_left">
@@ -82,14 +84,15 @@
                 <div class="prof_intro">
                   <%= @user.introduction %>
                 </div>
-
+                <div class="confirm_button">
                     <%= link_to "プロフィールを編集", edit_user_path(current_user.id) if current_user.id == @user.id %>
                     <%#= link_to 'ユーザー一覧画面に戻る', users_path %> 
                     <%= form_with(model: current_user.active_matchings.find_by(followed_id: @user.id), method: :delete, local: true ) do |f| %>
-                      <%= f.submit "やっぱりキャンセルする" %>
+                      <%= f.submit "やっぱりやめる" %>
                     <% end %>
-                    <%= link_to "この人に相合傘をお願いする", conversations_path(sender_id: @user.id, recipient_id: current_user.id), method: :post, data: { confirm: '本当にお願いしますか？(メッセージルームへ移動します)' }  %>
-                  
+                    <%= link_to "お願いする", conversations_path(sender_id: @user.id, recipient_id: current_user.id), method: :post, data: { confirm: '本当にお願いしますか？(メッセージルームへ移動します)' }  %>
+                </div>
+
               </div>
 
             </div>
