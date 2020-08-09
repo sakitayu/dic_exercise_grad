@@ -46,6 +46,8 @@
     <!-- ここに傘持ちユーザーのみに表示されるフォロー通知を置く -->
   <% end %>
 
+  <div class="right_culumn_container">
+
   <% if current_user.id != @user.id %>
     <div id="notification_id_is_<%= current_user.id %>">
       <div id="remove_overlap_notification_id_is_<%= current_user.id %>">
@@ -53,8 +55,6 @@
       </div>
     </div>
   <% end %>
-
-  <div class="right_culumn_container">
 
   <% if current_user.id != @user.id %>
     <div class="main_box_on_user_page">
