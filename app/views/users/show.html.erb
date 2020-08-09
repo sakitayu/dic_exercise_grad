@@ -48,7 +48,7 @@
 
   <div class="right_culumn_container">
   
-    <% if Matching.find_by(followed_id:current_user.id) %>
+    <% if Matching.find_by(followed_id:current_user.id) && current_user.have_umbrella == false %>
       <div class="confirm_box" id="confirm_id_is_<%= current_user.id %>">
         <%= link_to "あなたのリクエストが承諾されました。こちらから確認してください", confirm_request_users_path %>
       </div>
