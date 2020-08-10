@@ -608,6 +608,7 @@
   border-radius: 5em;
   margin: 2em 0 1em 0;
   background-color: white;
+  object-fit: cover;
 }
 
 .navi_box div.navi_prof_name {
