@@ -62,6 +62,8 @@
     </div>
   <% end %>
 
+  <div class="cancel_box" id="cancel_id_is_<%= @user.id %><%= current_user.id %>"></div>
+
   <% if current_user.id != @user.id %>
     <div class="main_box_on_user_page">
   <% else %>
@@ -73,7 +75,7 @@
         <%= link_to 'ユーザー一覧に戻る', users_path %>
         <p class="disc_for_accept" id="remove_disc_id_is_<%= @user.id %><%= current_user.id %>"><strong><%= @user.name %></strong> さんからリクエストが来ています。承諾しますか？</p>
       </div>
-      <div id="cancel_id_is_<%= @user.id %><%= current_user.id %>"></div>
+      
     <% else %>
       <div class="profile_header">
         <% if current_user.id != @user.id %>

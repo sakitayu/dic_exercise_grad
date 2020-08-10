@@ -1349,6 +1349,28 @@
   opacity: 0.8;
 }
 
+.cancel_box {
+  margin: 5.3em 5em -3em 5em;
+  width: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cancel_box a {
+  display: block;
+  width: auto;
+  padding: 0.5em;
+  background-color: #8ac6d1;
+  border-radius: 20em;
+  height: 1.5em;
+  font-size: 1.6em;
+  color: white;
+}
+
+.cancel_box a:hover {
+  opacity: 0.8;
+}
+
 .main_box_on_confirm_page {
   position: relative;
   background-color: #ffb6b9;

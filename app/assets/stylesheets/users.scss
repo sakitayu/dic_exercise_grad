@@ -1202,6 +1202,26 @@ $break-point-PC: 960px;
   }
 }
 
+.cancel_box {
+  margin: 5.3em 5em -3em 5em;
+  width: auto;
+  text-align: center;
+  font-weight:bold;
+  a {
+    display: block;
+    width: auto;
+    padding: 0.5em;
+    background-color: $dark-green;
+    border-radius: 20em;
+    height: 1.5em;
+    font-size: 1.6em;
+    color: white;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
 .main_box_on_confirm_page {
   position: relative;
   background-color: $dark-pink;
