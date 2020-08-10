@@ -71,7 +71,7 @@
     <% if current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil %>
       <div class="profile_header">
         <%= link_to 'ユーザー一覧に戻る', users_path %>
-        <p class="disc_for_accept"><strong><%= @user.name %></strong> さんからリクエストが来ています。承諾しますか？</p>
+        <p class="disc_for_accept" id="remove_disc_id_is_<%= @user.id %><%= current_user.id %>"><strong><%= @user.name %></strong> さんからリクエストが来ています。承諾しますか？</p>
       </div>
       <div id="cancel_id_is_<%= @user.id %><%= current_user.id %>"></div>
     <% else %>
