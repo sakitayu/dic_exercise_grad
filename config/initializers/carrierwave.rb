@@ -18,7 +18,7 @@ CarrierWave.configure do |config|
       config.fog_directory = 'raynee-production'
       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/raynee-production'
     when 'development'
-      config.fog_directory = 'raynee-production'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/raynee-production'
+      config.fog_directory = 'raynee-development'
+      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/raynee-development'
   end
 end
