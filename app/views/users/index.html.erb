@@ -23,10 +23,10 @@
         <div class="navi_prof_mypage">
           <p><%= link_to "マイページ", user_path(current_user.id) %></p>
         </div>
-        <div class="navi_prof_state">
+        <div class="navi_prof_notification">
           ここに通知
         </div>
-        <div class="navi_prof_notification">
+        <div class="navi_prof_state">
           ここに状態
         </div>
         <div class="navi_prof_logout">
@@ -113,12 +113,17 @@
         <div class="navi_prof_mypage">
           <p><%= link_to "マイページ", user_path(current_user.id) %></p>
         </div>
-        <div class="navi_prof_state">
+        
+        <div class="navi_prof_notification">
           ここに通知
         </div>
-        <div class="navi_prof_notification">
-          ここに状態
-        </div>
+
+        <% if current_user.following.first != nil %>
+          <div class="navi_prof_state">
+            <p><%= current_user.following.first.name %> さんに<br>リクエスト中です</p>
+          </div>
+        <% end %>
+
         <div class="navi_prof_logout">
           <% if user_signed_in? %>
               <div><%= link_to "ログアウトして終了", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %></div>

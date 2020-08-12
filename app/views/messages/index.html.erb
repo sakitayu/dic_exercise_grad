@@ -28,10 +28,10 @@
       <div class="navi_prof_mypage">
         <p><%= link_to "マイページ", user_path(current_user.id) %></p>
       </div>
-      <div class="navi_prof_state">
+      <div class="navi_prof_notification">
         ここに通知
       </div>
-      <div class="navi_prof_notification">
+      <div class="navi_prof_state">
         ここに状態
       </div>
       <div class="navi_prof_logout">
@@ -45,7 +45,10 @@
 <div id="cancel_id_is_<%= @opposite_user.id %><%= current_user.id %>"></div>
 
 <div class="right_culumn_container">
-  <div class="main_box">
+  <div class="main_box_on_message_page">
+    <div class="profile_header">
+      <h3><%= @opposite_user.name %> さんとのメッセージルーム</h3>
+    </div>
     <div class="message_box" id="remove_form_id_is_<%= @opposite_user.id %><%= current_user.id %>">
   
       <div class="ui segment">

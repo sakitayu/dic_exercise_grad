@@ -1,10 +1,44 @@
 @charset "UTF-8";
 /* メインカラー */
 /* ブレークポイント */
+.main_box_on_message_page {
+  position: relative;
+  background-color: #8ac6d1;
+  width: auto;
+  height: 37em;
+  margin: 5em 5em 0 5em;
+  border-radius: 0.2em;
+  z-index: 0;
+}
+
+.main_box_on_message_page div.profile_header {
+  color: #444;
+  height: 3em;
+  margin: 1em 2em 0.4em 2em;
+  padding-top: 1.5em;
+  top: 0;
+  background-color: #8ac6d1;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.main_box_on_message_page div.profile_header h3 {
+  height: 2em;
+  width: 100%;
+  color: #8ac6d1;
+  background-color: white;
+  font-size: 1.6em;
+  margin: 0.8em 1.9em 0 1.9em;
+  padding: 0.5em 1em 0 1em;
+  text-align: center;
+}
+
 .message_box {
-  margin: 5em;
+  margin: 0 5em 5em 5em;
   padding: 5em;
   background-color: white;
+  background-image: url(rain.jpg);
+  background-size: cover;
 }
 
 .self-container {
