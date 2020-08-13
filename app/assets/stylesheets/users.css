@@ -663,6 +663,10 @@
   text-align: center;
 }
 
+.navi_box div.navi_prof_state a {
+  color: #444;
+}
+
 .navi_box div.navi_prof_logout {
   margin: 5em auto;
   font-weight: bold;
