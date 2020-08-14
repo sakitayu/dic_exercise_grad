@@ -31,6 +31,8 @@ class MatchingsController < ApplicationController
         redirect_to "/conversations/#{message_room.id}/messages"
       end
     end
+
+    redirect_to users_path
   end
 
   def destroy
