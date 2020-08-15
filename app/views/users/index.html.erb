@@ -162,7 +162,7 @@
           <% @users.each do |user| %>
             <% if user.id != current_user.id && user.have_umbrella && Matching.find_by(follower_id: user.id) == nil %>
                 <tr class="table_border" id="having_user_list_id_is_<%= user.id %>">
-                  <td>
+                  <td class="list_prof_img">
                     <% if user.image.url == nil %>
                       <% if user.gender == "男" %>
                         <%= link_to image_tag('male.png'), user_path(user.id) %>
@@ -178,9 +178,11 @@
                   <td class="list_name">
                     <%= link_to "#{user.name}", user_path(user.id)  %>
                   </td>
+                  <td class="list_gender_and_age">
+                    <p><%= user.gender %></p>
+                    <p><%= user.age %><%= "才" unless user.age == "非公開" %></p>
+                  </td>
                   <td class="list_area"><%= user.area %></td>
-                  <td class="list_gender"><%= user.gender %></td>
-                  <td class="list_age"><%= user.age %></td>
                 </tr>
             <% end %>
           <% end %>

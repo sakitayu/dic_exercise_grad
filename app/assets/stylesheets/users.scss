@@ -673,9 +673,27 @@ $break-point-PC: 960px;
         object-fit: cover;
       }
     }
-    .list_name {
+    td.list_prof_img {
+      width: 5.2em;
+    }
+    td.list_name {
       font-size:1.5em;
       font-weight: bold;
+      width: 9em;
+    }
+    td.list_gender_and_age {
+      width: 8em;
+      color: $dark-grey;
+      padding: 0.3em;
+      margin: 0;
+      p {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+    }
+    .list_area {
+      font-size:1.3em;
     }
   }
 }
