@@ -30,9 +30,12 @@ class MatchingsController < ApplicationController
       else
         redirect_to "/conversations/#{message_room.id}/messages"
       end
+    else
+      # 傘持ちユーザーの時は「承諾」なのでそのままメッセージルームにリダイレクトが
+      # 傘なしユーザーの時は「リクエスト」なのでユーザー一覧にリダイレクトする
+      redirect_to users_path
     end
 
-    redirect_to users_path
   end
 
   def destroy
