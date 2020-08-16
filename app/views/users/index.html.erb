@@ -132,9 +132,8 @@
     </div>
   </div>
   
-  <div id="notification_id_is_<%= current_user.id %>"></div>
-
   <div class="right_culumn_container">
+    <div id="notification_id_is_<%= current_user.id %>"></div>
   
     <% if Matching.find_by(followed_id:current_user.id) %>
       <div class="confirm_box" id="confirm_id_is_<%= current_user.id %>">
