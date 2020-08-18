@@ -51,7 +51,7 @@
       </div>
 
       <div class="message_box" id="remove_form_id_is_<%= @opposite_user.id %><%= current_user.id %>">
-      
+
         <div class="ui segment">
           <% @messages.each do |message| %>
             <% if message.body.present? %>
@@ -68,8 +68,9 @@
     
                 <% else %>
                   <div class="partner-container">
-                    <div class="partner_span">
-                      <%#= image_tag @opposite_user.image.url, class: "profile_message_img" %>
+                    <%= image_tag message.user.image.url, class: "profile_message_img" %>
+                    <div class="partner_message_container">
+                      <p><%= message.user.name %></p>
                     </div>
                     <div class="past_partner_message">
                 <% end %>
@@ -91,19 +92,21 @@
           <div id="conversation_id_is_<%= @opposite_id %><%= @conversation.id %>"></div>
         </div>
     
+      </div>
+    </div>
+
+      <div class="submit_message_container">
         <%= form_with(model: [@conversation, @message]) do |f| %>
           <div class="message_field">
             <%= f.text_area :body, class: "form-control" %>
           </div>
             <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
           <div>
-            <%= f.submit "メッセージを送る" %>
+            <%= f.submit "送信" %>
           </div>
         <% end %>
-
       </div>
 
-    </div>
   </div>
 
 </div>

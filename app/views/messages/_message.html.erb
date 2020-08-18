@@ -1,7 +1,5 @@
 <div class="latest_box">
-  <div class="latest_span">
-    <%#= image_tag message.user.image.url, class: "profile_message_img" %>
-  </div>
+  <%= image_tag message.user.image.url, class: "profile_message_img" %>
   <div class="latest_message">
     <p><%= message.body %></p>
   </div>

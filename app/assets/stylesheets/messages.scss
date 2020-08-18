@@ -57,7 +57,7 @@ $break-point-PC: 960px;
 .message_box {
   height: auto;
   min-height: 16em;
-  margin: 0 2em 5em 2em;
+  margin: 0 2em 0 2em;
   padding: 5em;
   background-color: white;
   background-image: url(rain.jpg);
@@ -79,15 +79,14 @@ $break-point-PC: 960px;
   margin:0 0 1rem 0.5rem;
   padding:0;
   width:420px;
-}
-
-.partner_span{
-  margin: 0 0.3rem 0 0;
-  top:0.4rem;
-  position: relative;
-  width:50px;
-  padding:0;
-  white-space: nowrap;
+  img {
+    width: 4.1em;
+    height: 4.1em;
+    background-color: white;
+    object-fit: cover;
+    margin-top: 0.7em;
+    margin-right: 1em;
+  }
 }
 
 .latest_box{
@@ -96,6 +95,14 @@ $break-point-PC: 960px;
   display: flex;
   flex-direction: row;
   width:100%;
+  img {
+    width: 4.1em;
+    height: 4.1em;
+    background-color: white;
+    object-fit: cover;
+    margin-top: 0.7em;
+    margin-right: 1em;
+  }
 }
 
 .latest_message {
@@ -108,10 +115,11 @@ $break-point-PC: 960px;
   margin-top: 10px;
   margin-left: 0px;
   padding: 10px;
-  background: #64B5F7;
+  background: white;
   border-radius: 1.5rem;
   p {
-    margin: 0;
+    font-size: 1.5em;
+    margin: 0.2em;
     padding: 0;
     position: relative;
     z-index: 1;
@@ -122,12 +130,12 @@ $break-point-PC: 960px;
     margin: 0 0;
     top: 0;
     bottom: 1.5rem;
-    left: -0.5rem;
+    left: -1rem;
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
-    border-right: 30px solid #64B5F7;
-    border-bottom: 10px solid transparent;
+    border-top: 1em solid transparent;
+    border-right: 3em solid white;
+    border-bottom: 1em solid transparent;
     -webkit-transform: rotate(40deg);
     transform: rotate(40deg);
   }
@@ -144,10 +152,11 @@ $break-point-PC: 960px;
   margin-right: -80px;
   margin-left: 120px;
   padding: 10px;
-  background: rgb(116, 224, 158);
+  background: $dark-pink;
   border-radius: 1.5rem;
   p {
-    margin: 0;
+    font-size: 1.5em;
+    margin: 0.2em;
     padding: 0;
     position: relative;
     z-index: 1;
@@ -158,12 +167,12 @@ $break-point-PC: 960px;
     margin: 0 0;
     top: 0;
     bottom: 1.5rem;
-    right: -0.5rem;
+    right: -1em;
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
-    border-left: 30px solid rgb(116, 224, 158);
-    border-bottom: 10px solid transparent;
+    border-top: 1em solid transparent;
+    border-left: 3em solid $dark-pink;
+    border-bottom: 1em solid transparent;
     -webkit-transform: rotate(-40deg);
     transform: rotate(-40deg);
   }
@@ -179,10 +188,11 @@ $break-point-PC: 960px;
   margin-top: 10px;
   margin-left: 0px;
   padding: 10px;
-  background: #64B5F7;
+  background: white;
   border-radius: 1.5rem;
   p {
-    margin: 0;
+    font-size: 1.5em;
+    margin: 0.2em;
     padding: 0;
     position: relative;
     z-index: 1;
@@ -193,16 +203,38 @@ $break-point-PC: 960px;
     margin: 0 0;
     top: 0;
     bottom: 1.5rem;
-    left: -0.5rem;
+    left: -1rem;
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
-    border-right: 30px solid #64B5F7;
-    border-bottom: 10px solid transparent;
+    border-top: 1em solid transparent;
+    border-right: 3em solid white;
+    border-bottom: 1em solid transparent;
     -webkit-transform: rotate(40deg);
     transform: rotate(40deg);
   }
 }
+
+.submit_message_container {
+  position: fixed;
+  bottom: 0;
+  height: 5em;
+  width: 52.6em;
+  margin: 0 5em;
+  padding-top: 1.5em;
+  background-color: $dark-green;
+  display: flex;
+  justify-content: center;
+  form {
+    display: flex;
+    textarea {
+      resize: none;
+    }
+  }
+}
+
+
+
+
 
 .input_text form{
   display: flex;
