@@ -217,10 +217,9 @@ $break-point-PC: 960px;
   }
 }
 
-.submit_container {
+#submit_container {
   position: fixed;
   bottom: 0;
-  height: 5em;
   width: 52.6em;
   margin: 0 5em;
   padding-top: 1.5em;
@@ -229,8 +228,43 @@ $break-point-PC: 960px;
   justify-content: center;
   form {
     display: flex;
+    margin: 0;
+    padding: 0;
+    color: $dark-grey;
     textarea {
-      resize: none;
+      width: 18em;
+      height: 3em;
+      font-size: 20px;
+      position: relative;
+      border: solid thin $middle-grey;
+      resize: vertical;
+      border-radius: 0.3em;
+      bottom: 0;
+      margin: 0 2em 0 0;
+      padding: 0.2em;
+      &:focus {
+        border: solid thin $dark-pink;
+        outline: 0;
+      }
+    }
+    input.submit_buttom {
+      position: absolute;
+      bottom: 0;
+      right: 8em;
+      background-color: $dark-pink;
+      border-style: none;
+      border-radius: 0.2em;
+      color:white;
+      width: 3em;
+      height: 3em;
+      transition-duration: 0.2s;
+      margin: 0 0 1.45em 12.3em;
+      font-size: 1.3em;
+      &:hover {
+        background-color: $light-pink;
+        color:white;
+        transition-duration: 0s;
+      }
     }
   }
 }
@@ -253,34 +287,24 @@ $break-point-PC: 960px;
   }
 }
 
-
-
-.input_text form{
-  display: flex;
-  justify-content: center;
-  margin: 0.3rem 0 0 0;
+.delete_box {
+  height:0.5rem;
+  margin:0 0 1em 0;
   padding:0;
-}
-
-.submit_buttom {
-  position: absolute;
-  margin-bottom:1.7rem;
-  background-color: #e055d9;
-  border-style: none;
-  border-radius: 0.2rem;
-  color:white;
-  width:3rem;
-  height:3rem;
-  transition-duration: 0.2s;
-  margin:0.3rem 0rem 1.2rem 12.3rem;
-  bottom:0;
-  font-size:1rem;
-  &:hover {
-    background-color: #f186ec;
-    color:white;
-    transition-duration: 0s;
+  text-align: right;
+  a.delete_message {
+    font-size: 0.8em;
+    color: $dark-grey;
+    transition: 0.3s;
+    &:hover {
+      color: black;
+      transition: 0.1s;
+    }
   }
 }
+
+
+
 
 .scroll_down {
   position: absolute;
@@ -312,83 +336,3 @@ $break-point-PC: 960px;
   z-index: 1;
 }
 
-.profile_show_img {
-  width: 10rem;
-}
-.profile_message_img {
-  width: 3rem;
-  border-radius: 3rem;
-}
-
-#head_block {
-  position:fixed;
-  color:white;
-  background-color: #273147;
-  width:100%;
-  height: 80px;
-  font-size: 2rem;
-  font-weight: bold;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin:0;
-  padding:0;
-  margin-bottom:1rem;
-  z-index: 1;
-}
-
-.left_arrow {
-  width:2rem;
-  padding-top:1.5rem;
-}
-
-.head_person {
-  width:1rem;
-  padding-top:1.5rem;
-}
-
-.head_door {
-  width:1rem;
-}
-
-
-.delete_box {
-  height:0.5rem;
-  margin:0 0 0.5em 0;
-  padding:0;
-  a.delete_message {
-    position: absolute;
-    right: 25em;
-    font-size: 0.2rem;
-    color: $dark-grey;
-    transition: 0.3s;
-    &:hover {
-      color: black;
-      transition: 0.1s;
-    }
-  }
-}
-
-.header_name {
-
-  padding-top:1rem;
-}
-
-.header_space {
-  height:100px;
-}
-
-.header_right {
-  margin:-0.2rem 0.5rem 0 0;
-  padding:0;
-  height:2rem;
-}
-
-.all_user:hover{
-  font-weight: bold;
-}
-
-.message_pics {
-  width:2rem;
-  padding:0.5rem;
-}

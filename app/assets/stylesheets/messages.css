@@ -214,10 +214,9 @@
   padding: 0;
 }
 
-.submit_container {
+#submit_container {
   position: fixed;
   bottom: 0;
-  height: 5em;
   width: 52.6em;
   margin: 0 5em;
   padding-top: 1.5em;
@@ -226,12 +225,50 @@
   justify-content: center;
 }
 
-.submit_container form {
+#submit_container form {
   display: flex;
+  margin: 0;
+  padding: 0;
+  color: #444;
 }
 
-.submit_container form textarea {
-  resize: none;
+#submit_container form textarea {
+  width: 18em;
+  height: 3em;
+  font-size: 20px;
+  position: relative;
+  border: solid thin #999999;
+  resize: vertical;
+  border-radius: 0.3em;
+  bottom: 0;
+  margin: 0 2em 0 0;
+  padding: 0.2em;
+}
+
+#submit_container form textarea:focus {
+  border: solid thin #ffb6b9;
+  outline: 0;
+}
+
+#submit_container form input.submit_buttom {
+  position: absolute;
+  bottom: 0;
+  right: 8em;
+  background-color: #ffb6b9;
+  border-style: none;
+  border-radius: 0.2em;
+  color: white;
+  width: 3em;
+  height: 3em;
+  transition-duration: 0.2s;
+  margin: 0 0 1.45em 12.3em;
+  font-size: 1.3em;
+}
+
+#submit_container form input.submit_buttom:hover {
+  background-color: #fae3d9;
+  color: white;
+  transition-duration: 0s;
 }
 
 .message_body {
@@ -253,32 +290,22 @@
   line-height: 0;
 }
 
-.input_text form {
-  display: flex;
-  justify-content: center;
-  margin: 0.3rem 0 0 0;
+.delete_box {
+  height: 0.5rem;
+  margin: 0 0 1em 0;
   padding: 0;
+  text-align: right;
 }
 
-.submit_buttom {
-  position: absolute;
-  margin-bottom: 1.7rem;
-  background-color: #e055d9;
-  border-style: none;
-  border-radius: 0.2rem;
-  color: white;
-  width: 3rem;
-  height: 3rem;
-  transition-duration: 0.2s;
-  margin: 0.3rem 0rem 1.2rem 12.3rem;
-  bottom: 0;
-  font-size: 1rem;
+.delete_box a.delete_message {
+  font-size: 0.8em;
+  color: #444;
+  transition: 0.3s;
 }
 
-.submit_buttom:hover {
-  background-color: #f186ec;
-  color: white;
-  transition-duration: 0s;
+.delete_box a.delete_message:hover {
+  color: black;
+  transition: 0.1s;
 }
 
 .scroll_down {
@@ -310,86 +337,4 @@
   width: 100%;
   bottom: 0;
   z-index: 1;
-}
-
-.profile_show_img {
-  width: 10rem;
-}
-
-.profile_message_img {
-  width: 3rem;
-  border-radius: 3rem;
-}
-
-#head_block {
-  position: fixed;
-  color: white;
-  background-color: #273147;
-  width: 100%;
-  height: 80px;
-  font-size: 2rem;
-  font-weight: bold;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 1rem;
-  z-index: 1;
-}
-
-.left_arrow {
-  width: 2rem;
-  padding-top: 1.5rem;
-}
-
-.head_person {
-  width: 1rem;
-  padding-top: 1.5rem;
-}
-
-.head_door {
-  width: 1rem;
-}
-
-.delete_box {
-  height: 0.5rem;
-  margin: 0 0 0.5em 0;
-  padding: 0;
-}
-
-.delete_box a.delete_message {
-  position: absolute;
-  right: 25em;
-  font-size: 0.2rem;
-  color: #444;
-  transition: 0.3s;
-}
-
-.delete_box a.delete_message:hover {
-  color: black;
-  transition: 0.1s;
-}
-
-.header_name {
-  padding-top: 1rem;
-}
-
-.header_space {
-  height: 100px;
-}
-
-.header_right {
-  margin: -0.2rem 0.5rem 0 0;
-  padding: 0;
-  height: 2rem;
-}
-
-.all_user:hover {
-  font-weight: bold;
-}
-
-.message_pics {
-  width: 2rem;
-  padding: 0.5rem;
 }

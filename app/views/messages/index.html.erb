@@ -58,13 +58,13 @@
               
     
               <% if message.user == current_user %>
-                <div class="delete_box">
-                <% if current_user.id == message.user.id %>
-                  <%= link_to '削除', conversation_message_path(@conversation.id,message.id), class: "delete_message", method: :delete %>
-                <% end %>
-                </div>
                 <div class="self-container">
-                  <div>
+                  <div class="message_container">
+                    <div class="delete_box">
+                    <% if current_user.id == message.user.id %>
+                      <%= link_to '削除', conversation_message_path(@conversation.id,message.id), class: "delete_message", method: :delete %>
+                    <% end %>
+                    </div>
                     <div class="past_self_message">
   
               <% else %>
@@ -96,18 +96,42 @@
       </div>
     </div>
 
-      <div class="submit_container">
-        <%= form_with(model: [@conversation, @message]) do |f| %>
-          <div class="message_field">
-            <%= f.text_area :body, class: "form-control" %>
-          </div>
-            <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-          <div>
-            <%= f.submit "送信" %>
-          </div>
-        <% end %>
-      </div>
+    <div id="submit_container">
+      <%= form_with(model: [@conversation, @message]) do |f| %>
+          <%= f.text_area :body, id: "form-control", placeholder: "メッセージを入力" %>
+          <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+          <%= f.submit "送信", class: "submit_buttom" %>
+      <% end %>
+    </div>
 
   </div>
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-autosize@1.18.18/jquery.autosize.min.js"></script>
+
+<script>
+  $(function(){
+    $('textarea').autosize();
+  });
+</script>
+
+
+<script>
+    (function() {
+        const target = document.getElementById("form-control");
+        const observer = new MutationObserver(function() {
+            console.log(target.style.width, target.style.height);
+            let element = document.getElementById('submit_container');
+            let text_area_height = document.getElementById('form-control').clientHeight;
+            text_area_height = text_area_height + 28;
+            element.style.height = text_area_height + "px";
+        });
+
+        const options = {
+            attriblutes: true,
+            attributeFilter: ["style"]
+        };
+        observer.observe(target, options);
+    })();
+</script>
