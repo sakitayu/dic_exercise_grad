@@ -52,41 +52,40 @@
 
       <div class="message_box" id="remove_form_id_is_<%= @opposite_user.id %><%= current_user.id %>">
 
-        <div class="ui segment">
+        
           <% @messages.each do |message| %>
             <% if message.body.present? %>
-              <div class="item">
+              
     
-                <% if message.user == current_user %>
-                  <div class="delete_box">
-                  <% if current_user.id == message.user.id %>
-                    <%= link_to '削除', conversation_message_path(@conversation.id,message.id), class: "delete_message", method: :delete %>
-                  <% end %>
-                  </div>
-                  <div class="self-container">
-                    <div class="past_self_message">
-    
-                <% else %>
-                  <div class="partner-container">
-                    <%= image_tag message.user.image.url, class: "profile_message_img" %>
-                    <div class="partner_message_container">
-                      <p><%= message.user.name %></p>
-                    </div>
-                    <div class="past_partner_message">
+              <% if message.user == current_user %>
+                <div class="delete_box">
+                <% if current_user.id == message.user.id %>
+                  <%= link_to '削除', conversation_message_path(@conversation.id,message.id), class: "delete_message", method: :delete %>
                 <% end %>
+                </div>
+                <div class="self-container">
+                  <div>
+                    <div class="past_self_message">
+  
+              <% else %>
+                <div class="partner-container">
+                  <%= image_tag message.user.image.url, class: "profile_message_img" %>
+                  <div class="message_container">
+                    <p><%= message.user.name %></p>
+                    <div class="past_partner_message">
+              <% end %>
     
                     <p class="message_body"><%= message.body %></p>
-                    <% if message.user == current_user %>
-                      <%#= message.read ? '既読' : '未読' %>
-                    <% end %>
+                    </div>
     
                   </div>
+                  <p class="message_date"><%= message.user.created_at.strftime('%Y年%m月%d日') %></p>
                 </div>
-    
-              </div>
+  
+              
             <% end %>
           <% end %>
-        </div>
+        
     
         <div class="partner-container">
           <div id="conversation_id_is_<%= @opposite_id %><%= @conversation.id %>"></div>
@@ -95,7 +94,7 @@
       </div>
     </div>
 
-      <div class="submit_message_container">
+      <div class="submit_container">
         <%= form_with(model: [@conversation, @message]) do |f| %>
           <div class="message_field">
             <%= f.text_area :body, class: "form-control" %>
