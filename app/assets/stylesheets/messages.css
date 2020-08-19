@@ -215,9 +215,9 @@
 }
 
 #submit_container {
-  position: fixed;
+  position: sticky;
   bottom: 0;
-  width: 52.6em;
+  width: 52.7em;
   margin: 0 5em;
   padding-top: 1.5em;
   background-color: #8ac6d1;
