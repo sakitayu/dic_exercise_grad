@@ -75,11 +75,13 @@
                     <div class="past_partner_message">
               <% end %>
     
-                    <p class="message_body"><%= message.body %></p>
+                      <p class="message_body"><%= message.body %></p>
                     </div>
     
                   </div>
-                  <p class="message_date"><%= message.user.created_at.strftime('%Y年%m月%d日') %></p>
+                  <div class="message_date">
+                    <p><%= message.created_at.strftime('%H:%M') %></p>
+                  </div>
                 </div>
   
               
