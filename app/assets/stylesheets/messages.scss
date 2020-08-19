@@ -80,17 +80,18 @@ $break-point-PC: 960px;
   margin: 0 0 2em 0.5em;
   padding: 0;
   width: 42em;
-  img {
+  img.profile_message_img {
     width: 4.1em;
     height: 4.1em;
     background-color: white;
     object-fit: cover;
     margin: 0.3em 1em 0 0;
+    border-radius: 3rem;
   }
 }
 
 .latest_box{
-  margin:0 0 1rem 0;
+  margin: 0 0 1rem 0;
   padding:0;
   display: flex;
   flex-direction: row;
@@ -107,16 +108,13 @@ $break-point-PC: 960px;
 
 .latest_message {
   width: auto;
-  height:auto;
-  margin:0;
-  padding:0;
+  max-width: 25em;
+  height: auto;
+  padding: 0.5em 0.7em 0.3em 0.7em;
   display: inline-block;
   position: relative;
-  margin-top: 10px;
-  margin-left: 0px;
-  padding: 10px;
   background: white;
-  border-radius: 1.5rem;
+  border-radius: 1.5em;
   p {
     font-size: 1.5em;
     margin: 0.2em;
@@ -335,4 +333,6 @@ $break-point-PC: 960px;
   bottom: 0;
   z-index: 1;
 }
+
+
 

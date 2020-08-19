@@ -1,6 +1,13 @@
-<div class="latest_box">
+<div class="partner-container">
   <%= image_tag message.user.image.url, class: "profile_message_img" %>
-  <div class="latest_message">
-    <p><%= message.body %></p>
+  <div class="message_container">
+    <p><%= message.user.name %></p>
+    <div class="latest_message">
+      <p class="message_body"><%= message.body %></p>
+    </div>
+  </div>
+  
+  <div class="message_date">
+    <p><%= message.created_at.strftime('%H:%M') %></p>
   </div>
 </div>

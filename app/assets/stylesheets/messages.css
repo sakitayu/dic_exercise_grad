@@ -70,12 +70,13 @@
   width: 42em;
 }
 
-.partner-container img {
+.partner-container img.profile_message_img {
   width: 4.1em;
   height: 4.1em;
   background-color: white;
   object-fit: cover;
   margin: 0.3em 1em 0 0;
+  border-radius: 3rem;
 }
 
 .latest_box {
@@ -97,16 +98,13 @@
 
 .latest_message {
   width: auto;
+  max-width: 25em;
   height: auto;
-  margin: 0;
-  padding: 0;
+  padding: 0.5em 0.7em 0.3em 0.7em;
   display: inline-block;
   position: relative;
-  margin-top: 10px;
-  margin-left: 0px;
-  padding: 10px;
   background: white;
-  border-radius: 1.5rem;
+  border-radius: 1.5em;
 }
 
 .latest_message p {
