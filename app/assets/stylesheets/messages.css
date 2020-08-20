@@ -265,7 +265,7 @@
   margin: 0;
   padding: 0;
   color: #444;
-  position: sticky;
+  position: absolute;
 }
 
 #submit_container form textarea {
