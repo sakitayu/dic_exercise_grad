@@ -215,6 +215,40 @@ $break-point-PC: 960px;
   }
 }
 
+.message_body {
+  color: $dark-grey;
+  margin: 0;
+  padding: 0;
+}
+
+.message_date {
+  width: 4em;
+  margin: 0 0 0 1em;
+  padding: 0;
+  color: $dark-grey;
+  display: flex;
+  flex-direction: column-reverse;
+  p {
+    line-height: 0;
+  }
+}
+
+.delete_box {
+  height:0.5rem;
+  margin:0 0 1em 0;
+  padding:0;
+  text-align: right;
+  a.delete_message {
+    font-size: 0.8em;
+    color: $dark-grey;
+    transition: 0.3s;
+    &:hover {
+      color: black;
+      transition: 0.1s;
+    }
+  }
+}
+
 #submit_container {
   position: sticky;
   bottom: 0;
@@ -246,7 +280,7 @@ $break-point-PC: 960px;
       }
     }
     input.submit_buttom {
-      position: absolute;
+      position: sticky;
       bottom: 0;
       right: 8em;
       background-color: $dark-pink;
@@ -263,40 +297,6 @@ $break-point-PC: 960px;
         color:white;
         transition-duration: 0s;
       }
-    }
-  }
-}
-
-.message_body {
-  color: $dark-grey;
-  margin: 0;
-  padding: 0;
-}
-
-.message_date {
-  width: 4em;
-  margin: 0 0 0 1em;
-  padding: 0;
-  color: $dark-grey;
-  display: flex;
-  flex-direction: column-reverse;
-  p {
-    line-height: 0;
-  }
-}
-
-.delete_box {
-  height:0.5rem;
-  margin:0 0 1em 0;
-  padding:0;
-  text-align: right;
-  a.delete_message {
-    font-size: 0.8em;
-    color: $dark-grey;
-    transition: 0.3s;
-    &:hover {
-      color: black;
-      transition: 0.1s;
     }
   }
 }

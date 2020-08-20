@@ -212,6 +212,43 @@
   padding: 0;
 }
 
+.message_body {
+  color: #444;
+  margin: 0;
+  padding: 0;
+}
+
+.message_date {
+  width: 4em;
+  margin: 0 0 0 1em;
+  padding: 0;
+  color: #444;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.message_date p {
+  line-height: 0;
+}
+
+.delete_box {
+  height: 0.5rem;
+  margin: 0 0 1em 0;
+  padding: 0;
+  text-align: right;
+}
+
+.delete_box a.delete_message {
+  font-size: 0.8em;
+  color: #444;
+  transition: 0.3s;
+}
+
+.delete_box a.delete_message:hover {
+  color: black;
+  transition: 0.1s;
+}
+
 #submit_container {
   position: sticky;
   bottom: 0;
@@ -249,7 +286,7 @@
 }
 
 #submit_container form input.submit_buttom {
-  position: absolute;
+  position: sticky;
   bottom: 0;
   right: 8em;
   background-color: #ffb6b9;
@@ -267,43 +304,6 @@
   background-color: #fae3d9;
   color: white;
   transition-duration: 0s;
-}
-
-.message_body {
-  color: #444;
-  margin: 0;
-  padding: 0;
-}
-
-.message_date {
-  width: 4em;
-  margin: 0 0 0 1em;
-  padding: 0;
-  color: #444;
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-.message_date p {
-  line-height: 0;
-}
-
-.delete_box {
-  height: 0.5rem;
-  margin: 0 0 1em 0;
-  padding: 0;
-  text-align: right;
-}
-
-.delete_box a.delete_message {
-  font-size: 0.8em;
-  color: #444;
-  transition: 0.3s;
-}
-
-.delete_box a.delete_message:hover {
-  color: black;
-  transition: 0.1s;
 }
 
 .scroll_down {
