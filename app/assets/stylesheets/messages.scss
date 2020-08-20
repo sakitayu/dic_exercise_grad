@@ -263,12 +263,10 @@ $break-point-PC: 960px;
     margin: 0;
     padding: 0;
     color: $dark-grey;
-    position: absolute;
     textarea {
       width: 18em;
       height: 3em;
       font-size: 20px;
-      position: relative;
       border: solid thin $middle-grey;
       resize: none;
       border-radius: 0.3em;
@@ -281,7 +279,7 @@ $break-point-PC: 960px;
       }
     }
     input.submit_buttom {
-      position: relative;
+      position: absolute;
       bottom: 0;
       right: 8em;
       background-color: $dark-pink;
