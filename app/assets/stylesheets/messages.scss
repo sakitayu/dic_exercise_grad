@@ -28,7 +28,7 @@ $break-point-PC: 960px;
   width: auto;
   height: 100%;
   margin: 5em 5em 0 5em;
-  border-radius: 0.2em;
+  border-radius: 0.2em 0.2em 0 0;
   z-index: 0;
   div.profile_header {
     color: $dark-grey;
@@ -259,6 +259,7 @@ $break-point-PC: 960px;
   background-color: $dark-green;
   display: flex;
   justify-content: center;
+  border-radius: 0 0 0.2em 0.2em;
   form {
     display: flex;
     margin: 0;
@@ -286,7 +287,7 @@ $break-point-PC: 960px;
       background-color: $dark-pink;
       border-style: none;
       border-radius: 0.2em;
-      color:white;
+      color: $dark-grey;
       width: 3em;
       height: 3em;
       transition-duration: 0.2s;
@@ -294,7 +295,7 @@ $break-point-PC: 960px;
       font-size: 1.3em;
       &:hover {
         background-color: $light-pink;
-        color:white;
+        color: $dark-grey;
         transition-duration: 0s;
       }
     }

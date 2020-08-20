@@ -29,14 +29,11 @@
 
     <main>
       <%= yield %>
-      <% if user_signed_in? %>
-          <div><%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %></div>
-      <% end %>
     </main>
 
     <footer>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/jquery-autosize@1.18.18/jquery.autosize.min.js"></script>
 
   </body>

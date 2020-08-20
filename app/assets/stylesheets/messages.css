@@ -14,7 +14,7 @@
   width: auto;
   height: 100%;
   margin: 5em 5em 0 5em;
-  border-radius: 0.2em;
+  border-radius: 0.2em 0.2em 0 0;
   z-index: 0;
 }
 
@@ -259,6 +259,7 @@
   background-color: #8ac6d1;
   display: flex;
   justify-content: center;
+  border-radius: 0 0 0.2em 0.2em;
 }
 
 #submit_container form {
@@ -292,7 +293,7 @@
   background-color: #ffb6b9;
   border-style: none;
   border-radius: 0.2em;
-  color: white;
+  color: #444;
   width: 3em;
   height: 3em;
   transition-duration: 0.2s;
@@ -302,7 +303,7 @@
 
 #submit_container form input.submit_buttom:hover {
   background-color: #fae3d9;
-  color: white;
+  color: #444;
   transition-duration: 0s;
 }
 
