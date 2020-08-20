@@ -263,11 +263,12 @@ $break-point-PC: 960px;
     margin: 0;
     padding: 0;
     color: $dark-grey;
+    position: sticky;
     textarea {
       width: 18em;
       height: 3em;
       font-size: 20px;
-      position: absolute;
+      position: relative;
       border: solid thin $middle-grey;
       resize: none;
       border-radius: 0.3em;
