@@ -28,6 +28,7 @@
   display: flex;
   flex-direction: row-reverse;
   position: sticky;
+  position: -webkit-sticky;
   z-index: 2;
 }
 
@@ -252,6 +253,7 @@
 
 #submit_container {
   position: sticky;
+  position: -webkit-sticky;
   bottom: 0;
   width: 52.7em;
   margin: 0 5em;

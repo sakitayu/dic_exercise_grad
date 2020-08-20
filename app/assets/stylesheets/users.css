@@ -710,6 +710,7 @@
   display: flex;
   flex-direction: row-reverse;
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   background-color: #F7F7F7;
 }
@@ -802,6 +803,7 @@
   display: flex;
   flex-direction: row-reverse;
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   background-color: #F7F7F7;
 }
@@ -894,6 +896,7 @@
   display: flex;
   flex-direction: row-reverse;
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   background-color: #bbded6;
 }

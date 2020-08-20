@@ -637,6 +637,7 @@ $break-point-PC: 960px;
     display: flex;
     flex-direction: row-reverse;
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     background-color: $light-grey;
   }
@@ -716,6 +717,7 @@ $break-point-PC: 960px;
     display: flex;
     flex-direction: row-reverse;
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     background-color: $light-grey;
   }
@@ -799,6 +801,7 @@ $break-point-PC: 960px;
     display: flex;
     flex-direction: row-reverse;
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     background-color: $light-green;
   }
