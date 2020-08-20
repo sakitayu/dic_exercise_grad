@@ -286,7 +286,7 @@
 }
 
 #submit_container form input.submit_buttom {
-  position: sticky;
+  position: absolute;
   bottom: 0;
   right: 8em;
   background-color: #ffb6b9;
