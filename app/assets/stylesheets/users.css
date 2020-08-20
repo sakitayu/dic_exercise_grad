@@ -580,6 +580,7 @@
   border-radius: 0.2em;
   position: sticky;
   top: 0;
+  display: block;
 }
 
 .navi_box div.state_umbrella {
