@@ -28,8 +28,8 @@
       <div class="navi_prof_mypage">
         <p><%= link_to "マイページ", user_path(current_user.id) %></p>
       </div>
-      <div class="navi_prof_state">
-        <p><b><%= link_to "#{@opposite_user.name}", user_path(@opposite_user.id) %></b> さんと<br>メッセージのやりとり中</p>
+      <div class="navi_prof_state_dark-pink">
+        <p><b><%= link_to "#{@opposite_user.name}", user_path(@opposite_user.id) %></b> さんと<br>メッセージ中です</p>
       </div>
       <div class="navi_prof_logout">
         <% if user_signed_in? %>
