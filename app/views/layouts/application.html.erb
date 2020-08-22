@@ -15,7 +15,21 @@
       <div class="header_block">
         <div class="header_left"><%= image_tag 'raynee_logo.png', class: "raynee-logo" %></div>
         <div class="header_center"></div>
-        <% unless user_signed_in? %>
+        <% if user_signed_in? %>
+          <div class="header_prof_img">
+            <% if current_user.image.url == nil %>
+              <% if current_user.gender == "男" %>
+                <%= link_to image_tag('male.png'), user_path(current_user.id) %>
+              <% elsif current_user.gender == "女" %>
+                <%= link_to image_tag('female.png'), user_path(current_user.id) %>
+              <% elsif current_user.gender == "どちらでもない" %>
+                <%= link_to image_tag('trans.png'), user_path(current_user.id) %>
+              <% end %>
+            <% else %>
+              <%= link_to image_tag(current_user.image.url), user_path(current_user.id) unless current_user.image.url == nil %>
+            <% end %>
+          </div>
+        <% else %>
           <% if controller.action_name == "new" && controller.controller_name == "registrations" %>
             <div class="header_right"><%= link_to "ログイン", new_user_session_path, class: "register_link" %></div>
           <% elsif controller.action_name == "new" && controller.controller_name == "sessions" %>

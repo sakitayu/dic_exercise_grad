@@ -544,7 +544,7 @@ $break-point-PC: 960px;
     img {
       width: 6em;
       height: 6em;
-      border: 0.1em solid $dark-grey;
+      border: 1px solid $dark-grey;
       border-radius: 5em;
       margin: 2em 0 1em 0;
       background-color: white;
@@ -678,7 +678,7 @@ $break-point-PC: 960px;
         width: 4em;
         height: 4em;
         margin: 0.4em 0 0 0.4em;
-        border: 0.1em solid $dark-grey;
+        border: 1px solid $dark-grey;
         border-radius: 3em;
         background-color: white;
         object-fit: cover;

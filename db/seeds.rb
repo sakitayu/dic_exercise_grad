@@ -17,7 +17,7 @@ User.create!(
       name: 'さっきー',
       gender: '男',
       age: '34~40',
-      introduction: 'さっきーです！',
+      introduction: 'さっきーです！よろしくお願いします！',
     },
     {
       email: 'tuborin@example.com',
@@ -50,7 +50,7 @@ User.create!(
       name: '善ちゃん',
       gender: '男',
       age: '20~26',
-      introduction: 'しまんちゅうぬ宝〜',
+      introduction: 'しまんちゅうぬ宝〜(ここでポケットからウニを取り出す)',
     },
     {
       email: 'yoshiyuu@example.com',
@@ -61,7 +61,7 @@ User.create!(
       name: 'よしむー',
       gender: '男',
       age: '20~26',
-      introduction: '俺ガイル絶対見てください',
+      introduction: '俺ガイル絶対見てください。面白いですよ。',
     },
     {
       email: 'anridayo@example.com',
@@ -83,7 +83,7 @@ User.create!(
       name: 'ゆきねえ',
       gender: '女',
       age: '27~33',
-      introduction: 'お酒大好き！',
+      introduction: 'お酒大好き！肝臓は大切に！',
     },
     {
       email: 'yamachan@example.com',
@@ -105,7 +105,7 @@ User.create!(
       name: 'スギちゃん',
       gender: '男',
       age: '20~26',
-      introduction: 'お笑い芸人のスギちゃんとは一切関係ありません',
+      introduction: '男らしさを追い求めて早500年',
     },
     {
       email: 'ikkouikkou@example.com',
@@ -116,7 +116,7 @@ User.create!(
       name: 'いっこう',
       gender: 'どちらでもない',
       age: '48~60',
-      introduction: 'どんだけ〜(死語)',
+      introduction: 'やだもう〜どんだけ〜',
     },
     {
       email: 'tamutamu@example.com',
@@ -138,7 +138,7 @@ User.create!(
       name: 'かんちゃん',
       gender: '男',
       age: '34~40',
-      introduction: '趣味は音楽を聴くことかな',
+      introduction: 'かんちゃんです。趣味は音楽を聴くことかな。',
     },
     {
       email: 'stevejobs@example.com',

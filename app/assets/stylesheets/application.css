@@ -65,6 +65,20 @@ header div.header_right {
   margin: 1.4em 5em 0 0;
 }
 
+header div.header_prof_img {
+  height: 3em;
+  margin: 1em 5em 0 0;
+}
+
+header div.header_prof_img img {
+  width: 3em;
+  height: 3em;
+  border-radius: 3em;
+  background-color: white;
+  object-fit: cover;
+  margin: 0;
+}
+
 header img.raynee-logo {
   height: 3em;
 }

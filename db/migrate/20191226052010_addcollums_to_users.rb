@@ -8,5 +8,6 @@ class AddcollumsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :have_umbrella, :boolean
     add_column :users, :image, :text
     add_column :users, :removing, :boolean
+    add_column :users, :state, :string
   end
 end
