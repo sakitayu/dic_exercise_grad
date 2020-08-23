@@ -43,6 +43,13 @@
   </div>
 
   <div class="right_culumn_container">
+
+    <% if Matching.find_by(followed_id:current_user.id) && current_user.state == "message" %>
+        <div class="confirm_box">
+          <%= link_to "#{current_user.following.first.name} さんとメッセージ中です。メッセージ画面はこちら", conversations_path(sender_id: current_user.following.first.id, recipient_id: current_user.id), method: :post %>
+        </div>
+    <% end %>
+
     <div class="main_box">
       <div class="search_user">
         <div>
@@ -61,7 +68,7 @@
       <div class="main_contents">
         <table id="request_user_id_is_<%= current_user.id %>">
           <% if Matching.find_by(followed_id: current_user.id) == nil %>
-            <tr class="default_table_border">
+            <tr class="default_table_border" id="default_tr_id_is_<%= current_user.id %>">
               <td class="default_disc_box">
                 <p>リクエストが来たらここに表示されます</p>
               </td>

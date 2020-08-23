@@ -33,7 +33,8 @@ App.matching = App.cable.subscriptions.create "MatchingChannel",
     # 傘持ちユーザーからみて、リクエストを自分に送っているユーザー一覧に表示
     # 同時にdefault_table_borderの中身を非表示
     request_user_div = '#request_user_id_is_' + followed_id
-    $('.default_table_border').remove()
+    default_tr = '#default_tr_id_is_' + followed_id
+    $(default_tr).remove()
     $(request_user_div).append data['ping']
 
     # 他のユーザーーとマッチングした傘持ちユーザーを一覧から削除
