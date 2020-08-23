@@ -126,7 +126,7 @@
           <p><%= link_to "マイページ", user_path(current_user.id) %></p>
         </div>
         
-        <% if current_user.following.first != nil && current_user.followers.first != nil %>
+        <% if current_user.following.first != nil && current_user.followers.first != nil && current_user.state == "message" %>
           <div class="navi_prof_state_dark-pink">
             <p><b><%= link_to "#{current_user.following.first.name}", user_path(current_user.following.first.id) %></b> さんと<br>メッセージ中です</p>
           </div>
@@ -147,7 +147,11 @@
   <div class="right_culumn_container">
     <div id="notification_id_is_<%= current_user.id %>"></div>
   
-    <% if Matching.find_by(followed_id:current_user.id) %>
+    <% if Matching.find_by(followed_id:current_user.id) && current_user.state == "message" %>
+      <div class="confirm_box">
+        <%= link_to "#{current_user.following.first.name} さんとメッセージ中です。メッセージ画面はこちら", conversations_path(sender_id: current_user.following.first.id, recipient_id: current_user.id), method: :post %>
+      </div>
+    <% elsif Matching.find_by(followed_id:current_user.id) %>
       <div class="confirm_box" id="confirm_id_is_<%= current_user.id %>">
         <%= link_to "あなたのリクエストが承諾されました。こちらから確認してください", confirm_request_users_path %>
       </div>
