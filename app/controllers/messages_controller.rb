@@ -19,6 +19,12 @@ class MessagesController < ApplicationController
   
     @messages = @messages.order(:created_at)
     @message = @conversation.messages.build
+
+    # 傘なしユーザーがメッセージルームに移動した場合、stateカラムがmessageになる
+    # すでにstateがmessageになっている場合はなにもしない(データベースへの無駄なアクセスを増やさないため)
+    if current_user.have_umbrella == false && current_user.state != "message"
+      current_user.update(state: "message")
+    end
   end
 
   def create

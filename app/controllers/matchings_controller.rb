@@ -10,6 +10,12 @@ class MatchingsController < ApplicationController
     #   @matching_state.destroy
     # end
     current_user.follow!(@user)
+
+    # 傘持ちユーザーが傘なしユーザーをフォローする場合は"承認"になるので
+    # その場合にstateカラムをmessageにする
+    if current_user.have_umbrella == true
+      current_user.update(state: "message")
+    end
     
     # 傘持ちユーザーがリクエストを送っている傘なしユーザーをフォロー(承諾)した際に
     # 他に同じ傘持ちユーザーをフォロー(リクエスト)している傘なしユーザーがいた場合にそれらのマッチングを全て解除

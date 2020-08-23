@@ -28,8 +28,8 @@
       <div class="navi_prof_mypage">
         <p><%= link_to "マイページ", user_path(current_user.id) %></p>
       </div>
-        
-      <% if current_user.following.first != nil && current_user.followers.first != nil %>
+      
+      <% if current_user.following.first != nil && current_user.followers.first != nil && current_user.state == "message" %>
         <div class="navi_prof_state_dark-pink">
           <p><b><%= link_to "#{current_user.following.first.name}", user_path(current_user.following.first.id) %></b> さんと<br>メッセージ中です</p>
         </div>

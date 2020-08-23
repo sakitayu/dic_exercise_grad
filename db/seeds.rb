@@ -259,7 +259,7 @@ User.create!(
       name: 'サンプルAくん',
       gender: '男',
       age: '20~26',
-      introduction: '',
+      introduction: 'DO IT !!!!!!!!!',
     },
     {
       email: 'sample_b@example.com',
@@ -270,7 +270,7 @@ User.create!(
       name: 'サンプルBちゃん',
       gender: '女',
       age: '20~26',
-      introduction: '',
+      introduction: 'はじめまして！私の名前はサンプ・ルビー・チャンです',
     }
   ]
 )
