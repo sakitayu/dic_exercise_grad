@@ -90,6 +90,9 @@ class UsersController < ApplicationController
   def confirm_request
     @matchings = Matching.all
     @conversations = Conversation.all
+    if current_user.state == "message"
+      redirect_to user_path(id: current_user.id)
+    end
   end
 
   private
