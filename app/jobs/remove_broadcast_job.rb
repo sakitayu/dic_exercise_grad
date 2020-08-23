@@ -4,7 +4,7 @@ class RemoveBroadcastJob < ApplicationJob
   def perform(ban)
     if ban.have_umbrella == true
       ActionCable.server.broadcast 'remove_channel', ban: ban, ban_id: ban.id, ban_removing: ban.removing
-    elsif ban.following.first.id != nil
+    elsif ban.following.first.id != nil && ban.state != "message"
       ActionCable.server.broadcast 'remove_channel', ban: render_cancel_notification(ban), ban_id: ban.id, ban_removing: ban.removing, ban_opposite_id: ban.following.first.id
     end
   end
