@@ -60,6 +60,13 @@
 
       <div class="main_contents">
         <table id="request_user_id_is_<%= current_user.id %>">
+          <% if Matching.find_by(followed_id: current_user.id) == nil %>
+            <tr class="default_table_border">
+              <td class="default_disc_box">
+                <p>リクエストが来たらここに表示されます</p>
+              </td>
+            </tr>
+          <% end %>
           <% @matchings.each do |matching| %>
             <% follower = User.find(matching.follower_id) %>
             <% followed = User.find(matching.followed_id) %>

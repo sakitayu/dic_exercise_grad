@@ -657,6 +657,18 @@ $break-point-PC: 960px;
     width: 100%;
     border-spacing: 0;
     }
+    tr.default_table_border {
+      color: $dark-grey;
+      height: 5em;
+      margin: 0;
+      transition-duration: 0.5s;
+      z-index: -1;
+      p {
+        color: $middle-grey;
+        font-size: 1.2em;
+        text-align: center;
+      }
+    }
     tr.table_border {
       color: $dark-grey;
       height: 5em;
