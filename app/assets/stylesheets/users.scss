@@ -679,6 +679,12 @@ $break-point-PC: 960px;
         transition-duration: 0.3s;
       }
     }
+    tr.table_border_on_message {
+      background-color: $dark-pink;
+      color: $dark-grey;
+      height: 5em;
+      margin: 0;
+    }
     td {
       color: $dark-grey;
       padding: 0.3em;

@@ -78,7 +78,29 @@
             <% follower = User.find(matching.follower_id) %>
             <% followed = User.find(matching.followed_id) %>
 
-            <% if followed.id == current_user.id && follower.have_umbrella == false %>
+            <% if followed.id == current_user.id && follower.have_umbrella == false && follower.state == "message" && current_user.state == "message" %>
+              <tr class="table_border_on_message" id="request_user_list_id_is_<%= follower.id %>">
+                <td>
+                  <% if follower.image.url == nil %>
+                    <% if follower.gender == "男" %>
+                      <%= link_to image_tag('male.png'), user_path(follower.id) %>
+                    <% elsif follower.gender == "女" %>
+                      <%= link_to image_tag('female.png'), user_path(follower.id) %>
+                    <% elsif follower.gender == "どちらでもない" %>
+                      <%= link_to image_tag('trans.png'), user_path(follower.id) %>
+                    <% end %>
+                  <% else %>
+                    <%= link_to image_tag(follower.image.url), user_path(follower.id) unless follower.image.url == nil %>
+                  <% end %>
+                </td>
+                <td class="list_name">
+                  <%= link_to "#{follower.name}", user_path(follower.id)  %>
+                </td>
+                <td class="list_area"><%= follower.area %></td>
+                <td class="list_gender"><%= follower.gender %></td>
+                <td class="list_age"><%= follower.age %></td>
+              </tr>
+            <% elsif followed.id == current_user.id && follower.have_umbrella == false %>
               <tr class="table_border" id="request_user_list_id_is_<%= follower.id %>">
                 <td>
                   <% if follower.image.url == nil %>
@@ -183,29 +205,53 @@
         <table>
           <% @users.each do |user| %>
             <% if user.id != current_user.id && user.have_umbrella && Matching.find_by(follower_id: user.id) == nil %>
-                <tr class="table_border" id="having_user_list_id_is_<%= user.id %>">
-                  <td class="list_prof_img">
-                    <% if user.image.url == nil %>
-                      <% if user.gender == "男" %>
-                        <%= link_to image_tag('male.png'), user_path(user.id) %>
-                      <% elsif user.gender == "女" %>
-                        <%= link_to image_tag('female.png'), user_path(user.id) %>
-                      <% elsif user.gender == "どちらでもない" %>
-                        <%= link_to image_tag('trans.png'), user_path(user.id) %>
-                      <% end %>
-                    <% else %>
-                      <%= link_to image_tag(user.image.url), user_path(user.id) unless user.image.url == nil %>
+              <tr class="table_border" id="having_user_list_id_is_<%= user.id %>">
+                <td class="list_prof_img">
+                  <% if user.image.url == nil %>
+                    <% if user.gender == "男" %>
+                      <%= link_to image_tag('male.png'), user_path(user.id) %>
+                    <% elsif user.gender == "女" %>
+                      <%= link_to image_tag('female.png'), user_path(user.id) %>
+                    <% elsif user.gender == "どちらでもない" %>
+                      <%= link_to image_tag('trans.png'), user_path(user.id) %>
                     <% end %>
-                  </td>
-                  <td class="list_name">
-                    <%= link_to "#{user.name}", user_path(user.id)  %>
-                  </td>
-                  <td class="list_gender_and_age">
-                    <p><%= user.gender %></p>
-                    <p><%= user.age %><%= "才" unless user.age == "非公開" %></p>
-                  </td>
-                  <td class="list_area"><%= user.area %></td>
-                </tr>
+                  <% else %>
+                    <%= link_to image_tag(user.image.url), user_path(user.id) unless user.image.url == nil %>
+                  <% end %>
+                </td>
+                <td class="list_name">
+                  <%= link_to "#{user.name}", user_path(user.id)  %>
+                </td>
+                <td class="list_gender_and_age">
+                  <p><%= user.gender %></p>
+                  <p><%= user.age %><%= "才" unless user.age == "非公開" %></p>
+                </td>
+                <td class="list_area"><%= user.area %></td>
+              </tr>
+            <% elsif user.id != current_user.id && user.have_umbrella && user.state == "message" && current_user.state == "message" %>
+              <tr class="table_border_on_message" id="having_user_list_id_is_<%= user.id %>">
+                <td class="list_prof_img">
+                  <% if user.image.url == nil %>
+                    <% if user.gender == "男" %>
+                      <%= link_to image_tag('male.png'), user_path(user.id) %>
+                    <% elsif user.gender == "女" %>
+                      <%= link_to image_tag('female.png'), user_path(user.id) %>
+                    <% elsif user.gender == "どちらでもない" %>
+                      <%= link_to image_tag('trans.png'), user_path(user.id) %>
+                    <% end %>
+                  <% else %>
+                    <%= link_to image_tag(user.image.url), user_path(user.id) unless user.image.url == nil %>
+                  <% end %>
+                </td>
+                <td class="list_name">
+                  <%= link_to "#{user.name}", user_path(user.id)  %>
+                </td>
+                <td class="list_gender_and_age">
+                  <p><%= user.gender %></p>
+                  <p><%= user.age %><%= "才" unless user.age == "非公開" %></p>
+                </td>
+                <td class="list_area"><%= user.area %></td>
+              </tr>
             <% end %>
           <% end %>
         </table>
