@@ -54,6 +54,11 @@ class MatchingsController < ApplicationController
 
     current_user.unfollow!(@user)
 
+    # リクエスト承諾後にキャンセルして相互フォロー状態が解除された際に
+    # 相手の現在の状態を「メッセージ中」からnilに戻す
+    @user.update(state: nil)
+    @remove_user.update(state: nil)
+
     #リクエストキャンセル時に向こう側からのフォローも解除して相互フォロー状態を無効にする
     #キャンセル等の誤操作により自分に対してフォローしている状態が残ると動作バグの原因になるため
     if Matching.find_by(followed_id: current_user.id) && current_user.have_umbrella == false
