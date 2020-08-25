@@ -1049,6 +1049,7 @@
 
 .profile_container div.profile_left {
   border: 1px solid #999999;
+  background-color: #F7F7F7;
   border-radius: 0.2em;
   width: 15em;
   margin: 2em;
@@ -1064,12 +1065,14 @@
   width: 12em;
   height: 12em;
   object-fit: cover;
+  background-color: white;
 }
 
 .profile_container div.profile_left img.profile_pic {
   width: 12em;
   height: 12em;
   object-fit: cover;
+  background-color: white;
 }
 
 .profile_container div.profile_left p.prof_name {

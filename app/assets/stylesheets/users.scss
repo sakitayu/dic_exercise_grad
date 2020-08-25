@@ -935,7 +935,8 @@ $break-point-PC: 960px;
   margin: 0 2em 0 2em;
   height: 30em;
   div.profile_left {
-    border:1px solid $middle-grey;
+    border: 1px solid $middle-grey;
+    background-color: $light-grey;
     border-radius: 0.2em;
     width: 15em;
     margin:2em;
@@ -948,11 +949,13 @@ $break-point-PC: 960px;
       width: 12em;
       height: 12em;
       object-fit: cover;
+      background-color: white;
     }
     img.profile_pic {
       width: 12em;
       height: 12em;
       object-fit: cover;
+      background-color: white;
     }
     p.prof_name {
       text-align: center;
