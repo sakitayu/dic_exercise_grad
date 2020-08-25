@@ -28,6 +28,10 @@
       <div class="navi_prof_mypage">
         <p><%= link_to "マイページ", user_path(current_user.id) %></p>
       </div>
+      <div class="navi_prof_area">
+        <p>あなたがいる場所</p>
+        <p><b><%= current_user.area %></b></p>
+      </div>
       <div class="navi_prof_state_dark-pink">
         <p><b><%= link_to "#{@opposite_user.name}", user_path(@opposite_user.id) %></b> さんと<br>メッセージ中です</p>
       </div>

@@ -576,11 +576,22 @@ $break-point-PC: 960px;
       }
     }
   }
+  div.navi_prof_area {
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+    padding: 1em 0;
+    background-color: $light-green;
+    p {
+      color: $dark-grey;
+      font-size: 1em;
+      margin: 0;
+    }
+  }
   div.navi_prof_state_dark-pink {
     width: 100%;
     height: 5em;
     background-color: $dark-pink;
-    margin: 1em 0;
     p {
       color: $dark-grey;
       margin: 0;
@@ -595,7 +606,6 @@ $break-point-PC: 960px;
     width: 100%;
     height: 5em;
     background-color: $light-pink;
-    margin: 1em 0;
     p {
       color: $dark-grey;
       margin: 0;
@@ -1277,6 +1287,16 @@ $break-point-PC: 960px;
     &:hover {
       opacity: 0.8;
     }
+  }
+  p {
+    display: block;
+    width: auto;
+    padding: 0.5em;
+    background-color: $dark-green;
+    border-radius: 20em;
+    height: 1.5em;
+    font-size: 1.2em;
+    color: white;
   }
 }
 

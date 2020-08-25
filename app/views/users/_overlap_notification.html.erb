@@ -1,5 +1,4 @@
-<div id="cancel_notification_<%#= ban.id %><%#= ban.following.first.id %>">
-  <p>申し訳ございません。</p>
+<div id="cancel_notification_<%#= ban.id %><%#= ban.following.first.id %>" class="cancel_box">
   <p>相手が他のユーザーとマッチングしたためリクエストは無効になりました。</p>
-  <%= link_to "ユーザー一覧へ戻る", users_path %>
+  <%#= link_to "ユーザー一覧へ戻る", users_path %>
 </div>

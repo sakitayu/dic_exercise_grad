@@ -23,6 +23,10 @@
         <div class="navi_prof_mypage">
           <p><%= link_to "マイページ", user_path(current_user.id) %></p>
         </div>
+      <div class="navi_prof_area">
+        <p>あなたがいる場所</p>
+        <p><b><%= current_user.area %></b></p>
+      </div>
         
         <% if current_user.following.first != nil && current_user.followers.first != nil && current_user.state == "message" %>
           <div class="navi_prof_state_dark-pink">
@@ -135,41 +139,44 @@
   <div class="navi_container">
     <div class="navi_box">
       <div class="state_umbrella"><p>傘を持っていません</p></div>
-        <div class="navi_prof_pic">
-          <% if current_user.image.url == nil %>
-            <% if current_user.gender == "男" %>
-              <%= image_tag('male.png') %>
-            <% elsif current_user.gender == "女" %>
-              <%= image_tag('female.png') %>
-            <% elsif current_user.gender == "どちらでもない" %>
-              <%= image_tag('trans.png') %>
-            <% end %>
-          <% else %>
-            <%= image_tag(current_user.image.url) unless current_user.image.url == nil %>
+      <div class="navi_prof_pic">
+        <% if current_user.image.url == nil %>
+          <% if current_user.gender == "男" %>
+            <%= image_tag('male.png') %>
+          <% elsif current_user.gender == "女" %>
+            <%= image_tag('female.png') %>
+          <% elsif current_user.gender == "どちらでもない" %>
+            <%= image_tag('trans.png') %>
           <% end %>
-        </div>
-        <div class="navi_prof_name">
-          <p><%= current_user.name %></p>
-        </div>
-        <div class="navi_prof_mypage">
-          <p><%= link_to "マイページ", user_path(current_user.id) %></p>
-        </div>
-        
-        <% if current_user.following.first != nil && current_user.followers.first != nil && current_user.state == "message" %>
-          <div class="navi_prof_state_dark-pink">
-            <p><b><%= link_to "#{current_user.following.first.name}", user_path(current_user.following.first.id) %></b> さんと<br>メッセージ中です</p>
-          </div>
-        <% elsif current_user.following.first != nil %>
-          <div class="navi_prof_state_light-pink">
-            <p><b><%= link_to "#{current_user.following.first.name}", user_path(current_user.following.first.id) %></b> さんに<br>リクエスト中です</p>
-          </div>
+        <% else %>
+          <%= image_tag(current_user.image.url) unless current_user.image.url == nil %>
         <% end %>
-
-        <div class="navi_prof_logout">
-          <% if user_signed_in? %>
-              <div><%= link_to "ログアウトして終了", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %></div>
-          <% end %>
+      </div>
+      <div class="navi_prof_name">
+        <p><%= current_user.name %></p>
+      </div>
+      <div class="navi_prof_mypage">
+        <p><%= link_to "マイページ", user_path(current_user.id) %></p>
+      </div>
+      <div class="navi_prof_area">
+        <p>あなたがいる場所</p>
+        <p><b><%= current_user.area %></b></p>
+      </div>
+      
+      <% if current_user.following.first != nil && current_user.followers.first != nil && current_user.state == "message" %>
+        <div class="navi_prof_state_dark-pink">
+          <p><b><%= link_to "#{current_user.following.first.name}", user_path(current_user.following.first.id) %></b> さんと<br>メッセージ中です</p>
         </div>
+      <% elsif current_user.following.first != nil %>
+        <div class="navi_prof_state_light-pink">
+          <p><b><%= link_to "#{current_user.following.first.name}", user_path(current_user.following.first.id) %></b> さんに<br>リクエスト中です</p>
+        </div>
+      <% end %>
+      <div class="navi_prof_logout">
+        <% if user_signed_in? %>
+            <div><%= link_to "ログアウトして終了", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %></div>
+        <% end %>
+      </div>
     </div>
   </div>
   

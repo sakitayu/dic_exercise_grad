@@ -28,6 +28,10 @@
       <div class="navi_prof_mypage">
         <p><%= link_to "マイページ", user_path(current_user.id) %></p>
       </div>
+      <div class="navi_prof_area">
+        <p>あなたがいる場所</p>
+        <p><b><%= current_user.area %></b></p>
+      </div>
 
         <% if current_user.following.first != nil %>
           <div class="navi_prof_state_light-pink">
