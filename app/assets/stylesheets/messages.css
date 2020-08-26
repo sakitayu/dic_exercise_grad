@@ -77,6 +77,16 @@
   object-fit: cover;
   margin: 0.3em 1em 0 0;
   border-radius: 3rem;
+  border: solid 1px #999999;
+}
+
+.partner-container img.profile_message_pic {
+  width: 4.1em;
+  height: 4.1em;
+  background-color: white;
+  object-fit: cover;
+  margin: 0.3em 1em 0 0;
+  border-radius: 3rem;
 }
 
 .latest_box {

@@ -1,5 +1,16 @@
 <div class="partner-container">
-  <%= image_tag message.user.image.url, class: "profile_message_img" %>
+  <% if message.user.image.url == nil %>
+    <% if message.user.gender == "男" %>
+      <%= image_tag 'male.png', class: "profile_message_img" %>
+    <% elsif message.user.gender == "女" %>
+      <%= image_tag 'female.png', class: "profile_message_img" %>
+    <% elsif message.user.gender == "どちらでもない" %>
+      <%= image_tag 'trans.png', class: "profile_message_img" %>
+    <% end %>
+  <% else %>
+    <%= image_tag message.user.image.url, class: "profile_message_pic" unless message.user.image.url == nil %>
+  <% end %>
+  <%#= image_tag message.user.image.url, class: "profile_message_img" %>
   <div class="message_container">
     <p><%= message.user.name %></p>
     <div class="latest_message">
