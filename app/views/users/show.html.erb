@@ -84,12 +84,15 @@
     <div class="main_box_on_my_page">
   <% end %>
 
-    <% if current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil %>
+    <% if current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil && current_user.state != "message" %>
       <div class="profile_header">
         <%= link_to 'ユーザー一覧に戻る', users_path %>
         <p class="disc_for_accept" id="remove_disc_id_is_<%= @user.id %><%= current_user.id %>"><strong><%= @user.name %></strong> さんからリクエストが来ています。承諾しますか？</p>
       </div>
-      
+    <% elsif current_user.state == "message" && current_user.id != @user.id %>
+      <div class="profile_header">
+        <%= link_to 'ユーザー一覧に戻る', users_path %>
+      </div>
     <% else %>
       <div class="profile_header">
         <% if current_user.id != @user.id %>
@@ -139,7 +142,7 @@
           <% elsif @followed != nil %>
             <div class="approval_button">
               <div id="remove_form_id_is_<%= @user.id %><%= current_user.id %>">
-                <% if current_user.id == @followed.id %>
+                <% if current_user.id == @followed.id && current_user.state != "message" %>
                   <%= form_with(model: current_user.active_matchings.build(followed_id: @user.id)) do |f| %>
                     <%= f.hidden_field :followed_id %>
                     <%= f.submit "承諾する", data: { confirm: '本当に承諾しますか？(承諾するとメッセージルームに移動します)' } if current_user.id != @user.id && current_user.have_umbrella == true %>
