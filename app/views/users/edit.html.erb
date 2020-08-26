@@ -28,6 +28,10 @@
       <div class="navi_prof_mypage">
         <p><%= link_to "マイページ", user_path(current_user.id) %></p>
       </div>
+      <div class="navi_prof_area">
+        <p>あなたがいる場所</p>
+        <p><b><%= current_user.area %></b></p>
+      </div>
         
       <% if current_user.following.first != nil && current_user.followers.first != nil %>
         <div class="navi_prof_state_dark-pink">
@@ -48,6 +52,28 @@
   </div>
 
   <div class="right_culumn_container">
+    <div id="notification_id_is_<%= current_user.id %>"></div>
+  
+    <% if Matching.find_by(followed_id:current_user.id) && current_user.following.first != nil && current_user.state == "message" %>
+      <div class="confirm_box">
+        <%= link_to "#{current_user.following.first.name} さんとメッセージ中です。メッセージ画面はこちら", conversations_path(sender_id: current_user.following.first.id, recipient_id: current_user.id), method: :post %>
+      </div>
+    <% elsif Matching.find_by(followed_id:current_user.id) && current_user.have_umbrella == false %>
+      <div class="confirm_box" id="confirm_id_is_<%= current_user.id %>">
+        <%= link_to "あなたのリクエストが承諾されました。こちらから確認してください", confirm_request_users_path %>
+      </div>
+    <% end %>
+
+  <% if current_user.id != @user.id %>
+    <div id="notification_id_is_<%= current_user.id %>">
+      <div id="remove_overlap_notification_id_is_<%= current_user.id %>">
+        <div id="overlap_notification_id_is_<%= @user.id %>"></div>
+      </div>
+    </div>
+  <% end %>
+
+  <div id="cancel_id_is_<%= @user.id %><%= current_user.id %>"></div>
+
     <div class="main_box_on_my_page">
       <div class="profile_header">
         <% if current_user.id != @user.id %>
