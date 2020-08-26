@@ -50,5 +50,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery-autosize@1.18.18/jquery.autosize.min.js"></script>
 
+    <% if controller.controller_name == "messages" %>
+    <script>
+      var element = document.documentElement;
+      var bottom = element.scrollHeight - element.clientHeight;
+      window.scroll(0, bottom);
+    </script>
+    <% end %>
+
   </body>
 </html>

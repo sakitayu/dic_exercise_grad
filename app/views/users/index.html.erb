@@ -48,7 +48,7 @@
 
   <div class="right_culumn_container">
 
-    <% if Matching.find_by(followed_id:current_user.id) && current_user.state == "message" %>
+    <% if Matching.find_by(followed_id:current_user.id) && current_user.following.first != nil && current_user.state == "message" %>
         <div class="confirm_box">
           <%= link_to "#{current_user.following.first.name} さんとメッセージ中です。メッセージ画面はこちら", conversations_path(sender_id: current_user.following.first.id, recipient_id: current_user.id), method: :post %>
         </div>
