@@ -108,28 +108,30 @@
 
 
 
+
 <script>
   $(function(){
     $('textarea').autosize();
   });
-</script>
 
+  (function() {
+      const target = document.getElementById("form-control");
+      const observer = new MutationObserver(function() {
+          console.log(target.style.width, target.style.height);
+          let element = document.getElementById('submit_container');
+          let text_area_height = document.getElementById('form-control').clientHeight;
+          text_area_height = text_area_height + 28;
+          element.style.height = text_area_height + "px";
+      });
+      const options = {
+          attriblutes: true,
+          attributeFilter: ["style"]
+      };
+      observer.observe(target, options);
+  })();
 
-<script>
-    (function() {
-        const target = document.getElementById("form-control");
-        const observer = new MutationObserver(function() {
-            console.log(target.style.width, target.style.height);
-            let element = document.getElementById('submit_container');
-            let text_area_height = document.getElementById('form-control').clientHeight;
-            text_area_height = text_area_height + 28;
-            element.style.height = text_area_height + "px";
-        });
+  var element = document.documentElement;
+  var bottom = element.scrollHeight - element.clientHeight;
+  window.scroll(0, bottom);
 
-        const options = {
-            attriblutes: true,
-            attributeFilter: ["style"]
-        };
-        observer.observe(target, options);
-    })();
 </script>

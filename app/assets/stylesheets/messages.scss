@@ -62,8 +62,6 @@ $break-point-PC: 960px;
   margin: 0 2em 0 2em;
   padding: 2em;
   background-color: white;
-  background-image: url(rain.jpg);
-  background-size: cover;
   z-index: -1;
 }
 
@@ -115,7 +113,7 @@ $break-point-PC: 960px;
   padding: 0.5em 0.7em 0.3em 0.7em;
   display: inline-block;
   position: relative;
-  background: white;
+  background: gainsboro;
   border-radius: 1.5em;
   p {
     font-size: 1.5em;
@@ -134,7 +132,7 @@ $break-point-PC: 960px;
     width: 0;
     height: 0;
     border-top: 1em solid transparent;
-    border-right: 3em solid white;
+    border-right: 3em solid gainsboro;
     border-bottom: 1em solid transparent;
     -webkit-transform: rotate(40deg);
     transform: rotate(40deg);
@@ -181,7 +179,7 @@ $break-point-PC: 960px;
   padding: 0.5em 0.7em 0.3em 0.7em;
   display: inline-block;
   position: relative;
-  background: white;
+  background: gainsboro;
   border-radius: 1.5em;
   p {
     font-size: 1.5em;
@@ -200,7 +198,7 @@ $break-point-PC: 960px;
     width: 0;
     height: 0;
     border-top: 1em solid transparent;
-    border-right: 3em solid white;
+    border-right: 3em solid gainsboro;
     border-bottom: 1em solid transparent;
     -webkit-transform: rotate(40deg);
     transform: rotate(40deg);
