@@ -90,12 +90,12 @@
           <% end %>
         
         <div id="conversation_id_is_<%= @opposite_id %><%= @conversation.id %>"></div>
-        
+        <div id="latest_position"></div>
       </div>
     </div>
 
     <div id="submit_container">
-      <%= form_with(model: [@conversation, @message]) do |f| %>
+      <%= form_with(model: [@conversation, @message], :html => { :onsubmit => "ToLatestMessage()" }) do |f| %>
           <%= f.text_area :body, id: "form-control", placeholder: "メッセージを入力" %>
           <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
           <%= f.submit "送信", class: "submit_buttom" %>
@@ -130,8 +130,5 @@
       observer.observe(target, options);
   })();
 
-  var element = document.documentElement;
-  var bottom = element.scrollHeight - element.clientHeight;
-  window.scroll(0, bottom);
 
 </script>
