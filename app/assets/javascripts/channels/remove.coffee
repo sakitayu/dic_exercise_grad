@@ -17,6 +17,9 @@ App.remove = App.cable.subscriptions.create "RemoveChannel",
     notification_message = '#cancel_id_is_' + ban_id + ban_opposite_id
     $(notification_message).append data['ban']
 
+    # 傘持ちユーザー側でcancel通知と同時にconfirm_boxを非表示にする
+    $(".confirm_box").remove()
+
     # 傘持ちユーザーがキャンセルをされた場合にユーザー詳細画面の上部説明と承諾フォームを非表示にする
     remove_disc_p = '#remove_disc_id_is_' + ban_id + ban_opposite_id
     remove_form_div = '#remove_form_id_is_' + ban_id + ban_opposite_id
