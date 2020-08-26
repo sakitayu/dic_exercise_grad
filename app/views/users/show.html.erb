@@ -59,7 +59,7 @@
     <div id="notification_id_is_<%= current_user.id %>"></div>
   
     <% if Matching.find_by(followed_id:current_user.id) && current_user.following.first != nil && current_user.state == "message" %>
-      <div class="confirm_box">
+      <div class="confirm_box" id="confirm_id_is_<%= current_user.id %>">
         <%= link_to "#{current_user.following.first.name} さんとメッセージ中です。メッセージ画面はこちら", conversations_path(sender_id: current_user.following.first.id, recipient_id: current_user.id), method: :post %>
       </div>
     <% elsif Matching.find_by(followed_id:current_user.id) && current_user.have_umbrella == false %>
@@ -76,7 +76,7 @@
     </div>
   <% end %>
 
-  <div id="cancel_id_is_<%= @user.id %><%= current_user.id %>"></div>
+  <div id="cancel_id_is_<%#= @user.id %><%= current_user.id %>"></div>
 
   <% if current_user.id != @user.id %>
     <div class="main_box_on_user_page">
