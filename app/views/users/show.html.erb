@@ -82,6 +82,8 @@
     <div class="main_box_on_my_page">
   <% elsif current_user.state == "request" && current_user.following.first.id == @user.id %>
     <div class="main_box_on_request-user_page">
+  <% elsif current_user.state == "message" && current_user.following.first.id == @user.id %>
+    <div class="main_box_on_message-user_page">
   <% else %>
     <div class="main_box_on_user_page">
   <% end %>
