@@ -11,10 +11,14 @@ class MatchingsController < ApplicationController
     # end
     current_user.follow!(@user)
 
-    # 傘持ちユーザーが傘なしユーザーをフォローする場合は"承認"になるので
+    # 傘もちユーザーが傘なしユーザーをフォローする場合は"承認"になるので
     # その場合にstateカラムをmessageにする
     if current_user.have_umbrella == true
       current_user.update(state: "message")
+    else
+      # 傘なしユーザーが傘もちユーザーをフォローする場合は"リクエスト"になるので
+      # その場合にstateカラムをrequestにする
+      current_user.update(state: "request")
     end
     
     # 傘持ちユーザーがリクエストを送っている傘なしユーザーをフォロー(承諾)した際に
@@ -56,6 +60,7 @@ class MatchingsController < ApplicationController
 
     # リクエスト承諾後にキャンセルして相互フォロー状態が解除された際に
     # 相手の現在の状態を「メッセージ中」からnilに戻す
+    # バグ防止のためにif @user.have_umbrellaで条件分岐したほうがいいかも
     @user.update(state: nil)
     @remove_user.update(state: nil)
 

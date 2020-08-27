@@ -207,7 +207,7 @@
   height: 1.5em;
   width: auto;
   border-radius: 0.2em;
-  color: #999999;
+  color: #444;
   padding: 0 2.5em 0 0.5em;
   outline: none;
   text-indent: 0em;
@@ -744,6 +744,7 @@
   width: 10em;
   height: 2em;
   font-size: 1em;
+  color: #444;
   padding: 0 0 0 0.2em;
   margin: 0 0.8em 0 0;
   border: solid thin #999999;
@@ -763,7 +764,7 @@
   font-size: 1em;
   width: auto;
   border-radius: 0.2em;
-  color: #999999;
+  color: #444;
   padding: 0 0.5em 0 0.5em;
   margin: 0 0.8em 0.2em 0;
   outline: none;
@@ -864,6 +865,13 @@
 .main_box div.main_contents tr.table_border:hover {
   background-color: #F7F7F7;
   transition-duration: 0.3s;
+}
+
+.main_box div.main_contents tr.table_border_on_requset {
+  background-color: #fae3d9;
+  color: #444;
+  height: 5em;
+  margin: 0;
 }
 
 .main_box div.main_contents tr.table_border_on_message {

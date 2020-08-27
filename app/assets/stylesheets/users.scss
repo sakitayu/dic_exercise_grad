@@ -193,7 +193,7 @@ $break-point-PC: 960px;
         height: 1.5em;
         width: auto;
         border-radius: 0.2em;
-        color: $middle-grey;
+        color: $dark-grey;
         padding: 0 2.5em 0 0.5em;
         outline:none;
         text-indent: 0em;
@@ -666,6 +666,7 @@ $break-point-PC: 960px;
         width: 10em;
         height: 2em;
         font-size: 1em;
+        color: $dark-grey;
         padding: 0 0 0 0.2em;
         margin: 0 0.8em 0 0;
         border: solid thin $middle-grey;
@@ -683,7 +684,7 @@ $break-point-PC: 960px;
         font-size: 1em;
         width: auto;
         border-radius: 0.2em;
-        color: $middle-grey;
+        color: $dark-grey;
         padding: 0 0.5em 0 0.5em;
         margin: 0 0.8em 0.2em 0;
         outline: none;
@@ -772,6 +773,12 @@ $break-point-PC: 960px;
         background-color: $light-grey;
         transition-duration: 0.3s;
       }
+    }
+    tr.table_border_on_requset {
+      background-color: $light-pink;
+      color: $dark-grey;
+      height: 5em;
+      margin: 0;
     }
     tr.table_border_on_message {
       background-color: $dark-pink;
