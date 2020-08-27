@@ -420,6 +420,7 @@ $break-point-PC: 960px;
           margin-top: 0.1em;
         }
         input[type=text] {
+          -webkit-appearance: none;
           height: 1.5em;
           width: 13em;
           padding: 0.2em;
@@ -659,6 +660,89 @@ $break-point-PC: 960px;
     position: -webkit-sticky;
     top: 0;
     background-color: $light-grey;
+    div.search_box {
+      input[type="search"].search_area {
+        -webkit-appearance: none;
+        width: 10em;
+        height: 2em;
+        font-size: 1em;
+        padding: 0 0 0 0.2em;
+        margin: 0 0.8em 0 0;
+        border: solid thin $middle-grey;
+        border-radius: 0.2em;
+        &:focus {
+          font-size: 1em;
+          border: solid thin $dark-pink;
+          outline: 0;
+          border-radius: 0.2em;
+        }
+      }
+      select {
+        border: solid thin $middle-grey;
+        height: 2em;
+        font-size: 1em;
+        width: auto;
+        border-radius: 0.2em;
+        color: $middle-grey;
+        padding: 0 0.5em 0 0.5em;
+        margin: 0 0.8em 0.2em 0;
+        outline: none;
+        text-indent: 0em;
+        text-overflow: '';
+        background: white transparent;
+        vertical-align: middle;
+        font-size: inherit;
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        appearance: button;
+        z-index: 1;
+        option {
+          background-color: white;
+          color: $middle-grey;
+        }
+        &::-ms-expand {
+          display: button;
+        }
+        &:-moz-focusring {
+          color: transparent; 
+          text-shadow: 0 0 0 $middle-grey;
+        }
+      }
+      input[type="submit"].search_user_submit {
+        border: 0;
+        width: auto;
+        height: 2em;
+        line-height: 0;
+        padding: 0.5em 0.8em;
+        margin: 0 0.8em 0 0;
+        background-color: $light-green;
+        font-size: 1em;
+        color: $dark-grey;
+        border-radius: 0.2em;
+        transition: 0.3s;
+        &:hover {
+          opacity: 0.8;
+          transition: 0.1s;
+        } 
+      }
+      a {
+        border: 0;
+        width: auto;
+        height: 2em;
+        line-height: 0;
+        padding: 0.5em 0.8em;
+        margin: 0;
+        background-color: $light-green;
+        font-size: 1em;
+        color: $dark-grey;
+        border-radius: 0.2em;
+        transition: 0.3s;
+        &:hover {
+          opacity: 0.8;
+          transition: 0.1s;
+        } 
+      }
+    }
   }
   div.main_contents {
     margin: 0 2em 2em 2em;
@@ -974,8 +1058,9 @@ $break-point-PC: 960px;
       text-align: center;
       font-size: 0.8em;
       input[type="text"] {
+        -webkit-appearance: none;
         font-size: 1em;
-        padding: 0;
+        padding: 0 0 0 0.2em;
         border: solid thin $middle-grey;
         border-radius: 0.2em;
         &:focus {
@@ -1032,6 +1117,7 @@ $break-point-PC: 960px;
       height: auto;
       width:25em;
       textarea {
+        -webkit-appearance: none;
         font-size: 1.2em;
         color: $dark-grey;
         border: solid thin $middle-grey;

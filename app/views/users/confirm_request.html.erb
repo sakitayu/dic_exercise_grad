@@ -93,6 +93,7 @@
                     <%= link_to "プロフィールを編集", edit_user_path(current_user.id) if current_user.id == @user.id %>
                     <%#= link_to 'ユーザー一覧画面に戻る', users_path %> 
                     <%= form_with(model: current_user.active_matchings.find_by(followed_id: @user.id), method: :delete, local: true ) do |f| %>
+                      <%#= form.hidden_field :state, :value => nil %>
                       <%= f.submit "やっぱりやめる" %>
                     <% end %>
                     <%= link_to "お願いする", conversations_path(sender_id: @user.id, recipient_id: current_user.id), method: :post, data: { confirm: '本当にお願いしますか？(メッセージルームへ移動します)' }  %>
