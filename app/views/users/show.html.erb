@@ -78,10 +78,12 @@
 
   <div id="cancel_id_is_<%#= @user.id %><%= current_user.id %>"></div>
 
-  <% if current_user.id != @user.id %>
-    <div class="main_box_on_user_page">
-  <% else %>
+  <% if current_user.id == @user.id %>
     <div class="main_box_on_my_page">
+  <% elsif current_user.state == "request" && current_user.following.first.id == @user.id %>
+    <div class="main_box_on_request-user_page">
+  <% else %>
+    <div class="main_box_on_user_page">
   <% end %>
 
     <% if current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil && current_user.state != "message" %>
