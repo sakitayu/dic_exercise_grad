@@ -3,13 +3,6 @@ class MatchingsController < ApplicationController
 
   def create
     @user = User.find(params[:matching][:followed_id])
-    
-    #キャンセル等の誤操作により自分に対してフォローしている状態だった場合Matching状態を無効に戻す
-    # if Matching.find_by(follower_id: current_user.id) && current_user.have_umbrella == true
-    #   @matching_state = Matching.find_by(follower_id: current_user.id)
-    #   @matching_state.destroy
-    # end
-    current_user.follow!(@user)
 
     # 傘もちユーザーが傘なしユーザーをフォローする場合は"承認"になるので
     # その場合にstateカラムをmessageにする
@@ -20,6 +13,8 @@ class MatchingsController < ApplicationController
       # その場合にstateカラムをrequestにする
       current_user.update(state: "request")
     end
+    
+    current_user.follow!(@user)
     
     # 傘持ちユーザーがリクエストを送っている傘なしユーザーをフォロー(承諾)した際に
     # 他に同じ傘持ちユーザーをフォロー(リクエスト)している傘なしユーザーがいた場合にそれらのマッチングを全て解除
