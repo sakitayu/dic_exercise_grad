@@ -1440,7 +1440,7 @@
   font-weight: bold;
 }
 
-.cancel_box p {
+.cancel_box a {
   display: block;
   width: auto;
   padding: 0.5em;
@@ -1451,7 +1451,7 @@
   color: white;
 }
 
-.cancel_box p:hover {
+.cancel_box a:hover {
   opacity: 0.8;
 }
 
