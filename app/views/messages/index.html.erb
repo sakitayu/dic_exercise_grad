@@ -106,7 +106,7 @@
     </div>
 
     <div id="submit_container">
-      <%= form_with(model: [@conversation, @message], :html => { :onsubmit => "ToLatestMessage()" }) do |f| %>
+      <%= form_with(model: [@conversation, @message], :html => { :onsubmit => "ToLatestMessage()" }, local: true) do |f| %>
           <%= f.text_area :body, id: "form-control", placeholder: "メッセージを入力" %>
           <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
           <%= f.submit "送信", class: "submit_buttom" %>

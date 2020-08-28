@@ -1,11 +1,11 @@
 <div id="request_form_<%= user.id %>">
   <% unless current_user.following?(user) %>
-    <%= form_with(model: current_user.active_matchings.build(followed_id: user.id)) do |f| %>
+    <%= form_with(model: current_user.active_matchings.build(followed_id: user.id), local: true) do |f| %>
       <%= f.hidden_field :followed_id %>
       <%= f.submit "この人にリクエストを送る" %>
     <% end %>
   <% else %>
-    <%= form_with(model: current_user.active_matchings.find_by(followed_id: user.id), method: :delete ) do |f| %>
+    <%= form_with(model: current_user.active_matchings.find_by(followed_id: user.id), method: :delete, local: true ) do |f| %>
       <%= f.submit "リクエストをキャンセルする" %>
     <% end %>
   <% end %>
