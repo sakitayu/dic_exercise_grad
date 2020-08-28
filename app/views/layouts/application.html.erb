@@ -16,17 +16,17 @@
         <div class="header_left"><%= image_tag 'raynee_logo.png', class: "raynee-logo" %></div>
         <div class="header_center"></div>
         <% if user_signed_in? %>
-          <div class="header_prof_img">
+          <div class="header_prof_img" id="dropdown__btn">
             <% if current_user.image.url == nil %>
               <% if current_user.gender == "男" %>
-                <%= link_to image_tag('male.png'), user_path(current_user.id) %>
+                <%= image_tag('male.png') %>
               <% elsif current_user.gender == "女" %>
-                <%= link_to image_tag('female.png'), user_path(current_user.id) %>
+                <%= image_tag('female.png') %>
               <% elsif current_user.gender == "どちらでもない" %>
-                <%= link_to image_tag('trans.png'), user_path(current_user.id) %>
+                <%= image_tag('trans.png') %>
               <% end %>
             <% else %>
-              <%= link_to image_tag(current_user.image.url), user_path(current_user.id) unless current_user.image.url == nil %>
+              <%= image_tag(current_user.image.url) unless current_user.image.url == nil %>
             <% end %>
           </div>
         <% else %>
@@ -38,6 +38,16 @@
             <div class="header_right"><%= link_to "ログイン", new_user_session_path, class: "register_link" %></div>
           <% end %>
         <% end %>
+      </div>
+
+      <div class="dropdown_menu" id="header_menu">
+        <div class="dropdown__body">
+          <ul class="dropdown__list">
+            <li class="dropdown__item"><a href="" class="dropdown__item-link">メニュー１</a></li>
+            <li class="dropdown__item"><a href="" class="dropdown__item-link">メニュー２</a></li>
+            <li class="dropdown__item"><a href="" class="dropdown__item-link">メニュー３</a></li>
+          </ul>
+        </div>
       </div>
     </header>
 
@@ -57,6 +67,19 @@
         window.scroll(0, bottom);
       </script>
     <% end %>
+
+    <script>
+      (function () {
+                    document.addEventListener('DOMContentLoaded', function() { // HTML解析が終わったら
+                      const btn = document.getElementById('dropdown__btn'); // ボタンをidで取得
+                      if(btn) { // ボタンが存在しないときにエラーになるのを回避
+                        btn.addEventListener('click', function(){ //ボタンがクリックされたら
+                          document.getElementById('header_menu').classList.toggle('is-open'); // is-openを付加する
+                        });
+                      }
+                    });
+                  }());
+    </script>
 
   </body>
 </html>
