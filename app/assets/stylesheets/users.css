@@ -1689,7 +1689,7 @@
   width: auto;
   padding: 0.5em;
   background-color: #ffb6b9;
-  border-radius: 20em;
+  border-radius: 2em 20em 20em 2em;
   height: 1.5em;
   font-size: 1.6em;
   color: white;
@@ -1711,7 +1711,7 @@
   width: auto;
   padding: 0.5em;
   background-color: #ffb6b9;
-  border-radius: 20em;
+  border-radius: 2em 20em 20em 2em;
   height: 1.5em;
   font-size: 1.6em;
   color: white;
@@ -1733,7 +1733,7 @@
   width: auto;
   padding: 0.5em;
   background-color: #8ac6d1;
-  border-radius: 20em;
+  border-radius: 20em 2em 2em 20em;
   height: 1.5em;
   font-size: 1.6em;
   color: white;
