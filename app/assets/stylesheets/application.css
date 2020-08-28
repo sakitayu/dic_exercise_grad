@@ -99,8 +99,15 @@ header a.register_link:hover {
   transition: 0.1s;
 }
 
+.dropdown__empty {
+  width: 68em;
+  overflow: hidden;
+  position: relative;
+  margin-right: 0;
+}
+
 .dropdown__body {
-  width: 12.2em;
+  width: 12em;
   background: #fff;
   box-shadow: 0 2px 6px 2px rgba(60, 64, 67, 0.149), 0 1px 2px 0 rgba(60, 64, 67, 0.302);
   border-radius: 4px;
@@ -128,7 +135,7 @@ header a.register_link:hover {
 }
 
 .dropdown__item-link:hover {
-  background: #fbfbfb;
+  background: #F7F7F7;
 }
 
 .dropdown_menu {
@@ -149,6 +156,18 @@ header a.register_link:hover {
   margin: 0 auto;
   z-index: 4;
   position: relative;
+}
+
+.is-close::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  /* カーソルはデフォルトに戻しておく */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
 }
 
 footer {

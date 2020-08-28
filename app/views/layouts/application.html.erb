@@ -48,6 +48,7 @@
             <li class="dropdown__item"><a href="" class="dropdown__item-link">メニュー３</a></li>
           </ul>
         </div>
+        <div class="dropdown__empty" id="rest_of_dropdown"></div>
       </div>
     </header>
 
@@ -75,14 +76,20 @@
                       if(btn) { // ボタンが存在しないときにエラーになるのを回避
                         btn.addEventListener('click', function(){ //ボタンがクリックされたら
                           document.getElementById('header_menu').classList.toggle('is-open'); // is-openを付加する
+                          //document.getElementById('rest_of_dropdown').classList.toggle('is-close'); // is-closeを付加する
+                          this.classList.toggle('is-close'); // ボタンにis-closeを付加する
+                        });
+                      }
+                      const restOfMenu = document.getElementById('rest_of_dropdown'); // メニューブロックの残りの部分をidで取得
+                      if(restOfMenu) { // ボタンが存在しないときにエラーになるのを回避
+                        restOfMenu.addEventListener('click', function(){ //メニューブロックの残りの部分がクリックされたら
+                          document.getElementById('header_menu').classList.toggle('is-open'); // is-openを付加する
+                          //document.getElementById('rest_of_dropdown').classList.toggle('is-close'); // is-closeを付加する
+                          btn.classList.toggle('is-close'); // ボタンにis-closeを付加する
                         });
                       }
                     });
                   }());
-
-      $('.search_box').click(function(){
-          $('#header_menu').removeClass('is-open');
-        });
     </script>
 
   </body>
