@@ -18,8 +18,6 @@ App.remove = App.cable.subscriptions.create "RemoveChannel",
     notification_message = '#cancel_id_is_' + ban_opposite_id
     $(notification_message).append data['ban']
     # 傘なしユーザーがスタート画面に移動した際に傘もちユーザーのユーザー一覧から削除
-    default_tr = '#default_tr_id_is_' + ban_id
-    $(default_tr).remove()
 
     # 傘持ちユーザーがキャンセルをされた場合にユーザー詳細画面の上部説明と承諾フォームを非表示にする
     remove_disc_p = '#remove_disc_id_is_' + ban_id + ban_opposite_id
@@ -38,9 +36,10 @@ App.remove = App.cable.subscriptions.create "RemoveChannel",
     remove_confirm_notification = '#confirm_id_is_' + ban_id
     $(remove_confirm_notification).remove()
       
-    # 傘なしユーザーがフォロー解除した場合にdestroyと同時にユーザーテーブルのremovingカラムがtrueに更新されて
-    # userモデルでafter_update_commitで発火したのち傘持ちユーザーのリクエスト一覧に表示された傘なしユーザーが一覧から消える
-    # DOMにレンダーされた場合とDBから表示された場合の両方を消すようになっている
+    # 傘なしユーザーがフォロー解除した場合に傘持ちユーザーのリクエスト一覧に表示された傘なしユーザーが一覧から消える
+    # 動作原理はまず、destroyと同時にユーザーテーブルのremovingカラムがtrueに更新されて
+    # userモデルでafter_update_commitで発火したのち
+    # DOMにレンダーされた場合とDBから表示された場合の両方を消すようになっています
     remove_request_div = '#request_id_is_' + ban_id
     remove_request_on_db_div = '#request_user_list_id_is_' + ban_id
     if data['ban_removing'] == true

@@ -66,10 +66,17 @@ class UsersController < ApplicationController
         end
       # 傘なしユーザーがスタート画面に移動した場合に傘持ちユーザーへのフォローを解除する
       elsif current_user.have_umbrella == false && Matching.find_by(follower_id: current_user.id)
-        matching_state = Matching.find_by(follower_id: current_user.id)
         # ban_removingをtrueにすることでAction Cableのremove.coffeeで傘もちユーザーのユーザー一覧から削除できる
         current_user.update(removing: true)
+        matching_state = Matching.find_by(follower_id: current_user.id)
         matching_state.destroy
+        # 相互フォロー状態の時は傘もちユーザーがから傘なしユーザーへのフォローも解除する
+        if Matching.find_by(followed_id: current_user.id)
+          # 相手の傘もちユーザーのstateをmessageからbrokenに変更する
+          current_user.followers.first.update(state: "broken")
+          addon_matching_state = Matching.find_by(followed_id: current_user.id)
+          addon_matching_state.destroy
+        end
       end
       redirect_to start_users_path
     else

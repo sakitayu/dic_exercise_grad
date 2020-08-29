@@ -193,7 +193,7 @@
         <%= link_to "あなたのリクエストが承諾されました。こちらから確認してください", confirm_request_users_path %>
       </div>
     <% end %>
-    
+    <%= current_user.followers.first.name %><%= current_user.state %>
     <div class="main_box">
       <div class="search_user">
         <div class="search_box">
