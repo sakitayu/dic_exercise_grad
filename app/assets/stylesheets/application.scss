@@ -110,14 +110,14 @@ header {
 }
 
 .dropdown__empty {
-  width: 68em;
+  width: 67.8em;
   overflow: hidden;
   position: relative;
   margin-right: 0;
 }
 
 .dropdown__body {
-  width: 12em;
+  width: 13.8em;
   background: #fff;
   box-shadow: 0 2px 6px 2px rgba(60,64,67,0.149), 0 1px 2px 0 rgba(60,64,67,0.302);
   border-radius: 4px;
@@ -138,11 +138,14 @@ header {
 .dropdown__item-link {
   display: block;
   padding: 1em 1.2em;
-  font-size: 0.95em;
+  font-size: 1em;
   text-decoration: none;
-  color: #444;
+  color: $dark-grey;
+  transition: 0.3s;
   &:hover {
     background: $light-grey;
+    color: black;
+    transition: 0.1s;
   }
 }
 

@@ -40,16 +40,24 @@
         <% end %>
       </div>
 
-      <div class="dropdown_menu" id="header_menu">
-        <div class="dropdown__body">
-          <ul class="dropdown__list">
-            <li class="dropdown__item"><a href="" class="dropdown__item-link">メニュー１</a></li>
-            <li class="dropdown__item"><a href="" class="dropdown__item-link">メニュー２</a></li>
-            <li class="dropdown__item"><a href="" class="dropdown__item-link">メニュー３</a></li>
-          </ul>
+      <% if user_signed_in? %>
+        <div class="dropdown_menu" id="header_menu">
+          <div class="dropdown__body">
+            <ul class="dropdown__list">
+              <li class="dropdown__item">
+                <%= link_to "マイページ", user_path(current_user.id), class: "dropdown__item-link" %>
+              </li>
+              <li class="dropdown__item">
+                <%= link_to "スタート画面から始める", start_users_path, data: { confirm: 'スタート画面に移動しますか？(現在のリクエストがリセットされます)' }, class: "dropdown__item-link" %>
+              </li>
+              <li class="dropdown__item">
+                <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' }, class: "dropdown__item-link" %>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown__empty" id="rest_of_dropdown"></div>
         </div>
-        <div class="dropdown__empty" id="rest_of_dropdown"></div>
-      </div>
+      <% end %>
     </header>
 
     <main>

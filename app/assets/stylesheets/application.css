@@ -100,14 +100,14 @@ header a.register_link:hover {
 }
 
 .dropdown__empty {
-  width: 68em;
+  width: 67.8em;
   overflow: hidden;
   position: relative;
   margin-right: 0;
 }
 
 .dropdown__body {
-  width: 12em;
+  width: 13.8em;
   background: #fff;
   box-shadow: 0 2px 6px 2px rgba(60, 64, 67, 0.149), 0 1px 2px 0 rgba(60, 64, 67, 0.302);
   border-radius: 4px;
@@ -129,13 +129,16 @@ header a.register_link:hover {
 .dropdown__item-link {
   display: block;
   padding: 1em 1.2em;
-  font-size: 0.95em;
+  font-size: 1em;
   text-decoration: none;
   color: #444;
+  transition: 0.3s;
 }
 
 .dropdown__item-link:hover {
   background: #F7F7F7;
+  color: black;
+  transition: 0.1s;
 }
 
 .dropdown_menu {
