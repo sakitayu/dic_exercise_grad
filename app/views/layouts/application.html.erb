@@ -47,12 +47,18 @@
               <li class="dropdown__item">
                 <%= link_to "マイページ", user_path(current_user.id), class: "dropdown__item-link" %>
               </li>
-              <li class="dropdown__item">
-                <%= link_to "スタート画面から始める", start_users_path, data: { confirm: 'スタート画面に移動しますか？(現在のリクエストがリセットされます)' }, class: "dropdown__item-link" %>
-              </li>
-              <li class="dropdown__item">
-                <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' }, class: "dropdown__item-link" %>
-              </li>
+              <% if controller.action_name == "start" %>
+                <li class="dropdown__item">
+                  <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
+                </li>
+              <% else %>
+                <li class="dropdown__item">
+                  <%= link_to "スタート画面から始める", start_users_path, data: { confirm: 'スタート画面に移動しますか？(現在のリクエストがリセットされます)' }, class: "dropdown__item-link" %>
+                </li>
+                <li class="dropdown__item">
+                  <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' }, class: "dropdown__item-link" %>
+                </li>
+              <% end %>
             </ul>
           </div>
           <div class="dropdown__empty" id="rest_of_dropdown"></div>
