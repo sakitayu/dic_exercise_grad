@@ -17,6 +17,9 @@ App.remove = App.cable.subscriptions.create "RemoveChannel",
     #notification_message = '#cancel_id_is_' + ban_id + ban_opposite_id
     notification_message = '#cancel_id_is_' + ban_opposite_id
     $(notification_message).append data['ban']
+    # 傘なしユーザーがスタート画面に移動した際に傘もちユーザーのユーザー一覧から削除
+    default_tr = '#default_tr_id_is_' + ban_id
+    $(default_tr).remove()
 
     # 傘持ちユーザーがキャンセルをされた場合にユーザー詳細画面の上部説明と承諾フォームを非表示にする
     remove_disc_p = '#remove_disc_id_is_' + ban_id + ban_opposite_id
