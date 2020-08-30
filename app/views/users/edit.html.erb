@@ -98,7 +98,7 @@
           </div>
         <% end %>
 
-        <%= form_with model: @user do |form| %>
+        <%= form_with model: @user, local: true do |form| %>
           <div class="profile_left">
             <%= form.hidden_field :have_umbrella, :value => @user.have_umbrella %>
             <%= form.hidden_field :area, :value => @user.area %>

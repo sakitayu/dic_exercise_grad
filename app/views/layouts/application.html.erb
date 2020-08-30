@@ -49,9 +49,6 @@
                   <%= link_to "マイページ", user_path(current_user.id, params: { user: { state: "start"}}), method: :put, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "スタート画面から始める", start_users_path, class: "dropdown__item-link" %>
-                </li>
-                <li class="dropdown__item">
                   <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
                 </li>
               <% elsif current_user.state == "start" %>
@@ -59,7 +56,7 @@
                   <%= link_to "マイページ", user_path(current_user.id), class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "スタート画面から始める", start_users_path, class: "dropdown__item-link" %>
+                  <%= link_to "スタート画面に戻る", start_users_path, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
                   <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
@@ -76,7 +73,7 @@
                   <% end %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "スタート画面から始める", user_path(current_user.id, params: { user: { state: "restart"}}), data: { confirm: 'スタート画面に移動しますか？(現在のリクエストがリセットされます)' }, method: :put, class: "dropdown__item-link" %>
+                  <%= link_to "スタート画面に戻る", user_path(current_user.id, params: { user: { state: "restart"}}), data: { confirm: 'スタート画面に戻りますか？(現在のリクエストがリセットされます)' }, method: :put, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
                   <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' }, class: "dropdown__item-link" %>
@@ -89,7 +86,7 @@
                   <%= link_to "リクエスト一覧", users_path, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "スタート画面から始める", user_path(current_user.id, params: { user: { state: "restart"}}), data: { confirm: 'スタート画面に移動しますか？(リクエストが全て解除されます)' }, method: :put, class: "dropdown__item-link" %>
+                  <%= link_to "スタート画面に戻る", user_path(current_user.id, params: { user: { state: "restart"}}), data: { confirm: 'スタート画面に戻りますか？(リクエストが全て解除されます)' }, method: :put, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
                   <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(リクエストが全て解除されます)' }, class: "dropdown__item-link" %>
@@ -102,7 +99,7 @@
                   <%= link_to "傘を持っているひと一覧", users_path, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "スタート画面から始める", start_users_path, class: "dropdown__item-link" %>
+                  <%= link_to "スタート画面に戻る", start_users_path, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
                   <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>

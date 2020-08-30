@@ -91,7 +91,7 @@
     <% if current_user.state == "start" %>
       <div class="profile_header">
         <div><%= link_to 'スタート画面に戻る', start_users_path, class: "back_to_users" %></div>
-        <div class="my_page_on_profile">マイページ</div>
+        <div class="my_page_on_profile_from_start">マイページ</div>
         <div>
           <%= link_to "プロフィールを編集", edit_user_path(current_user.id), class: "edit_on_my_page" if current_user.id == @user.id %>
         </div>

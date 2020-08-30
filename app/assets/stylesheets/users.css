@@ -1326,6 +1326,14 @@
   bottom: 0.3em;
 }
 
+.main_box_on_my_page div.profile_header div.my_page_on_profile_from_start {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0 0 0 0;
+  position: relative;
+  bottom: 0.3em;
+}
+
 .profile_container {
   display: flex;
   background-color: white;
