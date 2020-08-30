@@ -1004,7 +1004,7 @@
 .main_box_on_user_page div.profile_header div.my_page_on_profile {
   font-size: 2em;
   font-weight: bold;
-  margin: 0 5.5em 0 0;
+  margin: 0 0 0 1.8em;
   position: relative;
   bottom: 0.3em;
 }
@@ -1097,7 +1097,7 @@
 .main_box_on_request-user_page div.profile_header div.my_page_on_profile {
   font-size: 2em;
   font-weight: bold;
-  margin: 0 5.5em 0 0;
+  margin: 0 0 0 1.8em;
   position: relative;
   bottom: 0.3em;
 }
@@ -1190,7 +1190,7 @@
 .main_box_on_message-user_page div.profile_header div.my_page_on_profile {
   font-size: 2em;
   font-weight: bold;
-  margin: 0 5.5em 0 0;
+  margin: 0 0 0 1.8em;
   position: relative;
   bottom: 0.3em;
 }
@@ -1321,7 +1321,7 @@
 .main_box_on_my_page div.profile_header div.my_page_on_profile {
   font-size: 2em;
   font-weight: bold;
-  margin: 0 1em 0 0;
+  margin: 0 0 0 1.8em;
   position: relative;
   bottom: 0.3em;
 }
@@ -1861,7 +1861,7 @@
 .main_box_on_confirm_page div.profile_header div.my_page_on_profile {
   font-size: 2em;
   font-weight: bold;
-  margin: 0 1em 0 0;
+  margin: 0 0 0 1.8em;
   position: relative;
   bottom: 0.3em;
 }

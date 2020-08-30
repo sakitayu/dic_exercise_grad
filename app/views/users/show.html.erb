@@ -98,19 +98,19 @@
       </div>
     <% elsif current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil && current_user.state != "message" %>
       <div class="profile_header">
-        <%= link_to 'ユーザー一覧に戻る', users_path %>
+        <%= link_to '一覧に戻る', users_path %>
         <p class="disc_for_accept" id="remove_disc_id_is_<%= @user.id %><%= current_user.id %>"><strong><%= @user.name %></strong> さんからリクエストが来ています。承諾しますか？</p>
       </div>
     <% elsif current_user.state == "message" && current_user.id != @user.id %>
       <div class="profile_header">
-        <%= link_to 'ユーザー一覧に戻る', users_path %>
+        <%= link_to '一覧に戻る', users_path %>
       </div>
     <% else %>
       <div class="profile_header">
         <% if current_user.id != @user.id %>
-          <%= link_to 'ユーザー一覧に戻る', users_path %>
+          <%= link_to '一覧に戻る', users_path %>
         <% else %>
-          <div><%= link_to 'ユーザー一覧に戻る', users_path, class: "back_to_users" %></div>
+          <div><%= link_to '一覧に戻る', users_path, class: "back_to_users" %></div>
           <div class="my_page_on_profile">マイページ</div>
           <div>
             <%= link_to "プロフィールを編集", edit_user_path(current_user.id), class: "edit_on_my_page" if current_user.id == @user.id %>
