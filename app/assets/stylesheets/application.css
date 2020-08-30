@@ -110,10 +110,24 @@ header a.register_link:hover {
   width: 13.8em;
   background: #fff;
   box-shadow: 0 2px 6px 2px rgba(60, 64, 67, 0.149), 0 1px 2px 0 rgba(60, 64, 67, 0.302);
-  border-radius: 4px;
-  overflow: hidden;
+  border-radius: 0.2em;
   position: relative;
   margin-right: 0;
+}
+
+.dropdown__body::after {
+  content: "";
+  position: absolute;
+  top: -0.35em;
+  right: 6em;
+  border-right: 0.4em solid transparent;
+  border-bottom: 0.4em solid white;
+  border-left: 0.4em solid transparent;
+  z-index: 3;
+}
+
+.dropdown__body::after:hover {
+  background: #F7F7F7;
 }
 
 .dropdown__list {
@@ -139,6 +153,7 @@ header a.register_link:hover {
   background: #F7F7F7;
   color: black;
   transition: 0.1s;
+  border-radius: 0.2em;
 }
 
 .dropdown_menu {
