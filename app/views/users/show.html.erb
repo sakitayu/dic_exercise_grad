@@ -88,7 +88,7 @@
     <div class="main_box_on_user_page">
   <% end %>
 
-    <% if current_user.state == "restart" || current_user.state == nil %>
+    <% if current_user.state == "start" %>
       <div class="profile_header">
         <div><%= link_to 'スタート画面に戻る', start_users_path, class: "back_to_users" %></div>
         <div class="my_page_on_profile">マイページ</div>
@@ -172,4 +172,3 @@
     </div>
   </div>
 </div>
-

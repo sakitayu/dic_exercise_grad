@@ -9,6 +9,7 @@
         <div class="email_and_pass_form">
           <div class="login_error_message"><%= alert %><%= notice %></div>
           <div class="field">
+            <%= f.hidden_field :state, value: "start" %>
             <%= f.label :email %>
             <br>
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -26,7 +27,6 @@
             <div class="field">
               <%= f.check_box :remember_me %>
               <%= f.label :remember_me %>
-              <%= f.hidden_field :state, :value => "start" %>
             </div>
           <% end %>
   
@@ -49,7 +49,7 @@
           <div class="field">
             <%= f.hidden_field :email ,value: "sample_a@example.com" %>
             <%= f.hidden_field :password ,value: "sample_a" %>
-            <%= f.hidden_field :state, :value => "start" %>
+            <%= f.hidden_field :state, value: "start" %>
           </div>
           <div class="login_button">
             <%= f.submit "サンプルユーザーAでログイン"%>
@@ -60,7 +60,7 @@
           <div class="field">
             <%= f.hidden_field :email ,value: "sample_b@example.com" %>
             <%= f.hidden_field :password ,value: "sample_b" %>
-            <%= f.hidden_field :state, :value => "start" %>
+            <%= f.hidden_field :state, value: "start" %>
           </div>
           <div class="login_button">
             <%= f.submit "サンプルユーザーBでログイン"%>
