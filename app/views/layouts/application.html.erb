@@ -74,6 +74,16 @@
                 <li class="dropdown__item">
                   <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(リクエストが全て解除されます)' }, class: "dropdown__item-link" %>
                 </li>
+              <% elsif current_user.have_umbrella == false %>
+                <li class="dropdown__item">
+                  <%= link_to "マイページ", user_path(current_user.id), class: "dropdown__item-link" %>
+                </li>
+                <li class="dropdown__item">
+                  <%= link_to "スタート画面から始める", start_users_path, class: "dropdown__item-link" %>
+                </li>
+                <li class="dropdown__item">
+                  <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
+                </li>
               <% elsif current_user.state == "request" || current_user.state == "message" %>
                 <li class="dropdown__item">
                   <%= link_to "マイページ", user_path(current_user.id), class: "dropdown__item-link" %>
@@ -115,16 +125,14 @@
                       const btn = document.getElementById('dropdown__btn'); // ボタンをidで取得
                       if(btn) { // ボタンが存在しないときにエラーになるのを回避
                         btn.addEventListener('click', function(){ //ボタンがクリックされたら
-                          document.getElementById('header_menu').classList.toggle('is-open'); // is-openを付加する
-                          //document.getElementById('rest_of_dropdown').classList.toggle('is-close'); // is-closeを付加する
+                          document.getElementById('header_menu').classList.toggle('is-open'); // #header_menuにis-openを付加する
                           this.classList.toggle('is-close'); // ボタンにis-closeを付加する
                         });
                       }
                       const restOfMenu = document.getElementById('rest_of_dropdown'); // メニューブロックの残りの部分をidで取得
                       if(restOfMenu) { // ボタンが存在しないときにエラーになるのを回避
                         restOfMenu.addEventListener('click', function(){ //メニューブロックの残りの部分がクリックされたら
-                          document.getElementById('header_menu').classList.toggle('is-open'); // is-openを付加する
-                          //document.getElementById('rest_of_dropdown').classList.toggle('is-close'); // is-closeを付加する
+                          document.getElementById('header_menu').classList.toggle('is-open'); // #header_menuにis-openを付加する
                           btn.classList.toggle('is-close'); // ボタンにis-closeを付加する
                         });
                       }
