@@ -54,16 +54,21 @@ class UsersController < ApplicationController
     # params[:user][:state]が"restart"の状態でlink_toからきた処理をここで行う
     elsif params[:user][:state] == "restart"
       @user.update(state: "restart")
-      # 傘持ちユーザーがスタート画面に移動した場合に自身をフォローしているユーザー全てのフォローを解除して
-      # 同時に彼らのstateをbrokenにする
       if current_user.have_umbrella == true && Matching.where(followed_id: current_user.id) != nil
+        #傘もちユーザーをフォロしているMarchingを全て取得してoverlap_usersに格納
         overlap_users = Matching.where(followed_id: current_user.id)
+        # 傘持ちユーザーがスタート画面に移動した場合に自身をフォローしているユーザー全てのフォローを解除して
+        # 同時に彼らのstateをbrokenにする
         overlap_users.each do | overlap_user |
           if overlap_user.follower_id != @user.id
             User.find_by(id: overlap_user.follower_id).update(state: "broken")
             overlap_user.destroy
           end
         end
+        # さらに傘持ちユーザー自身のフォローも解除する
+        # 傘持ちユーザーがフォロー状態(follower_idに存在する)のMatchingを削除
+        current_user_following = Matching.find_by(follower_id: current_user.id)
+        current_user_following.destroy
       # 傘なしユーザーがスタート画面に移動した場合に傘持ちユーザーへのフォローを解除する
       elsif current_user.have_umbrella == false && Matching.find_by(follower_id: current_user.id)
         # ban_removingをtrueにすることでAction Cableのremove.coffeeで傘もちユーザーのユーザー一覧から削除できる
