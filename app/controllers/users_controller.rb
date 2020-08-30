@@ -51,6 +51,10 @@ class UsersController < ApplicationController
       else
         render :edit
       end
+    # params[:user][:state]が"start"の状態でlink_toからきた処理をここで行う
+    elsif params[:user][:state] == "start"
+      current_user.update(state: "start")
+      redirect_to user_path(current_user.id)
     # params[:user][:state]が"restart"の状態でlink_toからきた処理をここで行う
     elsif params[:user][:state] == "restart"
       @user.update(state: "restart")
@@ -84,10 +88,6 @@ class UsersController < ApplicationController
         end
       end
       redirect_to start_users_path
-    # params[:user][:state]が"start"の状態でlink_toからきた処理をここで行う
-    elsif params[:user][:state] == "start"
-      current_user.update(state: "start")
-      redirect_to user_path(current_user.id)
     else
       #スタート画面でユーザー情報を更新したらフォロー関係がリセットされる
       if @user.update(user_params)
