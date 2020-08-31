@@ -80,6 +80,8 @@
 
   <% if current_user.id == @user.id %>
     <div class="main_box_on_my_page">
+  <% elsif Matching.find_by(followed_id: @user.id) == nil %>
+    <div class="main_box_on_user_page">
   <% elsif current_user.state == "request" && Matching.find_by(follower_id: current_user.id) != nil %>
     <div class="main_box_on_request-user_page">
   <% elsif current_user.state == "message" && current_user.following.first.id == @user.id %>
@@ -96,7 +98,7 @@
           <%= link_to "プロフィールを編集", edit_user_path(current_user.id), class: "edit_on_my_page" if current_user.id == @user.id %>
         </div>
       </div>
-    <% elsif current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil && current_user.state != "message" %>
+    <% elsif current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil && current_user.state != "message" && Matching.find_by(follower_id: @user.id) != nil %>
       <div class="profile_header">
         <%= link_to '一覧に戻る', users_path %>
         <p class="disc_for_accept" id="remove_disc_id_is_<%= @user.id %><%= current_user.id %>"><strong><%= @user.name %></strong> さんからリクエストが来ています。承諾しますか？</p>
@@ -147,10 +149,10 @@
           <div class="prof_intro">
             <%= @user.introduction %>
           </div>
-          <% if @followed == nil && current_user.id != @user.id && current_user.state == "request" && Matching.find_by(followed_id: current_user.id) != nil %>
+          <% if @followed == nil && current_user.id != @user.id && current_user.state == "request" && Matching.find_by(follower_id: current_user.id) != nil && Matching.find_by(followed_id: @user.id) == nil %>
             <div class="request_button">
             </div>
-          <% elsif @followed == nil && current_user.id != @user.id %>
+          <% elsif current_user.have_umbrella != true && @followed == nil && current_user.id != @user.id %>
             <div class="request_button">
               <div id="request_form_id_is_<%= @user.id %>", class="request_button_container"><%= render 'request_form', user: @user %></div>
             </div>

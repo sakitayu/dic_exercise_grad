@@ -58,7 +58,7 @@ class UsersController < ApplicationController
     # params[:user][:state]が"restart"の状態でlink_toからきた処理をここで行う (スタート画面から始めるからのリンク)
     elsif params[:user][:state] == "restart"
       @user.update(state: "restart")
-      if current_user.have_umbrella == true && Matching.where(followed_id: current_user.id).any?
+      if current_user.have_umbrella == true && Matching.where(follower_id: current_user.id).any?
         #傘もちユーザーをフォロしているMarchingを全て取得してoverlap_usersに格納
         overlap_users = Matching.where(followed_id: current_user.id)
         # 傘持ちユーザーがスタート画面に移動した場合に自身をフォローしているユーザー全てのフォローを解除して
