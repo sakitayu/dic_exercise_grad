@@ -2,13 +2,15 @@
 
   <div class="navi_container">
     <div class="navi_box">
-      <div class="state_umbrella">
-        <% if current_user.have_umbrella %>
-          <p>傘を持っています</p>
-        <% else %>
-          <p>傘を持っていません</p>
-        <% end %>
-      </div>
+      <% unless current_user.state == "start" %>
+        <div class="state_umbrella">
+          <% if current_user.have_umbrella %>
+            <p>傘を持っています</p>
+          <% else %>
+            <p>傘を持っていません</p>
+          <% end %>
+        </div>
+      <% end %>
       <div class="navi_prof_pic">
         <% if current_user.image.url == nil %>
           <% if current_user.gender == "男" %>
