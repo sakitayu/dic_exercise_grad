@@ -86,10 +86,10 @@
                   <%= link_to "リクエスト一覧", users_path, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "スタート画面に戻る", user_path(current_user.id, params: { user: { state: "restart"}}), data: { confirm: 'スタート画面に戻りますか？(リクエストが全て解除されます)' }, method: :put, class: "dropdown__item-link" %>
+                  <%= link_to "スタート画面に戻る", user_path(current_user.id, params: { user: { state: "restart"}}), data: { confirm: 'スタート画面に戻りますか？(リクエストが全てリセットされます)' }, method: :put, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(リクエストが全て解除されます)' }, class: "dropdown__item-link" %>
+                  <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(リクエストが全てリセットされます)' }, class: "dropdown__item-link" %>
                 </li>
               <% elsif current_user.have_umbrella == false %>
                 <li class="dropdown__item">
