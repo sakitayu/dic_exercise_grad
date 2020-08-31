@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   resources :matchings, only: [:create, :destroy]
   resources :users do
     collection do
-      get :profile_update
+      # get :profile_update
       get :confirm_request
       get :start
     end
   end
-  resources :starts
+  resources :tops, only: [:index]
+  # resources :starts
   resources :conversations do
     resources :messages
   end
