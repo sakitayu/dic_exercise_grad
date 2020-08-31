@@ -61,7 +61,7 @@
                 <li class="dropdown__item">
                   <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
                 </li>
-              <% elsif Matching.find_by(follower_id: current_user.id) == nil %>
+              <% elsif Matching.find_by(follower_id: current_user.id) == nil && current_user.have_umbrella == false %>
                 <li class="dropdown__item">
                   <%= link_to "マイページ", user_path(current_user.id), class: "dropdown__item-link" %>
                 </li>
