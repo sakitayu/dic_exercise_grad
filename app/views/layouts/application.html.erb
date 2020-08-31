@@ -15,7 +15,9 @@
       <div class="header_block">
         <div class="header_left"><%= image_tag 'raynee_logo.png', class: "raynee-logo" %></div>
         <div class="header_center"></div>
-        <% if user_signed_in? %>
+        <% if controller.controller_name == "tops" %>
+          <div class="header_right"><%= link_to "ログイン", new_user_session_path, class: "register_link" %></div>
+        <% elsif user_signed_in? %>
           <div class="header_prof_img" id="dropdown__btn">
             <% if current_user.image.url == nil %>
               <% if current_user.gender == "男" %>

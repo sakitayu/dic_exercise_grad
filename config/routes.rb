@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users,
               controllers: {registrations: "users/registrations"}
-  root to: 'users#start'
+  root to: 'tops#index'
   resources :matchings, only: [:create, :destroy]
   resources :users do
     collection do

@@ -244,6 +244,7 @@ ul {
 }
 
 .login_error_message {
+  width: 15em;
   text-align: center;
   color: #ffb6b9;
   padding-bottom: -3em;
