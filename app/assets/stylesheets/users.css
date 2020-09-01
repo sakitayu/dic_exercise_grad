@@ -133,20 +133,20 @@
 
 .regis_container div.regis_box div.email_and_pass_form div.field {
   margin-top: 1em;
-  color: #999999;
+  color: #444;
   font-weight: lighter;
 }
 
 .regis_container div.regis_box div.email_and_pass_form div.field_remember {
   width: 17.1em;
   margin-top: 1.5em;
-  color: #999999;
+  color: #444;
   font-weight: lighter;
 }
 
 .regis_container div.regis_box div.email_and_pass_form div.field_age, .regis_container div.regis_box div.email_and_pass_form div.field_gender {
   margin-top: 1.5em;
-  color: #999999;
+  color: #444;
   font-weight: lighter;
 }
 
