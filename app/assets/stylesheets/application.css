@@ -85,7 +85,7 @@ header div.header_prof_img img {
 
 header a.register_link {
   width: auto;
-  color: #444;
+  color: #999999;
   font-size: 1.4em;
   background-color: white;
   padding: 0.5em 1em;
@@ -95,7 +95,7 @@ header a.register_link {
 }
 
 header a.register_link:hover {
-  color: #ffb6b9;
+  color: #444;
   transition: 0.1s;
 }
 

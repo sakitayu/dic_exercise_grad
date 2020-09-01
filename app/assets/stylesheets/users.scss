@@ -53,14 +53,14 @@ $break-point-PC: 960px;
         font-weight: lighter;
         transition: 0.5s;
         &:hover {
-          color: $dark-pink;
+          color: $dark-grey;
           transition: 0.1s;
         }
       }
       div.field {
         width: 15em;
         text-align: center;
-        color: $middle-grey;
+        color: $dark-grey;
         font-weight: lighter;
         margin: 0 auto;
         padding-top: 1em;
@@ -254,7 +254,7 @@ $break-point-PC: 960px;
   padding-top: 2em;
   div.field {
     margin-top: 1em;
-    color: $middle-grey;
+    color: $dark-grey;
     font-weight: lighter;
   }
   div.field_remember {

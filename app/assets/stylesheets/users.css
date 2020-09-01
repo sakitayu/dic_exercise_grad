@@ -45,14 +45,14 @@
 }
 
 .login_container div.login_box div.remember_and_submit_form a:hover {
-  color: #ffb6b9;
+  color: #444;
   transition: 0.1s;
 }
 
 .login_container div.login_box div.remember_and_submit_form div.field {
   width: 15em;
   text-align: center;
-  color: #999999;
+  color: #444;
   font-weight: lighter;
   margin: 0 auto;
   padding-top: 1em;
@@ -275,7 +275,7 @@
 
 .email_and_pass_form div.field {
   margin-top: 1em;
-  color: #999999;
+  color: #444;
   font-weight: lighter;
 }
 

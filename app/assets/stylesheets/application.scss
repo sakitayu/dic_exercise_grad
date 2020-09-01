@@ -97,7 +97,7 @@ header {
   }
   a.register_link {
     width: auto;
-    color: $dark-grey;
+    color: $middle-grey;
     font-size: 1.4em;
     background-color: white;
     padding: 0.5em 1em;
@@ -105,7 +105,7 @@ header {
     white-space: nowrap;
     transition: 0.3s;
     &:hover {
-      color: $dark-pink;
+      color: $dark-grey;
       transition: 0.1s;
     }
   }
