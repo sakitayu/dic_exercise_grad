@@ -1,3 +1,214 @@
 // Place all the styles related to the tops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* メインカラー */
+$dark-green: #8ac6d1;
+$light-green: #bbded6;
+$dark-pink: #ffb6b9;
+$light-pink: #fae3d9;
+$dark-grey: #444;
+$middle-grey: #999999;
+$light-grey: #F7F7F7;
+
+/* ブレークポイント */
+$break-point-Mobile: 481px;
+$break-point-PC: 960px;
+
+.top_disc {
+  width: 80em; /* 共通の横幅 =1280px */
+  margin: 0 auto;
+  h1.disc_with_fade_in {
+    margin: 2em 2.5em 0 2.5em;
+    opacity: 0;
+  }
+}
+
+.tops_container {
+  width: 80em; /* 共通の横幅 =1280px */
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+  .left_user_box {
+    width: 39em;
+    height: auto;
+    margin: 4em 1em 5em 5em;
+    color: $dark-grey;
+    background-color: $light-grey;
+    border-radius: 0.3em;
+    .tops_user_box_header {
+      width: 100%;
+      height: auto;
+      p {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 0;
+        padding: 0.5em;
+        text-align: center;
+      }
+    }
+    .tops_user_box_contents {
+      background-color: white;
+      width: auto;
+      height: auto;
+      margin: 0 1em 1em 1em;
+      table {
+      width: 100%;
+      border-spacing: 0;
+      }
+      tr.default_table_border {
+        color: $dark-grey;
+        height: 5em;
+        margin: 0;
+        transition-duration: 0.5s;
+        z-index: -1;
+        p {
+          color: $middle-grey;
+          font-size: 1.2em;
+          text-align: center;
+        }
+      }
+      tr.table_border {
+        color: $dark-grey;
+        height: 5em;
+        margin: 0;
+        transition-duration: 0.5s;
+        &:hover {
+          background-color: $light-grey;
+          transition-duration: 0.3s;
+        }
+      }
+      tr.table_border_on_requset {
+        background-color: $light-pink;
+        color: $dark-grey;
+        height: 5em;
+        margin: 0;
+      }
+      tr.table_border_on_message {
+        background-color: $dark-pink;
+        color: $dark-grey;
+        height: 5em;
+        margin: 0;
+      }
+      td {
+        color: $dark-grey;
+        padding: 0.3em;
+        margin: 0;
+        a {
+          color: $dark-grey
+        }
+        img {
+          width: 3em;
+          height: 3em;
+          margin: 0.4em 0 0 0.4em;
+          border: 1px solid $dark-grey;
+          border-radius: 3em;
+          background-color: white;
+          object-fit: cover;
+        }
+      }
+      td.list_prof_img {
+        width: 4em;
+      }
+      td.list_name {
+        font-size:1.4em;
+        font-weight: bold;
+        width: 9em;
+      }
+      td.list_area {
+        font-size:1.2em;
+      }
+    }
+  }
+  .right_user_box {
+    width: 39em;
+    height: auto;
+    margin: 4em 5em 5em 1em;
+    color: $dark-grey;
+    background-color: $light-grey;
+    border-radius: 0.3em;
+    .tops_user_box_header {
+      width: 100%;
+      height: auto;
+      p {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 0;
+        padding: 0.5em;
+        text-align: center;
+      }
+    }
+    .tops_user_box_contents {
+      background-color: white;
+      width: auto;
+      height: auto;
+      margin: -1em 1em 1em 1em;
+      table {
+      width: 100%;
+      border-spacing: 0;
+      }
+      tr.default_table_border {
+        color: $dark-grey;
+        height: 5em;
+        margin: 0;
+        transition-duration: 0.5s;
+        z-index: -1;
+        p {
+          color: $middle-grey;
+          font-size: 1.2em;
+          text-align: center;
+        }
+      }
+      tr.table_border {
+        color: $dark-grey;
+        height: 5em;
+        margin: 0;
+        transition-duration: 0.5s;
+        &:hover {
+          background-color: $light-grey;
+          transition-duration: 0.3s;
+        }
+      }
+      tr.table_border_on_requset {
+        background-color: $light-pink;
+        color: $dark-grey;
+        height: 5em;
+        margin: 0;
+      }
+      tr.table_border_on_message {
+        background-color: $dark-pink;
+        color: $dark-grey;
+        height: 5em;
+        margin: 0;
+      }
+      td {
+        color: $dark-grey;
+        padding: 0.3em;
+        margin: 0;
+        a {
+          color: $dark-grey
+        }
+        img {
+          width: 4em;
+          height: 4em;
+          margin: 0.4em 0 0 0.4em;
+          border: 1px solid $dark-grey;
+          border-radius: 3em;
+          background-color: white;
+          object-fit: cover;
+        }
+      }
+      td.list_prof_img {
+        width: 5.2em;
+      }
+      td.list_name {
+        font-size:1.5em;
+        font-weight: bold;
+        width: 9em;
+      }
+      td.list_area {
+        font-size:1.3em;
+      }
+    }
+  }
+}

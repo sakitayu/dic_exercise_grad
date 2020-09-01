@@ -246,10 +246,11 @@
   font-weight: bold;
 }
 
-.regis_container div.disc_box div.disc_large p {
+.regis_container div.disc_box div.disc_large p.disc_large_sentence {
   margin: 0;
   padding: 0;
   white-space: nowrap;
+  opacity: 0;
 }
 
 .regis_container div.disc_box div.disc_small {
@@ -257,10 +258,11 @@
   margin-top: 1em;
 }
 
-.regis_container div.disc_box div.disc_small p {
+.regis_container div.disc_box div.disc_small p.disc_small_sentence {
   margin: 0;
   padding: 0.1em;
   white-space: nowrap;
+  opacity: 0;
 }
 
 .email_and_pass_form {
@@ -924,7 +926,7 @@
   text-align: center;
 }
 
-.main_box div.main_contents .list_area {
+.main_box div.main_contents td.list_area {
   font-size: 1.3em;
 }
 

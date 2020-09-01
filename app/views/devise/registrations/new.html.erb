@@ -4,17 +4,17 @@
   
     <div class="disc_box">
       <div class="disc_large">
-        <p>雨の日に人と人をつなぐ</p>
-        <p>傘シェアリングサービス</p>
+        <p class="disc_large_sentence">雨の日に人と人をつなぐ</p>
+        <p class="disc_large_sentence">傘シェアリングサービス</p>
       </div>
   
       <div class="disc_small">
-        <p>傘を忘れてしまいましたか？</p>
-        <p>目的地まで誰かに相合傘を頼んでみませんか？</p>
-        <p>あなた自身が誰かに相合傘を</p>
-        <p>してあげることもできます。</p>
-        <p>ユーザー登録をすれば</p>
-        <p>すぐに利用することができます。</p>
+        <p class="disc_small_sentence">傘を忘れてしまいましたか？</p>
+        <p class="disc_small_sentence">目的地まで誰かに相合傘を頼んでみませんか？</p>
+        <p class="disc_small_sentence">あなた自身が誰かに相合傘を</p>
+        <p class="disc_small_sentence">してあげることもできます。</p>
+        <p class="disc_small_sentence">ユーザー登録をすれば</p>
+        <p class="disc_small_sentence">すぐに利用することができます。</p>
       </div>
     </div>
   
@@ -81,3 +81,63 @@
   </div>
 
 </div>
+
+<script>
+  $(function () {
+      $('.disc_large_sentence').textillate({loop: true});
+  })
+  
+  $(function () {
+      $('.disc_large_sentence').css('opacity',1).textillate({
+        loop: false,  
+        minDisplayTime: 0,  
+        initialDelay: 100,  
+        autoStart: true,  
+
+        in:{
+          effect: 'fadeIn',  
+          delayScale: 10.5,  
+          delay: 40,  
+          sync: true,  
+          shuffle: false
+        },  
+
+        out:{
+          effect: 'fadeOut',  
+          delayScale: 1.5,  
+          delay: 50,  
+          sync: false,  
+          shuffle: false
+        }
+      });
+  })
+
+  $(function () {
+      $('.disc_small_sentence').textillate({loop: true});
+  })
+  
+  $(function () {
+      $('.disc_small_sentence').css('opacity',1).textillate({
+        loop: false,  
+        minDisplayTime: 0,  
+        initialDelay: 500,  
+        autoStart: true,  
+
+        in:{
+          effect: 'fadeIn',  
+          delayScale: 10.5,  
+          delay: 40,  
+          sync: true,  
+          shuffle: false
+        },  
+
+        out:{
+          effect: 'fadeOut',  
+          delayScale: 1.5,  
+          delay: 50,  
+          sync: false,  
+          shuffle: false
+        }
+      });
+  })
+</script>

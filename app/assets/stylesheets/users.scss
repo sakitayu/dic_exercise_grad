@@ -226,19 +226,21 @@ $break-point-PC: 960px;
     div.disc_large {
       font-size: 3.2em;
       font-weight: bold;
-      p {
+      p.disc_large_sentence {
         margin: 0;
         padding: 0;
         white-space: nowrap;
+        opacity: 0;
       }
     }
     div.disc_small {
       font-size: 1.6em;
       margin-top: 1em;
-      p {
+      p.disc_small_sentence {
         margin: 0;
         padding: 0.1em;
         white-space: nowrap;
+        opacity: 0;
       }
     }
   }
@@ -822,7 +824,7 @@ $break-point-PC: 960px;
         text-align: center;
       }
     }
-    .list_area {
+    td.list_area {
       font-size:1.3em;
     }
   }

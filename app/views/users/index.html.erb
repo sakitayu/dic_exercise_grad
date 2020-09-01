@@ -58,11 +58,8 @@
       <div class="search_user">
         <div class="search_box">
           <%= search_form_for @q do |f| %>
-            <%#= f.label :area, "場所" %>
             <%= f.search_field :area_cont, placeholder: "場所", class: "search_area" %>
-            <%#= f.label :gender, "性別" %>
             <%= f.select :gender_eq, [['男', 1], ['女', 2], ['どちらでもない', 3]], :include_blank => '性別' %>
-            <%#= f.label :age, "年齢" %>
             <%= f.select :age_eq, [['20~26', 1], ['27~33', 2], ['34~40', 3], ['41~47', 4], ['48~60', 5], ['非公開', 6]], :include_blank => '年齢' %>
             <%= f.submit "ユーザーを探す", class: "search_user_submit" %>
             <%= link_to "リセット", users_path %>

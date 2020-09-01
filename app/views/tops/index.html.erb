@@ -1,36 +1,86 @@
-<div class="regis_background">
+<div class="top_disc">
+  <h1 class="disc_with_fade_in">Rayneeは雨の日に傘を持っているひとと傘がないひとをつなぐマッチング&傘シェアリングサービスです</h1>
+</div>
 
-  <div class="regis_container">
+<div class="main_container">
+
+  <div class="tops_container">
   
-    <div class="disc_box">
-      <div class="disc_large">
-        <p>topページtopページ</p>
-        <p>topページtopページ</p>
+    <div class="left_user_box">
+      <div class="tops_user_box_header">
+        <p>傘を持っているひとたち</p>
       </div>
-  
-      <div class="disc_small">
-        <p>topページtopページ</p>
-        <p>topページtopページ</p>
-        <p>topページtopページ</p>
-        <p>topページtopページ</p>
-        <p>topページtopページ</p>
-        <p>topページtopページ</p>
+      <div class="tops_user_box_contents">
+        <% @users.each do |user| %>
+          <table>
+            <tr class="table_border">
+              <td class="list_prof_img">
+                <% if user.image.url == nil %>
+                  <% if user.gender == "男" %>
+                    <%= image_tag('male.png') %>
+                  <% elsif user.gender == "女" %>
+                    <%= image_tag('female.png') %>
+                  <% elsif user.gender == "どちらでもない" %>
+                    <%= image_tag('trans.png') %>
+                  <% end %>
+                <% else %>
+                  <%= image_tag(user.image.url) unless user.image.url == nil %>
+                <% end %>
+              </td>
+              <td class="list_name">
+                <%= user.name %>
+              </td>
+              <td class="list_area"><%= user.area %></td>
+            </tr>
+          </table>
+        <% end %>
       </div>
     </div>
   
-    <div class="regis_box">
-
+    <div class="right_user_box">
+      <div class="tops_user_box_header">
+        <p>傘がないひとたち</p>
+      </div>
+      <div class="tops_user_box_contents">
         <p>topページtopページ</p>
         <p>topページtopページ</p>
         <p>topページtopページ</p>
-        <p>topページtopページ</p>
-        <p>topページtopページ</p>
-        <p>topページtopページ</p>
-        <p>topページtopページ</p>
-        <p>topページtopページ</p>
-  
+      </div>
     </div>
   
   </div>
 
 </div>
+
+
+
+<script>
+  $(function () {
+      $('.disc_with_fade_in').textillate({loop: true});
+  })
+  
+  $(function () {
+      $('.disc_with_fade_in').css('opacity',1).textillate({
+        loop: false,  
+        minDisplayTime: 3000,  
+        initialDelay: 0,  
+        autoStart: true,  
+
+        in:{
+          effect: 'fadeIn',  
+          delayScale: 0.5,  
+          delay: 60,  
+          sync: false,  
+          shuffle: false
+        },  
+
+        out:{
+          effect: 'fadeOut',  
+          delayScale: 1.5,  
+          delay: 50,  
+          sync: false,  
+          shuffle: false
+        }
+      });
+  })
+</script>
