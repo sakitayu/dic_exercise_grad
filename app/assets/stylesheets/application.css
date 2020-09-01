@@ -56,6 +56,10 @@ header div.header_left {
   margin-left: 5em;
 }
 
+header div.header_left a.raynee-logo img {
+  height: 3em;
+}
+
 header div.header_center {
   height: 3em;
 }
@@ -77,10 +81,6 @@ header div.header_prof_img img {
   background-color: white;
   object-fit: cover;
   margin: 0;
-}
-
-header img.raynee-logo {
-  height: 3em;
 }
 
 header a.register_link {

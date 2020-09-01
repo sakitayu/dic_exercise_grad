@@ -70,6 +70,11 @@ header {
     color: white;
     padding: 1.2em 0 0 0;
     margin-left: 5em;
+    a.raynee-logo {
+      img {
+        height: 3em;
+      }
+    }
   }
   div.header_center {
     height: 3em;
@@ -89,9 +94,6 @@ header {
       object-fit: cover;
       margin: 0;
     }
-  }
-  img.raynee-logo {
-    height: 3em;
   }
   a.register_link {
     width: auto;

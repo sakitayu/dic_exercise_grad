@@ -13,7 +13,15 @@
   <body>
     <header>
       <div class="header_block">
-        <div class="header_left"><%= image_tag 'raynee_logo.png', class: "raynee-logo" %></div>
+        <div class="header_left">
+          <% if user_signed_in? && controller.action_name == "start" %>
+            <%= link_to image_tag('raynee_logo.png'), start_users_path, class: "raynee-logo" %>
+          <% elsif user_signed_in? %>
+            <%= link_to image_tag('raynee_logo.png'), users_path, class: "raynee-logo" %>
+          <% else %>
+            <%= link_to image_tag('raynee_logo.png'), root_path, class: "raynee-logo" %>
+          <% end %>
+        </div>
         <div class="header_center"></div>
         <% if controller.controller_name == "tops" %>
           <div class="header_right"><%= link_to "ログイン", new_user_session_path, class: "register_link" %></div>
