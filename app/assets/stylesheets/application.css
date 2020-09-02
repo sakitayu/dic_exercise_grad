@@ -260,18 +260,17 @@ ul {
 
 .top_bottom_etc {
   text-align: center;
-  font-size: 10px;
-  width: 250px;
-  margin: 10px auto 0 auto;
-  padding-right: 50px;
+  font-size: 0.8em;
+  width: auto;
+  margin: 2em auto 0 auto;
 }
 
 .top_bottom_etc a {
-  color: #616161;
+  color: #999999;
   transition: 0.5s;
 }
 
 .top_bottom_etc a:hover {
-  color: deeppink;
+  color: #444;
   transition: 0.1s;
 }

@@ -116,6 +116,69 @@
   border-radius: 0.3em;
 }
 
+.forgot_password_box h2 {
+  color: #444;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.forgot_password_box form div.email_form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.forgot_password_box form div.email_form div.forgot_password_field {
+  width: 20em;
+  margin: 1em auto 0 auto;
+  color: #444;
+  font-weight: lighter;
+}
+
+.forgot_password_box form div.email_form div.forgot_password_field input[type=email] {
+  height: 1.5em;
+  width: 100%;
+  padding: 0.2em;
+  text-indent: 0.5em;
+  border: solid thin #999999;
+  border-radius: 0.2em;
+}
+
+.forgot_password_box form div.email_form div.forgot_password_field input[type=email]:focus {
+  border: solid thin #ffb6b9;
+  outline: 0;
+}
+
+.forgot_button_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.forgot_button_container div.forgot_button {
+  margin: 2em auto 0 auto;
+}
+
+.forgot_button_container div.forgot_button input[type="submit"] {
+  height: 1.9em;
+  line-height: 0;
+  width: auto;
+  border-style: none;
+  font-size: 1.1em;
+  white-space: nowrap;
+  padding: 0 1em;
+  border-radius: 1em;
+  color: white;
+  background: #ffb6b9;
+  transition: 0.3s;
+}
+
+.forgot_button_container div.forgot_button input[type="submit"]:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.1s;
+}
+
 .regis_container {
   width: 80em;
   /* 共通の横幅 =1280px */

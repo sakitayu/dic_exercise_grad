@@ -110,8 +110,6 @@ $break-point-PC: 960px;
   }
 }
 
-
-
 .forgot_password_box {
   width: 28em;
   height: auto;
@@ -120,6 +118,63 @@ $break-point-PC: 960px;
   background-color: white;
   border: solid thin $dark-green;
   border-radius: 0.3em;
+  h2 {
+    color: $dark-grey;
+    text-align: center;
+    margin-top: 2em;
+  }
+  form {
+    div.email_form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      div.forgot_password_field {
+        width: 20em;
+        margin: 1em auto 0 auto;
+        color: $dark-grey;
+        font-weight: lighter;
+        input[type=email] {
+          height: 1.5em;
+          width: 100%;
+          padding: 0.2em;
+          text-indent: 0.5em;
+          border: solid thin $middle-grey;
+          border-radius: 0.2em;
+          &:focus {
+            border: solid thin $dark-pink;
+            outline: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.forgot_button_container {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+  div.forgot_button {
+    margin: 2em auto 0 auto;
+    input[type="submit"] {
+      height: 1.9em;
+      line-height: 0;
+      width: auto;
+      border-style: none;
+      font-size: 1.1em;
+      white-space: nowrap;
+      padding: 0 1em;
+      border-radius: 1em;
+      color:white;
+      background: $dark-pink;
+      transition: 0.3s;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+        transition: 0.1s;
+      }
+    }
+  }
 }
 
 .regis_container {
