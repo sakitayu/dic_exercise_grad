@@ -106,6 +106,16 @@
   /* チェックの色 */
 }
 
+.forgot_password_box {
+  width: 28em;
+  height: auto;
+  margin: 4.8em auto;
+  padding-bottom: 3.6em;
+  background-color: white;
+  border: solid thin #8ac6d1;
+  border-radius: 0.3em;
+}
+
 .regis_container {
   width: 80em;
   /* 共通の横幅 =1280px */
@@ -258,11 +268,43 @@
   margin-top: 1em;
 }
 
-.regis_container div.disc_box div.disc_small p.disc_small_sentence {
+.regis_container div.disc_box div.disc_small p.disc_small_sentence_1 {
   margin: 0;
   padding: 0.1em;
   white-space: nowrap;
   opacity: 0;
+}
+
+.regis_container div.disc_box div.disc_small p.disc_small_sentence_2 {
+  margin: 0;
+  padding: 0.1em;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.regis_container div.disc_box div.disc_small div.disc_small_space_2 {
+  height: 0.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.regis_container div.disc_box div.disc_small p.disc_small_sentence_3 {
+  margin: 0;
+  padding: 0.1em;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.regis_container div.disc_box div.disc_small div.disc_small_space_3 {
+  height: 0.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.regis_container div.disc_box div.disc_small div.disc_small_space {
+  height: 0.5em;
+  margin: 0;
+  padding: 0;
 }
 
 .email_and_pass_form {

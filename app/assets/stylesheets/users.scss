@@ -110,6 +110,18 @@ $break-point-PC: 960px;
   }
 }
 
+
+
+.forgot_password_box {
+  width: 28em;
+  height: auto;
+  margin: 4.8em auto;
+  padding-bottom: 3.6em;
+  background-color: white;
+  border: solid thin $dark-green;
+  border-radius: 0.3em;
+}
+
 .regis_container {
   width: 80em; /* 共通の横幅 =1280px */
   margin:0 auto;
@@ -236,11 +248,38 @@ $break-point-PC: 960px;
     div.disc_small {
       font-size: 1.6em;
       margin-top: 1em;
-      p.disc_small_sentence {
+      p.disc_small_sentence_1 {
         margin: 0;
         padding: 0.1em;
         white-space: nowrap;
         opacity: 0;
+      }
+      p.disc_small_sentence_2 {
+        margin: 0;
+        padding: 0.1em;
+        white-space: nowrap;
+        opacity: 0;
+      }
+      div.disc_small_space_2 {
+        height: 0.5em;
+        margin: 0;
+        padding: 0;
+      }
+      p.disc_small_sentence_3 {
+        margin: 0;
+        padding: 0.1em;
+        white-space: nowrap;
+        opacity: 0;
+      }
+      div.disc_small_space_3 {
+        height: 0.5em;
+        margin: 0;
+        padding: 0;
+      }
+      div.disc_small_space {
+        height: 0.5em;
+        margin: 0;
+        padding: 0;
       }
     }
   }

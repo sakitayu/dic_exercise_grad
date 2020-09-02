@@ -1,10 +1,10 @@
 <div class="top_disc">
-  <h1 class="disc_with_fade_in">Raynee は傘がない人と傘を持っている人をつなぐ傘シェアリングサービスです</h1>
+  <h1 class="disc_with_fade_in">Raynee は傘を持っている人と傘がない人をつなぐ傘シェアリングサービスです</h1>
 </div>
 
 <div class="search_user_container">
   <div class="search_user_box">
-    <p>周辺のユーザーを探す</p>
+    <p>周辺にいるユーザー</p>
   </div>
 </div>
 
@@ -16,27 +16,29 @@
       </div>
       <div class="tops_user_box_contents">
         <% @users.each do |user| %>
-          <table>
-            <tr class="table_border">
-              <td class="list_prof_img">
-                <% if user.image.url == nil %>
-                  <% if user.gender == "男" %>
-                    <%= image_tag('male.png') %>
-                  <% elsif user.gender == "女" %>
-                    <%= image_tag('female.png') %>
-                  <% elsif user.gender == "どちらでもない" %>
-                    <%= image_tag('trans.png') %>
+          <% if user.have_umbrella == true %>
+            <table>
+              <tr class="table_border">
+                <td class="list_prof_img">
+                  <% if user.image.url == nil %>
+                    <% if user.gender == "男" %>
+                      <%= image_tag('male.png') %>
+                    <% elsif user.gender == "女" %>
+                      <%= image_tag('female.png') %>
+                    <% elsif user.gender == "どちらでもない" %>
+                      <%= image_tag('trans.png') %>
+                    <% end %>
+                  <% else %>
+                    <%= image_tag(user.image.url) unless user.image.url == nil %>
                   <% end %>
-                <% else %>
-                  <%= image_tag(user.image.url) unless user.image.url == nil %>
-                <% end %>
-              </td>
-              <td class="list_name">
-                <%= user.name %>
-              </td>
-              <td class="list_area"><%= user.area %></td>
-            </tr>
-          </table>
+                </td>
+                <td class="list_name">
+                  <%= user.name %>
+                </td>
+                <td class="list_area"><%= user.area %></td>
+              </tr>
+            </table>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -46,9 +48,31 @@
         <p>傘がない人たち</p>
       </div>
       <div class="tops_user_box_contents">
-        <p>topページtopページ</p>
-        <p>topページtopページ</p>
-        <p>topページtopページ</p>
+        <% @users.each do |user| %>
+          <% if user.have_umbrella == false %>
+            <table>
+              <tr class="table_border">
+                <td class="list_prof_img">
+                  <% if user.image.url == nil %>
+                    <% if user.gender == "男" %>
+                      <%= image_tag('male.png') %>
+                    <% elsif user.gender == "女" %>
+                      <%= image_tag('female.png') %>
+                    <% elsif user.gender == "どちらでもない" %>
+                      <%= image_tag('trans.png') %>
+                    <% end %>
+                  <% else %>
+                    <%= image_tag(user.image.url) unless user.image.url == nil %>
+                  <% end %>
+                </td>
+                <td class="list_name">
+                  <%= user.name %>
+                </td>
+                <td class="list_area"><%= user.area %></td>
+              </tr>
+            </table>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

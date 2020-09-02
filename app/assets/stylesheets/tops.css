@@ -26,6 +26,8 @@
   padding: 0;
   background-color: #F7F7F7;
   border-radius: 0.3em;
+  display: flex;
+  justify-content: center;
 }
 
 .search_user_container div.search_user_box p {
@@ -176,7 +178,7 @@
   background-color: white;
   width: auto;
   height: auto;
-  margin: -1em 1em 1em 1em;
+  margin: 0 1em 1em 1em;
 }
 
 .tops_container .right_user_box .tops_user_box_contents table {
