@@ -45,11 +45,11 @@
           </div>
         <% else %>
           <% if controller.action_name == "new" && controller.controller_name == "registrations" %>
-            <div class="header_right"><%= link_to "ログイン", new_user_session_path, class: "register_link" %></div>
+            <div class="header_right"><%= link_to "ログイン", new_user_session_path, class: "register_link_alt" %></div>
           <% elsif controller.action_name == "new" && controller.controller_name == "sessions" %>
             <div class="header_right"><%= link_to "登録する", new_user_registration_path, class: "register_link" %></div>
           <% else %>
-            <div class="header_right"><%= link_to "ログイン", new_user_session_path, class: "register_link" %></div>
+            <div class="header_right"><%= link_to "ログイン", new_user_session_path, class: "register_link_alt" %></div>
           <% end %>
         <% end %>
       </div>
