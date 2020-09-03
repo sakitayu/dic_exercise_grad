@@ -83,6 +83,14 @@ header {
     height: 3em;
     margin: 1.4em 5em 0 0;
   }
+  div.header_right_on_top {
+    height: 3em;
+    margin: 1.4em 5em 0 0;
+    display: flex;
+    div {
+      margin-left: 2em;
+    }
+  }
   div.header_prof_img {
     height: 3em;
     margin: 1em 5em 0 0;
@@ -106,6 +114,23 @@ header {
     transition: 0.3s;
     &:hover {
       color: black;
+      transition: 0.1s;
+    }
+  }
+  a.register_link_alt {
+    width: auto;
+    color: white;
+    font-size: 1.4em;
+    background-color: $dark-green;
+    padding: 0.4em 1em;
+    border-radius: 1em;
+    border: solid 0.1em white;
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: 0.3s;
+    &:hover {
+      color: black;
+      background-color: white;
       transition: 0.1s;
     }
   }

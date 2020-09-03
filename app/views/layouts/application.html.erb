@@ -25,7 +25,10 @@
         </div>
         <div class="header_center"></div>
         <% if controller.controller_name == "tops" %>
-          <div class="header_right"><%= link_to "ログイン", new_user_session_path, class: "register_link" %></div>
+          <div class="header_right_on_top">
+            <div><%= link_to "ログイン", new_user_session_path, class: "register_link_alt" %></div>
+            <div><%= link_to "登録する", new_user_registration_path, class: "register_link" %></div>
+          </div>
         <% elsif user_signed_in? %>
           <div class="header_prof_img" id="dropdown__btn">
             <% if current_user.image.url == nil %>

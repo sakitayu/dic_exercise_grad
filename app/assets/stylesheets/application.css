@@ -69,6 +69,16 @@ header div.header_right {
   margin: 1.4em 5em 0 0;
 }
 
+header div.header_right_on_top {
+  height: 3em;
+  margin: 1.4em 5em 0 0;
+  display: flex;
+}
+
+header div.header_right_on_top div {
+  margin-left: 2em;
+}
+
 header div.header_prof_img {
   height: 3em;
   margin: 1em 5em 0 0;
@@ -96,6 +106,25 @@ header a.register_link {
 
 header a.register_link:hover {
   color: black;
+  transition: 0.1s;
+}
+
+header a.register_link_alt {
+  width: auto;
+  color: white;
+  font-size: 1.4em;
+  background-color: #8ac6d1;
+  padding: 0.4em 1em;
+  border-radius: 1em;
+  border: solid 0.1em white;
+  box-sizing: border-box;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+header a.register_link_alt:hover {
+  color: black;
+  background-color: white;
   transition: 0.1s;
 }
 
