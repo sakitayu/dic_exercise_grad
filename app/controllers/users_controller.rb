@@ -16,6 +16,17 @@ class UsersController < ApplicationController
       @q = @users.ransack(params[:q])
       @users = @q.result(distinct: true)
       @matchings = Matching.all
+      
+      # 会話ルームがある場合は@roomに会話ルームIDを入れる
+      if current_user.have_umbrella == true
+        if Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id) != nil
+          @room = Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id)
+        end
+      else
+        if Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id) != nil
+          @room = Conversation.find_by(sender_id: current_user.following.first.id, recipient_id: current_user.id)
+        end
+      end
     else
       redirect_to new_user_session_path
     end
@@ -32,6 +43,17 @@ class UsersController < ApplicationController
       if current_user.id == User.find(matching.followed_id).id
         @follower = User.find(matching.follower_id)
         @followed = User.find(matching.followed_id)
+      end
+    end
+
+    # 会話ルームがある場合は@roomに会話ルームIDを入れる
+    if current_user.have_umbrella == true
+      if Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id) != nil
+        @room = Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id)
+      end
+    else
+      if Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id) != nil
+        @room = Conversation.find_by(sender_id: current_user.following.first.id, recipient_id: current_user.id)
       end
     end
   end
@@ -88,6 +110,7 @@ class UsersController < ApplicationController
         end
       end
       redirect_to start_users_path
+    # リクエスト確認画面から「お願いする」ボタンをクリックしたらメッセージ画面に遷移する
     elsif params[:user][:state] == "message"
       current_user.update(state: "message")
       room = Conversation.find_by(sender_id: current_user.following.first.id, recipient_id: current_user.id)

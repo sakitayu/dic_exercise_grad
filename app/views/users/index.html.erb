@@ -49,9 +49,9 @@
   <div class="right_culumn_container">
 
     <% if Matching.find_by(followed_id:current_user.id) && current_user.following.first != nil && current_user.state == "message" %>
-        <div class="confirm_box">
-          <%= link_to "#{current_user.following.first.name} さんとメッセージ中です。メッセージ画面はこちら", conversations_path(sender_id: current_user.following.first.id, recipient_id: current_user.id), method: :post %>
-        </div>
+      <div class="confirm_box">
+        <%= link_to "#{current_user.following.first.name} さんとメッセージ中です。メッセージ画面はこちら", conversation_messages_path(@room.id) %>
+      </div>
     <% end %>
 
     <div class="main_box">
@@ -183,7 +183,7 @@
   
     <% if Matching.find_by(followed_id:current_user.id) && current_user.state == "message" %>
       <div class="confirm_box">
-        <%= link_to "#{current_user.following.first.name} さんとメッセージ中です。メッセージ画面はこちら", conversations_path(sender_id: current_user.following.first.id, recipient_id: current_user.id), method: :post %>
+        <%= link_to "#{current_user.following.first.name} さんとメッセージ中です。メッセージ画面はこちら", conversation_messages_path(@room.id) %>
       </div>
     <% elsif Matching.find_by(followed_id:current_user.id) %>
       <div class="confirm_box" id="confirm_id_is_<%= current_user.id %>">
