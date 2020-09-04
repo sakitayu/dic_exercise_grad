@@ -2,11 +2,7 @@ Rails.application.routes.draw do
   devise_for :users,
               controllers: {registrations: "users/registrations"}
   devise_scope :user do
-    unauthenticated do
-      as :user do
-        root :to => 'devise/registrations#new'
-      end
-    end
+    root to: "devise/sessions#new"
   end
   resources :matchings, only: [:create, :destroy]
   resources :users do

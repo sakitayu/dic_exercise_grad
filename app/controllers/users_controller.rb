@@ -18,11 +18,11 @@ class UsersController < ApplicationController
       @matchings = Matching.all
       
       # 会話ルームがある場合は@roomに会話ルームIDを入れる
-      if current_user.have_umbrella == true
+      if current_user.have_umbrella == true && current_user.following.present?
         if Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id) != nil
           @room = Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id)
         end
-      else
+      elsif current_user.following.present?
         if Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id) != nil
           @room = Conversation.find_by(sender_id: current_user.following.first.id, recipient_id: current_user.id)
         end
@@ -47,11 +47,11 @@ class UsersController < ApplicationController
     end
 
     # 会話ルームがある場合は@roomに会話ルームIDを入れる
-    if current_user.have_umbrella == true
+    if current_user.have_umbrella == true && current_user.following.present?
       if Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id) != nil
         @room = Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id)
       end
-    else
+    elsif current_user.following.present?
       if Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id) != nil
         @room = Conversation.find_by(sender_id: current_user.following.first.id, recipient_id: current_user.id)
       end
