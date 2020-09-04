@@ -96,7 +96,10 @@
                       <%#= form.hidden_field :state, :value => nil %>
                       <%= f.submit "やっぱりやめる" %>
                     <% end %>
-                    <%= link_to "お願いする", conversations_path(sender_id: @user.id, recipient_id: current_user.id), method: :post, data: { confirm: '本当にお願いしますか？(メッセージルームへ移動します)' }  %>
+                    <%= form_with(model: @user, local: true) do |form| %>
+                      <%= form.hidden_field :state, :value => "message" %>
+                      <%= form.submit "お願いする", data: { confirm: '本当にお願いしますか？(メッセージルームへ移動します)' }  %>
+                    <% end %>
                 </div>
 
               </div>

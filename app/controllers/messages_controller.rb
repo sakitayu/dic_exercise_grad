@@ -24,9 +24,9 @@ class MessagesController < ApplicationController
 
       # 傘なしユーザーがメッセージルームに移動した場合、stateカラムがmessageになる
       # すでにstateがmessageになっている場合はなにもしない(データベースへの無駄なアクセスを増やさないため)
-      if current_user.have_umbrella == false && current_user.state != "message"
-        current_user.update(state: "message")
-      end
+      # if current_user.have_umbrella == false && current_user.state != "message"
+      #   current_user.update(state: "message")
+      # end
     else
       redirect_to new_user_session_path
     end

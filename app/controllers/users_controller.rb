@@ -88,6 +88,10 @@ class UsersController < ApplicationController
         end
       end
       redirect_to start_users_path
+    elsif params[:user][:state] == "message"
+      current_user.update(state: "message")
+      room = Conversation.find_by(sender_id: current_user.following.first.id, recipient_id: current_user.id)
+      redirect_to conversation_messages_path(room.id)
     else
       #スタート画面でユーザー情報を更新したらフォロー関係がリセットされる
       if @user.update(user_params)

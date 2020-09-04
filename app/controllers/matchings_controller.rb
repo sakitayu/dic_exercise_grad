@@ -8,13 +8,13 @@ class MatchingsController < ApplicationController
     # その場合にstateカラムをmessageにする
     if current_user.have_umbrella == true
       current_user.update(state: "message")
+      current_user.follow!(@user)
     else
       # 傘なしユーザーが傘もちユーザーをフォローする場合は"リクエスト"になるので
       # その場合にstateカラムをrequestにする
       current_user.update(state: "request")
+      current_user.follow!(@user)
     end
-    
-    current_user.follow!(@user)
     
     # 傘持ちユーザーが自分にリクエストを送っている傘なしユーザーをフォロー(承諾)した際に
     # 自分をフォロー(リクエスト)している傘なしユーザーがいた場合に彼らのリクエストを全て解除
