@@ -22,8 +22,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user.area == nil
-      redirect_to start_users_path
+    if user_signed_in? &&  current_user.area == nil
+      redirect_to new_user_session_path
     end
     
     # Matchingテーブルから表示ユーザーがリクエストを送っているユーザーを@followedに格納
