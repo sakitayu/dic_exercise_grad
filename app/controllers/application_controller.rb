@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
     start_users_path # ログイン後に遷移するpath
   end
 
-  # def after_sign_out_path_for(resource)
-  #   new_user_session_path # ログアウト後に遷移するpath
-  # end
+  def after_sign_out_path_for(resource)
+    new_user_session_path # ログアウト後に遷移するpath
+  end
 
   protected
 
