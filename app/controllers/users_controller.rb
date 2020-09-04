@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   require "date"
 
   def index
-    if current_user.area != nil
+    if user_signed_in? && current_user.area != nil
       search_date = Date.today
       # ポートフォリオ用に一時的に直近滞在時間表示機能をオフにしています
       # 直近滞在時間表示機能をオンにする場合は以下のコードに変えてください
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       @users = @q.result(distinct: true)
       @matchings = Matching.all
     else
-      redirect_to start_users_path
+      redirect_to new_user_session_path
     end
   end
 
