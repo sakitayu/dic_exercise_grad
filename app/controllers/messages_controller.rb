@@ -4,7 +4,9 @@ class MessagesController < ApplicationController
   end
 
   def index
-    if user_signed_in? && current_user.area != nil
+    if user_signed_in? && current_user.area != nil && current_user.state != "message"
+      redirect_to users_path
+    elsif current_user.state == "message"
       @matching = Matching.find_by(follower_id: current_user.id)
       #会話相手ユーザーのIDを@opposite_idに格納
       if @conversation.sender_id == current_user.id
