@@ -700,6 +700,7 @@
 }
 
 .navi_box div.state_umbrella p {
+  display: block;
   text-align: center;
   padding-top: 0.3em;
   margin: 0;

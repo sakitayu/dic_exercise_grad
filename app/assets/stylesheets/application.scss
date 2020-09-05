@@ -25,198 +25,814 @@ $middle-grey: #999999;
 $light-grey: #F7F7F7;
 
 /* ブレークポイント */
-$break-point-Mobile: 481px;
-$break-point-PC: 960px;
+$break-point-mobile: 320px;
+$break-point-tablet: 560px;
+$break-point-pc: 960px;
 
 
 /* スマホサイズの設定 */
-@media (min-width: $break-point-Mobile) {
+@media screen and (min-width: $break-point-mobile) {
+
+  body {
+    font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
+    font-size: 1em;
+    min-width: auto; /* 共通の横幅 */
+    min-height: 100vh;
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-flow: column;
+    word-wrap: break-word;
+    a {
+      text-decoration: none;
+    }
+  }
+  
+  header {
+    position: fixed;
+    background-color: $dark-green;
+    height: 5em;
+    width: 100%;
+    z-index: 2;
+    div.header_block {
+      width: auto; /* 共通の横幅 */
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    div.header_left {
+      height: 3em;
+      color: white;
+      padding: 1.2em 0 0 0;
+      margin-left: 1em;
+      a.raynee-logo {
+        img {
+          height: 3em;
+        }
+      }
+    }
+    div.header_center {
+      height: 3em;
+    }
+    div.header_right {
+      height: 3em;
+      margin: 1.4em 1em 0 0;
+    }
+    div.header_right_on_top {
+      height: 3em;
+      margin: 1.4em 1em 0 0;
+      display: flex;
+      div {
+        margin-left: 2em;
+      }
+    }
+    div.header_prof_img {
+      display: none;
+      height: 3em;
+      margin: 1em 1em 0 0;
+      z-index: -5;
+      img {
+        width: 3em;
+        height: 3em;
+        border-radius: 3em;
+        background-color: white;
+        object-fit: cover;
+        margin: 0;
+      }
+    }
+    div.header_prof_img_responsible {
+      display: block;
+      height: 3em;
+      margin: 1em 1em 0 0;
+      z-index: 0;
+      img {
+        width: 3em;
+        height: 3em;
+        border-radius: 3em;
+        background-color: white;
+        object-fit: cover;
+        margin: 0;
+      }
+    }
+    a.register_link {
+      width: auto;
+      color: $dark-grey;
+      font-size: 1.4em;
+      background-color: white;
+      padding: 0.5em 1em;
+      border-radius: 1em;
+      white-space: nowrap;
+      transition: 0.3s;
+      &:hover {
+        color: black;
+        transition: 0.1s;
+      }
+    }
+    a.register_link_alt {
+      width: auto;
+      color: white;
+      font-size: 1.4em;
+      background-color: $dark-green;
+      padding: 0.4em 1em;
+      border-radius: 1em;
+      border: solid 0.1em white;
+      box-sizing: border-box;
+      white-space: nowrap;
+      transition: 0.3s;
+      &:hover {
+        color: black;
+        background-color: white;
+        transition: 0.1s;
+      }
+    }
+
+    nav {
+      background-color: $dark-green;
+      position: fixed;
+      z-index: 5;
+      top: 5em;
+      right: 0;
+      overflow-x: hidden;
+      text-align: center;
+      width: 0;
+      height: 100%;
+      transition: 0.6s;
+      div.navi_box_on_nav_menu {
+        background-color: $light-grey;
+        width: 23em;
+        height: auto;
+        margin: 1em auto 0 auto;
+        border-radius: 0.2em;
+        top: 0;
+        div.state_umbrella {
+          width: 100%;
+          height: 2em;
+          background: $light-green;
+          border-radius: 0.2em 0.2em 0 0;
+          color: $dark-grey;
+          p {
+            text-align: center;
+            padding-top: 0.3em;
+            margin: 0;
+          }
+        }
+        div.navi_prof_pic {
+          width: 100%;
+          text-align: center;
+          img {
+            width: 6em;
+            height: 6em;
+            border: 1px solid $dark-grey;
+            border-radius: 5em;
+            margin: 2em 0 1em 0;
+            background-color: white;
+            object-fit: cover;
+          }
+        }
+        div.navi_prof_name {
+          width: 100%;
+          text-align: center;
+          p {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0;
+          }
+        }
+        div.navi_prof_mypage {
+          width: 100%;
+          text-align: center;
+          p {
+            font-size: 1em;
+            margin: 0;
+            a {
+              color: $dark-grey;
+              transition: 0.3s;
+              &:hover {
+                color: black;
+                transition: 0.1s;
+              }
+            }
+          }
+        }
+        div.navi_prof_area {
+          width: 100%;
+          text-align: center;
+          margin-top: 1em;
+          padding: 1em 0;
+          background-color: $light-green;
+          border-radius: 0 0 0.2em 0.2em;
+          p {
+            color: $dark-grey;
+            font-size: 1em;
+            margin: 0;
+          }
+        }
+      }
+      div.nav_button_on_nav_menu {
+        width: auto;
+        font-size: 1.5em;
+        margin: 1em auto;
+        display: flex;
+        justify-content: center;
+        a {
+          width: 14.4em;
+          color: $dark-grey;
+          background-color: white;
+          border-radius: 0.1em;
+          padding: 0.5em;
+          white-space: nowrap;
+          &:hover {
+            color: black;
+            background-color: $light-grey;
+          }
+        }
+      }
+    }
+    nav.open-menu {
+      width: 100%;
+    }
+  }
+
+  .dropdown_menu {
+    width: 80em; /* 共通の横幅 =1280px */
+    height: auto;
+    margin: 0 auto;
+    display: none;
+    div.dropdown__body {
+      width: 13.8em;
+      background: #fff;
+      box-shadow: 0 2px 6px 2px rgba(60,64,67,0.149), 0 1px 2px 0 rgba(60,64,67,0.302);
+      border-radius: 0.2em;
+      position: relative;
+      margin-right: 0;
+      &::after {
+        content: "";
+        position: absolute;
+        top: -0.35em;
+        right: 6em;
+        border-right: 0.4em solid transparent;
+        border-bottom: 0.4em solid white;
+        border-left: 0.4em solid transparent;
+        z-index: 3;
+        &:hover {
+          background: $light-grey;
+        }
+      }
+      ul.dropdown__list { /* デフォルトスタイル リセット */
+        margin: 0;
+        padding: 0;
+        li.dropdown__item {
+          display: block;
+          a.dropdown__item-link {
+            display: block;
+            padding: 1em 1.2em;
+            font-size: 1em;
+            text-decoration: none;
+            color: $dark-grey;
+            transition: 0.3s;
+            &:hover {
+              background: $light-grey;
+              color: black;
+              transition: 0.1s;
+              border-radius: 0.2em;
+            }
+          }
+        }
+      }
+    }
+    div.dropdown__empty {
+      width: 66.2em;
+      overflow: hidden;
+      position: relative;
+      margin-right: 0;
+    }
+  }
+  
+  .is-open {
+    width: 80em; /* 共通の横幅 =1280px */
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0.2em auto 0 auto;
+    z-index: 4;
+    position: relative;
+  }
+  
+  .is-close::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    cursor: default; /* カーソルはデフォルトに戻しておく */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+  }
+  
+}
+
+/* タブレットサイズの設定 */
+@media screen and (min-width: $break-point-tablet) and (max-width: $break-point-pc) {
+
+  body {
+    font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
+    font-size: 1em;
+    min-width: auto;
+    min-height: 100vh;
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-flow: column;
+    word-wrap: break-word;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  header {
+    position: fixed;
+    background-color: $dark-green;
+    height: 5em;
+    width: 100%;
+    z-index: 2;
+    div.header_block {
+      width: auto; /* 共通の横幅 =560px */
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    div.header_left {
+      height: 3em;
+      color: white;
+      padding: 1.2em 0 0 0;
+      margin-left: 2em;
+      a.raynee-logo {
+        img {
+          height: 3em;
+        }
+      }
+    }
+    div.header_center {
+      height: 3em;
+    }
+    div.header_right {
+      height: 3em;
+      margin: 1.4em 2em 0 0;
+    }
+    div.header_right_on_top {
+      height: 3em;
+      margin: 1.4em 2em 0 0;
+      display: flex;
+      div {
+        margin-left: 2em;
+      }
+    }
+    div.header_prof_img {
+      height: 3em;
+      margin: 1em 2em 0 0;
+      display: none;
+      z-index: -5;
+      img {
+        width: 3em;
+        height: 3em;
+        border-radius: 3em;
+        background-color: white;
+        object-fit: cover;
+        margin: 0;
+      }
+    }
+    div.header_prof_img_responsible {
+      display: block;
+      height: 3em;
+      margin: 1em 1em 0 0;
+      z-index: 0;
+      img {
+        width: 3em;
+        height: 3em;
+        border-radius: 3em;
+        background-color: white;
+        object-fit: cover;
+        margin: 0;
+      }
+    }
+    a.register_link {
+      width: auto;
+      color: $dark-grey;
+      font-size: 1.4em;
+      background-color: white;
+      padding: 0.5em 1em;
+      border-radius: 1em;
+      white-space: nowrap;
+      transition: 0.3s;
+      &:hover {
+        color: black;
+        transition: 0.1s;
+      }
+    }
+    a.register_link_alt {
+      width: auto;
+      color: white;
+      font-size: 1.4em;
+      background-color: $dark-green;
+      padding: 0.4em 1em;
+      border-radius: 1em;
+      border: solid 0.1em white;
+      box-sizing: border-box;
+      white-space: nowrap;
+      transition: 0.3s;
+      &:hover {
+        color: black;
+        background-color: white;
+        transition: 0.1s;
+      }
+    }
+
+    nav {
+      background-color: $dark-green;
+      position: fixed;
+      z-index: 5;
+      top: 5em;
+      right: 0;
+      overflow-x: hidden;
+      text-align: center;
+      width: 0;
+      height: 100%;
+      transition: 0.6s;
+      div.navi_box_on_nav_menu {
+        background-color: $light-grey;
+        width: 23em;
+        height: auto;
+        margin: 1em auto 0 auto;
+        border-radius: 0.2em;
+        top: 0;
+        div.state_umbrella {
+          width: 100%;
+          height: 2em;
+          background: $light-green;
+          border-radius: 0.2em 0.2em 0 0;
+          color: $dark-grey;
+          p {
+            text-align: center;
+            padding-top: 0.3em;
+            margin: 0;
+          }
+        }
+        div.navi_prof_pic {
+          width: 100%;
+          text-align: center;
+          img {
+            width: 6em;
+            height: 6em;
+            border: 1px solid $dark-grey;
+            border-radius: 5em;
+            margin: 2em 0 1em 0;
+            background-color: white;
+            object-fit: cover;
+          }
+        }
+        div.navi_prof_name {
+          width: 100%;
+          text-align: center;
+          p {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0;
+          }
+        }
+        div.navi_prof_mypage {
+          width: 100%;
+          text-align: center;
+          p {
+            font-size: 1em;
+            margin: 0;
+            a {
+              color: $dark-grey;
+              transition: 0.3s;
+              &:hover {
+                color: black;
+                transition: 0.1s;
+              }
+            }
+          }
+        }
+        div.navi_prof_area {
+          width: 100%;
+          text-align: center;
+          margin-top: 1em;
+          padding: 1em 0;
+          background-color: $light-green;
+          border-radius: 0 0 0.2em 0.2em;
+          p {
+            color: $dark-grey;
+            font-size: 1em;
+            margin: 0;
+          }
+        }
+      }
+      div.nav_button_on_nav_menu {
+        width: auto;
+        font-size: 1.5em;
+        margin: 1em auto;
+        display: flex;
+        justify-content: center;
+        a {
+          width: 14.4em;
+          color: $dark-grey;
+          background-color: white;
+          border-radius: 0.1em;
+          padding: 0.5em;
+          white-space: nowrap;
+          &:hover {
+            color: black;
+            background-color: $light-grey;
+          }
+        }
+      }
+    }
+    nav.open-menu {
+      width: 100%;
+    }
+  }
+
+  .dropdown_menu {
+    width: auto; /* 共通の横幅 */
+    height: auto;
+    margin: 0 2em;
+    display: none;
+    div.dropdown__body {
+      width: 13.8em;
+      background: #fff;
+      box-shadow: 0 2px 6px 2px rgba(60,64,67,0.149), 0 1px 2px 0 rgba(60,64,67,0.302);
+      border-radius: 0.2em;
+      position: relative;
+      margin-right: 0;
+      &::after {
+        content: "";
+        position: absolute;
+        top: -0.35em;
+        right: 3em;
+        border-right: 0.4em solid transparent;
+        border-bottom: 0.4em solid white;
+        border-left: 0.4em solid transparent;
+        z-index: 3;
+        &:hover {
+          background: $light-grey;
+        }
+      }
+      ul.dropdown__list { /* デフォルトスタイル リセット */
+        margin: 0;
+        padding: 0;
+        li.dropdown__item {
+          display: block;
+          a.dropdown__item-link {
+            display: block;
+            padding: 1em 1.2em;
+            font-size: 1em;
+            text-decoration: none;
+            color: $dark-grey;
+            transition: 0.3s;
+            &:hover {
+              background: $light-grey;
+              color: black;
+              transition: 0.1s;
+              border-radius: 0.2em;
+            }
+          }
+        }
+      }
+    }
+    div.dropdown__empty {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      margin-right: 0;
+    }
+  }
+
+  .is-open {
+    width: auto; /* 共通の横幅 */
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0.2em auto 0 auto;
+    z-index: 4;
+    position: relative;
+  }
+
+  .is-close::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    cursor: default; /* カーソルはデフォルトに戻しておく */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+  }
   
 }
 
 /* PCサイズの設定 */
-@media (min-width: $break-point-PC) {
-  
-}
+@media screen and (min-width: $break-point-pc) {
 
-body {
-  font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
-  font-size: 1em;
-  min-width: 80em;
-  min-height: 100vh;
-  margin:0;
-  padding:0;
-  display: flex;
-  flex-flow: column;
-  word-wrap: break-word;
-  a {
-    text-decoration: none;
-  }
-}
-
-header {
-  background-color: $dark-green;
-  height: 5em;
-  width: 100%;
-  z-index: 2;
-  div.header_block {
-    width: 80em; /* 共通の横幅 =1280px */
-    margin: 0 auto;
+  body {
+    font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
+    font-size: 1em;
+    min-width: 80em; /* 共通の横幅 =1280px */
+    min-height: 100vh;
+    margin:0;
+    padding:0;
     display: flex;
-    justify-content: space-between;
+    flex-flow: column;
+    word-wrap: break-word;
+    a {
+      text-decoration: none;
+    }
   }
-  div.header_left {
-    height: 3em;
-    color: white;
-    padding: 1.2em 0 0 0;
-    margin-left: 5em;
-    a.raynee-logo {
+  
+  header {
+    position: relative;
+    background-color: $dark-green;
+    height: 5em;
+    width: 100%;
+    z-index: 2;
+    div.header_block {
+      width: 80em; /* 共通の横幅 =1280px */
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    div.header_left {
+      height: 3em;
+      color: white;
+      padding: 1.2em 0 0 0;
+      margin-left: 5em;
+      a.raynee-logo {
+        img {
+          height: 3em;
+        }
+      }
+    }
+    div.header_center {
+      height: 3em;
+    }
+    div.header_right {
+      height: 3em;
+      margin: 1.4em 5em 0 0;
+    }
+    div.header_right_on_top {
+      height: 3em;
+      margin: 1.4em 5em 0 0;
+      display: flex;
+      div {
+        margin-left: 2em;
+      }
+    }
+    div.header_prof_img {
+      height: 3em;
+      margin: 1em 5em 0 0;
+      display: block;
+      z-index: 0;
       img {
+        width: 3em;
         height: 3em;
+        border-radius: 3em;
+        background-color: white;
+        object-fit: cover;
+        margin: 0;
+      }
+    }
+    div.header_prof_img_responsible {
+      display: none;
+      z-index: -5;
+      height: 3em;
+      margin: 1em 1em 0 0;
+      img {
+        width: 3em;
+        height: 3em;
+        border-radius: 3em;
+        background-color: white;
+        object-fit: cover;
+        margin: 0;
+      }
+    }
+    a.register_link {
+      width: auto;
+      color: $dark-grey;
+      font-size: 1.4em;
+      background-color: white;
+      padding: 0.5em 1em;
+      border-radius: 1em;
+      white-space: nowrap;
+      transition: 0.3s;
+      &:hover {
+        color: black;
+        transition: 0.1s;
+      }
+    }
+    a.register_link_alt {
+      width: auto;
+      color: white;
+      font-size: 1.4em;
+      background-color: $dark-green;
+      padding: 0.4em 1em;
+      border-radius: 1em;
+      border: solid 0.1em white;
+      box-sizing: border-box;
+      white-space: nowrap;
+      transition: 0.3s;
+      &:hover {
+        color: black;
+        background-color: white;
+        transition: 0.1s;
       }
     }
   }
-  div.header_center {
-    height: 3em;
+
+  .dropdown_menu {
+    width: 80em; /* 共通の横幅 =1280px */
+    height: auto;
+    margin: 0 auto;
+    display: none;
+    div.dropdown__body {
+      width: 13.8em;
+      background: #fff;
+      box-shadow: 0 2px 6px 2px rgba(60,64,67,0.149), 0 1px 2px 0 rgba(60,64,67,0.302);
+      border-radius: 0.2em;
+      position: relative;
+      margin-right: 0;
+      &::after {
+        content: "";
+        position: absolute;
+        top: -0.35em;
+        right: 6em;
+        border-right: 0.4em solid transparent;
+        border-bottom: 0.4em solid white;
+        border-left: 0.4em solid transparent;
+        z-index: 3;
+        &:hover {
+          background: $light-grey;
+        }
+      }
+      ul.dropdown__list { /* デフォルトスタイル リセット */
+        margin: 0;
+        padding: 0;
+        li.dropdown__item {
+          display: block;
+          a.dropdown__item-link {
+            display: block;
+            padding: 1em 1.2em;
+            font-size: 1em;
+            text-decoration: none;
+            color: $dark-grey;
+            transition: 0.3s;
+            &:hover {
+              background: $light-grey;
+              color: black;
+              transition: 0.1s;
+              border-radius: 0.2em;
+            }
+          }
+        }
+      }
+    }
+    div.dropdown__empty {
+      width: 66.2em;
+      overflow: hidden;
+      position: relative;
+      margin-right: 0;
+    }
   }
-  div.header_right {
-    height: 3em;
-    margin: 1.4em 5em 0 0;
-  }
-  div.header_right_on_top {
-    height: 3em;
-    margin: 1.4em 5em 0 0;
+  
+  .is-open {
+    width: 80em; /* 共通の横幅 =1280px */
+    margin: 0 auto;
+    height: auto;
     display: flex;
-    div {
-      margin-left: 2em;
-    }
+    flex-direction: row-reverse;
+    margin: 0.2em auto 0 auto;
+    z-index: 4;
+    position: relative;
   }
-  div.header_prof_img {
-    height: 3em;
-    margin: 1em 5em 0 0;
-    img {
-      width: 3em;
-      height: 3em;
-      border-radius: 3em;
-      background-color: white;
-      object-fit: cover;
-      margin: 0;
-    }
-  }
-  a.register_link {
-    width: auto;
-    color: $dark-grey;
-    font-size: 1.4em;
-    background-color: white;
-    padding: 0.5em 1em;
-    border-radius: 1em;
-    white-space: nowrap;
-    transition: 0.3s;
-    &:hover {
-      color: black;
-      transition: 0.1s;
-    }
-  }
-  a.register_link_alt {
-    width: auto;
-    color: white;
-    font-size: 1.4em;
-    background-color: $dark-green;
-    padding: 0.4em 1em;
-    border-radius: 1em;
-    border: solid 0.1em white;
-    box-sizing: border-box;
-    white-space: nowrap;
-    transition: 0.3s;
-    &:hover {
-      color: black;
-      background-color: white;
-      transition: 0.1s;
-    }
-  }
-}
-
-.dropdown__empty {
-  width: 66.2em;
-  overflow: hidden;
-  position: relative;
-  margin-right: 0;
-}
-
-.dropdown__body {
-  width: 13.8em;
-  background: #fff;
-  box-shadow: 0 2px 6px 2px rgba(60,64,67,0.149), 0 1px 2px 0 rgba(60,64,67,0.302);
-  border-radius: 0.2em;
-  position: relative;
-  margin-right: 0;
-  &::after {
+  
+  .is-close::after {
     content: "";
-    position: absolute;
-    top: -0.35em;
-    right: 6em;
-    border-right: 0.4em solid transparent;
-    border-bottom: 0.4em solid white;
-    border-left: 0.4em solid transparent;
+    width: 100%;
+    height: 100%;
+    cursor: default; /* カーソルはデフォルトに戻しておく */
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 3;
-    &:hover {
-      background: $light-grey;
-    }
   }
+  
+  
 }
 
-.dropdown__list { /* デフォルトスタイル リセット */
-  margin: 0;
-  padding: 0;
-}
 
-.dropdown__item {
-  display: block;
-}
 
-.dropdown__item-link {
-  display: block;
-  padding: 1em 1.2em;
-  font-size: 1em;
-  text-decoration: none;
-  color: $dark-grey;
-  transition: 0.3s;
-  &:hover {
-    background: $light-grey;
-    color: black;
-    transition: 0.1s;
-    border-radius: 0.2em;
-  }
-}
-
-.dropdown_menu {
-  width: 80em; /* 共通の横幅 =1280px */
-  height: auto;
-  margin: 0 auto;
-  display: none;
-}
-
-.is-open {
-  width: 80em; /* 共通の横幅 =1280px */
-  margin: 0 auto;
-  height: auto;
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 0.2em auto 0 auto;
-  z-index: 4;
-  position: relative;
-}
-
-.is-close::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  cursor: default; /* カーソルはデフォルトに戻しておく */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 3;
-}
 
 footer {
   height:0;
