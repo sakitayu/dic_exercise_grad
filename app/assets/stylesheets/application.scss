@@ -31,7 +31,7 @@ $break-point-pc: 960px;
 
 
 /* スマホサイズの設定 */
-@media screen and (min-width: $break-point-mobile) {
+@media screen and (max-width: $break-point-tablet) {
 
   body {
     font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;

@@ -17,7 +17,7 @@
 /* メインカラー */
 /* ブレークポイント */
 /* スマホサイズの設定 */
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 560px) {
   body {
     font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
     font-size: 1em;

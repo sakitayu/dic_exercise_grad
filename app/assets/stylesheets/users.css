@@ -2,7 +2,7 @@
 /* メインカラー */
 /* ブレークポイント */
 /* スマホサイズの設定 */
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 560px) {
   /* ユーザー一覧画面、プロフィール画面、編集画面、メッセージ画面 */
   .main_container {
     width: auto;

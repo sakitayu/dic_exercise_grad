@@ -18,7 +18,7 @@ $break-point-pc: 960px;
 
 
 /* スマホサイズの設定 */
-@media screen and (min-width: $break-point-mobile) {
+@media screen and (max-width: $break-point-tablet) {
 
   /* ユーザー一覧画面、プロフィール画面、編集画面、メッセージ画面 */
   
