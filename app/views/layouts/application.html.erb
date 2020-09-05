@@ -170,44 +170,44 @@
           </div>
           <div class="dropdown__empty" id="rest_of_dropdown"></div>
         </div>
-      <% end %>
-      <nav>
-        <div class="navi_box_on_nav_menu">
-          <div class="state_umbrella"><p>傘を持っていません</p></div>
-          <div class="navi_prof_pic">
-            <% if current_user.image.url == nil %>
-              <% if current_user.gender == "男" %>
-                <%= image_tag('male.png') %>
-              <% elsif current_user.gender == "女" %>
-                <%= image_tag('female.png') %>
-              <% elsif current_user.gender == "どちらでもない" %>
-                <%= image_tag('trans.png') %>
+        <nav>
+          <div class="navi_box_on_nav_menu">
+            <div class="state_umbrella"><p>傘を持っていません</p></div>
+            <div class="navi_prof_pic">
+              <% if current_user.image.url == nil %>
+                <% if current_user.gender == "男" %>
+                  <%= image_tag('male.png') %>
+                <% elsif current_user.gender == "女" %>
+                  <%= image_tag('female.png') %>
+                <% elsif current_user.gender == "どちらでもない" %>
+                  <%= image_tag('trans.png') %>
+                <% end %>
+              <% else %>
+                <%= image_tag(current_user.image.url) unless current_user.image.url == nil %>
               <% end %>
-            <% else %>
-              <%= image_tag(current_user.image.url) unless current_user.image.url == nil %>
-            <% end %>
+            </div>
+            <div class="navi_prof_name">
+              <p><%= current_user.name %></p>
+            </div>
+            <div class="navi_prof_area">
+              <p>あなたがいる場所</p>
+              <p><b><%= current_user.area %></b></p>
+            </div>
           </div>
-          <div class="navi_prof_name">
-            <p><%= current_user.name %></p>
+          <div class="nav_button_on_nav_menu">
+            <%= link_to "マイページ", user_path(current_user.id) %>
           </div>
-          <div class="navi_prof_area">
-            <p>あなたがいる場所</p>
-            <p><b><%= current_user.area %></b></p>
+          <div class="nav_button_on_nav_menu">
+            <%= link_to "傘を持っているひと一覧", users_path %>
           </div>
-        </div>
-        <div class="nav_button_on_nav_menu">
-          <%= link_to "マイページ", user_path(current_user.id) %>
-        </div>
-        <div class="nav_button_on_nav_menu">
-          <%= link_to "傘を持っているひと一覧", users_path %>
-        </div>
-        <div class="nav_button_on_nav_menu">
-          <%= link_to "スタート画面に戻る", start_users_path %>
-        </div>
-        <div class="nav_button_on_nav_menu">
-          <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %>
-        </div>
-      </nav>
+          <div class="nav_button_on_nav_menu">
+            <%= link_to "スタート画面に戻る", start_users_path %>
+          </div>
+          <div class="nav_button_on_nav_menu">
+            <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %>
+          </div>
+        </nav>
+      <% end %>
     </header>
 
     <main>
