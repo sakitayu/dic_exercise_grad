@@ -147,10 +147,11 @@ $break-point-pc: 960px;
     }
 
     .state_umbrella_on_responsible {
+      position: absolute;
+      top: 5em;
       width: 100%;
       height: 2em;
       background: $light-green;
-      border-radius: 0.2em 0.2em 0 0;
       color: $dark-grey;
       display: block;
       p {
@@ -174,11 +175,11 @@ $break-point-pc: 960px;
       div.nav_button_on_nav_menu {
         width: auto;
         font-size: 1.5em;
-        margin: 1em auto;
+        margin: 2em auto;
         display: flex;
         justify-content: center;
         a {
-          width: 14.4em;
+          width: 12em;
           color: $dark-grey;
           background-color: white;
           border-radius: 0.1em;
@@ -392,10 +393,11 @@ $break-point-pc: 960px;
     }
 
     .state_umbrella_on_responsible {
+      position: absolute;
+      top: 5em;
       width: 100%;
       height: 2em;
       background: $light-green;
-      border-radius: 0.2em 0.2em 0 0;
       color: $dark-grey;
       display: block;
       p {
@@ -419,7 +421,7 @@ $break-point-pc: 960px;
       div.nav_button_on_nav_menu {
         width: auto;
         font-size: 1.5em;
-        margin: 1em auto;
+        margin: 2em auto;
         display: flex;
         justify-content: center;
         a {
@@ -637,10 +639,11 @@ $break-point-pc: 960px;
     }
 
     .state_umbrella_on_responsible {
+      position: absolute;
+      top: 5em;
       width: 100%;
       height: 2em;
       background: $light-green;
-      border-radius: 0.2em 0.2em 0 0;
       color: $dark-grey;
       display: none;
       p {
@@ -665,7 +668,7 @@ $break-point-pc: 960px;
       div.nav_button_on_nav_menu {
         width: auto;
         font-size: 1.5em;
-        margin: 1em auto;
+        margin: 2em auto;
         display: flex;
         justify-content: center;
         a {
