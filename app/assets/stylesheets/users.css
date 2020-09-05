@@ -1,6 +1,408 @@
 @charset "UTF-8";
 /* メインカラー */
 /* ブレークポイント */
+/* スマホサイズの設定 */
+@media screen and (min-width: 320px) {
+  /* ユーザー一覧画面、プロフィール画面、編集画面、メッセージ画面 */
+  .main_container {
+    width: auto;
+    /* 共通の横幅 */
+    margin: 0 auto;
+    display: flex;
+  }
+  /* 左側のナビゲーションカラム */
+  .navi_box {
+    background-color: #F7F7F7;
+    width: 12.2em;
+    height: auto;
+    margin: 5em 0 0 5.1em;
+    border-radius: 0.2em;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    display: none;
+  }
+  .navi_box div.state_umbrella {
+    width: 100%;
+    height: 2em;
+    background: #bbded6;
+    border-radius: 0.2em 0.2em 0 0;
+    color: #444;
+  }
+  .navi_box div.state_umbrella p {
+    display: block;
+    text-align: center;
+    padding-top: 0.3em;
+    margin: 0;
+  }
+  .navi_box div.navi_prof_pic {
+    width: 100%;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_pic img {
+    width: 6em;
+    height: 6em;
+    border: 1px solid #444;
+    border-radius: 5em;
+    margin: 2em 0 1em 0;
+    background-color: white;
+    object-fit: cover;
+  }
+  .navi_box div.navi_prof_name {
+    width: 100%;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_name p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+  }
+  .navi_box div.navi_prof_mypage {
+    width: 100%;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_mypage p {
+    font-size: 1em;
+    margin: 0;
+  }
+  .navi_box div.navi_prof_mypage p a {
+    color: #444;
+    transition: 0.3s;
+  }
+  .navi_box div.navi_prof_mypage p a:hover {
+    color: black;
+    transition: 0.1s;
+  }
+  .navi_box div.navi_prof_area {
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+    padding: 1em 0;
+    background-color: #bbded6;
+  }
+  .navi_box div.navi_prof_area p {
+    color: #444;
+    font-size: 1em;
+    margin: 0;
+  }
+  .navi_box div.navi_prof_state_dark-pink {
+    width: 100%;
+    height: 5em;
+    background-color: #ffb6b9;
+  }
+  .navi_box div.navi_prof_state_dark-pink p {
+    color: #444;
+    margin: 0;
+    padding: 1em 0 0 0;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_state_dark-pink a {
+    color: #444;
+  }
+  .navi_box div.navi_prof_state_light-pink {
+    width: 100%;
+    height: 5em;
+    background-color: #fae3d9;
+  }
+  .navi_box div.navi_prof_state_light-pink p {
+    color: #444;
+    margin: 0;
+    padding: 1em 0 0 0;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_state_light-pink a {
+    color: #444;
+  }
+  .navi_box div.navi_prof_logout {
+    margin: 5em auto;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    bottom: 2em;
+  }
+  .navi_box div.navi_prof_logout a {
+    width: 10em;
+    height: 2em;
+    padding: 0.7em;
+    background-color: #8ac6d1;
+    border-radius: 3em;
+    color: white;
+    transition: 0.3s;
+  }
+  .navi_box div.navi_prof_logout a:hover {
+    opacity: 0.8;
+    transition: 0.1s;
+  }
+}
+
+/* タブレットサイズの設定 */
+@media screen and (min-width: 560px) and (max-width: 960px) {
+  /* ユーザー一覧画面、プロフィール画面、編集画面、メッセージ画面 */
+  .main_container {
+    width: auto;
+    /* 共通の横幅 */
+    margin: 0 1em;
+    display: flex;
+  }
+  /* 左側のナビゲーションカラム */
+  .navi_box {
+    background-color: #F7F7F7;
+    width: 12.2em;
+    height: auto;
+    margin: 5em 0 0 5.1em;
+    border-radius: 0.2em;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    display: none;
+  }
+  .navi_box div.state_umbrella {
+    width: 100%;
+    height: 2em;
+    background: #bbded6;
+    border-radius: 0.2em 0.2em 0 0;
+    color: #444;
+  }
+  .navi_box div.state_umbrella p {
+    display: block;
+    text-align: center;
+    padding-top: 0.3em;
+    margin: 0;
+  }
+  .navi_box div.navi_prof_pic {
+    width: 100%;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_pic img {
+    width: 6em;
+    height: 6em;
+    border: 1px solid #444;
+    border-radius: 5em;
+    margin: 2em 0 1em 0;
+    background-color: white;
+    object-fit: cover;
+  }
+  .navi_box div.navi_prof_name {
+    width: 100%;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_name p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+  }
+  .navi_box div.navi_prof_mypage {
+    width: 100%;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_mypage p {
+    font-size: 1em;
+    margin: 0;
+  }
+  .navi_box div.navi_prof_mypage p a {
+    color: #444;
+    transition: 0.3s;
+  }
+  .navi_box div.navi_prof_mypage p a:hover {
+    color: black;
+    transition: 0.1s;
+  }
+  .navi_box div.navi_prof_area {
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+    padding: 1em 0;
+    background-color: #bbded6;
+  }
+  .navi_box div.navi_prof_area p {
+    color: #444;
+    font-size: 1em;
+    margin: 0;
+  }
+  .navi_box div.navi_prof_state_dark-pink {
+    width: 100%;
+    height: 5em;
+    background-color: #ffb6b9;
+  }
+  .navi_box div.navi_prof_state_dark-pink p {
+    color: #444;
+    margin: 0;
+    padding: 1em 0 0 0;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_state_dark-pink a {
+    color: #444;
+  }
+  .navi_box div.navi_prof_state_light-pink {
+    width: 100%;
+    height: 5em;
+    background-color: #fae3d9;
+  }
+  .navi_box div.navi_prof_state_light-pink p {
+    color: #444;
+    margin: 0;
+    padding: 1em 0 0 0;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_state_light-pink a {
+    color: #444;
+  }
+  .navi_box div.navi_prof_logout {
+    margin: 5em auto;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    bottom: 2em;
+  }
+  .navi_box div.navi_prof_logout a {
+    width: 10em;
+    height: 2em;
+    padding: 0.7em;
+    background-color: #8ac6d1;
+    border-radius: 3em;
+    color: white;
+    transition: 0.3s;
+  }
+  .navi_box div.navi_prof_logout a:hover {
+    opacity: 0.8;
+    transition: 0.1s;
+  }
+}
+
+/* PCサイズの設定 */
+@media screen and (min-width: 960px) {
+  /* ユーザー一覧画面、プロフィール画面、編集画面、メッセージ画面 */
+  .main_container {
+    width: 80em;
+    /* 共通の横幅 =1280px */
+    margin: 0 auto;
+    display: flex;
+  }
+  /* 左側のナビゲーションカラム */
+  .navi_box {
+    background-color: #F7F7F7;
+    width: 12.2em;
+    height: auto;
+    margin: 5em 0 0 5.1em;
+    border-radius: 0.2em;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    display: block;
+  }
+  .navi_box div.state_umbrella {
+    width: 100%;
+    height: 2em;
+    background: #bbded6;
+    border-radius: 0.2em 0.2em 0 0;
+    color: #444;
+  }
+  .navi_box div.state_umbrella p {
+    display: block;
+    text-align: center;
+    padding-top: 0.3em;
+    margin: 0;
+  }
+  .navi_box div.navi_prof_pic {
+    width: 100%;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_pic img {
+    width: 6em;
+    height: 6em;
+    border: 1px solid #444;
+    border-radius: 5em;
+    margin: 2em 0 1em 0;
+    background-color: white;
+    object-fit: cover;
+  }
+  .navi_box div.navi_prof_name {
+    width: 100%;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_name p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+  }
+  .navi_box div.navi_prof_mypage {
+    width: 100%;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_mypage p {
+    font-size: 1em;
+    margin: 0;
+  }
+  .navi_box div.navi_prof_mypage p a {
+    color: #444;
+    transition: 0.3s;
+  }
+  .navi_box div.navi_prof_mypage p a:hover {
+    color: black;
+    transition: 0.1s;
+  }
+  .navi_box div.navi_prof_area {
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+    padding: 1em 0;
+    background-color: #bbded6;
+  }
+  .navi_box div.navi_prof_area p {
+    color: #444;
+    font-size: 1em;
+    margin: 0;
+  }
+  .navi_box div.navi_prof_state_dark-pink {
+    width: 100%;
+    height: 5em;
+    background-color: #ffb6b9;
+  }
+  .navi_box div.navi_prof_state_dark-pink p {
+    color: #444;
+    margin: 0;
+    padding: 1em 0 0 0;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_state_dark-pink a {
+    color: #444;
+  }
+  .navi_box div.navi_prof_state_light-pink {
+    width: 100%;
+    height: 5em;
+    background-color: #fae3d9;
+  }
+  .navi_box div.navi_prof_state_light-pink p {
+    color: #444;
+    margin: 0;
+    padding: 1em 0 0 0;
+    text-align: center;
+  }
+  .navi_box div.navi_prof_state_light-pink a {
+    color: #444;
+  }
+  .navi_box div.navi_prof_logout {
+    margin: 5em auto;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    bottom: 2em;
+  }
+  .navi_box div.navi_prof_logout a {
+    width: 10em;
+    height: 2em;
+    padding: 0.7em;
+    background-color: #8ac6d1;
+    border-radius: 3em;
+    color: white;
+    transition: 0.3s;
+  }
+  .navi_box div.navi_prof_logout a:hover {
+    opacity: 0.8;
+    transition: 0.1s;
+  }
+}
+
 .regis_background, .login_background {
   background-image: url(rain.jpg);
   background-size: cover;
@@ -667,158 +1069,6 @@
 
 .start_button_container div.start_button input[type="submit"]:hover {
   cursor: pointer;
-  opacity: 0.8;
-  transition: 0.1s;
-}
-
-/* ユーザー一覧画面、プロフィール画面、編集画面、メッセージ画面 */
-.main_container {
-  width: 80em;
-  /* 共通の横幅 =1280px */
-  margin: 0 auto;
-  display: flex;
-}
-
-/* 左側のナビゲーションカラム */
-.navi_box {
-  background-color: #F7F7F7;
-  width: 12.2em;
-  height: auto;
-  margin: 5em 0 0 5.1em;
-  border-radius: 0.2em;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-}
-
-.navi_box div.state_umbrella {
-  width: 100%;
-  height: 2em;
-  background: #bbded6;
-  border-radius: 0.2em 0.2em 0 0;
-  color: #444;
-}
-
-.navi_box div.state_umbrella p {
-  display: block;
-  text-align: center;
-  padding-top: 0.3em;
-  margin: 0;
-}
-
-.navi_box div.navi_prof_pic {
-  width: 100%;
-  text-align: center;
-}
-
-.navi_box div.navi_prof_pic img {
-  width: 6em;
-  height: 6em;
-  border: 1px solid #444;
-  border-radius: 5em;
-  margin: 2em 0 1em 0;
-  background-color: white;
-  object-fit: cover;
-}
-
-.navi_box div.navi_prof_name {
-  width: 100%;
-  text-align: center;
-}
-
-.navi_box div.navi_prof_name p {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin: 0;
-}
-
-.navi_box div.navi_prof_mypage {
-  width: 100%;
-  text-align: center;
-}
-
-.navi_box div.navi_prof_mypage p {
-  font-size: 1em;
-  margin: 0;
-}
-
-.navi_box div.navi_prof_mypage p a {
-  color: #444;
-  transition: 0.3s;
-}
-
-.navi_box div.navi_prof_mypage p a:hover {
-  color: black;
-  transition: 0.1s;
-}
-
-.navi_box div.navi_prof_area {
-  width: 100%;
-  text-align: center;
-  margin-top: 1em;
-  padding: 1em 0;
-  background-color: #bbded6;
-}
-
-.navi_box div.navi_prof_area p {
-  color: #444;
-  font-size: 1em;
-  margin: 0;
-}
-
-.navi_box div.navi_prof_state_dark-pink {
-  width: 100%;
-  height: 5em;
-  background-color: #ffb6b9;
-}
-
-.navi_box div.navi_prof_state_dark-pink p {
-  color: #444;
-  margin: 0;
-  padding: 1em 0 0 0;
-  text-align: center;
-}
-
-.navi_box div.navi_prof_state_dark-pink a {
-  color: #444;
-}
-
-.navi_box div.navi_prof_state_light-pink {
-  width: 100%;
-  height: 5em;
-  background-color: #fae3d9;
-}
-
-.navi_box div.navi_prof_state_light-pink p {
-  color: #444;
-  margin: 0;
-  padding: 1em 0 0 0;
-  text-align: center;
-}
-
-.navi_box div.navi_prof_state_light-pink a {
-  color: #444;
-}
-
-.navi_box div.navi_prof_logout {
-  margin: 5em auto;
-  font-weight: bold;
-  text-align: center;
-  position: relative;
-  bottom: 2em;
-}
-
-.navi_box div.navi_prof_logout a {
-  width: 10em;
-  height: 2em;
-  padding: 0.7em;
-  background-color: #8ac6d1;
-  border-radius: 3em;
-  color: white;
-  transition: 0.3s;
-}
-
-.navi_box div.navi_prof_logout a:hover {
   opacity: 0.8;
   transition: 0.1s;
 }
