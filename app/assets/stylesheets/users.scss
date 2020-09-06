@@ -40,7 +40,7 @@ $break-point-max: 1025px;
     div.login_box {
       width: auto;
       height: auto;
-      margin: 2em auto;
+      margin: 2em auto 0 auto;
       background-color: white;
       div.remember_and_submit_form {
         width: auto;
@@ -744,6 +744,596 @@ $break-point-max: 1025px;
 
 /* タブレットサイズの設定 */
 @media screen and (min-width: $break-point-tablet) and (max-width: $break-point-pc) {
+
+  /* ログイン画面、登録画面、スタート画面 */
+  .regis_background, .login_background {
+    background-image: url(rain.jpg);
+    background-size: cover;
+    min-height: 100vh;
+  }
+  .start_background {
+    background-image: url(undraw_raining_sguh.png);
+    background-size: contain;
+    background-repeat:  no-repeat;
+    min-height: 100vh;
+  }
+  
+  .login_container{
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+    padding-top: 5em;
+    div.login_box {
+      width: 28em;
+      height: auto;
+      margin: 4.8em auto;
+      padding-bottom: 3.6em;
+      background-color: white;
+      border: solid thin $dark-green;
+      border-radius: 0.3em;
+      div.remember_and_submit_form {
+        width: auto;
+        display: flex;
+        justify-content: center; 
+        flex-wrap: wrap;
+        padding-top: 0.7em;
+        a {
+          color: $middle-grey;
+          font-weight: lighter;
+          transition: 0.5s;
+          &:hover {
+            color: $dark-grey;
+            transition: 0.1s;
+          }
+        }
+        div.field {
+          width: 15em;
+          text-align: center;
+          color: $dark-grey;
+          font-weight: lighter;
+          margin: 0 auto;
+          padding-top: 1em;
+        }
+        input[type=checkbox] {
+          display: none;
+        }
+        input[type="checkbox"]+label {
+          display: none;
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          padding-left: 25px;
+          padding-right: 10px;
+          &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            box-sizing: border-box;
+            width: 20px;
+            height: 20px;
+            margin-top: -10px;
+            left: 0;
+            top: 50%;
+            border: 1px solid;
+            border-color:  $middle-grey; /* 枠の色 */
+            border-radius: 0.2em;
+            background-color: #FFF; /* 背景の色 */
+          }
+        }
+        input[type="checkbox"]:checked+label::after{
+          content: "";
+          position: absolute;
+          display: block;
+          box-sizing: border-box;
+          width: 18px;
+          height: 9px;
+          margin-top: -9px;
+          top: 50%;
+          left: 3px;
+          transform: rotate(-45deg);
+          border-bottom: 3px solid;
+          border-left: 3px solid;
+          border-color:  $dark-pink; /* チェックの色 */
+        }
+      }
+    }
+  }
+  
+  .forgot_password_box {
+    width: 28em;
+    height: auto;
+    margin: 4.8em auto;
+    padding-bottom: 3.6em;
+    background-color: white;
+    border: solid thin $dark-green;
+    border-radius: 0.3em;
+    h2 {
+      color: $dark-grey;
+      text-align: center;
+      margin-top: 2em;
+    }
+    form {
+      div.email_form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        div.forgot_password_field {
+          width: 20em;
+          margin: 1em auto 0 auto;
+          color: $dark-grey;
+          font-weight: lighter;
+          input[type=email] {
+            height: 1.5em;
+            width: 100%;
+            padding: 0.2em;
+            text-indent: 0.5em;
+            border: solid thin $middle-grey;
+            border-radius: 0.2em;
+            &:focus {
+              border: solid thin $dark-pink;
+              outline: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .forgot_button_container {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    div.forgot_button {
+      margin: 2em auto 0 auto;
+      input[type="submit"] {
+        height: 1.9em;
+        line-height: 0;
+        width: auto;
+        border-style: none;
+        font-size: 1.1em;
+        white-space: nowrap;
+        padding: 0 1em;
+        border-radius: 1em;
+        color:white;
+        background: $dark-pink;
+        transition: 0.3s;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+          transition: 0.1s;
+        }
+      }
+    }
+  }
+  
+  .regis_container {
+    width: 80em; /* 共通の横幅 =1280px */
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    div.regis_box {
+      width: 28em;
+      height: auto;
+      margin: 4.8em 5em 5em 0;
+      padding-bottom: 3em;
+      background-color: white;
+      border: solid thin $dark-green;
+      border-radius: 0.3em;
+      div.email_and_pass_form {
+        width:auto;
+        display: flex;
+        justify-content: center;
+        padding-top: 2em;
+        div.field {
+          margin-top: 1em;
+          color: $dark-grey;
+          font-weight: lighter;
+        }
+        div.field_remember {
+          width: 17.1em;
+          margin-top: 1.5em;
+          color: $dark-grey;
+          font-weight: lighter;
+        }
+        div.field_age, div.field_gender {
+          margin-top: 1.5em;
+          color: $dark-grey;
+          font-weight: lighter;
+          label {
+            margin-left: 0.1em;
+          }
+        }
+        div.gender_and_age {
+          width:19em;
+          margin:0;
+          padding:0;
+        }
+        input[type=email] {
+          height: 1.5em;
+          width: 23em;
+          padding: 0.2em;
+          text-indent: 0.5em;
+          border: solid thin $middle-grey;
+          border-radius: 0.2em;
+          &:focus {
+            border: solid thin $dark-pink;
+            outline: 0;
+          }
+        }
+        input[type=text] {
+          height: 1.5em;
+          width: 23em;
+          padding: 0.2em;
+          text-indent: 0.5em;
+          border: solid thin $middle-grey;
+          border-radius: 0.2em;
+          &:focus {
+            border: solid thin $dark-pink;
+            outline: 0;
+          }
+        }
+        input[type=password] {
+          height: 1.5em;
+          width: 23em;
+          padding: 0.2em;
+          text-indent: 0.5em;
+          border: solid thin $middle-grey;
+          border-radius: 0.2em;
+          &:focus {
+            border: solid thin $dark-pink;
+            outline: 0;
+          }
+        }
+        select {
+          border: solid thin $middle-grey;
+          height: 1.5em;
+          width: auto;
+          border-radius: 0.2em;
+          color: $dark-grey;
+          padding: 0 2.5em 0 0.5em;
+          outline:none;
+          text-indent: 0em;
+          text-overflow: '';
+          background: none transparent;
+          vertical-align: middle;
+          font-size: inherit;
+          -webkit-appearance: button;
+          -moz-appearance: button;
+          appearance: button;
+          z-index: 1;
+          option {
+            background-color: #fff;
+            color: $middle-grey;
+          }
+          &::-ms-expand {
+            display: button;
+          }
+          &:-moz-focusring {
+            color: transparent; 
+            text-shadow: 0 0 0 $middle-grey;
+          }
+        }
+      }
+    }
+    div.disc_box {
+      height: 30em;
+      margin: 4em 3em 5em 4.9em;
+      color: $dark-grey;
+      div.disc_large {
+        font-size: 3.2em;
+        font-weight: bold;
+        p.disc_large_sentence {
+          margin: 0;
+          padding: 0;
+          white-space: nowrap;
+          opacity: 0;
+        }
+      }
+      div.disc_small {
+        font-size: 1.6em;
+        margin-top: 1em;
+        p.disc_small_sentence_1 {
+          margin: 0;
+          padding: 0.1em;
+          white-space: nowrap;
+          opacity: 0;
+        }
+        p.disc_small_sentence_2 {
+          margin: 0;
+          padding: 0.1em;
+          white-space: nowrap;
+          opacity: 0;
+        }
+        div.disc_small_space_2 {
+          height: 0.5em;
+          margin: 0;
+          padding: 0;
+        }
+        p.disc_small_sentence_3 {
+          margin: 0;
+          padding: 0.1em;
+          white-space: nowrap;
+          opacity: 0;
+        }
+        div.disc_small_space_3 {
+          height: 0.5em;
+          margin: 0;
+          padding: 0;
+        }
+        div.disc_small_space {
+          height: 0.5em;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+  
+  .email_and_pass_form {
+    width:auto;
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    padding-top: 2em;
+    div.field {
+      margin-top: 1em;
+      color: $dark-grey;
+      font-weight: lighter;
+    }
+    div.field_remember {
+      width: 17.1em;
+      margin-top: 1.5em;
+      color: $middle-grey;
+      font-weight: lighter;
+    }
+    div.field_age, div.field_gender {
+      margin-top: 1.5em;
+      color: $middle-grey;
+      font-weight: lighter;
+    }
+    div.gender_and_age {
+      width:19em;
+      margin:0;
+      padding:0;
+    }
+    input[type=email] {
+      height: 1.5em;
+      width: 23em;
+      padding: 0.2em;
+      text-indent: 0.5em;
+      border: solid thin $middle-grey;
+      border-radius: 0.2em;
+      &:focus {
+        border: solid thin $dark-pink;
+        outline: 0;
+      }
+    }
+    input[type=text] {
+      height: 1.5em;
+      width: 23em;
+      padding: 0.2em;
+      text-indent: 0.5em;
+      border: solid thin $middle-grey;
+      border-radius: 0.2em;
+      &:focus {
+        border: solid thin $dark-pink;
+        outline: 0;
+      }
+    }
+    input[type=password] {
+      height: 1.5em;
+      width: 23em;
+      padding: 0.2em;
+      text-indent: 0.5em;
+      border: solid thin $middle-grey;
+      border-radius: 0.2em;
+      &:focus {
+        border: solid thin $dark-pink;
+        outline: 0;
+      }
+    }
+    select {
+      border: solid thin $middle-grey;
+      height: 1.5em;
+      width: auto;
+      border-radius: 0.2em;
+      color: $middle-grey;
+      padding: 0 0.5em;
+      outline:none;
+      text-indent: 0.01px;
+      text-overflow: '';
+      background: none transparent;
+      vertical-align: middle;
+      font-size: inherit;
+      -webkit-appearance: button;
+      -moz-appearance: button;
+      appearance: button;
+      option {
+        background-color: #fff;
+        color: #333;
+      }
+      &::-ms-expand {
+        display: none;
+      }
+      &:-moz-focusring {
+        color: transparent; 
+        text-shadow: 0 0 0 #828c9a;
+      }
+    }
+  }
+  
+  .login_button_container, .regis_button_container {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    div.login_button, div.regis_button {
+      margin: 2em auto 0 auto;
+      input[type="submit"] {
+        -webkit-appearance: none;
+        height: 2.1em;
+        line-height: 0;
+        width: auto;
+        border-style: none;
+        font-size: 1.4em;
+        white-space: nowrap;
+        padding: 0 1em;
+        border-radius: 1em;
+        color:white;
+        background: $dark-pink;
+        transition: 0.3s;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+          transition: 0.1s;
+        }
+      }
+    }
+  }
+  
+  .sample_user {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    div.login_button {
+      margin: 2em auto 0 auto;
+      input[type="submit"] {
+        -webkit-appearance: none;
+        height: 2.1em;
+        line-height: 0;
+        width: auto;
+        border-style: none;
+        font-size: 1.2em;
+        white-space: nowrap;
+        padding: 0 1em;
+        border-radius: 1em;
+        color:white;
+        background: $dark-pink;
+        transition: 0.3s;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+          transition: 0.1s;
+        }
+      }
+    }
+  }
+  
+  .start_container {
+    width: 80em; /* 共通の横幅 =1280px */
+    margin:0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    div.start_box{
+      width: 30em;
+      height: auto;
+      margin: 4.8em 5em 0 0;
+      padding: 0 2em;
+      background-color: white;
+      border: solid thin $dark-green;
+      border-radius: 0.3em;
+      div.start_form {
+        width:auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-top: 2em;
+        div.field {
+          margin-top: 1em;
+          color: $dark-grey;
+          font-size: 1.3em;
+          font-weight: lighter;
+          display: flex;
+          div.start_label {
+            margin-top: 0.1em;
+          }
+          input[type=text] {
+            -webkit-appearance: none;
+            height: 1.5em;
+            width: 13em;
+            padding: 0.2em;
+            margin-left: 0.5em;
+            font-size: 0.8em;
+            text-indent: 0.5em;
+            border: solid thin $middle-grey;
+            border-radius: 0.2em;
+            &:focus {
+              border: solid thin $dark-pink;
+              outline: 0;
+            }
+          }
+        }
+      }
+      group + group {
+        margin-top: 20px;
+      }
+      .inline-radio {
+        display: flex;
+        border-radius: 0.2em;
+        overflow: hidden;
+        border: solid thin $middle-grey;
+        margin-left: 0.45em;
+        div {
+          position: relative;
+          flex: 1;
+        }
+        input {
+          width: 7em;
+          height: 1.7em;
+          opacity: 0;
+        }
+        label {
+          font-size: 1em;
+          position: absolute;
+          top: 0;
+          left: 0;
+          color: $middle-grey;
+          width: 5em;
+          height: 5em;
+          background: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          pointer-events: none;
+          border-right: 1px solid #b6b6b6;
+          text-align:left;
+          padding-left:0.2em;
+        }
+        div:last-child label {
+          border-right: 0;
+        }
+        input:checked + label {
+          background: $dark-pink;
+          font-weight: 500;
+          color: #fff;
+        }
+      }
+    }
+  }
+  
+  .start_button_container {
+    display: flex;
+    div.start_button {
+      margin: 3em auto 3em auto;
+      input[type="submit"] {
+        height: 2.1em;
+        line-height: 0;
+        width: auto;
+        border-style: none;
+        font-size: 1.4em;
+        white-space: nowrap;
+        padding: 0 1em 0 1em;
+        border-radius: 1em;
+        color:white;
+        background: $dark-pink;
+        transition: 0.3s;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+          transition: 0.1s;
+        }
+      }
+    }
+  }
 
   /* ユーザー一覧画面、プロフィール画面、編集画面、メッセージ画面 */
   
@@ -1468,7 +2058,6 @@ $break-point-max: 1025px;
       }
     }
   }
-
 
   /* ユーザー一覧画面、プロフィール画面、編集画面、メッセージ画面 */
   
