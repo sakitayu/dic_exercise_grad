@@ -108,6 +108,7 @@
     font-size: 20px;
     margin: 1.2em 0.7em 1em 0;
     z-index: 0;
+    cursor: pointer;
   }
   header .sp_menu_button .menu_icon02 {
     display: block;
@@ -363,10 +364,10 @@
     margin: 0;
   }
   header div.header_prof_img_responsible {
-    display: block;
+    display: none;
     height: 3em;
     margin: 1em 2em 0 0;
-    z-index: 0;
+    z-index: -5;
   }
   header div.header_prof_img_responsible img {
     width: 3em;
@@ -377,14 +378,15 @@
     margin: 0;
   }
   header div.sp_menu_button {
-    display: none;
+    display: block;
     width: 60px;
     height: 30px;
     outline: none;
     border: none;
     font-size: 30px;
     margin: 0.8em 1em 1em 0;
-    z-index: -5;
+    z-index: 0;
+    cursor: pointer;
   }
   header .sp_menu_button .menu_icon02 {
     display: block;
