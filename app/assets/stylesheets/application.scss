@@ -50,7 +50,7 @@ $break-point-max: 1025px;
   }
   
   header {
-    position: fixed;
+    position: relative;
     background-color: $dark-green;
     height: 4em;
     width: 100%;
@@ -285,11 +285,6 @@ $break-point-max: 1025px;
       position: relative;
       margin-right: 0;
     }
-  }
-
-  main {
-    flex: 1;
-    height: 100vh;
   }
   
   .is-open {
@@ -581,10 +576,6 @@ $break-point-max: 1025px;
     }
   }
 
-  main {
-    flex: 1;
-  }
-
   .is-open {
     width: auto; /* 共通の横幅 */
     margin: 0 auto;
@@ -794,10 +785,6 @@ $break-point-max: 1025px;
     }
   }
 
-  main {
-    flex: 1;
-  }
-
   .dropdown_menu {
     width: 80em; /* 共通の横幅 =1280px */
     height: auto;
@@ -885,6 +872,10 @@ $break-point-max: 1025px;
 }
 
 
+
+main {
+  flex: 1;
+}
 
 ul {
   list-style-type: decimal; 
