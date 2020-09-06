@@ -179,23 +179,21 @@ $break-point-max: 1025px;
   }
   
   .regis_container {
-    width: 80em; /* 共通の横幅 =1280px */
-    margin:0 auto;
+    width: auto; /* 共通の横幅 =1280px */
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     div.regis_box {
       width: 28em;
       height: auto;
-      margin: 4.8em 5em 5em 0;
+      margin: 0;
       padding-bottom: 3em;
       background-color: white;
-      border: solid thin $dark-green;
-      border-radius: 0.3em;
       div.email_and_pass_form {
         width:auto;
         display: flex;
         justify-content: center;
-        padding-top: 2em;
+        padding-top: 1em;
         div.field {
           margin-top: 1em;
           color: $dark-grey;
@@ -221,8 +219,9 @@ $break-point-max: 1025px;
           padding:0;
         }
         input[type=email] {
+          font-size: 1em;
           height: 1.5em;
-          width: 23em;
+          width: 17.4em;
           padding: 0.2em;
           text-indent: 0.5em;
           border: solid thin $middle-grey;
@@ -233,8 +232,9 @@ $break-point-max: 1025px;
           }
         }
         input[type=text] {
+          font-size: 1em;
           height: 1.5em;
-          width: 23em;
+          width: 17.4em;
           padding: 0.2em;
           text-indent: 0.5em;
           border: solid thin $middle-grey;
@@ -245,8 +245,9 @@ $break-point-max: 1025px;
           }
         }
         input[type=password] {
+          font-size: 1em;
           height: 1.5em;
-          width: 23em;
+          width: 17.4em;
           padding: 0.2em;
           text-indent: 0.5em;
           border: solid thin $middle-grey;
@@ -288,6 +289,7 @@ $break-point-max: 1025px;
       }
     }
     div.disc_box {
+      display: none;
       height: 30em;
       margin: 4em 3em 5em 4.9em;
       color: $dark-grey;
@@ -381,8 +383,9 @@ $break-point-max: 1025px;
       }
     }
     input[type=text] {
+      font-size: 1em;
       height: 1.5em;
-      width: 23em;
+      width: 17.4em;
       padding: 0.2em;
       text-indent: 0.5em;
       border: solid thin $middle-grey;
@@ -435,12 +438,40 @@ $break-point-max: 1025px;
     }
   }
   
-  .login_button_container, .regis_button_container {
+  .login_button_container {
     display: flex;
     justify-content: center; 
     flex-wrap: wrap;
-    div.login_button, div.regis_button {
-      margin: 1em auto 0 auto;
+    div.login_button {
+      margin: 1.5em auto 0 auto;
+      input[type="submit"] {
+        -webkit-appearance: none;
+        height: 2.1em;
+        line-height: 0;
+        width: auto;
+        border-style: none;
+        font-size: 1.2em;
+        white-space: nowrap;
+        padding: 0 1em;
+        border-radius: 1em;
+        color:white;
+        background: $dark-pink;
+        transition: 0.3s;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+          transition: 0.1s;
+        }
+      }
+    }
+  }
+  
+  .regis_button_container {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    div.regis_button {
+      margin: 3em auto 0 auto;
       input[type="submit"] {
         -webkit-appearance: none;
         height: 2.1em;
@@ -1016,6 +1047,7 @@ $break-point-max: 1025px;
       }
     }
     div.disc_box {
+      display: block;
       height: 30em;
       margin: 4em 3em 5em 4.9em;
       color: $dark-grey;
@@ -1742,6 +1774,7 @@ $break-point-max: 1025px;
       }
     }
     div.disc_box {
+      display: block;
       height: 30em;
       margin: 4em 3em 5em 4.9em;
       color: $dark-grey;
