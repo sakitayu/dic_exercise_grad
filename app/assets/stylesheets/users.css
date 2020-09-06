@@ -23,7 +23,7 @@
   .login_container div.login_box {
     width: auto;
     height: auto;
-    margin: 2em auto 0 auto;
+    margin: 0 auto;
     background-color: white;
   }
   .login_container div.login_box div.remember_and_submit_form {
@@ -325,7 +325,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding-top: 2em;
   }
   .email_and_pass_form div.field {
     margin-top: 1em;
