@@ -56,6 +56,13 @@
               <%= image_tag(current_user.image.url) unless current_user.image.url == nil %>
             <% end %>
           </div>
+          <div class="sp_menu_button">
+            <div class="menu_icon02">
+              <span class="bar1"></span>
+              <span class="bar2"></span>
+              <span class="bar3"></span>
+            </div>
+          </div>
         <% else %>
           <% if controller.action_name == "new" && controller.controller_name == "registrations" %>
             <div class="header_right"><%= link_to "ログイン", new_user_session_path, class: "register_link" %></div>
@@ -170,7 +177,15 @@
           </div>
           <div class="dropdown__empty" id="rest_of_dropdown"></div>
         </div>
-        <div class="state_umbrella_on_responsible"><p>傘を持っていません</p></div>
+        <% if current_user.have_umbrella == true %>
+          <div class="state_umbrella_on_responsible">
+            <p>傘を持っているユーザーとして利用中</p>
+          </div>
+        <% else %>
+          <div class="state_umbrella_on_responsible">
+            <p>傘を持っていないユーザーとして利用中</p>
+          </div>
+        <% end %>
         <nav>
           <div class="nav_button_on_nav_menu">
             <%= link_to "マイページ", user_path(current_user.id) %>
@@ -226,12 +241,30 @@
                     });
                   }());
 
-      // スマホ・タブレット画面のナビメニュー
+      // タブレット画面のナビメニュー
       const ResponsibleBtn = document.querySelector('.header_prof_img_responsible');
       const nav = document.querySelector('nav');
       ResponsibleBtn.addEventListener('click', () => {
         nav.classList.toggle('open-menu')
       });
+
+      // スマホ画面のナビメニュー
+      const ResponsibleBtn2 = document.querySelector('.sp_menu_button');
+      const nav_mobile = document.querySelector('nav');
+      ResponsibleBtn2.addEventListener('click', () => {
+        nav_mobile.classList.toggle('open-menu')
+      });
+
+      // スマホ画面のハンバーガーメニュー
+      $(function () {
+                      $('.sp_menu_button').on('click',function(){
+                              if ($(this).hasClass('open')){
+                                  $(this).removeClass('open');
+                              } else {
+                                  $(this).addClass('open');
+                              }
+                          });
+                      });
     </script>
 
   </body>

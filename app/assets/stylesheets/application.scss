@@ -51,7 +51,7 @@ $break-point-pc: 960px;
   header {
     position: fixed;
     background-color: $dark-green;
-    height: 5em;
+    height: 4em;
     width: 100%;
     z-index: 2;
     div.header_block {
@@ -61,25 +61,25 @@ $break-point-pc: 960px;
       justify-content: space-between;
     }
     div.header_left {
-      height: 3em;
+      height: 2em;
       color: white;
       padding: 1.2em 0 0 0;
       margin-left: 1em;
       a.raynee-logo {
         img {
-          height: 3em;
+          height: 2em;
         }
       }
     }
     div.header_center {
-      height: 3em;
+      height: 2em;
     }
     div.header_right {
-      height: 3em;
+      height: 2em;
       margin: 1.4em 1em 0 0;
     }
     div.header_right_on_top {
-      height: 3em;
+      height: 2em;
       margin: 1.4em 1em 0 0;
       display: flex;
       div {
@@ -88,31 +88,66 @@ $break-point-pc: 960px;
     }
     div.header_prof_img {
       display: none;
-      height: 3em;
+      height: 2em;
       margin: 1em 1em 0 0;
       z-index: -5;
       img {
-        width: 3em;
-        height: 3em;
-        border-radius: 3em;
+        width: 2em;
+        height: 2em;
+        border-radius: 2em;
         background-color: white;
         object-fit: cover;
         margin: 0;
       }
     }
     div.header_prof_img_responsible {
-      display: block;
-      height: 3em;
+      display: none;
+      height: 2em;
       margin: 1em 1em 0 0;
-      z-index: 0;
+      z-index: -4;
       img {
-        width: 3em;
-        height: 3em;
-        border-radius: 3em;
+        width: 2em;
+        height: 2em;
+        border-radius: 2em;
         background-color: white;
         object-fit: cover;
         margin: 0;
       }
+    }
+    div.sp_menu_button {
+      display: block;
+      width: 40px;
+      height: 20px;
+      outline: none;
+      border: none;
+      font-size: 20px;
+      margin: 1.2em 0.7em 1em 0;
+      z-index: 0;
+    }
+    .sp_menu_button .menu_icon02 {
+      display: block;
+      float: left;
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+    }
+    .sp_menu_button .menu_icon02 span {
+      display: block;
+      width: 30px;
+      height: 4px;
+      background: white;
+      margin-bottom: 4px;
+      transition: all 0.4s ease-out;
+    }
+    .sp_menu_button.open .menu_icon02 .bar1 {
+      transform: translateY(10px) rotate(135deg);
+    }
+    .sp_menu_button.open .menu_icon02 .bar2 {
+      opacity: 0;
+      transform:translateX(-100px);
+    }
+    .sp_menu_button.open .menu_icon02 .bar3 {
+      transform:  translateY(-6px)
+      rotate(45deg);
     }
     a.register_link {
       width: auto;
@@ -148,7 +183,7 @@ $break-point-pc: 960px;
 
     .state_umbrella_on_responsible {
       position: absolute;
-      top: 5em;
+      top: 4em;
       width: 100%;
       height: 2em;
       background: $light-green;
@@ -165,7 +200,7 @@ $break-point-pc: 960px;
       background-color: $dark-green;
       position: fixed;
       z-index: 5;
-      top: 5em;
+      top: 4em;
       right: 0;
       overflow-x: hidden;
       text-align: center;
@@ -175,19 +210,21 @@ $break-point-pc: 960px;
       div.nav_button_on_nav_menu {
         width: auto;
         font-size: 1.5em;
-        margin: 2em auto;
+        margin: 1em auto 2em auto;
         display: flex;
         justify-content: center;
         a {
-          width: 12em;
+          width: 11em;
           color: $dark-grey;
           background-color: white;
           border-radius: 0.1em;
           padding: 0.5em;
           white-space: nowrap;
+          transition: 0.5s;
           &:hover {
             color: black;
             background-color: $light-grey;
+            transition: 0.1s;
           }
         }
       }
@@ -349,7 +386,7 @@ $break-point-pc: 960px;
     div.header_prof_img_responsible {
       display: block;
       height: 3em;
-      margin: 1em 1em 0 0;
+      margin: 1em 2em 0 0;
       z-index: 0;
       img {
         width: 3em;
@@ -359,6 +396,16 @@ $break-point-pc: 960px;
         object-fit: cover;
         margin: 0;
       }
+    }
+    div.sp_menu_button {
+      display: none;
+      width: 40px;
+      height: 20px;
+      outline: none;
+      border: none;
+      font-size: 20px;
+      margin: 1.2em 0.7em 1em 0;
+      z-index: 0;
     }
     a.register_link {
       width: auto;
@@ -605,6 +652,16 @@ $break-point-pc: 960px;
         object-fit: cover;
         margin: 0;
       }
+    }
+    div.sp_menu_button {
+      display: none;
+      width: 40px;
+      height: 20px;
+      outline: none;
+      border: none;
+      font-size: 20px;
+      margin: 1.2em 0.7em 1em 0;
+      z-index: 0;
     }
     a.register_link {
       width: auto;
