@@ -381,10 +381,10 @@ $break-point-pc: 1024px;
       }
     }
     div.header_prof_img_responsible {
-      display: none;
+      display: block;
       height: 3em;
       margin: 1em 2em 0 0;
-      z-index: -5;
+      z-index: 0;
       img {
         width: 3em;
         height: 3em;
@@ -395,14 +395,14 @@ $break-point-pc: 1024px;
       }
     }
     div.sp_menu_button {
-      display: block;
+      display: none;
       width: 60px;
       height: 30px;
       outline: none;
       border: none;
       font-size: 30px;
       margin: 0.8em 1em 1em 0;
-      z-index: 0;
+      z-index: -5;
     }
     .sp_menu_button .menu_icon02 {
       display: block;

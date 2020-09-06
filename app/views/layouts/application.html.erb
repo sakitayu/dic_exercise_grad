@@ -241,11 +241,18 @@
                     });
                   }());
 
-      // スマホ・タブレット画面のナビメニュー
-      const ResponsibleBtn = document.querySelector('.sp_menu_button');
+      // タブレット画面のナビメニュー
+      const ResponsibleBtn = document.querySelector('.header_prof_img_responsible');
       const nav = document.querySelector('nav');
       ResponsibleBtn.addEventListener('click', () => {
         nav.classList.toggle('open-menu')
+      });
+
+      // スマホ画面のナビメニュー
+      const ResponsibleBtn2 = document.querySelector('.sp_menu_button');
+      const nav_mobile = document.querySelector('nav');
+      ResponsibleBtn2.addEventListener('click', () => {
+        nav_mobile.classList.toggle('open-menu')
       });
 
       // スマホ画面のハンバーガーメニュー
