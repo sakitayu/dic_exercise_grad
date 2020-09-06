@@ -27,7 +27,7 @@ $light-grey: #F7F7F7;
 /* ブレークポイント */
 $break-point-mobile: 320px;
 $break-point-tablet: 560px;
-$break-point-pc: 960px;
+$break-point-pc: 1024px;
 
 
 /* スマホサイズの設定 */
@@ -180,7 +180,6 @@ $break-point-pc: 960px;
         transition: 0.1s;
       }
     }
-
     .state_umbrella_on_responsible {
       position: absolute;
       top: 4em;
@@ -195,7 +194,6 @@ $break-point-pc: 960px;
         margin: 0;
       }
     }
-
     nav {
       background-color: $dark-green;
       position: fixed;
@@ -210,7 +208,7 @@ $break-point-pc: 960px;
       div.nav_button_on_nav_menu {
         width: auto;
         font-size: 1.5em;
-        margin: 1em auto 2em auto;
+        margin: 1.4em auto 1.6em auto;
         display: flex;
         justify-content: center;
         a {
@@ -233,7 +231,6 @@ $break-point-pc: 960px;
       width: 100%;
     }
   }
-
   .dropdown_menu {
     width: 80em; /* 共通の横幅 =1280px */
     height: auto;
@@ -384,7 +381,7 @@ $break-point-pc: 960px;
       }
     }
     div.header_prof_img_responsible {
-      display: block;
+      display: none;
       height: 3em;
       margin: 1em 2em 0 0;
       z-index: 0;
@@ -398,14 +395,39 @@ $break-point-pc: 960px;
       }
     }
     div.sp_menu_button {
-      display: none;
-      width: 40px;
-      height: 20px;
+      display: block;
+      width: 60px;
+      height: 30px;
       outline: none;
       border: none;
-      font-size: 20px;
-      margin: 1.2em 0.7em 1em 0;
+      font-size: 30px;
+      margin: 0.8em 1em 1em 0;
       z-index: 0;
+    }
+    .sp_menu_button .menu_icon02 {
+      display: block;
+      float: left;
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+    }
+    .sp_menu_button .menu_icon02 span {
+      display: block;
+      width: 45px;
+      height: 6px;
+      background: white;
+      margin-bottom: 6px;
+      transition: all 0.4s ease-out;
+    }
+    .sp_menu_button.open .menu_icon02 .bar1 {
+      transform: translateY(12px) rotate(135deg);
+    }
+    .sp_menu_button.open .menu_icon02 .bar2 {
+      opacity: 0;
+      transform:translateX(-100px);
+    }
+    .sp_menu_button.open .menu_icon02 .bar3 {
+      transform:  translateY(-12px)
+      rotate(45deg);
     }
     a.register_link {
       width: auto;

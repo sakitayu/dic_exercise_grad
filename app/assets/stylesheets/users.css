@@ -136,7 +136,7 @@
 }
 
 /* タブレットサイズの設定 */
-@media screen and (min-width: 560px) and (max-width: 960px) {
+@media screen and (min-width: 560px) and (max-width: 1024px) {
   /* ユーザー一覧画面、プロフィール画面、編集画面、メッセージ画面 */
   .main_container {
     width: auto;
@@ -270,7 +270,7 @@
 }
 
 /* PCサイズの設定 */
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1024px) {
   /* ユーザー一覧画面、プロフィール画面、編集画面、メッセージ画面 */
   .main_container {
     width: 80em;

@@ -193,7 +193,7 @@
   header nav div.nav_button_on_nav_menu {
     width: auto;
     font-size: 1.5em;
-    margin: 1em auto 2em auto;
+    margin: 1.4em auto 1.6em auto;
     display: flex;
     justify-content: center;
   }
@@ -295,7 +295,7 @@
 }
 
 /* タブレットサイズの設定 */
-@media screen and (min-width: 560px) and (max-width: 960px) {
+@media screen and (min-width: 560px) and (max-width: 1024px) {
   body {
     font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
     font-size: 1em;
@@ -363,7 +363,7 @@
     margin: 0;
   }
   header div.header_prof_img_responsible {
-    display: block;
+    display: none;
     height: 3em;
     margin: 1em 2em 0 0;
     z-index: 0;
@@ -377,14 +377,38 @@
     margin: 0;
   }
   header div.sp_menu_button {
-    display: none;
-    width: 40px;
-    height: 20px;
+    display: block;
+    width: 60px;
+    height: 30px;
     outline: none;
     border: none;
-    font-size: 20px;
-    margin: 1.2em 0.7em 1em 0;
+    font-size: 30px;
+    margin: 0.8em 1em 1em 0;
     z-index: 0;
+  }
+  header .sp_menu_button .menu_icon02 {
+    display: block;
+    float: left;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+  }
+  header .sp_menu_button .menu_icon02 span {
+    display: block;
+    width: 45px;
+    height: 6px;
+    background: white;
+    margin-bottom: 6px;
+    transition: all 0.4s ease-out;
+  }
+  header .sp_menu_button.open .menu_icon02 .bar1 {
+    transform: translateY(12px) rotate(135deg);
+  }
+  header .sp_menu_button.open .menu_icon02 .bar2 {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  header .sp_menu_button.open .menu_icon02 .bar3 {
+    transform: translateY(-12px) rotate(45deg);
   }
   header a.register_link {
     width: auto;
@@ -546,7 +570,7 @@
 }
 
 /* PCサイズの設定 */
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1024px) {
   body {
     font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
     font-size: 1em;
