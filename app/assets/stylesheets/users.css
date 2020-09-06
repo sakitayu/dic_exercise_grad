@@ -16,6 +16,7 @@
   }
   .login_container {
     width: auto;
+    height: auto;
     margin: 0;
     display: flex;
   }
