@@ -378,12 +378,12 @@
   }
   header div.sp_menu_button {
     display: block;
-    width: 60px;
-    height: 30px;
+    width: 40px;
+    height: 20px;
     outline: none;
     border: none;
-    font-size: 30px;
-    margin: 0.8em 1em 1em 0;
+    font-size: 20px;
+    margin: 1.2em 0.7em 1em 0;
     z-index: 0;
   }
   header .sp_menu_button .menu_icon02 {
@@ -394,21 +394,21 @@
   }
   header .sp_menu_button .menu_icon02 span {
     display: block;
-    width: 45px;
-    height: 6px;
+    width: 30px;
+    height: 4px;
     background: white;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     transition: all 0.4s ease-out;
   }
   header .sp_menu_button.open .menu_icon02 .bar1 {
-    transform: translateY(12px) rotate(135deg);
+    transform: translateY(10px) rotate(135deg);
   }
   header .sp_menu_button.open .menu_icon02 .bar2 {
     opacity: 0;
     transform: translateX(-100px);
   }
   header .sp_menu_button.open .menu_icon02 .bar3 {
-    transform: translateY(-12px) rotate(45deg);
+    transform: translateY(-6px) rotate(45deg);
   }
   header a.register_link {
     width: auto;
