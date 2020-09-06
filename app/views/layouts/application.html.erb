@@ -177,28 +177,42 @@
           </div>
           <div class="dropdown__empty" id="rest_of_dropdown"></div>
         </div>
-        <% if current_user.have_umbrella == true %>
+        <% if current_user.have_umbrella == true && controller.action_name != "start" && current_user.state != "start" %>
           <div class="state_umbrella_on_responsible">
             <p>傘を持っているユーザーとして利用中</p>
           </div>
-        <% else %>
+        <% elsif controller.action_name != "start" && current_user.state != "start" %>
           <div class="state_umbrella_on_responsible">
             <p>傘を持っていないユーザーとして利用中</p>
           </div>
         <% end %>
         <nav>
-          <div class="nav_button_on_nav_menu">
-            <%= link_to "マイページ", user_path(current_user.id) %>
-          </div>
-          <div class="nav_button_on_nav_menu">
-            <%= link_to "傘を持っているひと一覧", users_path %>
-          </div>
-          <div class="nav_button_on_nav_menu">
-            <%= link_to "スタート画面に戻る", start_users_path %>
-          </div>
-          <div class="nav_button_on_nav_menu">
-            <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %>
-          </div>
+          <% if controller.action_name == "start" %>
+            <div class="nav_button_on_nav_menu">
+              <%= link_to "マイページ", user_path(current_user.id, params: { user: { state: "start"}}), method: :put, class: "dropdown__item-link" %>
+            </div>
+            <div class="nav_button_on_nav_menu">
+              <%= link_to "スタート画面に戻る", start_users_path %>
+            </div>
+            <div class="nav_button_on_nav_menu">
+              <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %>
+            </div>
+          <% else %>
+            <div class="nav_button_on_nav_menu">
+              <%= link_to "マイページ", user_path(current_user.id) %>
+            </div>
+            <% if current_user.state != "start" %>
+              <div class="nav_button_on_nav_menu">
+                <%= link_to "傘を持っているひと一覧", users_path %>
+              </div>
+            <% end %>
+            <div class="nav_button_on_nav_menu">
+              <%= link_to "スタート画面に戻る", start_users_path %>
+            </div>
+            <div class="nav_button_on_nav_menu">
+              <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: '本当に終了しますか？(現在のリクエストがリセットされます)' } %>
+            </div>
+          <% end %>
         </nav>
       <% end %>
     </header>
@@ -241,21 +255,14 @@
                     });
                   }());
 
-      // タブレット画面のナビメニュー
-      const ResponsibleBtn = document.querySelector('.header_prof_img_responsible');
+      // スマホ・タブレット画面のナビメニュー
+      const ResponsibleBtn = document.querySelector('.sp_menu_button');
       const nav = document.querySelector('nav');
       ResponsibleBtn.addEventListener('click', () => {
         nav.classList.toggle('open-menu')
       });
 
-      // スマホ画面のナビメニュー
-      const ResponsibleBtn2 = document.querySelector('.sp_menu_button');
-      const nav_mobile = document.querySelector('nav');
-      ResponsibleBtn2.addEventListener('click', () => {
-        nav_mobile.classList.toggle('open-menu')
-      });
-
-      // スマホ画面のハンバーガーメニュー
+      // スマホ・タブレット画面のハンバーガーメニュー
       $(function () {
                       $('.sp_menu_button').on('click',function(){
                               if ($(this).hasClass('open')){

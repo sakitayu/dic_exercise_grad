@@ -28,6 +28,7 @@ $light-grey: #F7F7F7;
 $break-point-mobile: 320px;
 $break-point-tablet: 560px;
 $break-point-pc: 1024px;
+$break-point-max: 1025px;
 
 
 /* スマホサイズの設定 */
@@ -123,7 +124,6 @@ $break-point-pc: 1024px;
       font-size: 20px;
       margin: 1.2em 0.7em 1em 0;
       z-index: 0;
-      cursor: pointer;
     }
     .sp_menu_button .menu_icon02 {
       display: block;
@@ -404,7 +404,6 @@ $break-point-pc: 1024px;
       font-size: 30px;
       margin: 0.8em 1em 1em 0;
       z-index: 0;
-      cursor: pointer;
     }
     .sp_menu_button .menu_icon02 {
       display: block;
@@ -488,6 +487,7 @@ $break-point-pc: 1024px;
       text-align: center;
       width: 0;
       height: 100%;
+      padding-top: 5em;
       transition: 0.6s;
       div.nav_button_on_nav_menu {
         width: auto;
@@ -594,7 +594,7 @@ $break-point-pc: 1024px;
 }
 
 /* PCサイズの設定 */
-@media screen and (min-width: $break-point-pc) {
+@media screen and (min-width: $break-point-max) {
 
   body {
     font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
