@@ -384,7 +384,7 @@ $break-point-pc: 1024px;
       display: none;
       height: 3em;
       margin: 1em 2em 0 0;
-      z-index: 0;
+      z-index: -5;
       img {
         width: 3em;
         height: 3em;
@@ -396,12 +396,12 @@ $break-point-pc: 1024px;
     }
     div.sp_menu_button {
       display: block;
-      width: 40px;
-      height: 20px;
+      width: 60px;
+      height: 30px;
       outline: none;
       border: none;
-      font-size: 20px;
-      margin: 1.2em 0.7em 1em 0;
+      font-size: 30px;
+      margin: 0.8em 1em 1em 0;
       z-index: 0;
     }
     .sp_menu_button .menu_icon02 {
@@ -412,21 +412,21 @@ $break-point-pc: 1024px;
     }
     .sp_menu_button .menu_icon02 span {
       display: block;
-      width: 30px;
-      height: 4px;
+      width: 45px;
+      height: 6px;
       background: white;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       transition: all 0.4s ease-out;
     }
     .sp_menu_button.open .menu_icon02 .bar1 {
-      transform: translateY(10px) rotate(135deg);
+      transform: translateY(12px) rotate(135deg);
     }
     .sp_menu_button.open .menu_icon02 .bar2 {
       opacity: 0;
       transform:translateX(-100px);
     }
     .sp_menu_button.open .menu_icon02 .bar3 {
-      transform:  translateY(-6px)
+      transform:  translateY(-12px)
       rotate(45deg);
     }
     a.register_link {
