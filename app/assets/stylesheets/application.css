@@ -270,6 +270,10 @@
     position: relative;
     margin-right: 0;
   }
+  main {
+    flex: 1;
+    height: 100vh;
+  }
   .is-open {
     width: 80em;
     /* 共通の横幅 =1280px */
@@ -552,6 +556,9 @@
     position: relative;
     margin-right: 0;
   }
+  main {
+    flex: 1;
+  }
   .is-open {
     width: auto;
     /* 共通の横幅 */
@@ -755,6 +762,9 @@
   header nav.open-menu {
     width: 100%;
   }
+  main {
+    flex: 1;
+  }
   .dropdown_menu {
     width: 80em;
     /* 共通の横幅 =1280px */
@@ -839,28 +849,6 @@
     color: #ffb6b9;
     padding-bottom: -3em;
   }
-}
-
-footer {
-  height: 0;
-  bottom: 0;
-  padding: 0 auto;
-}
-
-footer div {
-  width: 300px;
-  margin: 30px auto;
-  padding-left: 100px;
-}
-
-footer a {
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-}
-
-main {
-  flex: 1;
 }
 
 ul {

@@ -286,6 +286,11 @@ $break-point-max: 1025px;
       margin-right: 0;
     }
   }
+
+  main {
+    flex: 1;
+    height: 100vh;
+  }
   
   .is-open {
     width: 80em; /* 共通の横幅 =1280px */
@@ -576,6 +581,10 @@ $break-point-max: 1025px;
     }
   }
 
+  main {
+    flex: 1;
+  }
+
   .is-open {
     width: auto; /* 共通の横幅 */
     margin: 0 auto;
@@ -785,6 +794,10 @@ $break-point-max: 1025px;
     }
   }
 
+  main {
+    flex: 1;
+  }
+
   .dropdown_menu {
     width: 80em; /* 共通の横幅 =1280px */
     height: auto;
@@ -872,28 +885,6 @@ $break-point-max: 1025px;
 }
 
 
-
-
-footer {
-  height:0;
-  bottom:0;
-  padding:0 auto;
-  div {
-    width:300px;
-    margin:30px auto;
-    padding-left:100px;
-
-  }
-  a {
-    font-weight: bold;
-    color:white;
-    text-decoration: none;
-  }
-}
-
-main {
-  flex: 1;
-}
 
 ul {
   list-style-type: decimal; 
