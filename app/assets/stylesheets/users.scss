@@ -368,9 +368,10 @@ $break-point-max: 1025px;
       padding:0;
     }
     input[type=email] {
+      font-size: 1em;
       height: 1.5em;
-      width: 23em;
-      padding: 0.2em;
+      width: 17.4em;
+      padding: 0.1em;
       text-indent: 0.5em;
       border: solid thin $middle-grey;
       border-radius: 0.2em;
@@ -392,9 +393,10 @@ $break-point-max: 1025px;
       }
     }
     input[type=password] {
+      font-size: 1em;
       height: 1.5em;
-      width: 23em;
-      padding: 0.2em;
+      width: 17.4em;
+      padding: 0.1em;
       text-indent: 0.5em;
       border: solid thin $middle-grey;
       border-radius: 0.2em;
@@ -440,6 +442,7 @@ $break-point-max: 1025px;
     div.login_button, div.regis_button {
       margin: 1em auto 0 auto;
       input[type="submit"] {
+        -webkit-appearance: none;
         height: 2.1em;
         line-height: 0;
         width: auto;
@@ -467,6 +470,7 @@ $break-point-max: 1025px;
     div.login_button {
       margin: 1.3em auto 0 auto;
       input[type="submit"] {
+        -webkit-appearance: none;
         height: 2.1em;
         line-height: 0;
         width: auto;

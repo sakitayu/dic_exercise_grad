@@ -348,9 +348,10 @@
     padding: 0;
   }
   .email_and_pass_form input[type=email] {
+    font-size: 1em;
     height: 1.5em;
-    width: 23em;
-    padding: 0.2em;
+    width: 17.4em;
+    padding: 0.1em;
     text-indent: 0.5em;
     border: solid thin #999999;
     border-radius: 0.2em;
@@ -372,9 +373,10 @@
     outline: 0;
   }
   .email_and_pass_form input[type=password] {
+    font-size: 1em;
     height: 1.5em;
-    width: 23em;
-    padding: 0.2em;
+    width: 17.4em;
+    padding: 0.1em;
     text-indent: 0.5em;
     border: solid thin #999999;
     border-radius: 0.2em;
@@ -420,6 +422,7 @@
     margin: 1em auto 0 auto;
   }
   .login_button_container div.login_button input[type="submit"], .login_button_container div.regis_button input[type="submit"], .regis_button_container div.login_button input[type="submit"], .regis_button_container div.regis_button input[type="submit"] {
+    -webkit-appearance: none;
     height: 2.1em;
     line-height: 0;
     width: auto;
@@ -446,6 +449,7 @@
     margin: 1.3em auto 0 auto;
   }
   .sample_user div.login_button input[type="submit"] {
+    -webkit-appearance: none;
     height: 2.1em;
     line-height: 0;
     width: auto;
