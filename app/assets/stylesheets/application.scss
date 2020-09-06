@@ -153,9 +153,9 @@ $break-point-max: 1025px;
     a.register_link {
       width: auto;
       color: $dark-grey;
-      font-size: 1.4em;
+      font-size: 1em;
       background-color: white;
-      padding: 0.5em 1em;
+      padding: 0.5em 0.5em;
       border-radius: 1em;
       white-space: nowrap;
       transition: 0.3s;
@@ -307,6 +307,13 @@ $break-point-max: 1025px;
     top: 0;
     left: 0;
     z-index: 3;
+  }
+
+  .login_error_message {
+    width: 18em;
+    text-align: center;
+    color:$dark-pink;
+    padding-top: 1em;
   }
   
 }
@@ -590,6 +597,13 @@ $break-point-max: 1025px;
     left: 0;
     z-index: 3;
   }
+
+  .login_error_message {
+    width: 22em;
+    text-align: center;
+    color:$dark-pink;
+    padding-bottom:-3em;
+  }
   
 }
 
@@ -847,6 +861,13 @@ $break-point-max: 1025px;
     left: 0;
     z-index: 3;
   }
+
+  .login_error_message {
+    width: 22em;
+    text-align: center;
+    color:$dark-pink;
+    padding-bottom:-3em;
+  }
   
 }
 
@@ -905,13 +926,6 @@ ul {
 
 .field_with_errors {
   display: contents;
-}
-
-.login_error_message {
-  width: 22em;
-  text-align: center;
-  color:$dark-pink;
-  padding-bottom:-3em;
 }
 
 .forgot_password_actions{
