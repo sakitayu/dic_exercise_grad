@@ -590,6 +590,7 @@
     margin: 3em auto 3em auto;
   }
   .start_button_container div.start_button input[type="submit"] {
+    -webkit-appearance: none;
     height: 2.1em;
     line-height: 0;
     width: auto;

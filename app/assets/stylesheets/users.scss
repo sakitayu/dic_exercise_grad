@@ -613,6 +613,7 @@ $break-point-max: 1025px;
     div.start_button {
       margin: 3em auto 3em auto;
       input[type="submit"] {
+        -webkit-appearance: none;
         height: 2.1em;
         line-height: 0;
         width: auto;
