@@ -27,10 +27,8 @@ $break-point-max: 1025px;
     height: auto;
   }
   .start_background {
-    background-image: url(undraw_raining_sguh.png);
-    background-size: contain;
-    background-repeat:  no-repeat;
-    min-height: 100vh;
+    width: auto;
+    height: auto;
   }
   
   .login_container{
@@ -523,40 +521,36 @@ $break-point-max: 1025px;
   }
   
   .start_container {
-    width: auto; /* 共通の横幅 =1280px */
+    width: auto; /* 共通の横幅 */
     margin:0 auto;
     display: flex;
     flex-direction: row-reverse;
     div.start_box{
       width: 30em;
       height: auto;
-      margin: 4.8em 5em 0 0;
-      padding: 0 2em;
+      margin: 0 auto;
       background-color: white;
-      border: solid thin $dark-green;
-      border-radius: 0.3em;
+      display: flex;
+      justify-content: center;
       div.start_form {
-        width:auto;
-        display: flex;
-        justify-content: center;
+        width: auto;
         flex-wrap: wrap;
-        padding-top: 2em;
         div.field {
-          margin-top: 1em;
+          width: auto;
+          margin: 2em auto 0 auto;
           color: $dark-grey;
           font-size: 1.3em;
           font-weight: lighter;
-          display: flex;
           div.start_label {
             margin-top: 0.1em;
+            margin-bottom: 1em;
           }
           input[type=text] {
             -webkit-appearance: none;
             height: 1.5em;
             width: 13em;
             padding: 0.2em;
-            margin-left: 0.5em;
-            font-size: 0.8em;
+            font-size: 1em;
             text-indent: 0.5em;
             border: solid thin $middle-grey;
             border-radius: 0.2em;
@@ -572,21 +566,21 @@ $break-point-max: 1025px;
       }
       .inline-radio {
         display: flex;
+        width: 10em;
         border-radius: 0.2em;
         overflow: hidden;
         border: solid thin $middle-grey;
-        margin-left: 0.45em;
         div {
           position: relative;
           flex: 1;
         }
-        input {
+        input.radio-inline__input {
           width: 7em;
-          height: 1.7em;
+          height: 2.5em;
           opacity: 0;
         }
         label {
-          font-size: 1em;
+          font-size: 1.2em;
           position: absolute;
           top: 0;
           left: 0;
@@ -1265,7 +1259,7 @@ $break-point-max: 1025px;
       border: solid thin $dark-green;
       border-radius: 0.3em;
       div.start_form {
-        width:auto;
+        width: auto;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -1990,7 +1984,7 @@ $break-point-max: 1025px;
       border: solid thin $dark-green;
       border-radius: 0.3em;
       div.start_form {
-        width:auto;
+        width: auto;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
