@@ -242,10 +242,12 @@
                   <%= link_to "#{user.name}", user_path(user.id)  %>
                 </td>
                 <td class="list_gender_and_age">
-                  <p><%= user.gender %></p>
-                  <p><%= user.age %><%= "才" unless user.age == "非公開" %></p>
+                  <%= link_to "#{user.gender}", user_path(user.id), class: "gender" %>
+                  <%= link_to "#{user.age}才", user_path(user.id), class: "age" unless user.age == "非公開" %>
                 </td>
-                <td class="list_area"><%= user.area %></td>
+                <td class="list_area">
+                  <%= link_to "#{user.area}", user_path(user.id) %>
+                </td>
               </tr>
             <% elsif user.id != current_user.id && user.have_umbrella && user.state == "message" && current_user.state == "message" %>
               <tr class="table_border_on_message" id="having_user_list_id_is_<%= user.id %>">
@@ -266,8 +268,8 @@
                   <%= link_to "#{user.name}", user_path(user.id)  %>
                 </td>
                 <td class="list_gender_and_age">
-                  <p><%= user.gender %></p>
-                  <p><%= user.age %><%= "才" unless user.age == "非公開" %></p>
+                  <%= link_to "#{user.gender}", user_path(user.id) %>
+                  <%= link_to "#{user.age}才", user_path(user.id) unless user.age == "非公開" %>
                 </td>
                 <td class="list_area"><%= user.area %></td>
               </tr>

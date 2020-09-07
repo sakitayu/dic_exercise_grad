@@ -801,9 +801,8 @@ $break-point-max: 1025px;
         padding: 0.1em;
         margin: 0;
         a {
+          display: block;
           color: $dark-grey;
-          width: auto;
-          height: auto;
         }
         img {
           width: 2em;
@@ -817,11 +816,19 @@ $break-point-max: 1025px;
       }
       td.list_prof_img {
         width: 2.4em;
+        a {
+          display: block;
+          padding: 0;
+        }
       }
       td.list_name {
         font-size: 1em;
         font-weight: bold;
         width: 7.9em;
+        a {
+          display: block;
+          padding: 0.6em 0;
+        }
       }
       td.list_gender_and_age {
         font-size: 0.5em;
@@ -829,14 +836,22 @@ $break-point-max: 1025px;
         color: $dark-grey;
         padding: 0.3em;
         margin: 0;
-        p {
-          margin: 0;
-          padding: 0;
+        a.gender {
+          display: block;
+          padding: 0.8em 0 0 0;
+          text-align: center;
+        }
+        a.age {
+          display: block;
+          padding: 0 0 0.8em 0;
           text-align: center;
         }
       }
       td.list_area {
         font-size: 0.6em;
+        a {
+          padding: 1.6em 0;
+        }
       }
     }
   }
@@ -2457,13 +2472,15 @@ $break-point-max: 1025px;
         color: $dark-grey;
         padding: 0.3em;
         margin: 0;
+        padding: 0;
         a {
-          color: $dark-grey
+          display: block;
+          color: $dark-grey;
         }
         img {
           width: 4em;
           height: 4em;
-          margin: 0.4em 0 0 0.4em;
+          margin: 0.4em 0 0 1em;
           border: 1px solid $dark-grey;
           border-radius: 3em;
           background-color: white;
@@ -2472,25 +2489,45 @@ $break-point-max: 1025px;
       }
       td.list_prof_img {
         width: 5.2em;
+        margin-left: 1em;
+        a {
+          display: block;
+          padding: 0.3em 0;
+        }
       }
       td.list_name {
-        font-size:1.5em;
+        font-size: 1.5em;
         font-weight: bold;
         width: 9em;
+        a {
+          display: block;
+          color: $dark-grey;
+          padding: 1.2em 0 1.2em 1em;
+          margin: 0;
+          
+        }
       }
       td.list_gender_and_age {
         width: 8em;
         color: $dark-grey;
-        padding: 0.3em;
         margin: 0;
-        p {
+        a.gender {
           margin: 0;
-          padding: 0;
+          padding: 1.5em 0 0 0;
+          text-align: center;
+        }
+        a.age {
+          margin: 0;
+          padding: 0 0 1.5em  0;
           text-align: center;
         }
       }
       td.list_area {
         font-size:1.3em;
+        a {
+          display: block;
+          padding: 1.5em 0;
+        }
       }
     }
   }
