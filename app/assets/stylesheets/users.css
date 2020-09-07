@@ -753,12 +753,8 @@
     transition-duration: 0.5s;
     border-top: 1px solid #F7F7F7;
   }
-  .main_box div.main_contents tr.table_border:hover {
-    background-color: #F7F7F7;
-    transition-duration: 0.3s;
-  }
   .main_box div.main_contents tr.table_border:active {
-    background-color: #F7F7F7;
+    background-color: #999999;
     transition-duration: 0.3s;
   }
   .main_box div.main_contents tr.table_border_on_requset {
