@@ -754,8 +754,8 @@
     border-top: 1px solid #F7F7F7;
   }
   .main_box div.main_contents tr.table_border:active {
-    background-color: #999999;
-    transition-duration: 0.3s;
+    background-color: #F7F7F7;
+    transition-duration: 0s;
   }
   .main_box div.main_contents tr.table_border_on_requset {
     background-color: #fae3d9;

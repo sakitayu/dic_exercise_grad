@@ -780,8 +780,8 @@ $break-point-max: 1025px;
         transition-duration: 0.5s;
         border-top: 1px solid $light-grey;
         &:active {
-          background-color: $middle-grey;
-          transition-duration: 0.3s;
+          background-color: $light-grey;
+          transition-duration: 0s;
         }
       }
       tr.table_border_on_requset {
