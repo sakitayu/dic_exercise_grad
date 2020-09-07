@@ -12,7 +12,11 @@
   </head>
 
   <body>
-    <header>
+    <% if user_signed_in? %>
+    <header class="after_login">
+    <% else %>
+    <header class="before_login">
+    <% end %>
       <div class="header_block">
         <div class="header_left">
           <% if user_signed_in? && controller.action_name == "start" %>

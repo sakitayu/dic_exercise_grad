@@ -498,7 +498,7 @@
   .start_container {
     width: auto;
     /* 共通の横幅 */
-    margin: 0 auto;
+    margin: 5em auto 0 auto;
     display: flex;
     flex-direction: row-reverse;
   }
