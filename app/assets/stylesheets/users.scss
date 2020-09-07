@@ -779,6 +779,7 @@ $break-point-max: 1025px;
         margin: 0;
         transition-duration: 0.5s;
         border-top: 1px solid $light-grey;
+        -webkit-tap-highlight-color: $light-grey;
         &:hover {
           background-color: $light-grey;
           transition-duration: 0.3s;
