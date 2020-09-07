@@ -207,11 +207,11 @@
             </div>
             <% if current_user.state != "start" && current_user.have_umbrella == true %>
               <div class="nav_button_on_nav_menu">
-                <%= link_to "傘を持っているひと一覧", users_path %>
+                <%= link_to "リクエスト一覧", users_path %>
               </div>
             <% elsif current_user.state != "start" && current_user.have_umbrella == false %>
               <div class="nav_button_on_nav_menu">
-                <%= link_to "リクエスト一覧", users_path %>
+                <%= link_to "傘を持っているひと一覧", users_path %>
               </div>
             <% end %>
             <div class="nav_button_on_nav_menu">

@@ -777,6 +777,7 @@
   .main_box div.main_contents td a {
     display: block;
     color: #444;
+    -webkit-tap-highlight-color: transparent;
   }
   .main_box div.main_contents td img {
     width: 2em;
@@ -793,6 +794,7 @@
   .main_box div.main_contents td.list_prof_img a {
     display: block;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
   }
   .main_box div.main_contents td.list_name {
     font-size: 1em;
@@ -802,6 +804,7 @@
   .main_box div.main_contents td.list_name a {
     display: block;
     padding: 0.6em 0;
+    -webkit-tap-highlight-color: transparent;
   }
   .main_box div.main_contents td.list_gender_and_age {
     font-size: 0.5em;
@@ -814,17 +817,20 @@
     display: block;
     padding: 0.8em 0 0 0;
     text-align: center;
+    -webkit-tap-highlight-color: transparent;
   }
   .main_box div.main_contents td.list_gender_and_age a.age {
     display: block;
     padding: 0 0 0.8em 0;
     text-align: center;
+    -webkit-tap-highlight-color: transparent;
   }
   .main_box div.main_contents td.list_area {
     font-size: 0.6em;
   }
   .main_box div.main_contents td.list_area a {
     padding: 1.6em 0;
+    -webkit-tap-highlight-color: transparent;
   }
   /* 左側のナビゲーションカラム (非表示)*/
   .navi_box {

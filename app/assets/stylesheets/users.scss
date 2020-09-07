@@ -803,6 +803,7 @@ $break-point-max: 1025px;
         a {
           display: block;
           color: $dark-grey;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
         img {
           width: 2em;
@@ -819,6 +820,7 @@ $break-point-max: 1025px;
         a {
           display: block;
           padding: 0;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
       }
       td.list_name {
@@ -828,6 +830,7 @@ $break-point-max: 1025px;
         a {
           display: block;
           padding: 0.6em 0;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
       }
       td.list_gender_and_age {
@@ -840,17 +843,20 @@ $break-point-max: 1025px;
           display: block;
           padding: 0.8em 0 0 0;
           text-align: center;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
         a.age {
           display: block;
           padding: 0 0 0.8em 0;
           text-align: center;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
       }
       td.list_area {
         font-size: 0.6em;
         a {
           padding: 1.6em 0;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
       }
     }
