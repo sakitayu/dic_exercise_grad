@@ -521,7 +521,192 @@ $break-point-max: 1025px;
     }
   }
 
-  header.before_login, header.after_login {
+  header.before_login {
+    position: relative;
+    background-color: $dark-green;
+    height: 5em;
+    width: 100%;
+    z-index: 2;
+    div.header_block {
+      width: auto; /* 共通の横幅 =560px */
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    div.header_left {
+      height: 3em;
+      color: white;
+      padding: 1.2em 0 0 0;
+      margin-left: 2em;
+      a.raynee-logo {
+        img {
+          height: 3em;
+        }
+      }
+    }
+    div.header_center {
+      height: 3em;
+    }
+    div.header_right {
+      height: 3em;
+      margin: 1.4em 2em 0 0;
+    }
+    div.header_right_on_top {
+      height: 3em;
+      margin: 1.4em 2em 0 0;
+      display: flex;
+      div {
+        margin-left: 2em;
+      }
+    }
+    div.header_prof_img {
+      height: 3em;
+      margin: 1em 2em 0 0;
+      display: none;
+      z-index: -5;
+      img {
+        width: 3em;
+        height: 3em;
+        border-radius: 3em;
+        background-color: white;
+        object-fit: cover;
+        margin: 0;
+      }
+    }
+    div.header_prof_img_responsible {
+      display: none;
+      height: 3em;
+      margin: 1em 2em 0 0;
+      z-index: -5;
+      img {
+        width: 3em;
+        height: 3em;
+        border-radius: 3em;
+        background-color: white;
+        object-fit: cover;
+        margin: 0;
+      }
+    }
+    div.sp_menu_button {
+      display: block;
+      width: 60px;
+      height: 30px;
+      outline: none;
+      border: none;
+      font-size: 30px;
+      margin: 0.8em 1em 1em 0;
+      z-index: 0;
+    }
+    .sp_menu_button .menu_icon02 {
+      display: block;
+      float: left;
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+    }
+    .sp_menu_button .menu_icon02 span {
+      display: block;
+      width: 45px;
+      height: 6px;
+      background: white;
+      margin-bottom: 6px;
+      transition: all 0.4s ease-out;
+    }
+    .sp_menu_button.open .menu_icon02 .bar1 {
+      transform: translateY(12px) rotate(135deg);
+    }
+    .sp_menu_button.open .menu_icon02 .bar2 {
+      opacity: 0;
+      transform:translateX(-100px);
+    }
+    .sp_menu_button.open .menu_icon02 .bar3 {
+      transform:  translateY(-12px)
+      rotate(45deg);
+    }
+    a.register_link {
+      width: auto;
+      color: $dark-grey;
+      font-size: 1.4em;
+      background-color: white;
+      padding: 0.5em 1em;
+      border-radius: 1em;
+      white-space: nowrap;
+      transition: 0.3s;
+      &:hover {
+        color: black;
+        transition: 0.1s;
+      }
+    }
+    a.register_link_alt {
+      width: auto;
+      color: white;
+      font-size: 1.4em;
+      background-color: $dark-green;
+      padding: 0.4em 1em;
+      border-radius: 1em;
+      border: solid 0.1em white;
+      box-sizing: border-box;
+      white-space: nowrap;
+      transition: 0.3s;
+      &:hover {
+        color: black;
+        background-color: white;
+        transition: 0.1s;
+      }
+    }
+    
+    .state_umbrella_on_responsible {
+      position: absolute;
+      top: 5em;
+      width: 100%;
+      height: 2em;
+      background: $light-green;
+      color: $dark-grey;
+      display: block;
+      p {
+        text-align: center;
+        padding-top: 0.3em;
+        margin: 0;
+      }
+    }
+    
+    nav {
+      background-color: $dark-green;
+      position: fixed;
+      z-index: 5;
+      top: 5em;
+      right: 0;
+      overflow-x: hidden;
+      text-align: center;
+      width: 0;
+      height: 100%;
+      padding-top: 5em;
+      transition: 0.6s;
+      div.nav_button_on_nav_menu {
+        width: auto;
+        font-size: 1.5em;
+        margin: 2em auto;
+        display: flex;
+        justify-content: center;
+        a {
+          width: 14.4em;
+          color: $dark-grey;
+          background-color: white;
+          border-radius: 0.1em;
+          padding: 0.5em;
+          white-space: nowrap;
+          &:hover {
+            color: black;
+            background-color: $light-grey;
+          }
+        }
+      }
+    }
+    nav.open-menu {
+      width: 100%;
+    }
+  }
+
+  header.after_login {
     position: fixed;
     background-color: $dark-green;
     height: 5em;
@@ -653,7 +838,7 @@ $break-point-max: 1025px;
         transition: 0.1s;
       }
     }
-
+    
     .state_umbrella_on_responsible {
       position: absolute;
       top: 5em;

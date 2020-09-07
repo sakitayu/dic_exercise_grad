@@ -497,51 +497,51 @@
   body a {
     text-decoration: none;
   }
-  header.before_login, header.after_login {
-    position: fixed;
+  header.before_login {
+    position: relative;
     background-color: #8ac6d1;
     height: 5em;
     width: 100%;
     z-index: 2;
   }
-  header.before_login div.header_block, header.after_login div.header_block {
+  header.before_login div.header_block {
     width: auto;
     /* 共通の横幅 =560px */
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
   }
-  header.before_login div.header_left, header.after_login div.header_left {
+  header.before_login div.header_left {
     height: 3em;
     color: white;
     padding: 1.2em 0 0 0;
     margin-left: 2em;
   }
-  header.before_login div.header_left a.raynee-logo img, header.after_login div.header_left a.raynee-logo img {
+  header.before_login div.header_left a.raynee-logo img {
     height: 3em;
   }
-  header.before_login div.header_center, header.after_login div.header_center {
+  header.before_login div.header_center {
     height: 3em;
   }
-  header.before_login div.header_right, header.after_login div.header_right {
+  header.before_login div.header_right {
     height: 3em;
     margin: 1.4em 2em 0 0;
   }
-  header.before_login div.header_right_on_top, header.after_login div.header_right_on_top {
+  header.before_login div.header_right_on_top {
     height: 3em;
     margin: 1.4em 2em 0 0;
     display: flex;
   }
-  header.before_login div.header_right_on_top div, header.after_login div.header_right_on_top div {
+  header.before_login div.header_right_on_top div {
     margin-left: 2em;
   }
-  header.before_login div.header_prof_img, header.after_login div.header_prof_img {
+  header.before_login div.header_prof_img {
     height: 3em;
     margin: 1em 2em 0 0;
     display: none;
     z-index: -5;
   }
-  header.before_login div.header_prof_img img, header.after_login div.header_prof_img img {
+  header.before_login div.header_prof_img img {
     width: 3em;
     height: 3em;
     border-radius: 3em;
@@ -549,13 +549,13 @@
     object-fit: cover;
     margin: 0;
   }
-  header.before_login div.header_prof_img_responsible, header.after_login div.header_prof_img_responsible {
+  header.before_login div.header_prof_img_responsible {
     display: none;
     height: 3em;
     margin: 1em 2em 0 0;
     z-index: -5;
   }
-  header.before_login div.header_prof_img_responsible img, header.after_login div.header_prof_img_responsible img {
+  header.before_login div.header_prof_img_responsible img {
     width: 3em;
     height: 3em;
     border-radius: 3em;
@@ -563,7 +563,7 @@
     object-fit: cover;
     margin: 0;
   }
-  header.before_login div.sp_menu_button, header.after_login div.sp_menu_button {
+  header.before_login div.sp_menu_button {
     display: block;
     width: 60px;
     height: 30px;
@@ -573,13 +573,13 @@
     margin: 0.8em 1em 1em 0;
     z-index: 0;
   }
-  header.before_login .sp_menu_button .menu_icon02, header.after_login .sp_menu_button .menu_icon02 {
+  header.before_login .sp_menu_button .menu_icon02 {
     display: block;
     float: left;
     cursor: pointer;
     transition: all 0.2s ease-in;
   }
-  header.before_login .sp_menu_button .menu_icon02 span, header.after_login .sp_menu_button .menu_icon02 span {
+  header.before_login .sp_menu_button .menu_icon02 span {
     display: block;
     width: 45px;
     height: 6px;
@@ -587,17 +587,17 @@
     margin-bottom: 6px;
     transition: all 0.4s ease-out;
   }
-  header.before_login .sp_menu_button.open .menu_icon02 .bar1, header.after_login .sp_menu_button.open .menu_icon02 .bar1 {
+  header.before_login .sp_menu_button.open .menu_icon02 .bar1 {
     transform: translateY(12px) rotate(135deg);
   }
-  header.before_login .sp_menu_button.open .menu_icon02 .bar2, header.after_login .sp_menu_button.open .menu_icon02 .bar2 {
+  header.before_login .sp_menu_button.open .menu_icon02 .bar2 {
     opacity: 0;
     transform: translateX(-100px);
   }
-  header.before_login .sp_menu_button.open .menu_icon02 .bar3, header.after_login .sp_menu_button.open .menu_icon02 .bar3 {
+  header.before_login .sp_menu_button.open .menu_icon02 .bar3 {
     transform: translateY(-12px) rotate(45deg);
   }
-  header.before_login a.register_link, header.after_login a.register_link {
+  header.before_login a.register_link {
     width: auto;
     color: #444;
     font-size: 1.4em;
@@ -607,11 +607,11 @@
     white-space: nowrap;
     transition: 0.3s;
   }
-  header.before_login a.register_link:hover, header.after_login a.register_link:hover {
+  header.before_login a.register_link:hover {
     color: black;
     transition: 0.1s;
   }
-  header.before_login a.register_link_alt, header.after_login a.register_link_alt {
+  header.before_login a.register_link_alt {
     width: auto;
     color: white;
     font-size: 1.4em;
@@ -623,12 +623,12 @@
     white-space: nowrap;
     transition: 0.3s;
   }
-  header.before_login a.register_link_alt:hover, header.after_login a.register_link_alt:hover {
+  header.before_login a.register_link_alt:hover {
     color: black;
     background-color: white;
     transition: 0.1s;
   }
-  header.before_login .state_umbrella_on_responsible, header.after_login .state_umbrella_on_responsible {
+  header.before_login .state_umbrella_on_responsible {
     position: absolute;
     top: 5em;
     width: 100%;
@@ -637,12 +637,12 @@
     color: #444;
     display: block;
   }
-  header.before_login .state_umbrella_on_responsible p, header.after_login .state_umbrella_on_responsible p {
+  header.before_login .state_umbrella_on_responsible p {
     text-align: center;
     padding-top: 0.3em;
     margin: 0;
   }
-  header.before_login nav, header.after_login nav {
+  header.before_login nav {
     background-color: #8ac6d1;
     position: fixed;
     z-index: 5;
@@ -655,14 +655,14 @@
     padding-top: 5em;
     transition: 0.6s;
   }
-  header.before_login nav div.nav_button_on_nav_menu, header.after_login nav div.nav_button_on_nav_menu {
+  header.before_login nav div.nav_button_on_nav_menu {
     width: auto;
     font-size: 1.5em;
     margin: 2em auto;
     display: flex;
     justify-content: center;
   }
-  header.before_login nav div.nav_button_on_nav_menu a, header.after_login nav div.nav_button_on_nav_menu a {
+  header.before_login nav div.nav_button_on_nav_menu a {
     width: 14.4em;
     color: #444;
     background-color: white;
@@ -670,11 +670,191 @@
     padding: 0.5em;
     white-space: nowrap;
   }
-  header.before_login nav div.nav_button_on_nav_menu a:hover, header.after_login nav div.nav_button_on_nav_menu a:hover {
+  header.before_login nav div.nav_button_on_nav_menu a:hover {
     color: black;
     background-color: #F7F7F7;
   }
-  header.before_login nav.open-menu, header.after_login nav.open-menu {
+  header.before_login nav.open-menu {
+    width: 100%;
+  }
+  header.after_login {
+    position: fixed;
+    background-color: #8ac6d1;
+    height: 5em;
+    width: 100%;
+    z-index: 2;
+  }
+  header.after_login div.header_block {
+    width: auto;
+    /* 共通の横幅 =560px */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  header.after_login div.header_left {
+    height: 3em;
+    color: white;
+    padding: 1.2em 0 0 0;
+    margin-left: 2em;
+  }
+  header.after_login div.header_left a.raynee-logo img {
+    height: 3em;
+  }
+  header.after_login div.header_center {
+    height: 3em;
+  }
+  header.after_login div.header_right {
+    height: 3em;
+    margin: 1.4em 2em 0 0;
+  }
+  header.after_login div.header_right_on_top {
+    height: 3em;
+    margin: 1.4em 2em 0 0;
+    display: flex;
+  }
+  header.after_login div.header_right_on_top div {
+    margin-left: 2em;
+  }
+  header.after_login div.header_prof_img {
+    height: 3em;
+    margin: 1em 2em 0 0;
+    display: none;
+    z-index: -5;
+  }
+  header.after_login div.header_prof_img img {
+    width: 3em;
+    height: 3em;
+    border-radius: 3em;
+    background-color: white;
+    object-fit: cover;
+    margin: 0;
+  }
+  header.after_login div.header_prof_img_responsible {
+    display: none;
+    height: 3em;
+    margin: 1em 2em 0 0;
+    z-index: -5;
+  }
+  header.after_login div.header_prof_img_responsible img {
+    width: 3em;
+    height: 3em;
+    border-radius: 3em;
+    background-color: white;
+    object-fit: cover;
+    margin: 0;
+  }
+  header.after_login div.sp_menu_button {
+    display: block;
+    width: 60px;
+    height: 30px;
+    outline: none;
+    border: none;
+    font-size: 30px;
+    margin: 0.8em 1em 1em 0;
+    z-index: 0;
+  }
+  header.after_login .sp_menu_button .menu_icon02 {
+    display: block;
+    float: left;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+  }
+  header.after_login .sp_menu_button .menu_icon02 span {
+    display: block;
+    width: 45px;
+    height: 6px;
+    background: white;
+    margin-bottom: 6px;
+    transition: all 0.4s ease-out;
+  }
+  header.after_login .sp_menu_button.open .menu_icon02 .bar1 {
+    transform: translateY(12px) rotate(135deg);
+  }
+  header.after_login .sp_menu_button.open .menu_icon02 .bar2 {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  header.after_login .sp_menu_button.open .menu_icon02 .bar3 {
+    transform: translateY(-12px) rotate(45deg);
+  }
+  header.after_login a.register_link {
+    width: auto;
+    color: #444;
+    font-size: 1.4em;
+    background-color: white;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+  header.after_login a.register_link:hover {
+    color: black;
+    transition: 0.1s;
+  }
+  header.after_login a.register_link_alt {
+    width: auto;
+    color: white;
+    font-size: 1.4em;
+    background-color: #8ac6d1;
+    padding: 0.4em 1em;
+    border-radius: 1em;
+    border: solid 0.1em white;
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+  header.after_login a.register_link_alt:hover {
+    color: black;
+    background-color: white;
+    transition: 0.1s;
+  }
+  header.after_login .state_umbrella_on_responsible {
+    position: absolute;
+    top: 5em;
+    width: 100%;
+    height: 2em;
+    background: #bbded6;
+    color: #444;
+    display: block;
+  }
+  header.after_login .state_umbrella_on_responsible p {
+    text-align: center;
+    padding-top: 0.3em;
+    margin: 0;
+  }
+  header.after_login nav {
+    background-color: #8ac6d1;
+    position: fixed;
+    z-index: 5;
+    top: 5em;
+    right: 0;
+    overflow-x: hidden;
+    text-align: center;
+    width: 0;
+    height: 100%;
+    padding-top: 5em;
+    transition: 0.6s;
+  }
+  header.after_login nav div.nav_button_on_nav_menu {
+    width: auto;
+    font-size: 1.5em;
+    margin: 2em auto;
+    display: flex;
+    justify-content: center;
+  }
+  header.after_login nav div.nav_button_on_nav_menu a {
+    width: 14.4em;
+    color: #444;
+    background-color: white;
+    border-radius: 0.1em;
+    padding: 0.5em;
+    white-space: nowrap;
+  }
+  header.after_login nav div.nav_button_on_nav_menu a:hover {
+    color: black;
+    background-color: #F7F7F7;
+  }
+  header.after_login nav.open-menu {
     width: 100%;
   }
   .dropdown_menu {
