@@ -752,9 +752,12 @@
     margin: 0;
     transition-duration: 0.5s;
     border-top: 1px solid #F7F7F7;
-    cursor: pointer;
   }
   .main_box div.main_contents tr.table_border:hover {
+    background-color: #F7F7F7;
+    transition-duration: 0.3s;
+  }
+  .main_box div.main_contents tr.table_border:active {
     background-color: #F7F7F7;
     transition-duration: 0.3s;
   }
