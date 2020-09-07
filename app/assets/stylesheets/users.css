@@ -732,6 +732,7 @@
   .main_box div.main_contents table {
     width: 100%;
     border-spacing: 0;
+    border-collapse: collapse;
   }
   .main_box div.main_contents tr.default_table_border {
     color: #444;
@@ -750,6 +751,7 @@
     height: 3em;
     margin: 0;
     transition-duration: 0.5s;
+    border-top: 1px solid #F7F7F7;
   }
   .main_box div.main_contents tr.table_border:hover {
     background-color: #F7F7F7;
@@ -792,7 +794,7 @@
   .main_box div.main_contents td.list_name {
     font-size: 1em;
     font-weight: bold;
-    width: 7.8em;
+    width: 7.9em;
   }
   .main_box div.main_contents td.list_gender_and_age {
     font-size: 0.5em;

@@ -759,6 +759,7 @@ $break-point-max: 1025px;
       table {
       width: 100%;
       border-spacing: 0;
+      border-collapse: collapse;
       }
       tr.default_table_border {
         color: $dark-grey;
@@ -777,6 +778,7 @@ $break-point-max: 1025px;
         height: 3em;
         margin: 0;
         transition-duration: 0.5s;
+        border-top: 1px solid $light-grey;
         &:hover {
           background-color: $light-grey;
           transition-duration: 0.3s;
@@ -819,7 +821,7 @@ $break-point-max: 1025px;
       td.list_name {
         font-size: 1em;
         font-weight: bold;
-        width: 7.8em;
+        width: 7.9em;
       }
       td.list_gender_and_age {
         font-size: 0.5em;
