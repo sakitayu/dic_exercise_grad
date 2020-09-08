@@ -1164,6 +1164,7 @@
     right: 2em;
   }
   .profile_container div.profile_right div.profile_update_button input[type="submit"] {
+    -webkit-appearance: none;
     height: 2em;
     line-height: 0;
     width: auto;
@@ -1190,6 +1191,7 @@
     justify-content: center;
   }
   .profile_container div.profile_right div.request_button input[type="submit"] {
+    -webkit-appearance: none;
     height: 2.1em;
     line-height: 0;
     width: auto;
@@ -1214,6 +1216,7 @@
     justify-content: center;
   }
   .profile_container div.profile_right div.approval_button input[type="submit"] {
+    -webkit-appearance: none;
     height: 2.1em;
     line-height: 0;
     width: auto;
@@ -1238,6 +1241,7 @@
     justify-content: space-between;
   }
   .profile_container div.profile_right div.confirm_button input[type="submit"] {
+    -webkit-appearance: none;
     height: 2.1em;
     line-height: 0;
     width: auto;

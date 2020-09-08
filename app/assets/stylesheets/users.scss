@@ -1190,6 +1190,7 @@ $break-point-max: 1025px;
         top: 0.1em;
         right: 2em;
         input[type="submit"] {
+          -webkit-appearance: none;
           height: 2em;
           line-height: 0;
           width: auto;
@@ -1216,6 +1217,7 @@ $break-point-max: 1025px;
         display: flex;
         justify-content: center;
         input[type="submit"] {
+          -webkit-appearance: none;
           height: 2.1em;
           line-height: 0;
           width: auto;
@@ -1240,6 +1242,7 @@ $break-point-max: 1025px;
         display: flex;
         justify-content: center;
         input[type="submit"] {
+          -webkit-appearance: none;
           height: 2.1em;
           line-height: 0;
           width: auto;
@@ -1264,6 +1267,7 @@ $break-point-max: 1025px;
         display: flex;
         justify-content: space-between;
         input[type="submit"] {
+          -webkit-appearance: none;
           height: 2.1em;
           line-height: 0;
           width: auto;
