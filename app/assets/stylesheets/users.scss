@@ -741,6 +741,7 @@ $break-point-max: 1025px;
           justify-content: center;
           margin-top: 1em;
           input[type="submit"].search_user_submit {
+            -webkit-appearance: none;
             border: 0;
             width: auto;
             height: 2em;

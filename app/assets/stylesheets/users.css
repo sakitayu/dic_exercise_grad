@@ -718,6 +718,7 @@
     margin-top: 1em;
   }
   .main_box div.search_user form.user_search div.search_box_mobile_submit input[type="submit"].search_user_submit {
+    -webkit-appearance: none;
     border: 0;
     width: auto;
     height: 2em;
