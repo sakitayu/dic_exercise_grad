@@ -714,7 +714,7 @@ $break-point-max: 1025px;
               outline: none;
               text-indent: 0em;
               text-overflow: '';
-              background: white transparent;
+              background-color: white;
               vertical-align: middle;
               font-size: inherit;
               -webkit-appearance: button;
@@ -809,7 +809,7 @@ $break-point-max: 1025px;
           outline: none;
           text-indent: 0em;
           text-overflow: '';
-          background: white transparent;
+          background-color: white;
           vertical-align: middle;
           font-size: inherit;
           -webkit-appearance: button;
@@ -851,7 +851,7 @@ $break-point-max: 1025px;
           width: auto;
           height: 2em;
           line-height: 0;
-          padding: 0.5em 0.8em;
+          padding: 0.48em 0.8em;
           margin: 0;
           background-color: $light-green;
           font-size: 1em;
@@ -1778,7 +1778,7 @@ $break-point-max: 1025px;
               outline: none;
               text-indent: 0em;
               text-overflow: '';
-              background: white transparent;
+              background-color: white;
               vertical-align: middle;
               font-size: inherit;
               -webkit-appearance: button;
@@ -1828,7 +1828,7 @@ $break-point-max: 1025px;
             width: auto;
             height: 2.5em;
             line-height: 0;
-            padding: 0.8em 0.8em;
+            padding: 0.74em 0.8em;
             margin: 0 2em 0 0;
             background-color: $light-green;
             font-size: 1.3em;
@@ -2802,6 +2802,7 @@ $break-point-max: 1025px;
       top: 0;
       background-color: $light-grey;
       div.search_box {
+        display: block;
         input[type="search"].search_area {
           -webkit-appearance: none;
           width: 10em;
@@ -2831,7 +2832,7 @@ $break-point-max: 1025px;
           outline: none;
           text-indent: 0em;
           text-overflow: '';
-          background: white transparent;
+          background-color: white;
           vertical-align: middle;
           font-size: inherit;
           -webkit-appearance: button;
@@ -2887,8 +2888,14 @@ $break-point-max: 1025px;
           } 
         }
       }
+      div.search_button {
+        display: none;
+      }
     }
-    div.search_user {
+    div.search_box_mobile_elements {
+      display: none;
+    }
+    div.search_box_mobile_submit {
       display: none;
     }
     div.main_contents {
