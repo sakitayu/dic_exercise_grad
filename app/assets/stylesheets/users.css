@@ -847,6 +847,7 @@
   }
   .main_box div.main_contents {
     margin: 0;
+    padding-bottom: 4em;
     background-color: white;
   }
   .main_box div.main_contents table {
@@ -919,7 +920,7 @@
   .main_box div.main_contents td.list_name {
     font-size: 1em;
     font-weight: bold;
-    width: 8em;
+    width: 8.5em;
   }
   .main_box div.main_contents td.list_name a {
     display: block;

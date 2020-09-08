@@ -65,6 +65,23 @@
             <%= f.submit "ユーザーを探す", class: "search_user_submit" %>
           <% end %>
         </div>
+
+        <div class="search_button">ユーザー検索フォームを開く</div>
+        <%= search_form_for @q do |f| %>
+          <div class="search_box_mobile_elements">
+            <%= f.search_field :area_cont, placeholder: "場所", class: "search_area" %>
+            <div class="search_box_mobile_gender_age">
+              <%= f.select :gender_eq, [['男', 1], ['女', 2], ['どちらでもない', 3]], :include_blank => '性別' %>
+              <%= f.select :age_eq, [['20~26', 1], ['27~33', 2], ['34~40', 3], ['41~47', 4], ['48~60', 5], ['非公開', 6]], :include_blank => '年齢' %>
+            </div>
+          </div>
+          <div class="search_box_mobile_submit">
+            <div>
+              <%= link_to "条件をリセット", users_path %>
+              <%= f.submit "ユーザーを探す", class: "search_user_submit" %>
+            </div>
+          </div>
+        <% end %>
       </div>
 
       <div class="main_contents">
@@ -213,37 +230,21 @@
           <% end %>
         </div>
         
-        <div class="search_button">検索フォームを開く</div>
-        <% if current_user.have_umbrella == true %>
-          <%= search_form_for @q do |f| %>
-            <div class="search_box_mobile_elements">
-              <%= f.search_field :area_cont, placeholder: "場所", class: "search_area" %>
+        <div class="search_button">ユーザー検索フォームを開く</div>
+        <%= search_form_for @q do |f| %>
+          <div class="search_box_mobile_elements">
+            <%= f.search_field :area_cont, placeholder: "場所", class: "search_area" %>
               <div class="search_box_mobile_gender_age">
                 <%= f.select :gender_eq, [['男', 1], ['女', 2], ['どちらでもない', 3]], :include_blank => '性別' %>
                 <%= f.select :age_eq, [['20~26', 1], ['27~33', 2], ['34~40', 3], ['41~47', 4], ['48~60', 5], ['非公開', 6]], :include_blank => '年齢' %>
               </div>
-            </div>
-            <div class="search_box_mobile_submit">
+          </div>
+          <div class="search_box_mobile_submit">
+            <div>
               <%= link_to "条件をリセット", users_path %>
-              <%= f.submit "リクエストを探す", class: "search_user_submit" %>
+              <%= f.submit "ユーザーを探す", class: "search_user_submit" %>
             </div>
-          <% end %>
-        <% else %>
-          <%= search_form_for @q do |f| %>
-            <div class="search_box_mobile_elements">
-              <%= f.search_field :area_cont, placeholder: "場所", class: "search_area" %>
-                <div class="search_box_mobile_gender_age">
-                  <%= f.select :gender_eq, [['男', 1], ['女', 2], ['どちらでもない', 3]], :include_blank => '性別' %>
-                  <%= f.select :age_eq, [['20~26', 1], ['27~33', 2], ['34~40', 3], ['41~47', 4], ['48~60', 5], ['非公開', 6]], :include_blank => '年齢' %>
-                </div>
-            </div>
-            <div class="search_box_mobile_submit">
-              <div>
-                <%= link_to "条件をリセット", users_path %>
-                <%= f.submit "ユーザーを探す", class: "search_user_submit" %>
-              </div>
-            </div>
-          <% end %>
+          </div>
         <% end %>
       </div>
 
@@ -323,10 +324,10 @@
   SearchBtn.addEventListener('click', () => {
     SearchContent.classList.toggle('open-search')
 
-    if (SearchBtn.innerHTML === '検索フォームを開く') {
-      SearchBtn.innerHTML = '検索フォームを閉じる';
+    if (SearchBtn.innerHTML === 'ユーザー検索フォームを開く') {
+      SearchBtn.innerHTML = 'ユーザー検索フォームを閉じる';
     } else {
-      SearchBtn.innerHTML = '検索フォームを開く';
+      SearchBtn.innerHTML = 'ユーザー検索フォームを開く';
     }
     });
 </script>

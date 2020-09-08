@@ -873,6 +873,7 @@ $break-point-max: 1025px;
     }
     div.main_contents {
       margin: 0;
+      padding-bottom: 4em;
       background-color: white;
       table {
       width: 100%;
@@ -944,7 +945,7 @@ $break-point-max: 1025px;
       td.list_name {
         font-size: 1em;
         font-weight: bold;
-        width: 8em;
+        width: 8.5em;
         a {
           display: block;
           padding: 0.6em 0;
