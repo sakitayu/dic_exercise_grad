@@ -1858,6 +1858,7 @@
     text-shadow: 0 0 0 #999999;
   }
   .main_box div.search_user div.search_box input[type="submit"].search_user_submit {
+    -webkit-appearance: none;
     border: 0;
     width: auto;
     height: 2em;
@@ -2801,6 +2802,7 @@
     text-shadow: 0 0 0 #999999;
   }
   .main_box div.search_user div.search_box input[type="submit"].search_user_submit {
+    -webkit-appearance: none;
     border: 0;
     width: auto;
     height: 2em;
