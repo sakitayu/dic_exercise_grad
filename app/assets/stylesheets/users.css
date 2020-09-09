@@ -17,6 +17,7 @@
     height: auto;
     margin: 0;
     display: flex;
+    overflow: hidden;
   }
   .login_container div.login_box {
     width: auto;
@@ -1128,7 +1129,7 @@
   }
   .profile_container div.profile_right div.prof_intro {
     color: #444;
-    margin: 1em 1.1em 5em 1.1em;
+    margin: 1em 1.2em 5em 1.2em;
     height: auto;
     width: auto;
   }
@@ -1139,7 +1140,7 @@
     color: #444;
     margin-top: 1em;
     height: auto;
-    width: 25em;
+    width: auto;
   }
   .profile_container div.profile_right div.edit_intro textarea {
     -webkit-appearance: none;

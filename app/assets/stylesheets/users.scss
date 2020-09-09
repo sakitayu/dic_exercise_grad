@@ -36,6 +36,7 @@ $break-point-max: 1025px;
     height: auto;
     margin: 0;
     display: flex;
+    overflow: hidden;
     div.login_box {
       width: auto;
       height: auto;
@@ -1155,7 +1156,7 @@ $break-point-max: 1025px;
       }
       div.prof_intro {
         color: $dark-grey;
-        margin: 1em 1.1em 5em 1.1em;
+        margin: 1em 1.2em 5em 1.2em;
         height: auto;
         width: auto;
       }
@@ -1166,7 +1167,7 @@ $break-point-max: 1025px;
         color: $dark-grey;
         margin-top: 1em;
         height: auto;
-        width:25em;
+        width: auto;
         textarea {
           -webkit-appearance: none;
           font-size: 1.2em;
