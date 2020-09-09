@@ -618,6 +618,29 @@
     transition: 0.1s;
   }
   /* ユーザー一覧画面 スマホ */
+  .user_state_responsive_dark-pink {
+    display: none;
+  }
+  .user_state_responsive_light-pink {
+    position: fixed;
+    width: 100%;
+    height: 4em;
+    color: white;
+    background-color: #fae3d9;
+    margin-top: 6em;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+  }
+  .user_state_responsive_light-pink a {
+    text-align: center;
+    display: block;
+    color: #444;
+    font-weight: bold;
+    width: 100%;
+    padding-top: 1.3em;
+    margin: 0 auto;
+  }
   .main_container {
     width: auto;
     /* 共通の横幅 */
@@ -625,12 +648,13 @@
     display: flex;
   }
   .right_culumn_container {
-    width: auto;
+    width: 80em;
     /* 共通の横幅 =1280px */
     margin: 0 auto;
   }
   .right_culumn_container div.async_notification {
     display: none;
+    /* 内部をnoneにしてレスポンシブ用にもう一個divを作る */
   }
   .right_culumn_container div.confirm_notification {
     display: none;
@@ -1356,14 +1380,14 @@
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    background-color: #fae3d9;
+    background-color: #F7F7F7;
   }
   .main_box_on_request-user_page div.profile_header {
     color: #444;
     height: 3em;
     margin: 6em 0 0 0;
     padding-top: 0;
-    background-color: #fae3d9;
+    background-color: #F7F7F7;
     display: flex;
     justify-content: space-between;
   }
@@ -2139,12 +2163,13 @@
     display: flex;
   }
   .right_culumn_container {
-    width: auto;
+    width: 80em;
     /* 共通の横幅 =1280px */
     margin: 0 auto;
   }
   .right_culumn_container div.async_notification {
     display: none;
+    /* 内部をnoneにしてレスポンシブ用にもう一個divを作る */
   }
   .right_culumn_container div.confirm_notification {
     display: none;
@@ -2875,14 +2900,14 @@
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    background-color: #fae3d9;
+    background-color: #F7F7F7;
   }
   .main_box_on_request-user_page div.profile_header {
     color: #444;
     height: 3em;
     margin: 6em 0 0 0;
     padding-top: 0;
-    background-color: #fae3d9;
+    background-color: #F7F7F7;
     display: flex;
     justify-content: space-between;
   }
@@ -3653,6 +3678,12 @@
     transition: 0.1s;
   }
   /* ユーザー一覧画面 PC */
+  .user_state_responsive_dark-pink {
+    display: none;
+  }
+  .user_state_responsive_light-pink {
+    display: none;
+  }
   .main_container {
     width: 80em;
     /* 共通の横幅 =1280px */

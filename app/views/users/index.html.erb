@@ -1,3 +1,13 @@
+<% if current_user.following.first != nil && current_user.followers.first != nil && current_user.state == "message" %>
+  <div class="user_state_responsive_dark-pink">
+    <%= link_to "#{current_user.following.first.name} さんとメッセージ中です", user_path(current_user.following.first.id) %>
+  </div>
+<% elsif current_user.following.first != nil %>
+  <div class="user_state_responsive_light-pink">
+    <%= link_to "#{current_user.following.first.name} さんにリクエスト中です", user_path(current_user.following.first.id) %>
+  </div>
+<% end %>
+
 <div class="main_container">
 
 <% if current_user.have_umbrella %>
