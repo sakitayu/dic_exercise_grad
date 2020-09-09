@@ -281,10 +281,11 @@
 
     <% if controller.controller_name == "sessions" %>
       <script>
-        // スクロールを無効にする
-          $(window).on('touchmove.noScroll', function(e) {
-              e.preventDefault();
-          });
+        $(function () {
+                        window.addEventListener('touchmove', function(event) {
+                            event.preventDefault();
+                        });
+                      });
       </script>
     <% end %>
 
