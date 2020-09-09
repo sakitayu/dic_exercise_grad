@@ -1010,9 +1010,9 @@
   .main_box_on_user_page div.profile_header {
     color: #444;
     height: 3em;
-    margin: 6em 0 0 0;
+    margin: 10em 0 0 0;
     padding-top: 0;
-    background-color: #F7F7F7;
+    background-color: white;
     display: flex;
     justify-content: space-between;
   }
@@ -1385,9 +1385,9 @@
   .main_box_on_request-user_page div.profile_header {
     color: #444;
     height: 3em;
-    margin: 6em 0 0 0;
+    margin: 10em 0 0 0;
     padding-top: 0;
-    background-color: #F7F7F7;
+    background-color: white;
     display: flex;
     justify-content: space-between;
   }
