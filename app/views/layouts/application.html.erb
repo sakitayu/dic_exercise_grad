@@ -279,5 +279,14 @@
                       });
     </script>
 
+    <% if controller.controller_name == "sessions" %>
+      <script>
+        // スクロールを無効にする
+          $(window).on('touchmove.noScroll', function(e) {
+              e.preventDefault();
+          });
+      </script>
+    <% end %>
+
   </body>
 </html>

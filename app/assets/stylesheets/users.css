@@ -17,7 +17,6 @@
     height: auto;
     margin: 0;
     display: flex;
-    overflow: hidden;
   }
   .login_container div.login_box {
     width: auto;
