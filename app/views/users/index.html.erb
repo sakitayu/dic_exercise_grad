@@ -196,7 +196,7 @@
   </div>
   
   <div class="right_culumn_container">
-    <div id="notification_id_is_<%= current_user.id %>"></div>
+    <div id="notification_id_is_<%= current_user.id %>" class="async_notification"></div>
   
     <% if Matching.find_by(followed_id:current_user.id) && current_user.state == "message" %>
       <div class="confirm_box">
