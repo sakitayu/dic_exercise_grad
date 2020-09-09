@@ -2382,6 +2382,383 @@
     padding: 1.6em 0;
     -webkit-tap-highlight-color: transparent;
   }
+  /* ユーザー詳細画面 タブレット */
+  .main_box_on_user_page {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 7em 0 0 0;
+    z-index: 0;
+  }
+  .main_box_on_user_page div.search_user {
+    color: #444;
+    height: 3em;
+    padding-top: 0.5em;
+    display: flex;
+    flex-direction: row-reverse;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-color: #F7F7F7;
+  }
+  .main_box_on_user_page div.profile_header {
+    color: #444;
+    height: 3em;
+    margin: 6em 0 0 0;
+    padding-top: 0;
+    background-color: #F7F7F7;
+    display: flex;
+    justify-content: space-between;
+  }
+  .main_box_on_user_page div.profile_header a {
+    font-size: 1.3em;
+    color: #999999;
+    transition: 0.3s;
+    padding: 0.4em 0 0 2.7em;
+  }
+  .main_box_on_user_page div.profile_header a::before {
+    content: "";
+    position: absolute;
+    left: 1.5em;
+    top: 0.7em;
+    width: 0;
+    height: 0;
+    border-top: 0.4em solid transparent;
+    border-bottom: 0.4em solid transparent;
+    border-right: 0.8em solid #999999;
+    transition: 0.3s;
+  }
+  .main_box_on_user_page div.profile_header a:hover {
+    color: #444;
+    transition: 0.1s;
+  }
+  .main_box_on_user_page div.profile_header a:hover::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 0.4em solid transparent;
+    border-bottom: 0.4em solid transparent;
+    border-right: 0.8em solid #444;
+    transition: 0.1s;
+  }
+  .main_box_on_user_page div.profile_header div.my_page_on_profile {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 0 0 1.8em;
+    position: relative;
+    bottom: 0.3em;
+  }
+  .main_box_on_user_page div.profile_header p.disc_for_accept {
+    font-size: 1.1em;
+    position: absolute;
+    top: 0.5em;
+    right: 1.6em;
+  }
+  .main_box_on_user_page div.main_contents {
+    margin: 0 2em 2em 2em;
+    background-color: white;
+  }
+  .profile_container {
+    background-color: white;
+    margin: 0;
+    height: auto;
+  }
+  .profile_container div.profile_left {
+    border: 1px solid #999999;
+    background-color: #F7F7F7;
+    border-radius: 0.2em;
+    width: auto;
+    height: 15em;
+    margin: 4em 5em 3em 5em;
+    padding: 2em;
+  }
+  .profile_container div.profile_left div {
+    text-align: center;
+    float: left;
+  }
+  .profile_container div.profile_left img.profile_img {
+    width: 15em;
+    height: 15em;
+    margin-bottom: 1em;
+    object-fit: cover;
+    background-color: white;
+  }
+  .profile_container div.profile_left img.profile_pic {
+    width: 15em;
+    height: 15em;
+    margin-bottom: 1em;
+    object-fit: cover;
+    background-color: white;
+  }
+  .profile_container div.profile_left p.prof_name {
+    text-align: center;
+    font-size: 1.6em;
+    margin: 1.8em 0.2em 0.2em 0.2em;
+  }
+  .profile_container div.profile_left p.prof_gender {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 1em 0.2em 0.2em 0.2em;
+  }
+  .profile_container div.profile_left p.prof_age {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 1em 0.2em 0.2em 0.2em;
+  }
+  .profile_container div.profile_left p.edit_name {
+    margin-top: 1.5em;
+    text-align: center;
+    font-size: 0.8em;
+  }
+  .profile_container div.profile_left p.edit_name input[type="text"] {
+    -webkit-appearance: none;
+    font-size: 1em;
+    padding: 0 0 0 0.2em;
+    border: solid thin #999999;
+    border-radius: 0.2em;
+  }
+  .profile_container div.profile_left p.edit_name input[type="text"]:focus {
+    font-size: 1em;
+    border: solid thin #ffb6b9;
+    outline: 0;
+    border-radius: 0.2em;
+  }
+  .profile_container div.profile_left p.edit_gender {
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 0;
+  }
+  .profile_container div.profile_left p.edit_age {
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 0;
+  }
+  .profile_container div.profile_right {
+    width: auto;
+    margin: 0.5em 0 0 0;
+  }
+  .profile_container div.profile_right div.prof_area {
+    color: #444;
+    height: auto;
+    margin: 0 5em;
+  }
+  .profile_container div.profile_right div.prof_area h2 {
+    font-size: 1.6em;
+    margin: 0 0 0 0;
+    padding: 0;
+    color: #444;
+  }
+  .profile_container div.profile_right div.prof_area p {
+    margin: 0.2em 0 0 0;
+    padding: 0;
+    font-size: 2.1em;
+  }
+  .profile_container div.profile_right div.prof_intro {
+    color: #444;
+    margin: 2em 3.5em 5em 3.5em;
+    height: auto;
+    width: auto;
+    font-size: 1.5em;
+  }
+  .profile_container div.profile_right div.edit_intro {
+    font-size: 1em;
+    position: absolute;
+    bottom: 8.2em;
+    color: #444;
+    margin-top: 1em;
+    height: auto;
+    width: auto;
+  }
+  .profile_container div.profile_right div.edit_intro textarea {
+    -webkit-appearance: none;
+    font-size: 1.2em;
+    color: #444;
+    border: solid thin #999999;
+    border-radius: 0.2em;
+    resize: none;
+    height: 10em;
+    width: 100%;
+    padding: 0.2em;
+  }
+  .profile_container div.profile_right div.edit_intro textarea:focus {
+    border: solid thin #ffb6b9;
+    outline: 0;
+    border-radius: 0.2em;
+  }
+  .profile_container div.profile_right div.profile_update_button {
+    position: absolute;
+    padding-top: 1.2em;
+    top: 0.1em;
+    right: 2em;
+  }
+  .profile_container div.profile_right div.profile_update_button input[type="submit"] {
+    -webkit-appearance: none;
+    height: 2em;
+    line-height: 0;
+    width: auto;
+    border-style: none;
+    font-size: 1.2em;
+    white-space: nowrap;
+    padding: 0 1em;
+    border-radius: 1em;
+    color: #444;
+    background-color: white;
+    transition: 0.3s;
+  }
+  .profile_container div.profile_right div.profile_update_button input[type="submit"]:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    color: black;
+  }
+  .profile_container div.profile_right div.request_button {
+    position: fixed;
+    bottom: 5em;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .profile_container div.profile_right div.request_button input[type="submit"] {
+    -webkit-appearance: none;
+    height: 2.1em;
+    line-height: 0;
+    width: auto;
+    border-style: none;
+    font-size: 2em;
+    white-space: nowrap;
+    padding: 0 1em;
+    border-radius: 1em;
+    color: white;
+    background-color: #ffb6b9;
+    transition: 0.3s;
+  }
+  .profile_container div.profile_right div.request_button input[type="submit"]:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    color: white;
+    opacity: 0.8;
+  }
+  .profile_container div.profile_right div.approval_button {
+    padding-top: 4.1em;
+    display: flex;
+    justify-content: center;
+  }
+  .profile_container div.profile_right div.approval_button input[type="submit"] {
+    -webkit-appearance: none;
+    height: 2.1em;
+    line-height: 0;
+    width: auto;
+    border-style: none;
+    font-size: 1.2em;
+    white-space: nowrap;
+    padding: 0 1em;
+    border-radius: 1em;
+    color: white;
+    background-color: #ffb6b9;
+    transition: 0.3s;
+  }
+  .profile_container div.profile_right div.approval_button input[type="submit"]:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    color: white;
+    opacity: 0.8;
+  }
+  .profile_container div.profile_right div.confirm_button {
+    padding-top: 4.1em;
+    display: flex;
+    justify-content: space-between;
+  }
+  .profile_container div.profile_right div.confirm_button input[type="submit"] {
+    -webkit-appearance: none;
+    height: 2.1em;
+    line-height: 0;
+    width: auto;
+    border-style: none;
+    font-size: 1.2em;
+    white-space: nowrap;
+    padding: 0 1em;
+    border-radius: 1em;
+    color: white;
+    background-color: #ffb6b9;
+    transition: 0.3s;
+  }
+  .profile_container div.profile_right div.confirm_button input[type="submit"]:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    color: white;
+    opacity: 0.8;
+  }
+  .profile_container div.profile_right div.confirm_button a {
+    height: 2.1em;
+    line-height: 2.1em;
+    width: auto;
+    border-style: none;
+    font-size: 1.2em;
+    white-space: nowrap;
+    padding: 0 1em;
+    border-radius: 1em;
+    color: white;
+    background-color: #ffb6b9;
+    transition: 0.3s;
+  }
+  .profile_container div.profile_right div.confirm_button a:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    color: white;
+    opacity: 0.8;
+  }
+  .profile_container form {
+    display: flex;
+  }
+  .profile_container form div.edit_prof_img {
+    width: 12em;
+    height: 12em;
+    margin: 1.3em auto 0 auto;
+    text-align: center;
+    background-color: #F7F7F7;
+  }
+  .profile_container form div.edit_prof_img #img_prev {
+    z-index: 2;
+  }
+  .profile_container form div.edit_prof_img img {
+    object-fit: cover;
+    width: 12em;
+    height: 12em;
+    z-index: 1;
+  }
+  .profile_container form div.edit_prof_img label {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 8.75em;
+    width: 9.9em;
+    height: 9.9em;
+    color: white;
+    background-color: 0;
+    padding: 1em;
+    border: solid 0.05em #999999;
+  }
+  .profile_container form div.edit_prof_img input[type="file"] {
+    display: none;
+  }
+  .profile_container form div.edit_prof_img div.img_submit_label {
+    position: absolute;
+    z-index: 0;
+    top: 8.8em;
+    width: 12em;
+    height: 9.35em;
+    margin: 0 auto;
+    padding-top: 2.7em;
+    background-color: white;
+    opacity: 0.7;
+  }
+  .profile_container form div.edit_prof_img div.img_submit_label p {
+    color: black;
+    font-weight: bold;
+  }
   /* 左側のナビゲーションカラム */
   .navi_box {
     background-color: #F7F7F7;
@@ -3326,7 +3703,7 @@
     display: block;
     padding: 1.5em 0;
   }
-  /* ユーザー詳細画面 スマホ */
+  /* ユーザー詳細画面 PC */
   .main_box_on_user_page {
     position: relative;
     background-color: #F7F7F7;
