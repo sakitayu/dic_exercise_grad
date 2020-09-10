@@ -1160,9 +1160,10 @@ $break-point-max: 1025px;
         margin: 0.2em;
       }
       p.edit_name {
-        margin-top: 1.5em;
+        margin-top: -0.3em;
         text-align: center;
         font-size: 0.8em;
+        height: 2em;
         input[type="text"] {
           -webkit-appearance: none;
           font-size: 1em;
@@ -1178,12 +1179,14 @@ $break-point-max: 1025px;
         }
       }
       p.edit_gender {
+        height: 2em;
         margin-top: 0.5em;
         text-align: center;
         font-size: 0.8em;
         padding: 0;
       }
       p.edit_age {
+        height: 2em;
         margin-top: 0.5em;
         text-align: center;
         font-size: 0.8em;
@@ -1192,7 +1195,7 @@ $break-point-max: 1025px;
     }
     div.profile_right {
       width: auto;
-      margin: 1em 1em 0 0;
+      margin: 1em 0 0 0;
       div.prof_area {
         color: $dark-grey;
         height: auto;
@@ -1216,12 +1219,11 @@ $break-point-max: 1025px;
       }
       div.edit_intro {
         font-size: 1em;
-        position: absolute;
-        bottom: 8.2em;
         color: $dark-grey;
-        margin-top: 1em;
+        margin: 1em;
         height: auto;
         width: auto;
+        padding-right: 0.5em;
         textarea {
           -webkit-appearance: none;
           font-size: 1.2em;
@@ -1229,8 +1231,9 @@ $break-point-max: 1025px;
           border: solid thin $middle-grey;
           border-radius: 0.2em;
           resize: none;
-          height: 10em;
+          height: 8em;
           width: 100%;
+          margin-top: 0.5em;
           padding: 0.2em;
           &:focus {
             border: solid thin $dark-pink;
@@ -1240,10 +1243,8 @@ $break-point-max: 1025px;
         }
       }
       div.profile_update_button {
-        position: absolute;
-        padding-top: 1.2em;
-        top: 0.1em;
-        right: 2em;
+        width: 12.3em;
+        margin: 2em auto 0 auto;
         input[type="submit"] {
           -webkit-appearance: none;
           height: 2em;
@@ -1252,9 +1253,10 @@ $break-point-max: 1025px;
           border-style: none;
           font-size: 1.2em;
           white-space: nowrap;
-          padding: 0 1em;
-          border-radius: 1em;
           color: $dark-grey;
+          padding: 0.2em 0.5em;
+          border: 0.1em solid $dark-grey;
+          border-radius: 2em;
           background-color: white;
           transition: 0.3s;
           &:hover {
@@ -1363,11 +1365,11 @@ $break-point-max: 1025px;
       }
     }
     form {
-      display: flex;
+      display: block;
       div.edit_prof_img {
-        width: 12em;
-        height: 12em;
-        margin: 1.3em auto 0 auto;
+        width: 7em;
+        height: 7em;
+        margin: 0 auto 0 auto;
         text-align: center;
         background-color: $light-grey;
         #img_prev {
@@ -1375,17 +1377,17 @@ $break-point-max: 1025px;
         }
         img {
           object-fit: cover;
-          width: 12em;
-          height: 12em;
+          width: 7em;
+          height: 7em;
           z-index: 1;
         }
         label {
           display:block;
           position: absolute;
           z-index: 1;
-          top: 8.75em;
-          width: 9.9em;
-          height: 9.9em;
+          top: 5em;
+          width: 5em;
+          height: 5em;
           color: white;
           background-color: red($color: #000000);
           padding: 1em;
@@ -1397,16 +1399,18 @@ $break-point-max: 1025px;
         div.img_submit_label {
           position: absolute;
           z-index: 0;
-          top: 8.8em;
-          width: 12em;
-          height: 9.35em;
+          top: 5em;
+          width: 7em;
+          height: 7em;
           margin: 0 auto;
-          padding-top: 2.7em;
+          padding-top: 0;
           background-color: white;
           opacity: 0.7;
           p {
             color: black;
+            font-size: 0.8em;
             font-weight: bold;
+            padding-top: 1em;
           }
         }
       }

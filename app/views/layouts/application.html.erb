@@ -191,7 +191,7 @@
           </div>
         <% end %>
         <nav>
-          <% if controller.action_name == "start" %>
+          <% if controller.action_name == "start" || current_user.state == "start" %>
             <div class="nav_button_on_nav_menu">
               <%= link_to "マイページ", user_path(current_user.id, params: { user: { state: "start"}}), method: :put, class: "dropdown__item-link" %>
             </div>
@@ -205,15 +205,15 @@
             <div class="nav_button_on_nav_menu">
               <%= link_to "マイページ", user_path(current_user.id) %>
             </div>
-            <% if current_user.state != "start" && current_user.have_umbrella == true %>
-              <div class="nav_button_on_nav_menu">
-                <%= link_to "リクエスト一覧", users_path %>
-              </div>
-            <% elsif current_user.state != "start" && current_user.have_umbrella == false %>
-              <div class="nav_button_on_nav_menu">
-                <%= link_to "傘を持っているひと一覧", users_path %>
-              </div>
-            <% end %>
+              <% if current_user.state != "start" && current_user.have_umbrella == true %>
+                <div class="nav_button_on_nav_menu">
+                  <%= link_to "リクエスト一覧", users_path %>
+                </div>
+              <% elsif current_user.state != "start" && current_user.have_umbrella == false %>
+                <div class="nav_button_on_nav_menu">
+                  <%= link_to "傘を持っているひと一覧", users_path %>
+                </div>
+              <% end %>
             <div class="nav_button_on_nav_menu">
               <%= link_to "スタート画面に戻る", user_path(current_user.id, params: { user: { state: "restart"}}), data: { confirm: 'スタート画面に戻りますか？(現在のリクエストがリセットされます)' }, method: :put, class: "dropdown__item-link" %>
             </div>

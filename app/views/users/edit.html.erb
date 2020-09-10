@@ -77,7 +77,7 @@
     <div class="main_box_on_my_page">
       <div class="profile_header">
         <% if current_user.id != @user.id %>
-          <%= link_to 'ユーザー一覧に戻る', users_path %>
+          <%= link_to '一覧に戻る', users_path %>
         <% else %>
           <div>
             <%= link_to "編集をキャンセル", user_path(current_user.id), class: "back_to_users" %>
