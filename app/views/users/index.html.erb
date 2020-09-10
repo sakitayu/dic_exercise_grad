@@ -217,6 +217,12 @@
         <%= link_to "あなたのリクエストが承諾されました。こちらから確認してください", confirm_request_users_path %>
       </div>
     <% end %>
+
+    <% if current_user.following.first != nil && current_user.followers.first != nil && current_user.state == "message" %>
+      <div class="user_state_responsive_empty_space"></div>
+    <% elsif current_user.following.first != nil %>
+      <div class="user_state_responsive_empty_space"></div>
+    <% end %>
     
     <div class="main_box">
       <div class="search_user">

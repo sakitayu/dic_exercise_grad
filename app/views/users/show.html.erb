@@ -80,6 +80,12 @@
       </div>
     <% end %>
 
+    <% if current_user.following.first != nil && current_user.followers.first != nil && current_user.state == "message" %>
+      <div class="user_state_responsive_empty_space"></div>
+    <% elsif current_user.following.first != nil %>
+      <div class="user_state_responsive_empty_space"></div>
+    <% end %>
+
   <% if current_user.id != @user.id %>
     <div id="notification_id_is_<%= current_user.id %>">
       <div id="remove_overlap_notification_id_is_<%= current_user.id %>">
