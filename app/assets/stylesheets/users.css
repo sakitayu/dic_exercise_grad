@@ -2160,6 +2160,30 @@
     transition: 0.1s;
   }
   /* ユーザー一覧画面 タブレット */
+  .user_state_responsive_dark-pink {
+    display: none;
+  }
+  .user_state_responsive_light-pink {
+    position: fixed;
+    width: 100%;
+    height: 6em;
+    color: white;
+    background-color: #fae3d9;
+    margin-top: 6em;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+  }
+  .user_state_responsive_light-pink a {
+    text-align: center;
+    display: block;
+    color: #444;
+    font-size: 1.6em;
+    font-weight: bold;
+    width: 100%;
+    padding-top: 1.3em;
+    margin: 0 auto;
+  }
   .main_container {
     width: auto;
     /* 共通の横幅 */
@@ -2536,7 +2560,7 @@
   .main_box_on_user_page div.profile_header {
     color: #444;
     height: 3em;
-    margin: 8em 0 0 0;
+    margin: 9em 0 0 0;
     padding-top: 0;
     display: flex;
     justify-content: space-between;
@@ -2912,9 +2936,8 @@
   .main_box_on_request-user_page div.profile_header {
     color: #444;
     height: 3em;
-    margin: 8em 0 0 0;
+    margin: 9em 0 0 0;
     padding-top: 0;
-    background-color: #F7F7F7;
     display: flex;
     justify-content: space-between;
   }
