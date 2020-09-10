@@ -130,9 +130,9 @@
         <% if current_user.id != @user.id %>
           <%= link_to '一覧に戻る', users_path %>
         <% else %>
-          <div><%= link_to '一覧に戻る', users_path, class: "back_to_users" %></div>
+          <%= link_to '一覧に戻る', users_path, class: "back_to_users" %>
           <div class="my_page_on_profile">マイページ</div>
-          <div>
+          <div class="my_page_edit_on_profile">
             <%= link_to "プロフィールを編集", edit_user_path(current_user.id), class: "edit_on_my_page" if current_user.id == @user.id %>
           </div>
         <% end %>
@@ -140,6 +140,11 @@
     <% end %>
 
       <div class="profile_container">
+        <% if current_user.id == @user.id %>
+          <div class="title_responsive_on_my_page">
+            <h2>マイページ</h2>
+          </div>
+        <% end %>
         <div class="profile_left">
           <div>
             <% if @user.image.url == nil %>
