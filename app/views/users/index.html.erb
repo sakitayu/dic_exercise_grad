@@ -270,7 +270,9 @@
             <% if user.id != current_user.id && user.have_umbrella && Matching.find_by(follower_id: user.id) == nil %>
               <% if Matching.find_by(follower_id: current_user.id) != nil %>
                 <% if user.id == current_user.following.first.id %>
-                <tr class="table_border_on_requset" id="having_user_list_id_is_<%= user.id %>">
+                  <tr class="table_border_on_requset" id="having_user_list_id_is_<%= user.id %>">
+                <% else %>
+                  <tr class="table_border" id="having_user_list_id_is_<%= user.id %>" ontouchstart="">
                 <% end %>
               <% else %>
                 <tr class="table_border" id="having_user_list_id_is_<%= user.id %>" ontouchstart="">
