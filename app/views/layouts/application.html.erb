@@ -215,7 +215,7 @@
               </div>
             <% end %>
             <div class="nav_button_on_nav_menu">
-              <%= link_to "スタート画面に戻る", start_users_path %>
+              <%= link_to "スタート画面に戻る", user_path(current_user.id, params: { user: { state: "restart"}}), data: { confirm: 'スタート画面に戻りますか？(現在のリクエストがリセットされます)' }, method: :put, class: "dropdown__item-link" %>
             </div>
             <div class="nav_button_on_nav_menu">
               <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: "本当に終了しますか？\n(現在のリクエストがリセットされます)" } %>
