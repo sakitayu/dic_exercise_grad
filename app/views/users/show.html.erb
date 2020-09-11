@@ -8,6 +8,12 @@
   </div>
 <% end %>
 
+<% if current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil && current_user.state != "message" && Matching.find_by(follower_id: @user.id) != nil %>
+  <div class="disc_for_accept_on_responsive" id="remove_disc_id_is_<%= @user.id %><%= current_user.id %>">
+    <p><strong><%= @user.name %></strong> さんからリクエストが来ています。<br>承諾しますか？</p>
+  </div>
+<% end %>
+
 <div class="main_container">
 
   <div class="navi_container">
@@ -83,6 +89,8 @@
     <% if current_user.following.first != nil && current_user.followers.first != nil && current_user.state == "message" %>
       <div class="user_state_responsive_empty_space"></div>
     <% elsif current_user.following.first != nil %>
+      <div class="user_state_responsive_empty_space"></div>
+    <% elsif current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil && current_user.state != "message" && Matching.find_by(follower_id: @user.id) != nil %>
       <div class="user_state_responsive_empty_space"></div>
     <% end %>
 
