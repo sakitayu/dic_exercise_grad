@@ -69,7 +69,7 @@ class UsersController < ApplicationController
     
     if params[:follow_state] == {"true"=>""}
       if @user.update(user_params)
-        redirect_to users_path(id: current_user.id)
+        redirect_to user_path(id: current_user.id)
       else
         render :edit
       end

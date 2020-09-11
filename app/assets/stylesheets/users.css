@@ -2755,6 +2755,21 @@
     padding: 0.5em 0;
     height: auto;
   }
+  .profile_container div.title_responsive_on_my_page {
+    display: block;
+    color: #444;
+    width: auto;
+    height: 3em;
+    margin: 3em 5em 0 5em;
+    background-color: #bbded6;
+    border-radius: 0.2em;
+    z-index: 1;
+  }
+  .profile_container div.title_responsive_on_my_page h2 {
+    text-align: center;
+    margin: 0;
+    padding-top: 0.2em;
+  }
   .profile_container div.profile_left {
     border: 1px solid #999999;
     background-color: #F7F7F7;
@@ -2849,17 +2864,15 @@
   }
   .profile_container div.profile_right div.prof_intro {
     color: #444;
-    margin: 2em 3.5em 3.5em 3.5em;
+    margin: 2em 3.5em 7em 3.5em;
     height: auto;
     width: auto;
     font-size: 1.5em;
   }
   .profile_container div.profile_right div.edit_intro {
     font-size: 1em;
-    position: absolute;
-    bottom: 8.2em;
     color: #444;
-    margin-top: 1em;
+    margin: 1em 1em 1em 1em;
     height: auto;
     width: auto;
   }
@@ -3125,6 +3138,120 @@
   .main_box_on_request-user_page div.main_contents {
     margin: 0 2em 2em 2em;
     background-color: white;
+  }
+  .main_box_on_my_page {
+    position: relative;
+    background-color: white;
+    width: auto;
+    height: auto;
+    margin: 6em 0 0 0;
+    border-radius: 0.2em;
+    z-index: 0;
+  }
+  .main_box_on_my_page div.search_user {
+    color: #8ac6d1;
+    height: 3em;
+    padding-top: 0.5em;
+    display: flex;
+    flex-direction: row-reverse;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-color: white;
+  }
+  .main_box_on_my_page div.profile_header {
+    color: #444;
+    height: 3em;
+    margin: 9em 0 0 0;
+    padding-top: 0.5em;
+    background-color: white;
+  }
+  .main_box_on_my_page div.profile_header a.back_to_users {
+    font-size: 1.3em;
+    color: #444;
+    transition: 0.3s;
+    padding: 0.4em 0 0 2.7em;
+  }
+  .main_box_on_my_page div.profile_header a.back_to_users::before {
+    content: "";
+    position: absolute;
+    left: 1.6em;
+    top: 0.7em;
+    width: 0;
+    height: 0;
+    border-top: 0.4em solid transparent;
+    border-bottom: 0.4em solid transparent;
+    border-right: 0.8em solid #444;
+    transition: 0.3s;
+  }
+  .main_box_on_my_page div.profile_header a.back_to_users:hover {
+    color: black;
+    transition: 0.1s;
+  }
+  .main_box_on_my_page div.profile_header a.back_to_users:hover::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 0.4em solid transparent;
+    border-bottom: 0.4em solid transparent;
+    border-right: 0.8em solid black;
+    transition: 0.1s;
+  }
+  .main_box_on_my_page div.profile_header div.my_page_edit_on_profile {
+    width: 100%;
+    position: absolute;
+    bottom: 3em;
+  }
+  .main_box_on_my_page div.profile_header div.my_page_edit_on_profile a.edit_on_my_page {
+    display: block;
+    font-size: 1.3em;
+    color: #444;
+    transition: 0.3s;
+    width: 10em;
+    margin: 0 auto;
+    padding: 0.2em 0.5em;
+    border: 0.1em solid #444;
+    border-radius: 2em;
+  }
+  .main_box_on_my_page div.profile_header div.my_page_edit_on_profile a.edit_on_my_page::after {
+    content: "";
+    display: inline-block;
+    background-image: url(pencil.png);
+    background-size: contain;
+    width: 0.8em;
+    height: 0.8em;
+    margin: 0.1em 0 0 0.1em;
+    transition: 0.3s;
+  }
+  .main_box_on_my_page div.profile_header div.my_page_edit_on_profile a.edit_on_my_page:hover {
+    color: black;
+    transition: 0.1s;
+  }
+  .main_box_on_my_page div.profile_header div.my_page_edit_on_profile a.edit_on_my_page:hover::after {
+    content: "";
+    display: inline-block;
+    background-image: url(pencil_black.png);
+    background-size: contain;
+    width: 0.8em;
+    height: 0.8em;
+    margin: 0.1em 0 0 0.1em;
+    transition: 0.1s;
+  }
+  .main_box_on_my_page div.profile_header div.my_page_on_profile {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 0 0 1.8em;
+    position: relative;
+    bottom: 0.3em;
+    display: none;
+  }
+  .main_box_on_my_page div.profile_header div.my_page_on_profile_from_start {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 0 0 0;
+    position: relative;
+    bottom: 0.3em;
   }
   /* 左側のナビゲーションカラム */
   .navi_box {
