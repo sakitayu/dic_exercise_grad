@@ -1100,9 +1100,10 @@ $break-point-max: 1025px;
   }
 
   .profile_container {
-    background-color: white;
-    margin: 0;
-    height: 30em;
+    background-color: $light-grey;
+    margin: 0.5em 0 0 0;
+    padding: 0.5em 0;
+    height: auto;
     div.title_responsive_on_my_page {
       display: block;
       color: $dark-grey;
@@ -1160,7 +1161,7 @@ $break-point-max: 1025px;
         margin: 0.2em;
       }
       p.edit_name {
-        margin-top: -0.3em;
+        margin-top: -0.5em;
         text-align: center;
         font-size: 0.8em;
         height: 2em;
@@ -1168,6 +1169,7 @@ $break-point-max: 1025px;
           -webkit-appearance: none;
           font-size: 1em;
           padding: 0 0 0 0.2em;
+          width: 8.5em;
           border: solid thin $middle-grey;
           border-radius: 0.2em;
           &:focus {
@@ -1213,7 +1215,7 @@ $break-point-max: 1025px;
       }
       div.prof_intro {
         color: $dark-grey;
-        margin: 1em 1.2em 5em 1.2em;
+        margin: 1em 1.2em 7em 1.2em;
         height: auto;
         width: auto;
       }
@@ -1244,7 +1246,7 @@ $break-point-max: 1025px;
       }
       div.profile_update_button {
         width: 12.3em;
-        margin: 2em auto 0 auto;
+        margin: 2em auto;
         input[type="submit"] {
           -webkit-appearance: none;
           height: 2em;
@@ -1385,7 +1387,7 @@ $break-point-max: 1025px;
           display:block;
           position: absolute;
           z-index: 1;
-          top: 5em;
+          top: 6em;
           width: 5em;
           height: 5em;
           color: white;
@@ -1399,7 +1401,7 @@ $break-point-max: 1025px;
         div.img_submit_label {
           position: absolute;
           z-index: 0;
-          top: 5em;
+          top: 6em;
           width: 7em;
           height: 7em;
           margin: 0 auto;
@@ -1555,7 +1557,7 @@ $break-point-max: 1025px;
       div.my_page_edit_on_profile {
         width: 100%;
         position: absolute;
-        bottom: 4em;
+        bottom: 2em;
         a.edit_on_my_page {
           display: block;
           font-size: 1.3em;
@@ -2794,8 +2796,9 @@ $break-point-max: 1025px;
   }
 
   .profile_container {
-    background-color: white;
-    margin: 0;
+    background-color: $light-grey;
+    margin: 2em 0 0 0;
+    padding: 0.5em 0;
     height: auto;
     div.profile_left {
       border: 1px solid $middle-grey;
@@ -2890,7 +2893,7 @@ $break-point-max: 1025px;
       }
       div.prof_intro {
         color: $dark-grey;
-        margin: 2em 3.5em 5em 3.5em;
+        margin: 2em 3.5em 3.5em 3.5em;
         height: auto;
         width: auto;
         font-size: 1.5em;
