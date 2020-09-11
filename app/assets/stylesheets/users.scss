@@ -682,9 +682,10 @@ $break-point-max: 1025px;
       text-align: center;
       display: block;
       color: $dark-grey;
+      font-size: 0.8em;
       font-weight: bold;
       width: 100%;
-      padding-top: 0.5em;
+      padding-top: 0.9em;
       margin: 0 auto;
     }
   }
@@ -2387,6 +2388,27 @@ $break-point-max: 1025px;
       margin: 0 auto;
     }
   }
+  .disc_for_accept_on_responsive {
+    position: fixed;
+    width: 100%;
+    height: 5em;
+    color: white;
+    background-color: $light-pink;
+    margin-top: 7em;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    p {
+      text-align: center;
+      display: block;
+      color: $dark-grey;
+      font-size: 1.6em;
+      font-weight: bold;
+      width: 100%;
+      padding-top: 0.04em;
+      margin: 0 auto;
+    }
+  }
   
   .main_container {
     width: auto; /* 共通の横幅 */
@@ -2808,6 +2830,7 @@ $break-point-max: 1025px;
         bottom: 0.3em;
       }
       p.disc_for_accept {
+        display: none;
         font-size: 1.1em;
         position: absolute;
         top: 0.5em;
@@ -3018,7 +3041,10 @@ $break-point-max: 1025px;
         }
       }
       div.approval_button {
-        padding-top: 4.1em;
+        position: fixed;
+        bottom: 3em;
+        width: 100%;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
         input[type="submit"] {
@@ -3027,7 +3053,7 @@ $break-point-max: 1025px;
           line-height: 0;
           width: auto;
           border-style: none;
-          font-size: 1.2em;
+          font-size: 2em;
           white-space: nowrap;
           padding: 0 1em;
           border-radius: 1em;
@@ -3203,6 +3229,7 @@ $break-point-max: 1025px;
         bottom:0.3em;
       }
       p.disc_for_accept {
+        display: none;
         font-size: 1.1em;
         position: absolute;
         top: 0.5em;
