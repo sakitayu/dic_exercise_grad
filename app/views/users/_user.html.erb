@@ -1,5 +1,5 @@
 <tr class="table_border" id="request_id_is_<%= ping.follower.id %>">
-  <td>
+  <td class="list_prof_img">
     <% if ping.follower.image.url == nil %>
       <% if ping.follower.gender == "男" %>
         <%= link_to image_tag('male.png'), user_path(ping.follower.id) %>
@@ -15,7 +15,11 @@
   <td class="list_name">
     <%= link_to "#{ping.follower.name}", user_path(ping.follower.id)  %>
   </td>
-  <td class="list_area"><%= ping.follower.area %></td>
-  <td class="list_gender"><%= ping.follower.gender %></td>
-  <td class="list_age"><%= ping.follower.age %></td>
+  <td class="list_gender_and_age">
+    <%= link_to "#{ping.follower.gender}", user_path(ping.follower.id), class: "gender" %>
+    <%= link_to "#{ping.follower.age}才", user_path(ping.follower.id), class: "age" unless ping.follower.age == "非公開" %>
+  </td>
+  <td class="list_area">
+    <%= link_to "#{ping.follower.area}", user_path(ping.follower.id) %>
+  </td>
 </tr>

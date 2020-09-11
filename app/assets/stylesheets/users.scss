@@ -2889,11 +2889,11 @@ $break-point-max: 1025px;
     }
     div.profile_right {
       width: auto;
-      margin: 0.5em 5em 0 5em;
+      margin: 0.5em 0 0 0;
       div.prof_area {
         color: $dark-grey;
         height: auto;
-        margin: 0;
+        margin: 0 5em;
         h2 {
           font-size: 1.6em;
           margin: 0 0 0 0;
@@ -2908,7 +2908,7 @@ $break-point-max: 1025px;
       }
       div.prof_intro {
         color: $dark-grey;
-        margin: 2em 0 7em 0;
+        margin: 2em 3.3em 7em 3.3em;
         height: auto;
         width: auto;
         font-size: 1.5em;
@@ -2916,9 +2916,12 @@ $break-point-max: 1025px;
       div.edit_intro {
         font-size: 1em;
         color: $dark-grey;
-        margin: 2em 0 3em 0;
+        margin: 2em 3.3em 3em 3.3em;
         height: auto;
-        width: 100%;
+        width: auto;
+        label {
+          margin-left: 1.5em;
+        }
         textarea {
           -webkit-appearance: none;
           font-size: 1.5em;
@@ -2927,8 +2930,8 @@ $break-point-max: 1025px;
           border-radius: 0.2em;
           resize: none;
           height: 10em;
-          width: 100%;
-          margin: 0.5em 0 0 0;
+          width: 91%;
+          margin: 0.5em 0 0 1.2em;
           padding: 0.2em;
           &:focus {
             border: solid thin $dark-pink;

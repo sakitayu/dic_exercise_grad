@@ -2844,12 +2844,12 @@
   }
   .profile_container div.profile_right {
     width: auto;
-    margin: 0.5em 5em 0 5em;
+    margin: 0.5em 0 0 0;
   }
   .profile_container div.profile_right div.prof_area {
     color: #444;
     height: auto;
-    margin: 0;
+    margin: 0 5em;
   }
   .profile_container div.profile_right div.prof_area h2 {
     font-size: 1.6em;
@@ -2864,7 +2864,7 @@
   }
   .profile_container div.profile_right div.prof_intro {
     color: #444;
-    margin: 2em 0 7em 0;
+    margin: 2em 3.3em 7em 3.3em;
     height: auto;
     width: auto;
     font-size: 1.5em;
@@ -2872,9 +2872,12 @@
   .profile_container div.profile_right div.edit_intro {
     font-size: 1em;
     color: #444;
-    margin: 2em 0 3em 0;
+    margin: 2em 3.3em 3em 3.3em;
     height: auto;
-    width: 100%;
+    width: auto;
+  }
+  .profile_container div.profile_right div.edit_intro label {
+    margin-left: 1.5em;
   }
   .profile_container div.profile_right div.edit_intro textarea {
     -webkit-appearance: none;
@@ -2884,8 +2887,8 @@
     border-radius: 0.2em;
     resize: none;
     height: 10em;
-    width: 100%;
-    margin: 0.5em 0 0 0;
+    width: 91%;
+    margin: 0.5em 0 0 1.2em;
     padding: 0.2em;
   }
   .profile_container div.profile_right div.edit_intro textarea:focus {
