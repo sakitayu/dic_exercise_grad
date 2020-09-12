@@ -57,7 +57,8 @@
           <div class="main_box_on_confirm_page">
             <div class="profile_header">
               <%#= link_to 'ユーザー一覧に戻る', users_path %>
-              <p>あなたのリクエストが <strong><%= @user.name %></strong> さんに承諾されました。お願いしますか？</p>
+              <p class="titile_on_confirm_page">あなたのリクエストが <strong><%= @user.name %></strong> さんに承諾されました。お願いしますか？</p>
+              <p class="titile_on_confirm_page_responsive">あなたのリクエストが<br><strong><%= @user.name %></strong> さんに承諾されました。<br>お願いしますか？</p>
             </div>
 
             <div class="profile_container">
