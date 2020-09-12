@@ -674,11 +674,11 @@
     margin: 0 auto;
   }
   .right_culumn_container div.async_notification {
-    display: none;
+    display: block;
     /* 内部をnoneにしてレスポンシブ用にもう一個divを作る */
   }
   .right_culumn_container div.confirm_notification {
-    display: none;
+    display: block;
   }
   .right_culumn_container div.user_state_responsive_empty_space {
     width: 100%;
@@ -1604,6 +1604,67 @@
     margin: 0 0 0 0;
     position: relative;
     bottom: 0.3em;
+  }
+  .confirm_box {
+    display: none;
+    word-wrap: normal;
+    margin: 0 2em;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-weight: bold;
+    position: fixed;
+    top: 13em;
+    z-index: 5;
+  }
+  .confirm_box a {
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 0.5em;
+    background-color: #ffb6b9;
+    border-radius: 0.2em;
+    font-size: 1.6em;
+    color: white;
+  }
+  .confirm_box a:hover {
+    opacity: 0.8;
+  }
+  .confirm_box_responsive {
+    display: flex;
+    justify-content: center;
+    word-wrap: normal;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight: bold;
+    position: fixed;
+    top: 12em;
+    z-index: 1;
+  }
+  .confirm_box_responsive a {
+    display: block;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 0.5em;
+    background-color: #ffb6b9;
+    border-radius: 0.5em;
+    font-size: 1.6em;
+    color: white;
+    box-shadow: 0 0.3em 1em 0 rgba(0, 0, 0, 0.5);
+  }
+  .confirm_box_responsive a::before {
+    content: "";
+    display: inline-block;
+    background-image: url(bell.png);
+    background-size: contain;
+    width: 2em;
+    height: 2em;
+  }
+  .confirm_box_responsive a:hover {
+    opacity: 0.8;
   }
   /* 左側のナビゲーションカラム スマホ(非表示)*/
   .navi_box {
@@ -3308,6 +3369,26 @@
     position: relative;
     bottom: 0.3em;
   }
+  .confirm_box {
+    display: none;
+    margin: 5.3em 5em -3em 5em;
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+  }
+  .confirm_box a {
+    display: block;
+    width: auto;
+    padding: 0.5em;
+    background-color: #ffb6b9;
+    border-radius: 2em 20em 20em 2em;
+    height: 1.5em;
+    font-size: 1.6em;
+    color: white;
+  }
+  .confirm_box a:hover {
+    opacity: 0.8;
+  }
   /* 左側のナビゲーションカラム */
   .navi_box {
     background-color: #F7F7F7;
@@ -4845,6 +4926,29 @@
     position: relative;
     bottom: 0.3em;
   }
+  .confirm_box {
+    display: block;
+    margin: 5.3em 5em -3em 5em;
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+  }
+  .confirm_box a {
+    display: block;
+    width: auto;
+    padding: 0.5em;
+    background-color: #ffb6b9;
+    border-radius: 2em 20em 20em 2em;
+    height: 1.5em;
+    font-size: 1.6em;
+    color: white;
+  }
+  .confirm_box a:hover {
+    opacity: 0.8;
+  }
+  .confirm_box_responsive {
+    display: none;
+  }
   /* 左側のナビゲーションカラム PC */
   .navi_box {
     background-color: #F7F7F7;
@@ -5098,28 +5202,6 @@
 }
 
 .notification_box a:hover {
-  opacity: 0.8;
-}
-
-.confirm_box {
-  margin: 5.3em 5em -3em 5em;
-  width: auto;
-  text-align: center;
-  font-weight: bold;
-}
-
-.confirm_box a {
-  display: block;
-  width: auto;
-  padding: 0.5em;
-  background-color: #ffb6b9;
-  border-radius: 2em 20em 20em 2em;
-  height: 1.5em;
-  font-size: 1.6em;
-  color: white;
-}
-
-.confirm_box a:hover {
   opacity: 0.8;
 }
 

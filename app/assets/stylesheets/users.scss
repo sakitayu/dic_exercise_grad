@@ -700,10 +700,10 @@ $break-point-max: 1025px;
     width: 80em; /* 共通の横幅 =1280px */
     margin:0 auto;
     div.async_notification {
-      display: none; /* 内部をnoneにしてレスポンシブ用にもう一個divを作る */
+      display: block; /* 内部をnoneにしてレスポンシブ用にもう一個divを作る */
     }
     div.confirm_notification {
-      display: none;
+      display: block;
     }
     div.user_state_responsive_empty_space {
       width: 100%;
@@ -1634,6 +1634,69 @@ $break-point-max: 1025px;
         margin: 0 0 0 0;
         position: relative;
         bottom:0.3em;
+      }
+    }
+  }
+
+  .confirm_box {
+    display: none;
+    word-wrap: normal; 
+    margin: 0 2em;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-weight:bold;
+    position: fixed;
+    top: 13em;
+    z-index: 5;
+    a {
+      display: block;
+      width: auto;
+      height: auto;
+      padding: 0.5em;
+      background-color: $dark-pink;
+      border-radius: 0.2em;
+      font-size: 1.6em;
+      color: white;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  
+  .confirm_box_responsive {
+    display: flex;
+    justify-content: center;
+    word-wrap: normal; 
+    margin: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight:bold;
+    position: fixed;
+    top: 12em;
+    z-index: 1;
+    a {
+      display: block;
+      text-align: center;
+      width: auto;
+      height: auto;
+      padding: 0.5em;
+      background-color: $dark-pink;
+      border-radius: 0.5em;
+      font-size: 1.6em;
+      color: white;
+      box-shadow: 0 0.3em 1em 0 rgba(0, 0, 0, .5);
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url(bell.png);
+        background-size: contain;
+        width: 2em;
+        height: 2em;
+      }
+      &:hover {
+        opacity: 0.8;
       }
     }
   }
@@ -3356,6 +3419,27 @@ $break-point-max: 1025px;
       }
     }
   }
+
+  .confirm_box {
+    display: none;
+    margin: 5.3em 5em -3em 5em;
+    width: auto;
+    text-align: center;
+    font-weight:bold;
+    a {
+      display: block;
+      width: auto;
+      padding: 0.5em;
+      background-color: $dark-pink;
+      border-radius: 2em 20em 20em 2em;
+      height: 1.5em;
+      font-size: 1.6em;
+      color: white;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
   
   /* 左側のナビゲーションカラム */
   
@@ -4912,6 +4996,31 @@ $break-point-max: 1025px;
       }
     }
   }
+
+  .confirm_box {
+    display: block;
+    margin: 5.3em 5em -3em 5em;
+    width: auto;
+    text-align: center;
+    font-weight:bold;
+    a {
+      display: block;
+      width: auto;
+      padding: 0.5em;
+      background-color: $dark-pink;
+      border-radius: 2em 20em 20em 2em;
+      height: 1.5em;
+      font-size: 1.6em;
+      color: white;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .confirm_box_responsive {
+    display: none;
+  }
   
   /* 左側のナビゲーションカラム PC */
   
@@ -5147,26 +5256,6 @@ $break-point-max: 1025px;
       height: 1em;
     }
   }
-  a {
-    display: block;
-    width: auto;
-    padding: 0.5em;
-    background-color: $dark-pink;
-    border-radius: 2em 20em 20em 2em;
-    height: 1.5em;
-    font-size: 1.6em;
-    color: white;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-}
-
-.confirm_box {
-  margin: 5.3em 5em -3em 5em;
-  width: auto;
-  text-align: center;
-  font-weight:bold;
   a {
     display: block;
     width: auto;
