@@ -2515,7 +2515,7 @@ $break-point-max: 1025px;
     width: 80em; /* 共通の横幅 =1280px */
     margin:0 auto;
     div.async_notification {
-      display: none; /* 内部をnoneにしてレスポンシブ用にもう一個divを作る */
+      display: block;
     }
     div.confirm_notification {
       display: none;
@@ -3473,7 +3473,77 @@ $break-point-max: 1025px;
     }
   }
   
-  /* 左側のナビゲーションカラム */
+  .confirm_box_responsive {
+    display: flex;
+    justify-content: center;
+    word-wrap: normal; 
+    margin: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight:bold;
+    position: fixed;
+    top: 18em;
+    z-index: 1;
+    a {
+      display: block;
+      text-align: center;
+      width: auto;
+      height: auto;
+      line-height: 2em;
+      padding: 2em 4em;
+      background-color: $dark-pink;
+      border-radius: 0.5em;
+      font-size: 1.6em;
+      color: white;
+      box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, .5);
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url(bell.png);
+        background-size: contain;
+        width: 2em;
+        height: 2em;
+      }
+    }
+  }
+
+  .notification_box {
+    display: none;
+    margin: 5.3em 5em -3em 5em;
+    width: auto;
+    text-align: center;
+    font-weight:bold;
+    p {
+      color: white;
+      font-size: 1.2em;
+      margin: 0;
+      padding: 0;
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url(bell.png);
+        background-size: contain;
+        width: 1em;
+        height: 1em;
+      }
+    }
+    a {
+      display: block;
+      width: auto;
+      padding: 0.5em;
+      background-color: $dark-pink;
+      border-radius: 2em 20em 20em 2em;
+      height: 1.5em;
+      font-size: 1.6em;
+      color: white;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  
+  /* 左側のナビゲーションカラム タブレット */
   
   .navi_box {
     background-color: $light-grey;
