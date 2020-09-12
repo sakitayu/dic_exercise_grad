@@ -84,6 +84,9 @@
       <div class="confirm_box" id="confirm_id_is_<%= current_user.id %>">
         <%= link_to "あなたのリクエストが承諾されました。こちらから確認してください", confirm_request_users_path %>
       </div>
+      <div class="confirm_box_responsive" id="confirm_id_is_<%= current_user.id %>" class="confirm_notification">
+        <%= link_to "<br>あなたのリクエストが<br>承諾されました<br>こちらから<br>確認してください".html_safe, confirm_request_users_path %>
+      </div>
     <% end %>
 
     <% if current_user.following.first != nil && current_user.followers.first != nil && current_user.state == "message" %>

@@ -675,10 +675,9 @@
   }
   .right_culumn_container div.async_notification {
     display: block;
-    /* 内部をnoneにしてレスポンシブ用にもう一個divを作る */
   }
   .right_culumn_container div.confirm_notification {
-    display: block;
+    display: none;
   }
   .right_culumn_container div.user_state_responsive_empty_space {
     width: 100%;
@@ -1653,7 +1652,7 @@
     border-radius: 0.5em;
     font-size: 1.6em;
     color: white;
-    box-shadow: 0 0.3em 1em 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, 0.5);
   }
   .confirm_box_responsive a::before {
     content: "";
@@ -1663,7 +1662,38 @@
     width: 2em;
     height: 2em;
   }
-  .confirm_box_responsive a:hover {
+  .notification_box {
+    display: none;
+    margin: 5.3em 5em -3em 5em;
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+  }
+  .notification_box p {
+    color: white;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+  }
+  .notification_box p::before {
+    content: "";
+    display: inline-block;
+    background-image: url(bell.png);
+    background-size: contain;
+    width: 1em;
+    height: 1em;
+  }
+  .notification_box a {
+    display: block;
+    width: auto;
+    padding: 0.5em;
+    background-color: #ffb6b9;
+    border-radius: 2em 20em 20em 2em;
+    height: 1.5em;
+    font-size: 1.6em;
+    color: white;
+  }
+  .notification_box a:hover {
     opacity: 0.8;
   }
   /* 左側のナビゲーションカラム スマホ(非表示)*/
@@ -4949,6 +4979,39 @@
   .confirm_box_responsive {
     display: none;
   }
+  .notification_box {
+    margin: 5.3em 5em -3em 5em;
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+  }
+  .notification_box p {
+    color: white;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+  }
+  .notification_box p::before {
+    content: "";
+    display: inline-block;
+    background-image: url(bell.png);
+    background-size: contain;
+    width: 1em;
+    height: 1em;
+  }
+  .notification_box a {
+    display: block;
+    width: auto;
+    padding: 0.5em;
+    background-color: #ffb6b9;
+    border-radius: 2em 20em 20em 2em;
+    height: 1.5em;
+    font-size: 1.6em;
+    color: white;
+  }
+  .notification_box a:hover {
+    opacity: 0.8;
+  }
   /* 左側のナビゲーションカラム PC */
   .navi_box {
     background-color: #F7F7F7;
@@ -5165,44 +5228,6 @@
 .main_box_on_message-user_page div.main_contents {
   margin: 0 2em 2em 2em;
   background-color: white;
-}
-
-.notification_box {
-  margin: 5.3em 5em -3em 5em;
-  width: auto;
-  text-align: center;
-  font-weight: bold;
-}
-
-.notification_box p {
-  color: white;
-  font-size: 1.2em;
-  margin: 0;
-  padding: 0;
-}
-
-.notification_box p::before {
-  content: "";
-  display: inline-block;
-  background-image: url(bell.png);
-  background-size: contain;
-  width: 1em;
-  height: 1em;
-}
-
-.notification_box a {
-  display: block;
-  width: auto;
-  padding: 0.5em;
-  background-color: #ffb6b9;
-  border-radius: 2em 20em 20em 2em;
-  height: 1.5em;
-  font-size: 1.6em;
-  color: white;
-}
-
-.notification_box a:hover {
-  opacity: 0.8;
 }
 
 .cancel_box {
