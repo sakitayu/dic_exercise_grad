@@ -285,11 +285,16 @@
   #submit_container form input.submit_buttom {
     -webkit-appearance: none;
     background-color: #ffb6b9;
+    background-image: url(paperplane.png);
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center center;
     border-style: none;
     border-radius: 0.2em;
     color: #444;
     width: 2.9em;
     height: 2.9em;
+    padding: 0.3em;
     transition-duration: 0.2s;
     font-size: 1em;
     position: absolute;
@@ -578,6 +583,10 @@
     bottom: 0;
     right: 8em;
     background-color: #ffb6b9;
+    background-image: url(paperplane.png);
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center center;
     border-style: none;
     border-radius: 0.2em;
     color: #444;
