@@ -16,7 +16,7 @@
     height: 3em;
     background-color: #8ac6d1;
     position: fixed;
-    z-index: 5;
+    z-index: 1;
   }
   .message_title_box p {
     text-align: center;
@@ -283,17 +283,19 @@
     outline: 0;
   }
   #submit_container form input.submit_buttom {
+    -webkit-appearance: none;
     background-color: #ffb6b9;
     border-style: none;
     border-radius: 0.2em;
     color: #444;
-    width: 2.6em;
-    height: 2.6em;
+    width: 2.9em;
+    height: 2.9em;
     transition-duration: 0.2s;
-    font-size: 1.1em;
+    font-size: 1em;
     position: absolute;
-    bottom: 1.5em;
-    right: 1.5em;
+    bottom: 1.6em;
+    right: 1.6em;
+    white-space: nowrap;
   }
   #submit_container form input.submit_buttom:hover {
     background-color: #fae3d9;

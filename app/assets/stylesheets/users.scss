@@ -889,6 +889,7 @@ $break-point-max: 1025px;
           }
         }
         input[type="submit"].search_user_submit {
+          -webkit-appearance: none;
           border: 0;
           width: auto;
           height: 2em;
@@ -2099,6 +2100,7 @@ $break-point-max: 1025px;
     div.forgot_button {
       margin: 2em auto 0 auto;
       input[type="submit"] {
+        -webkit-appearance: none;
         height: 1.9em;
         line-height: 0;
         width: auto;

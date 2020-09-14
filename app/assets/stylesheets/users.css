@@ -864,6 +864,7 @@
     text-shadow: 0 0 0 #999999;
   }
   .main_box div.search_user div.search_box input[type="submit"].search_user_submit {
+    -webkit-appearance: none;
     border: 0;
     width: auto;
     height: 2em;
@@ -2059,6 +2060,7 @@
     margin: 2em auto 0 auto;
   }
   .forgot_button_container div.forgot_button input[type="submit"] {
+    -webkit-appearance: none;
     height: 1.9em;
     line-height: 0;
     width: auto;
