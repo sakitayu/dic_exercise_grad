@@ -276,7 +276,7 @@
     bottom: 1.5em;
     left: 1em;
     margin: 1.5em 1em 0 0;
-    padding: 0.2em;
+    padding: auto;
   }
   #submit_container form textarea:focus {
     border: solid thin #ffb6b9;

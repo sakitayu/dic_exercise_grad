@@ -308,7 +308,7 @@ $break-point-max: 1025px;
         bottom: 1.5em;
         left: 1em;
         margin: 1.5em 1em 0 0;
-        padding: 0.2em;
+        padding: auto;
         &:focus {
           border: solid thin $dark-pink;
           outline: 0;
