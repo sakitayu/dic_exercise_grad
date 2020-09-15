@@ -1556,6 +1556,7 @@
     display: inline-block;
     background-image: url(pencil.png);
     background-size: contain;
+    background-repeat: no-repeat;
     width: 0.8em;
     height: 0.8em;
     margin: 0.1em 0 0 0.1em;
@@ -1570,6 +1571,7 @@
     display: inline-block;
     background-image: url(pencil_black.png);
     background-size: contain;
+    background-repeat: no-repeat;
     width: 0.8em;
     height: 0.8em;
     margin: 0.1em 0 0 0.1em;
@@ -1786,6 +1788,7 @@
     display: inline-block;
     background-image: url(pencil.png);
     background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
     right: 1.6em;
     top: 1.5em;
@@ -1802,6 +1805,7 @@
     display: inline-block;
     background-image: url(pencil_black.png);
     background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
     right: 1.6em;
     top: 1.5em;
@@ -3571,6 +3575,7 @@
     display: inline-block;
     background-image: url(pencil.png);
     background-size: contain;
+    background-repeat: no-repeat;
     width: 0.8em;
     height: 0.8em;
     margin: 0.1em 0 0 0.1em;
@@ -3585,6 +3590,7 @@
     display: inline-block;
     background-image: url(pencil_black.png);
     background-size: contain;
+    background-repeat: no-repeat;
     width: 0.8em;
     height: 0.8em;
     margin: 0.1em 0 0 0.1em;
@@ -3658,6 +3664,31 @@
     background-size: contain;
     width: 2em;
     height: 2em;
+  }
+  .confirm_box_responsive_on_message {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    height: 5em;
+    font-weight: bold;
+    position: fixed;
+    top: 7em;
+    z-index: 1;
+  }
+  .confirm_box_responsive_on_message a {
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    line-height: 0;
+    padding-top: 1.6em;
+    background-color: #ffb6b9;
+    font-size: 1.5em;
+    color: white;
+  }
+  .confirm_box_responsive_on_message a:hover {
+    opacity: 0.8;
   }
   .notification_box {
     display: none;
@@ -3776,6 +3807,7 @@
     display: inline-block;
     background-image: url(pencil.png);
     background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
     right: 1.6em;
     top: 1.5em;
@@ -5311,6 +5343,7 @@
     display: inline-block;
     background-image: url(pencil.png);
     background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
     right: 1.6em;
     top: 1.5em;
@@ -5485,6 +5518,7 @@
     display: inline-block;
     background-image: url(pencil.png);
     background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
     right: 1.6em;
     top: 1.5em;
