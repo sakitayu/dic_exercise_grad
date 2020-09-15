@@ -5371,6 +5371,9 @@
   .confirm_box_responsive {
     display: none;
   }
+  .confirm_box_responsive_on_message {
+    display: none;
+  }
   .notification_box {
     margin: 5.3em 5em -3em 5em;
     width: auto;

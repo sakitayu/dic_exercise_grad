@@ -62,6 +62,13 @@
       <div class="confirm_box">
         <%= link_to "#{current_user.following.first.name} さんとメッセージ中です。メッセージ画面はこちら", conversation_messages_path(@room.id) %>
       </div>
+      <div class="confirm_box_responsive_on_message">
+        <%= link_to "#{current_user.following.first.name} さんとメッセージ中です", conversation_messages_path(@room.id) %>
+      </div>
+    <% end %>
+
+    <% if current_user.following.first != nil && current_user.followers.first != nil && current_user.state == "message" %>
+      <div class="user_state_responsive_empty_space"></div>
     <% end %>
 
     <div class="main_box">
