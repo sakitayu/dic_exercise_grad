@@ -260,6 +260,7 @@
   #submit_container form {
     width: 20em;
     display: flex;
+    justify-content: center;
     margin: 0;
     padding: 0;
     color: #444;
@@ -273,8 +274,7 @@
     border-radius: 0.3em;
     position: relative;
     bottom: 1.5em;
-    left: 1em;
-    margin: 1.5em 0 0 1em;
+    margin: 1.5em 5em 0 1em;
     padding: auto;
   }
   #submit_container form textarea:focus {
@@ -294,11 +294,11 @@
     width: 2.8em;
     height: 2.8em;
     padding: 0.3em;
+    margin-left: 6.8em;
     transition-duration: 0.2s;
     font-size: 1em;
     position: absolute;
     bottom: 1.6em;
-    right: 2.2em;
     white-space: nowrap;
   }
   #submit_container form input.submit_buttom:hover {
@@ -567,6 +567,7 @@
   #submit_container form {
     width: 37em;
     display: flex;
+    justify-content: center;
     margin: 0;
     padding: 0;
     color: #444;
@@ -580,8 +581,7 @@
     border-radius: 0.3em;
     position: relative;
     bottom: 1.5em;
-    left: 1em;
-    margin: 1.5em 6em 0 0;
+    margin: 1.5em 4em 0 0;
     padding: auto;
   }
   #submit_container form textarea:focus {
@@ -601,11 +601,11 @@
     width: 3.9em;
     height: 3.9em;
     padding: 0.3em;
+    margin-left: 16em;
     transition-duration: 0.2s;
     font-size: 1em;
     position: absolute;
     bottom: 1.7em;
-    right: 7em;
     white-space: nowrap;
   }
   #submit_container form input.submit_buttom:hover {
