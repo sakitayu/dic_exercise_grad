@@ -1684,6 +1684,32 @@ $break-point-max: 1025px;
     }
   }
 
+  .confirm_box_responsive_on_message {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    height: 4em;
+    font-weight:bold;
+    position: fixed;
+    top: 6em;
+    z-index: 1;
+    a {
+      display: block;
+      width: 100%;
+      height: auto;
+      text-align: center;
+      line-height: 0;
+      padding-top: 1.9em;
+      background-color: $dark-pink;
+      font-size: 1em;
+      color: white;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
   .notification_box {
     display: none;
     margin: 5.3em 5em -3em 5em;
@@ -1831,6 +1857,84 @@ $break-point-max: 1025px;
       display: block;
       width: 100%;
       height: 6em;
+    }
+  }
+
+  .main_box_on_message-user_page {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 6em 0 0 0;
+    border-radius: 0.2em;
+    z-index: 0;
+    div.search_user {
+      color: $dark-grey;
+      height: 3em;
+      padding-top: 0.5em;
+      display: flex;
+      flex-direction: row-reverse;
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0;
+      background-color: $light-grey;
+    }
+    div.profile_header {
+      color: $dark-grey;
+      height: 3em;
+      margin: 7em 0 0 0;
+      padding-top: 0;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      a {
+        font-size: 1.3em;
+        color: $dark-grey;
+        transition: 0.3s;
+        padding: 0.4em 0 0 2em;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0.9em;
+          top: 0.7em;
+          width: 0;
+          height: 0;
+          border-top: 0.4em solid transparent;
+          border-bottom: 0.4em solid transparent;
+          border-right: 0.8em solid $dark-grey;
+          transition: 0.3s;
+        }
+        &:hover {
+          color: black;
+          transition: 0.1s;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 0.4em solid transparent;
+            border-bottom: 0.4em solid transparent;
+            border-right: 0.8em solid black;
+            transition: 0.1s;
+          }
+        }
+      }
+      div.my_page_on_profile {
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0 0 0 1.8em;
+        position: relative;
+        bottom:0.3em;
+      }
+      p.disc_for_accept {
+        font-size: 1.1em;
+        position: absolute;
+        top: 0.5em;
+        right: 1.6em;
+      }
+    }
+    div.main_contents {
+      margin: 0 2em 2em 2em;
+      background-color: white;
     }
   }
   
