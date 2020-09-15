@@ -291,7 +291,7 @@ $break-point-max: 1025px;
     justify-content: center;
     border-radius: 0 0 0.2em 0.2em;
     form {
-      width: 18em;
+      width: 20em;
       display: flex;
       margin: 0;
       padding: 0;
@@ -306,7 +306,7 @@ $break-point-max: 1025px;
         position: relative;
         bottom: 1.5em;
         left: 1em;
-        margin: 1.5em 1em 0 0;
+        margin: 1.5em 0 0 1em;
         padding: auto;
         &:focus {
           border: solid thin $dark-pink;
@@ -323,14 +323,14 @@ $break-point-max: 1025px;
         border-style: none;
         border-radius: 0.2em;
         color: $dark-grey;
-        width: 2.9em;
-        height: 2.9em;
+        width: 2.8em;
+        height: 2.8em;
         padding: 0.3em;
         transition-duration: 0.2s;
         font-size: 1em;
         position: absolute;
         bottom: 1.6em;
-        right: 1.6em;
+        right: 2.2em;
         white-space: nowrap;
         &:hover {
           background-color: $light-pink;
