@@ -327,8 +327,8 @@
                   <%= link_to "#{user.name}", user_path(user.id)  %>
                 </td>
                 <td class="list_gender_and_age">
-                  <%= link_to "#{user.gender}", user_path(user.id) %>
-                  <%= link_to "#{user.age}才", user_path(user.id) unless user.age == "非公開" %>
+                  <%= link_to "#{user.gender}", user_path(user.id), class: "gender" %>
+                  <%= link_to "#{user.age}才", user_path(user.id), class: "age" unless user.age == "非公開" %>
                 </td>
                 <td class="list_area">
                   <%= link_to "#{user.area}", user_path(user.id) %>
