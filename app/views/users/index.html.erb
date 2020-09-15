@@ -125,9 +125,13 @@
                 <td class="list_name">
                   <%= link_to "#{follower.name}", user_path(follower.id)  %>
                 </td>
-                <td class="list_area"><%= follower.area %></td>
-                <td class="list_gender"><%= follower.gender %></td>
-                <td class="list_age"><%= follower.age %></td>
+                <td class="list_gender_and_age">
+                  <%= link_to "#{follower.gender}", user_path(follower.id), class: "gender" %>
+                  <%= link_to "#{follower.age}才", user_path(follower.id), class: "age" unless follower.age == "非公開" %>
+                </td>
+                <td class="list_area">
+                  <%= link_to "#{follower.area}", user_path(follower.id) %>
+                </td>
               </tr>
             <% elsif followed.id == current_user.id && follower.have_umbrella == false %>
               <tr class="table_border" id="request_user_list_id_is_<%= follower.id %>">
