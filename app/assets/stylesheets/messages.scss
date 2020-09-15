@@ -49,7 +49,7 @@ $break-point-max: 1025px;
     position: relative;
     width: auto;
     height: auto;
-    margin-top: 9em;
+    margin-top: 9.5em;
     z-index: 0;
     div.profile_header {
       display: none;
@@ -140,12 +140,12 @@ $break-point-max: 1025px;
     width: auto;
     max-width: 17em;
     height: auto;
-    padding: 0.5em 0.7em 0.3em 0.7em;
+    padding: 0.4em 0.7em 0.3em 0.7em;
     display: inline-block;
     position: relative;
     background: gainsboro;
     border-radius: 1.5em;
-    p {
+    p.message_body {
       font-size: 1em;
       margin: 0.2em;
       padding: 0;
@@ -155,7 +155,7 @@ $break-point-max: 1025px;
     &::after {
       content: "";
       position: absolute;
-      margin: 0 0;
+      margin: 0;
       top: -0.2em;
       left: -1rem;
       width: 0;
@@ -235,7 +235,6 @@ $break-point-max: 1025px;
   
   .message_container {
     width: auto;
-    max-width: 25em;
     p {
       font-size: 0.9em;
       color: $dark-grey;
@@ -347,6 +346,325 @@ $break-point-max: 1025px;
 /* タブレットサイズの設定 */
 
 @media screen and (min-width: $break-point-tablet) and (max-width: $break-point-pc) {
+  
+  .right_culumn_container {
+    width: 80em; /* 共通の横幅 =1280px */
+    margin:0 auto;
+  }
+
+  .message_title_box {
+    display: block;
+    word-wrap: normal; 
+    margin-top: 7em;
+    width: 100%;
+    height: 3em;
+    background-color: $dark-green;
+    position: fixed;
+    z-index: 1;
+    p {
+      text-align: center;
+      font-weight:bold;
+      color: white;
+      line-height: 0;
+      padding-top: 0.5em;
+    }
+  }
+
+  .main_box_on_message_page {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin-top: 11em;
+    z-index: 0;
+    div.profile_header {
+      display: none;
+      color: $dark-grey;
+      height: 3em;
+      margin: 1em 2em 0.4em 2em;
+      padding-top: 1.5em;
+      top: 0;
+      background-color: $dark-green;
+      flex-direction: row-reverse;
+      position: sticky;
+      position: -webkit-sticky;
+      z-index: 2;
+      h3 {
+        position: absolute;
+        top: 0.6em;
+        height: 2em;
+        width: 100%;
+        color: white;
+        font-size: 1.8em;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  .message_box {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    z-index: -1;
+  }
+
+  .self-container{
+    display: flex;
+    flex-direction: row-reverse;
+    margin:0 2em 2em 0;
+    padding: 0;
+    width: 100%;
+    padding-right: 0;
+  }
+  
+  .partner-container{
+    width: 33em;
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 2em 2em;
+    padding: 0;
+    img.profile_message_img {
+      width: 5em;
+      height: 5em;
+      background-color: white;
+      object-fit: cover;
+      margin: 0.3em 1em 0 0;
+      border-radius: 3rem;
+      border: solid 1px $middle-grey;
+    }
+    img.profile_message_pic {
+      width: 5em;
+      height: 5em;
+      background-color: white;
+      object-fit: cover;
+      margin: 0.3em 1em 0 0;
+      border-radius: 3rem;
+    }
+  }
+  
+  .latest_box{
+    margin: 0 0 1rem 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    img {
+      width: 5em;
+      height: 5em;
+      background-color: white;
+      object-fit: cover;
+      margin-top: 0.7em;
+      margin-right: 1em;
+    }
+  }
+  
+  .latest_message {
+    width: auto;
+    max-width: 33em;
+    height: auto;
+    padding: 0.5em 0.7em 0.3em 0.7em;
+    display: inline-block;
+    position: relative;
+    background: gainsboro;
+    border-radius: 1.5em;
+    p.message_body {
+      font-size: 1.5em;
+      margin: 0.2em;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      margin: 0 0;
+      top: 0;
+      left: -1rem;
+      width: 0;
+      height: 0;
+      border-top: 1em solid transparent;
+      border-right: 3em solid gainsboro;
+      border-bottom: 1em solid transparent;
+      -webkit-transform: rotate(40deg);
+      transform: rotate(40deg);
+    }
+  }
+  
+  .past_self_message {
+    width: auto;
+    max-width: 33em;
+    height:auto;
+    padding: 0.4em 0.7em 0.3em 0.7em;
+    margin-right: 2em;
+    display: inline-block;
+    position: relative;
+    background: $dark-pink;
+    border-radius: 1.5em;
+    p.message_body {
+      font-size: 1.5em;
+      margin: 0.2em;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      margin: 0;
+      top: 0;
+      right: -1em;
+      width: 0;
+      height: 0;
+      border-top: 1em solid transparent;
+      border-left: 3em solid $dark-pink;
+      border-bottom: 1em solid transparent;
+      -webkit-transform: rotate(-40deg);
+      transform: rotate(-40deg);
+    }
+  }
+  
+  .past_partner_message {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0.4em 0.7em 0.3em 0.7em;
+    display: inline-block;
+    position: relative;
+    background: gainsboro;
+    border-radius: 1.5em;
+    p.message_body {
+      font-size: 1.5em;
+      margin: 0.2em;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      margin: 0 0;
+      top: 0;
+      left: -1rem;
+      width: 0;
+      height: 0;
+      border-top: 1em solid transparent;
+      border-right: 3em solid gainsboro;
+      border-bottom: 1em solid transparent;
+      -webkit-transform: rotate(40deg);
+      transform: rotate(40deg);
+    }
+  }
+  
+  .message_container {
+    width: auto;
+    max-width: 25em;
+    p {
+      font-size: 1.1em;
+      color: $dark-grey;
+      margin: 0 0 0.2em 0;
+      padding: 0;
+    }
+  }
+  
+  .message_body {
+    color: $dark-grey;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .message_date {
+    width: 4em;
+    margin: 0 0 0 0.5em;
+    padding: 0;
+    color: $dark-grey;
+    display: flex;
+    flex-direction: column-reverse;
+    p {
+      line-height: 0;
+    }
+  }
+  
+  .delete_box {
+    height: 0.5rem;
+    margin: 0 2em 1em 0;
+    padding:0;
+    text-align: right;
+    a.delete_message {
+      font-size: 0.8em;
+      color: $dark-grey;
+      transition: 0.3s;
+      &:hover {
+        color: black;
+        transition: 0.1s;
+      }
+    }
+  }
+
+
+
+  #submit_container {
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding-top: 1.5em;
+    background-color: $dark-green;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 0.2em 0.2em;
+    form {
+      width: 37em;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      color: $dark-grey;
+      textarea {
+        width: 20em;
+        height: 2.5em;
+        font-size: 1.5em;
+        border: solid thin $middle-grey;
+        resize: none;
+        border-radius: 0.3em;
+        position: relative;
+        bottom: 1.5em;
+        left: 1em;
+        margin: 1.5em 6em 0 0;
+        padding: auto;
+        &:focus {
+          border: solid thin $dark-pink;
+          outline: 0;
+        }
+      }
+      input.submit_buttom {
+        -webkit-appearance: none;
+        background-color: $dark-pink;
+        background-image: url(paperplane.png);
+        background-size: 2em;
+        background-repeat:  no-repeat;
+        background-position:center center;
+        border-style: none;
+        border-radius: 0.2em;
+        color: $dark-grey;
+        width: 3.9em;
+        height: 3.9em;
+        padding: 0.3em;
+        transition-duration: 0.2s;
+        font-size: 1em;
+        position: absolute;
+        bottom: 1.7em;
+        right: 7em;
+        white-space: nowrap;
+        &:hover {
+          background-color: $light-pink;
+          color: $dark-grey;
+          transition-duration: 0s;
+        }
+      }
+    }
+  }
 
 }
 
