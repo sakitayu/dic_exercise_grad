@@ -1941,6 +1941,44 @@ $break-point-max: 1025px;
       background-color: white;
     }
   }
+
+  .cancel_box {
+    display: none;
+  }
+
+  .cancel_box_responsive {
+    display: flex;
+    justify-content: center;
+    word-wrap: normal; 
+    margin: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight:bold;
+    position: fixed;
+    top: 12em;
+    z-index: 1;
+    a {
+      display: block;
+      text-align: center;
+      width: auto;
+      height: auto;
+      padding: 0.5em;
+      background-color: $dark-green;
+      border-radius: 0.5em;
+      font-size: 1.6em;
+      color: white;
+      box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, .5);
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url(bell.png);
+        background-size: contain;
+        width: 2em;
+        height: 2em;
+      }
+    }
+  }
   
   /* 左側のナビゲーションカラム スマホ(非表示)*/
   
@@ -3904,6 +3942,84 @@ $break-point-max: 1025px;
       height: 6em;
     }
   }
+
+  .main_box_on_message-user_page {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 7em 0 0 0;
+    border-radius: 0.2em;
+    z-index: 0;
+    div.search_user {
+      color: $dark-grey;
+      height: 3em;
+      padding-top: 0;
+      display: flex;
+      flex-direction: row-reverse;
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0;
+      background-color: $light-grey;
+    }
+    div.profile_header {
+      color: $dark-grey;
+      height: 3em;
+      margin-top: 9em;
+      padding-top: 0;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      a {
+        font-size: 1.3em;
+        color: $middle-grey;
+        transition: 0.3s;
+        padding: 0.4em 0 0 2.7em;;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 1.6em;
+          top: 0.7em;
+          width: 0;
+          height: 0;
+          border-top: 0.4em solid transparent;
+          border-bottom: 0.4em solid transparent;
+          border-right: 0.8em solid $middle-grey;
+          transition: 0.3s;
+        }
+        &:hover {
+          color: $dark-grey;
+          transition: 0.1s;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 0.4em solid transparent;
+            border-bottom: 0.4em solid transparent;
+            border-right: 0.8em solid $dark-grey;
+            transition: 0.1s;
+          }
+        }
+      }
+      div.my_page_on_profile {
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0 0 0 1.8em;
+        position: relative;
+        bottom:0.3em;
+      }
+      p.disc_for_accept {
+        font-size: 1.1em;
+        position: absolute;
+        top: 0.5em;
+        right: 1.6em;
+      }
+    }
+    div.main_contents {
+      margin: 0 2em 2em 2em;
+      background-color: white;
+    }
+  }
   
   /* 左側のナビゲーションカラム タブレット */
   
@@ -5721,6 +5837,40 @@ $break-point-max: 1025px;
       background-color: white;
     }
   }
+
+  .cancel_box {
+    margin: 5.3em 5em -3em 5em;
+    width: auto;
+    text-align: center;
+    font-weight:bold;
+    a {
+      display: block;
+      width: auto;
+      padding: 0.5em;
+      background-color: $dark-green;
+      border-radius: 20em 2em 2em 20em;
+      height: 1.5em;
+      font-size: 1.6em;
+      color: white;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    p {
+      display: block;
+      width: auto;
+      padding: 0.5em;
+      background-color: $dark-green;
+      border-radius: 20em;
+      height: 1.5em;
+      font-size: 1.2em;
+      color: white;
+    }
+  }
+
+  .cancel_box_responsive {
+    display: none;
+  }
   
   /* 左側のナビゲーションカラム PC */
   
@@ -5851,34 +6001,3 @@ $break-point-max: 1025px;
 
 
 
-
-
-.cancel_box {
-  margin: 5.3em 5em -3em 5em;
-  width: auto;
-  text-align: center;
-  font-weight:bold;
-  a {
-    display: block;
-    width: auto;
-    padding: 0.5em;
-    background-color: $dark-green;
-    border-radius: 20em 2em 2em 20em;
-    height: 1.5em;
-    font-size: 1.6em;
-    color: white;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-  p {
-    display: block;
-    width: auto;
-    padding: 0.5em;
-    background-color: $dark-green;
-    border-radius: 20em;
-    height: 1.5em;
-    font-size: 1.2em;
-    color: white;
-  }
-}

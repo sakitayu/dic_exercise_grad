@@ -13,7 +13,9 @@ App.remove = App.cable.subscriptions.create "RemoveChannel",
     # メッセージ画面のパーシャル_cansel_notification.html.erbにリクエストキャンセルを通知
     # その際に傘なしユーザーがリクエストとキャンセルを短時間に何回繰り返しても表示か増えないように削除してから表示するように動作
     remove_cancel_notification = '#cancel_notification_' + ban_id + ban_opposite_id
+    remove_cancel_notification_responsive = '#cancel_notification_responsive_' + ban_id + ban_opposite_id
     $(remove_cancel_notification).remove()
+    $(remove_cancel_notification_responsive).remove()
     #notification_message = '#cancel_id_is_' + ban_id + ban_opposite_id
     notification_message = '#cancel_id_is_' + ban_opposite_id
     $(notification_message).append data['ban']

@@ -58,6 +58,10 @@
 
   <div class="right_culumn_container">
 
+    <% if current_user.state == "message" %>
+      <div id="cancel_id_is_<%= current_user.id %>"></div>
+    <% end %>
+
     <% if Matching.find_by(followed_id:current_user.id) && current_user.following.first != nil && current_user.state == "message" %>
       <div class="confirm_box">
         <%= link_to "#{current_user.following.first.name} さんとメッセージ中です。メッセージ画面はこちら", conversation_messages_path(@room.id) %>

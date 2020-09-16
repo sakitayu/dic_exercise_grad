@@ -1,3 +1,6 @@
 <div class="cancel_box" id="cancel_notification_<%= ban.id %><%= ban.following.first.id %>">
   <%= link_to "相手がキャンセルしたためリクエストは無効になりました。", users_path %>
 </div>
+<div class="cancel_box_responsive" id="cancel_notification_responsive_<%= ban.id %><%= ban.following.first.id %>">
+  <%= link_to "<br>相手がキャンセル<br>したため<br>リクエストは<br>無効になりました。".html_safe, users_path %>
+</div>

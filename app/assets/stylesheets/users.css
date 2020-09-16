@@ -1902,6 +1902,42 @@
     margin: 0 2em 2em 2em;
     background-color: white;
   }
+  .cancel_box {
+    display: none;
+  }
+  .cancel_box_responsive {
+    display: flex;
+    justify-content: center;
+    word-wrap: normal;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight: bold;
+    position: fixed;
+    top: 12em;
+    z-index: 1;
+  }
+  .cancel_box_responsive a {
+    display: block;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 0.5em;
+    background-color: #8ac6d1;
+    border-radius: 0.5em;
+    font-size: 1.6em;
+    color: white;
+    box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, 0.5);
+  }
+  .cancel_box_responsive a::before {
+    content: "";
+    display: inline-block;
+    background-image: url(bell.png);
+    background-size: contain;
+    width: 2em;
+    height: 2em;
+  }
   /* 左側のナビゲーションカラム スマホ(非表示)*/
   .navi_box {
     background-color: #F7F7F7;
@@ -3843,6 +3879,83 @@
     width: 100%;
     height: 6em;
   }
+  .main_box_on_message-user_page {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 7em 0 0 0;
+    border-radius: 0.2em;
+    z-index: 0;
+  }
+  .main_box_on_message-user_page div.search_user {
+    color: #444;
+    height: 3em;
+    padding-top: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-color: #F7F7F7;
+  }
+  .main_box_on_message-user_page div.profile_header {
+    color: #444;
+    height: 3em;
+    margin-top: 9em;
+    padding-top: 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+  .main_box_on_message-user_page div.profile_header a {
+    font-size: 1.3em;
+    color: #999999;
+    transition: 0.3s;
+    padding: 0.4em 0 0 2.7em;
+  }
+  .main_box_on_message-user_page div.profile_header a::before {
+    content: "";
+    position: absolute;
+    left: 1.6em;
+    top: 0.7em;
+    width: 0;
+    height: 0;
+    border-top: 0.4em solid transparent;
+    border-bottom: 0.4em solid transparent;
+    border-right: 0.8em solid #999999;
+    transition: 0.3s;
+  }
+  .main_box_on_message-user_page div.profile_header a:hover {
+    color: #444;
+    transition: 0.1s;
+  }
+  .main_box_on_message-user_page div.profile_header a:hover::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 0.4em solid transparent;
+    border-bottom: 0.4em solid transparent;
+    border-right: 0.8em solid #444;
+    transition: 0.1s;
+  }
+  .main_box_on_message-user_page div.profile_header div.my_page_on_profile {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 0 0 1.8em;
+    position: relative;
+    bottom: 0.3em;
+  }
+  .main_box_on_message-user_page div.profile_header p.disc_for_accept {
+    font-size: 1.1em;
+    position: absolute;
+    top: 0.5em;
+    right: 1.6em;
+  }
+  .main_box_on_message-user_page div.main_contents {
+    margin: 0 2em 2em 2em;
+    background-color: white;
+  }
   /* 左側のナビゲーションカラム タブレット */
   .navi_box {
     background-color: #F7F7F7;
@@ -5635,6 +5748,38 @@
     margin: 0 2em 2em 2em;
     background-color: white;
   }
+  .cancel_box {
+    margin: 5.3em 5em -3em 5em;
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+  }
+  .cancel_box a {
+    display: block;
+    width: auto;
+    padding: 0.5em;
+    background-color: #8ac6d1;
+    border-radius: 20em 2em 2em 20em;
+    height: 1.5em;
+    font-size: 1.6em;
+    color: white;
+  }
+  .cancel_box a:hover {
+    opacity: 0.8;
+  }
+  .cancel_box p {
+    display: block;
+    width: auto;
+    padding: 0.5em;
+    background-color: #8ac6d1;
+    border-radius: 20em;
+    height: 1.5em;
+    font-size: 1.2em;
+    color: white;
+  }
+  .cancel_box_responsive {
+    display: none;
+  }
   /* 左側のナビゲーションカラム PC */
   .navi_box {
     background-color: #F7F7F7;
@@ -5758,37 +5903,4 @@
     opacity: 0.8;
     transition: 0.1s;
   }
-}
-
-.cancel_box {
-  margin: 5.3em 5em -3em 5em;
-  width: auto;
-  text-align: center;
-  font-weight: bold;
-}
-
-.cancel_box a {
-  display: block;
-  width: auto;
-  padding: 0.5em;
-  background-color: #8ac6d1;
-  border-radius: 20em 2em 2em 20em;
-  height: 1.5em;
-  font-size: 1.6em;
-  color: white;
-}
-
-.cancel_box a:hover {
-  opacity: 0.8;
-}
-
-.cancel_box p {
-  display: block;
-  width: auto;
-  padding: 0.5em;
-  background-color: #8ac6d1;
-  border-radius: 20em;
-  height: 1.5em;
-  font-size: 1.2em;
-  color: white;
 }

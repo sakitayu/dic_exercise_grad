@@ -108,7 +108,13 @@
     </div>
   <% end %>
 
-  <div id="cancel_id_is_<%#= @user.id %><%= current_user.id %>"></div>
+  <% if current_user.have_umbrella != true && current_user.id != @user.id %>
+    <div id="cancel_id_is_<%= current_user.id %>"></div>
+  <% elsif current_user.id != @user.id %>
+    <div id="cancel_id_is_<%= current_user.id %>"></div>
+  <% elsif Matching.find_by(follower_id: current_user.id) != nil %>
+    <div id="cancel_id_is_<%= current_user.id %>"></div>
+  <% end %>
 
   <% if current_user.id == @user.id %>
     <div class="main_box_on_my_page">
@@ -132,17 +138,17 @@
       </div>
     <% elsif current_user.id != @user.id && current_user.have_umbrella == true && @follower != nil && current_user.state != "message" && Matching.find_by(follower_id: @user.id) != nil %>
       <div class="profile_header">
-        <%= link_to '一覧に戻る', users_path %>
+        <%= link_to '一覧に戻る', users_path, class: "back_to_users" %>
         <p class="disc_for_accept" id="remove_disc_id_is_<%= @user.id %><%= current_user.id %>"><strong><%= @user.name %></strong> さんからリクエストが来ています。承諾しますか？</p>
       </div>
     <% elsif current_user.state == "message" && current_user.id != @user.id %>
       <div class="profile_header">
-        <%= link_to '一覧に戻る', users_path %>
+        <%= link_to '一覧に戻る', users_path, class: "back_to_users" %>
       </div>
     <% else %>
       <div class="profile_header">
         <% if current_user.id != @user.id %>
-          <%= link_to '一覧に戻る', users_path %>
+          <%= link_to '一覧に戻る', users_path, class: "back_to_users" %>
         <% else %>
           <%= link_to '一覧に戻る', users_path, class: "back_to_users" %>
           <div class="my_page_on_profile">マイページ</div>
