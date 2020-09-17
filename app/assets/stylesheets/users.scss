@@ -1747,6 +1747,40 @@ $break-point-max: 1025px;
     }
   }
 
+  .cancel_box_responsive {
+    display: flex;
+    justify-content: center;
+    word-wrap: normal; 
+    margin: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight:bold;
+    position: fixed;
+    top: 12em;
+    z-index: 1;
+    a {
+      display: block;
+      text-align: center;
+      width: auto;
+      height: auto;
+      padding: 0.5em;
+      background-color: $dark-green;
+      border-radius: 0.5em;
+      font-size: 1.6em;
+      color: white;
+      box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, .5);
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url(bell.png);
+        background-size: contain;
+        width: 2em;
+        height: 2em;
+      }
+    }
+  }
+
   .main_box_on_confirm_page {
     position: relative;
     background-color: $dark-pink;
@@ -1944,40 +1978,6 @@ $break-point-max: 1025px;
 
   .cancel_box {
     display: none;
-  }
-
-  .cancel_box_responsive {
-    display: flex;
-    justify-content: center;
-    word-wrap: normal; 
-    margin: 0;
-    width: 100%;
-    height: auto;
-    text-align: center;
-    font-weight:bold;
-    position: fixed;
-    top: 12em;
-    z-index: 1;
-    a {
-      display: block;
-      text-align: center;
-      width: auto;
-      height: auto;
-      padding: 0.5em;
-      background-color: $dark-green;
-      border-radius: 0.5em;
-      font-size: 1.6em;
-      color: white;
-      box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, .5);
-      &::before {
-        content: "";
-        display: inline-block;
-        background-image: url(bell.png);
-        background-size: contain;
-        width: 2em;
-        height: 2em;
-      }
-    }
   }
   
   /* 左側のナビゲーションカラム スマホ(非表示)*/
@@ -3823,6 +3823,46 @@ $break-point-max: 1025px;
     }
     div.confirm_request_empty_space {
       display: none;
+    }
+  }
+
+  .cancel_box {
+    display: none;
+  }
+
+  .cancel_box_responsive {
+    display: flex;
+    justify-content: center;
+    word-wrap: normal; 
+    margin: 0;
+    padding: 0.5em;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight:bold;
+    position: fixed;
+    top: 12em;
+    z-index: 1;
+    a {
+      display: block;
+      text-align: center;
+      width: auto;
+      height: auto;
+      line-height: 2em;
+      padding: 2em 4em;
+      background-color: $dark-green;
+      border-radius: 0.5em;
+      font-size: 1.6em;
+      color: white;
+      box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, .5);
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url(bell.png);
+        background-size: contain;
+        width: 2em;
+        height: 2em;
+      }
     }
   }
 
