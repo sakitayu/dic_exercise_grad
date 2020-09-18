@@ -189,6 +189,10 @@
           <div class="state_umbrella_on_responsible">
             <p>傘を持っていないユーザーとして利用中</p>
           </div>
+        <% elsif current_user.state == "start" && controller.action_name == "show" %>
+          <div class="state_umbrella_on_responsible">
+            <p>まだ利用を開始していません</p>
+          </div>
         <% end %>
         <nav>
           <% if controller.action_name == "start" || current_user.state == "start" %>

@@ -1588,9 +1588,10 @@
   .main_box_on_my_page div.profile_header div.my_page_on_profile_from_start {
     font-size: 2em;
     font-weight: bold;
-    margin: 0 0 0 0;
+    margin: 0 0 0 1.8em;
     position: relative;
     bottom: 0.3em;
+    display: none;
   }
   .confirm_box {
     display: none;
@@ -3643,9 +3644,10 @@
   .main_box_on_my_page div.profile_header div.my_page_on_profile_from_start {
     font-size: 2em;
     font-weight: bold;
-    margin: 0 0 0 0;
+    margin: 0 0 0 1.8em;
     position: relative;
     bottom: 0.3em;
+    display: none;
   }
   .confirm_box {
     display: none;
