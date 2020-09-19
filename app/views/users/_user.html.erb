@@ -17,7 +17,11 @@
   </td>
   <td class="list_gender_and_age">
     <%= link_to "#{ping.follower.gender}", user_path(ping.follower.id), class: "gender" %>
-    <%= link_to "#{ping.follower.age}才", user_path(ping.follower.id), class: "age" unless ping.follower.age == "非公開" %>
+    <% if ping.follower.age != "非公開" %>
+      <%= link_to "#{ping.follower.age}才", user_path(ping.follower.id), class: "age" %>
+    <% else %>
+      <%= link_to "年齢非公開", user_path(ping.follower.id), class: "age" %>
+    <% end %>
   </td>
   <td class="list_area">
     <%= link_to "#{ping.follower.area}", user_path(ping.follower.id) %>
