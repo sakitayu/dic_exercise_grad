@@ -181,7 +181,13 @@
           </div>
           <p class="prof_name"><strong><%= @user.name %></strong></p>
           <p class="prof_gender"><b>性別</b> <%= @user.gender %></p>
-          <p class="prof_age"><b>年齢</b> <%= @user.age %> 才</p>
+          <p class="prof_age">
+            <% if @user.age != "非公開"  %>
+              <b>年齢</b> <%= @user.age %> 才
+            <% else %>
+              <b>年齢</b> 非公開
+            <% end %>
+          </p>
         </div>
 
         <div class="profile_right">
