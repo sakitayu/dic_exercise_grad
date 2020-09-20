@@ -139,7 +139,7 @@ class UsersController < ApplicationController
 
   def start
     # 状態がリクエスト中もしくはメッセージ中の場合はindex(ユーザー一覧ページ)に移動するようにする
-    if current_user.state == "request" || current_user.state == "message"
+    if current_user.following.first.present?
       redirect_to users_path
     # 傘もちユーザーの場合、相手からリクエストがきている場合はindex(ユーザー一覧ページ)に移動するようにする
     elsif current_user.followers.first.present?
