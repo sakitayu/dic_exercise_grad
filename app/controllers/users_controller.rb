@@ -138,18 +138,24 @@ class UsersController < ApplicationController
   end
 
   def start
-    # メッセージ中の時にウィンドウを再び開いた場合にroomに会話テーブルの中身を入れます
-    # 傘もちユーザーの場合はsender_idがcurrent_userになるので sender_id: current_user.id でfind_byする
-    if current_user.have_umbrella == true
-      room = Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id)
-    else
-      room = Conversation.find_by(sender_id: current_user.following.first.id, recipient_id: current_user.id)
-    end
-
     if current_user.state == "message" && user_signed_in?
+      # メッセージ中の時にウィンドウを再び開いた場合にroomに会話テーブルの中身を入れます
+      # 傘もちユーザーの場合はsender_idがcurrent_userになるので sender_id: current_user.id でfind_byする
+      if current_user.have_umbrella == true
+        room = Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id)
+      else
+        room = Conversation.find_by(sender_id: current_user.following.first.id, recipient_id: current_user.id)
+      end
       redirect_to conversation_messages_path(room.id)
     # 状態がリクエスト中もしくはメッセージ中の場合はindex(ユーザー一覧ページ)に移動するようにする
     elsif current_user.following.first.present? && user_signed_in?
+      # メッセージ中の時にウィンドウを再び開いた場合にroomに会話テーブルの中身を入れます
+      # 傘もちユーザーの場合はsender_idがcurrent_userになるので sender_id: current_user.id でfind_byする
+      if current_user.have_umbrella == true
+        room = Conversation.find_by(sender_id: current_user.id, recipient_id: current_user.following.first.id)
+      else
+        room = Conversation.find_by(sender_id: current_user.following.first.id, recipient_id: current_user.id)
+      end
       redirect_to users_path
     # 傘もちユーザーの場合、相手からリクエストがきている場合はindex(ユーザー一覧ページ)に移動するようにする
     elsif current_user.followers.first.present? && user_signed_in?
