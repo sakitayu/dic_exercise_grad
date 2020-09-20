@@ -146,13 +146,13 @@ class UsersController < ApplicationController
       room = Conversation.find_by(sender_id: current_user.following.first.id, recipient_id: current_user.id)
     end
 
-    if current_user.state == "message"
+    if current_user.state == "message" && current_user.user_signed_in?
       redirect_to conversation_messages_path(room.id)
     # 状態がリクエスト中もしくはメッセージ中の場合はindex(ユーザー一覧ページ)に移動するようにする
-    elsif current_user.following.first.present?
+    elsif current_user.following.first.present? && current_user.user_signed_in?
       redirect_to users_path
     # 傘もちユーザーの場合、相手からリクエストがきている場合はindex(ユーザー一覧ページ)に移動するようにする
-    elsif current_user.followers.first.present?
+    elsif current_user.followers.first.present? && current_user.user_signed_in?
       redirect_to users_path
     else
       @user = User.find(current_user.id)
