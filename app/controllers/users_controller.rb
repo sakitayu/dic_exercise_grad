@@ -138,7 +138,15 @@ class UsersController < ApplicationController
   end
 
   def start
-    @user = User.find(current_user.id)
+    # 状態がリクエスト中もしくはメッセージ中の場合はindex(ユーザー一覧ページ)に移動するようにする
+    if current_user.state == "request" || current_user.state == "message"
+      redirect_to users_path
+    # 傘もちユーザーの場合、相手からリクエストがきている場合はindex(ユーザー一覧ページ)に移動するようにする
+    elsif current_user.followers.first.present?
+      redirect_to users_path
+    else
+      @user = User.find(current_user.id)
+    end
   end
 
   def profile_update
