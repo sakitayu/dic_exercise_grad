@@ -112,10 +112,9 @@ $break-point-max: 1025px;
   .forgot_password_box {
     width: 28em;
     height: auto;
-    margin: 4.8em auto;
+    margin: 0;
     padding-bottom: 3.6em;
     background-color: white;
-    border: solid thin $dark-green;
     border-radius: 0.3em;
     h2 {
       color: $dark-grey;

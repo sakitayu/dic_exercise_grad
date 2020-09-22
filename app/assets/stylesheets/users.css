@@ -95,10 +95,9 @@
   .forgot_password_box {
     width: 28em;
     height: auto;
-    margin: 4.8em auto;
+    margin: 0;
     padding-bottom: 3.6em;
     background-color: white;
-    border: solid thin #8ac6d1;
     border-radius: 0.3em;
   }
   .forgot_password_box h2 {
