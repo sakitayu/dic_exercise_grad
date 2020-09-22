@@ -1224,8 +1224,13 @@ ul {
 #error_explanation_partial {
   color: #ffb6b9;
   height: 2em;
-  margin-bottom: 5em;
-  padding-bottom: 2em;
+  text-align: center;
+}
+
+#error_explanation_partial ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .error_explanation_small {

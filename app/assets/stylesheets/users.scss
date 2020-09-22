@@ -135,6 +135,7 @@ $break-point-max: 1025px;
             height: 1.5em;
             width: 100%;
             padding: 0.2em;
+            font-size: 1em;
             text-indent: 0.5em;
             border: solid thin $middle-grey;
             border-radius: 0.2em;
@@ -155,6 +156,7 @@ $break-point-max: 1025px;
     div.forgot_button {
       margin: 2em auto 0 auto;
       input[type="submit"] {
+        -webkit-appearance: none;
         height: 1.9em;
         line-height: 0;
         width: auto;
@@ -2226,6 +2228,7 @@ $break-point-max: 1025px;
             height: 1.5em;
             width: 100%;
             padding: 0.2em;
+            font-size: 1em;
             text-indent: 0.5em;
             border: solid thin $middle-grey;
             border-radius: 0.2em;

@@ -120,6 +120,7 @@
     height: 1.5em;
     width: 100%;
     padding: 0.2em;
+    font-size: 1em;
     text-indent: 0.5em;
     border: solid thin #999999;
     border-radius: 0.2em;
@@ -137,6 +138,7 @@
     margin: 2em auto 0 auto;
   }
   .forgot_button_container div.forgot_button input[type="submit"] {
+    -webkit-appearance: none;
     height: 1.9em;
     line-height: 0;
     width: auto;
@@ -2185,6 +2187,7 @@
     height: 1.5em;
     width: 100%;
     padding: 0.2em;
+    font-size: 1em;
     text-indent: 0.5em;
     border: solid thin #999999;
     border-radius: 0.2em;
