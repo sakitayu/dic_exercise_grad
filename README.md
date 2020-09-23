@@ -1,7 +1,7 @@
 # README
 
 # Raynee
-![README用のRayneeロゴ](images/rayneelogo4github.jpg "hero")
+![README用のRayneeロゴ](app/assets/images/rayneelogo4github.jpg "logo")
 
 ## 概要
 雨の日に人と人のつながりが生まれる傘シェアリング＆マッチングサービスです。<br>
