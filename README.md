@@ -38,6 +38,7 @@ Rails 5.2.4
 - メッセージ機能
 
 ## スクリーンショット
+![README用のRayneeロゴ](app/assets/images/raynee_anime_large.gif "screenshot")
 
 ## 使い方
 
