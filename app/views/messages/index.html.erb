@@ -58,7 +58,11 @@
 
       <div class="message_box" id="remove_form_id_is_<%= @opposite_user.id %><%= current_user.id %>">
 
-        
+        <div class="empty_message-container">
+          <p><br><br>ここでのメッセージは<br>相手にしか見えません</p>
+          <p>自分のいる場所を<br>相手にわかりやすく伝えましょう</p>
+        </div>
+
           <% @messages.each do |message| %>
             <% if message.body.present? %>
               

@@ -58,11 +58,22 @@
   }
   .message_box {
     height: auto;
-    min-height: 36em;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     background-color: white;
     z-index: -1;
+  }
+  .message_box div.empty_message-container {
+    height: 18em;
+    margin: 0;
+    padding: 0;
+  }
+  .message_box div.empty_message-container p {
+    margin: 0;
+    text-align: center;
+    color: #999999;
+    padding: 0.8em;
   }
   .self-container {
     display: flex;
@@ -366,7 +377,7 @@
   }
   .message_box {
     height: auto;
-    min-height: 68em;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     background-color: white;
