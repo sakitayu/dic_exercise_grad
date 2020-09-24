@@ -65,7 +65,7 @@
     z-index: -1;
   }
   .message_box div.empty_message-container {
-    height: 18em;
+    height: 20em;
     margin: 0;
     padding: 0;
   }
@@ -382,6 +382,17 @@
     padding: 0;
     background-color: white;
     z-index: -1;
+  }
+  .message_box div.empty_message-container {
+    height: 22em;
+    margin: 0;
+    padding: 0;
+  }
+  .message_box div.empty_message-container p {
+    margin: 0;
+    text-align: center;
+    color: #999999;
+    padding: 0.8em;
   }
   .self-container {
     display: flex;
