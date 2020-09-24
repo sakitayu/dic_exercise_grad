@@ -100,7 +100,7 @@
                     <% end %>
                     <%= form_with(model: @user, local: true) do |form| %>
                       <%= form.hidden_field :state, :value => "message" %>
-                      <%= form.submit "お願いする", data: { confirm: '本当にお願いしますか？(メッセージルームへ移動します)' }  %>
+                      <%= form.submit "お願いする", data: { confirm: "本当にお願いしますか？\n(メッセージルームへ移動します)" }  %>
                     <% end %>
                 </div>
 
