@@ -85,7 +85,7 @@ $break-point-max: 1025px;
     background-color: white;
     z-index: -1;
     div.empty_message-container{
-      height: 20em;
+      height: 22em;
       margin: 0;
       padding: 0;
       p {
@@ -742,11 +742,23 @@ $break-point-max: 1025px;
 
   .message_box {
     height: auto;
-    min-height: 68em;
+    min-height: 100%;
     margin: 0 2em 0 2em;
     padding: 2em;
     background-color: white;
     z-index: -1;
+    div.empty_message-container{
+      height: 22em;
+      margin: 0;
+      padding: 0;
+      p {
+        font-size: 1.2em;
+        margin: 0;
+        text-align: center;
+        color: $middle-grey;
+        padding: 0.8em;
+      }
+    }
   }
 
   .self-container{
