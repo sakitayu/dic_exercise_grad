@@ -79,6 +79,7 @@ $break-point-max: 1025px;
 
   .message_box {
     height: auto;
+    min-height: 36em;
     margin: 0;
     padding: 0;
     background-color: white;
@@ -404,6 +405,7 @@ $break-point-max: 1025px;
 
   .message_box {
     height: auto;
+    min-height: 68em;
     margin: 0;
     padding: 0;
     background-color: white;
@@ -718,7 +720,7 @@ $break-point-max: 1025px;
 
   .message_box {
     height: auto;
-    min-height: 25em;
+    min-height: 68em;
     margin: 0 2em 0 2em;
     padding: 2em;
     background-color: white;
