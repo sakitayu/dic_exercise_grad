@@ -7,7 +7,7 @@
 <h3>https://raynee.herokuapp.com</h3>
 
 ### アプリのQRコード▼
-![README用のRayneeロゴ](app/assets/images/qr_raynee_heroku.png "qr_code")
+![QRコード](app/assets/images/qr_raynee_heroku.png "qr_code")
 
 ## 概要
 雨の日に人と人のつながりが生まれる傘シェアリング＆マッチングサービスです。<br>
@@ -24,7 +24,7 @@
 もし、傘が必要な時に自分の近くにいる知らない人が相合傘してくれたら、どんなに素敵な世の中でしょうか。<br>
 ふとそう思ったのがこのアプリを作るきっかけでした。<br>
 <br>
-傘を無駄に購入する必要なくちょとした出会いのきっかけにもなるサービス。<br>
+傘を無駄に購入する必要なくちょっとした出会いのきっかけにもなるサービス。<br>
 <br>
 それがRaynee☂️です。<br>
 
@@ -43,17 +43,16 @@ Rails 5.2.4
 - メッセージ機能
 
 ## スクリーンショット
-![README用のRayneeロゴ](app/assets/images/raynee_anime_large.gif "screenshot")
+![スクリーンショット](app/assets/images/raynee_anime_large.gif "screenshot")
 
 ## 使い方
-1. スマホとPC/Mac、もしくは2種類のブラウザを用意してそれぞれ以下のURLにアクセスします。
-2. 【URL】https://raynee.herokuapp.com 【QRコード】![README用のRayneeロゴ](app/assets/images/qr_raynee_heroku.png "qr_code")
-3. 一方を「サンプルユーザーA」でログインし、他方を「サンプルユーザーB」でログインします。
-4. それぞれ「利用を開始」をクリックします。
-5. サンプルユーザーAでログインした方のデバイスのユーザー一覧からサンプルユーザーBを見つけてクリックし、「この人にリクエストを送る」をクリックします。
-6. サンプルユーザーBでログインした方のデバイスのリクエスト一覧にサンプルユーザーAが表示されるのでクリックし、「承諾する」をクリックするとメッセージ画面に移動します。
-7. サンプルユーザーAでログインした方のデバイスにリクエストが承諾された旨の通知が表示されるので、この通知をクリックし、「お願いする」をクリックするとメッセージ画面に移動します。
-8. マッチング完了です。それぞれのユーザーからメッセージを送り合ってみてください。
+1. スマホとPC/Mac、もしくは2種類のブラウザを用意してそれぞれ以下のURLにアクセスします。<br><br>URL▼<br>https://raynee.herokuapp.com <br><br>QRコード▼<br>![QRコード](app/assets/images/qr_raynee_heroku.png "qr_code")
+2. 一方を「サンプルユーザーA」でログインし、他方を「サンプルユーザーB」でログインします。
+3. それぞれ「利用を開始」をクリックします。
+4. サンプルユーザーAでログインした方のデバイスのユーザー一覧からサンプルユーザーB(サンプルBちゃん)を見つけてクリックし、「この人にリクエストを送る」をクリックします。
+5. サンプルユーザーBでログインした方のデバイスのリクエスト一覧にサンプルユーザーAが表示されるのでクリックし、「承諾する」をクリックするとメッセージ画面に移動します。
+6. サンプルユーザーAでログインした方のデバイスにリクエストが承諾された旨の通知が表示されるので、この通知をクリックし、「お願いする」をクリックするとメッセージ画面に移動します。
+7. マッチング完了です。それぞれのユーザーからメッセージを送り合ってみてください。
 
 ## カタログ設計
 https://docs.google.com/spreadsheets/d/1jkdfB5QhGuiCdXwYa5FgVRzbw0I_XxRPcuP8uJx127I/edit?usp=sharing
@@ -62,6 +61,7 @@ https://docs.google.com/spreadsheets/d/1jkdfB5QhGuiCdXwYa5FgVRzbw0I_XxRPcuP8uJx1
 https://docs.google.com/spreadsheets/d/1rITo7L0AhSnEWOgwoJu_YKJhjzPJmmG3H8ITqfGD6tg/edit?usp=sharing
 
 ##  ER図
+![ER図](app/assets/images/er.png "Entity Relationship Diagram")
 
 ## 画面遷移図
 https://docs.google.com/spreadsheets/d/16D7C_iYghqZb075Qxy524ciJA_B9JudhNZLSwvhayU0/edit?usp=sharing
