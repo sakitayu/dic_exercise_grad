@@ -87,7 +87,7 @@
                   <%= link_to "マイページ", user_path(current_user.id, params: { user: { state: "start"}}), method: :put, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
                 </li>
               <% elsif current_user.state == "start" %>
                 <li class="dropdown__item">
@@ -97,7 +97,7 @@
                   <%= link_to "スタート画面に戻る", start_users_path, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
                 </li>
               <% elsif Matching.find_by(follower_id: current_user.id) == nil && current_user.have_umbrella == false %>
                 <li class="dropdown__item">
@@ -114,7 +114,7 @@
                   <%= link_to "スタート画面に戻る", start_users_path, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
                 </li>
               <% elsif current_user.state == "request" %>
                 <li class="dropdown__item">
@@ -131,7 +131,7 @@
                   <%= link_to "スタート画面に戻る", user_path(current_user.id, params: { user: { state: "restart"}}), data: { confirm: "スタート画面に戻りますか？\n(現在のリクエストがリセットされます)" }, method: :put, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: "本当に終了しますか？\n(現在のリクエストがリセットされます)" }, class: "dropdown__item-link" %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
                 </li>
               <% elsif current_user.state == "message" %>
                 <li class="dropdown__item">
@@ -148,7 +148,7 @@
                   <%= link_to "スタート画面に戻る", user_path(current_user.id, params: { user: { state: "restart"}}), data: { confirm: "スタート画面に戻りますか？\n(現在のリクエストがリセットされます)" }, method: :put, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: "本当に終了しますか？\n(現在のリクエストがリセットされます)" }, class: "dropdown__item-link" %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
                 </li>
               <% elsif current_user.have_umbrella == true %>
                 <li class="dropdown__item">
@@ -161,7 +161,7 @@
                   <%= link_to "スタート画面に戻る", user_path(current_user.id, params: { user: { state: "restart"}}), data: { confirm: "スタート画面に戻りますか？\n(リクエストが全てリセットされます)" }, method: :put, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: "本当に終了しますか？\n(リクエストが全てリセットされます)" }, class: "dropdown__item-link" %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
                 </li>
               <% elsif current_user.have_umbrella == false %>
                 <li class="dropdown__item">
@@ -174,7 +174,7 @@
                   <%= link_to "スタート画面に戻る", user_path(current_user.id, params: { user: { state: "restart"}}), data: { confirm: "スタート画面に戻りますか？\n(現在のリクエストがリセットされます)" }, method: :put, class: "dropdown__item-link" %>
                 </li>
                 <li class="dropdown__item">
-                  <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown__item-link" %>
                 </li>
               <% end %>
             </ul>
@@ -203,7 +203,7 @@
               <%= link_to "スタート画面に戻る", start_users_path %>
             </div>
             <div class="nav_button_on_nav_menu">
-              <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: "本当に終了しますか？\n(現在のリクエストがリセットされます)" } %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
             </div>
           <% else %>
             <div class="nav_button_on_nav_menu">
@@ -222,7 +222,7 @@
               <%= link_to "スタート画面に戻る", user_path(current_user.id, params: { user: { state: "restart"}}), data: { confirm: "スタート画面に戻りますか？\n(現在のリクエストがリセットされます)" }, method: :put, class: "dropdown__item-link" %>
             </div>
             <div class="nav_button_on_nav_menu">
-              <%= link_to "ログアウトして終了する", destroy_user_session_path, method: :delete, data: { confirm: "本当に終了しますか？\n(現在のリクエストがリセットされます)" } %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
             </div>
           <% end %>
         </nav>

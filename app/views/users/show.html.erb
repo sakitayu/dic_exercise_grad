@@ -63,7 +63,7 @@
 
       <div class="navi_prof_logout">
         <% if user_signed_in? %>
-            <div><%= link_to "ログアウトして終了", destroy_user_session_path, method: :delete, data: { confirm: "本当に終了しますか？\n(現在のリクエストがリセットされます)" } %></div>
+            <div><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
         <% end %>
       </div>
     </div>
