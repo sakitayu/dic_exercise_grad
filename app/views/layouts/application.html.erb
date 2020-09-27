@@ -21,6 +21,8 @@
         <div class="header_left">
           <% if user_signed_in? && controller.action_name == "start" %>
             <%= link_to image_tag('raynee_logo.png'), start_users_path, class: "raynee-logo" %>
+          <% elsif user_signed_in? && current_user.state == "start" %>
+            <%= link_to image_tag('raynee_logo.png'), start_users_path, class: "raynee-logo" %>
           <% elsif user_signed_in? %>
             <%= link_to image_tag('raynee_logo.png'), users_path, class: "raynee-logo" %>
           <% else %>
