@@ -55,10 +55,11 @@ Rails 5.2.4
 7. マッチング完了です。それぞれのユーザーからメッセージを送り合ってみてください。
 
 ## カタログ設計
-https://docs.google.com/spreadsheets/d/1jkdfB5QhGuiCdXwYa5FgVRzbw0I_XxRPcuP8uJx127I/edit?usp=sharing
+[こちらで確認できます](https://docs.google.com/spreadsheets/d/1jkdfB5QhGuiCdXwYa5FgVRzbw0I_XxRPcuP8uJx127I/edit?usp=sharing)
+
 
 ## テーブル定義
-https://docs.google.com/spreadsheets/d/1rITo7L0AhSnEWOgwoJu_YKJhjzPJmmG3H8ITqfGD6tg/edit?usp=sharing
+[こちらで確認できます](https://docs.google.com/spreadsheets/d/1rITo7L0AhSnEWOgwoJu_YKJhjzPJmmG3H8ITqfGD6tg/edit?usp=sharing)
 
 ##  ER図
 ![ER図](app/assets/images/er.png "Entity Relationship Diagram")
@@ -72,11 +73,10 @@ https://docs.google.com/spreadsheets/d/1RfgUJXfSwmt3_wmU9-IuWb5Uab-FeYfrTjCGFCqu
 ## 使用Gem
 ログイン系
 * devise
-* devise-i18n
-* devise-i18n-views
 
 画像投稿
 * CarrierWave
+* MiniMagick
 * fog-aws
 
 検索機能
