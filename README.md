@@ -65,7 +65,7 @@ Rails 5.2.4
 ![ER図](app/assets/images/er.png "Entity Relationship Diagram")
 
 ## 画面遷移図
-https://docs.google.com/spreadsheets/d/16D7C_iYghqZb075Qxy524ciJA_B9JudhNZLSwvhayU0/edit?usp=sharing
+![画面遷移図](app/assets/images/raynee_std.png "Screen Transition Diagram")
 
 ## 画面ワイヤーフレーム
 https://docs.google.com/spreadsheets/d/1RfgUJXfSwmt3_wmU9-IuWb5Uab-FeYfrTjCGFCquHQo/edit?usp=sharing
