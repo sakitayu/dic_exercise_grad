@@ -519,6 +519,21 @@ $break-point-max: 1025px;
         }
       }
     }
+    p.login_disc {
+      color: $dark-grey;
+      font-size: 0.8em;
+      text-align: center;
+      padding-top: 2em;
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url(attension.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 1em;
+        height: 1em;
+      }
+    }
   }
   
   .start_container {
@@ -2579,6 +2594,21 @@ $break-point-max: 1025px;
           opacity: 0.8;
           transition: 0.1s;
         }
+      }
+    }
+    p.login_disc {
+      color: $dark-grey;
+      font-size: 0.8em;
+      text-align: center;
+      padding-top: 2em;
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url(attension.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 1em;
+        height: 1em;
       }
     }
   }
@@ -4662,6 +4692,21 @@ $break-point-max: 1025px;
           opacity: 0.8;
           transition: 0.1s;
         }
+      }
+    }
+    p.login_disc {
+      color: $dark-grey;
+      font-size: 0.8em;
+      text-align: center;
+      padding-top: 2em;
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url(attension.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 1em;
+        height: 1em;
       }
     }
   }

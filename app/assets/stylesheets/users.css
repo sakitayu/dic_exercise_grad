@@ -496,6 +496,21 @@
     opacity: 0.8;
     transition: 0.1s;
   }
+  .sample_user p.login_disc {
+    color: #444;
+    font-size: 0.8em;
+    text-align: center;
+    padding-top: 2em;
+  }
+  .sample_user p.login_disc::before {
+    content: "";
+    display: inline-block;
+    background-image: url(attension.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
+  }
   .start_container {
     width: auto;
     /* 共通の横幅 */
@@ -2532,6 +2547,21 @@
     cursor: pointer;
     opacity: 0.8;
     transition: 0.1s;
+  }
+  .sample_user p.login_disc {
+    color: #444;
+    font-size: 0.8em;
+    text-align: center;
+    padding-top: 2em;
+  }
+  .sample_user p.login_disc::before {
+    content: "";
+    display: inline-block;
+    background-image: url(attension.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
   }
   .start_container {
     width: auto;
@@ -4589,6 +4619,21 @@
     cursor: pointer;
     opacity: 0.8;
     transition: 0.1s;
+  }
+  .sample_user p.login_disc {
+    color: #444;
+    font-size: 0.8em;
+    text-align: center;
+    padding-top: 2em;
+  }
+  .sample_user p.login_disc::before {
+    content: "";
+    display: inline-block;
+    background-image: url(attension.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
   }
   .start_container {
     width: 80em;
